@@ -5,6 +5,9 @@ writing code, etc).
 To download, check and build it do the following in a terminal emulator:
 
 git clone  git://github.comr/jcfaria/fdth.git
+  or
+git clone https://jcfaria@github.com/jcfaria/fdth.git
+
 R CMD check fdth
 R CMD build fdth
 R CMD INSTALL fdth_x.x-x.tar.gz
