@@ -1,28 +1,31 @@
-2012-04-02 vs. 1.1-7 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2012-03-24 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
+	* The documentation was enhanced
+
+2012-04-02 vs. 1.1-7 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Cosmetic changes to meet the requirements of CRAN
 
-2011-08-21  vs. 1.1-6 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2011-08-21  vs. 1.1-6 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The S3 methods print.fdt.default and print.fdt.multiple were improved.
 	* The S3 methods summary.fdt.default and summary.fdt.multiple were improved.
 
-2011-05-07  vs. 1.1-5 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2011-05-07  vs. 1.1-5 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The S3 methods plot.default and plot.multiple were improved.
 	Both enable adding the count values to all types of plot
 
-2011-04-12  vs. 1.1-3 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2011-04-12  vs. 1.1-3 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The MASS package is not essential and was removed from some examples
 	to avoid NOTES in compilation
 
-2010-05-27  vs. 1.1-2 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2010-05-27  vs. 1.1-2 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The S3 methods plot.default and plot.multiple were improved
 
-2010-05-22  vs. 1.1-1 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2010-05-22  vs. 1.1-1 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The slot data was removed from the fdt object
 	* The S3 methods plot.default and plot.multiple were improved
 
-2010-05-20  vs. 1.1-0 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2010-05-20  vs. 1.1-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Released to CRAN
 
-2010-05-16  vs. 1.0-0 - Jose Claudio Faria  <joseclaudio.faria@gmail.com>
+2010-05-16  vs. 1.0-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Restrict to testers
 
