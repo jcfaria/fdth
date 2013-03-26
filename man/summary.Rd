@@ -55,13 +55,13 @@
 \details{
   It is possible to select what columns of the table (a \code{data.frame})
   will be shown, as well as the pattern of the first column. The columns are:
-  \describe{
-    \item{1}{\samp{Class limits}}
-    \item{2}{\samp{f} (absolut frequency)}
-    \item{3}{\samp{rf} (relative frequency)}
-    \item{4}{\samp{rf(\%)} (relative frequency, \%)}
-    \item{5}{\samp{cf} (cumulative frequency)}
-    \item{6}{\samp{cf(\%)} (cumulative frequency, \%)}
+  \enumerate{
+    \item \samp{Class limits} 
+    \item \samp{f} - Absolut frequency 
+    \item \samp{rf} - Relative frequency 
+    \item \samp{rf(\%)} - Relative frequency, \% 
+    \item \samp{cf} - Cumulative frequency 
+    \item \samp{cf(\%)} - Cumulative frequency, \% 
   }
 
   The available parameters offer an easy and powerful way to format the \samp{fdt}
