@@ -38,14 +38,12 @@
 \value{
   The function \code{make.fdt.simple} returns a \code{data.frame} which contains the 
   table with interval classes and frequencies. The following are the columns:
-  \itemize{
-    \item{\samp{Class limits}:} {Interval classes, \code{character}}
-    \item{\samp{f}:} {Absolute frequency, \code{numeric}}
-    \item{\samp{rf}:} {Relative frequency, \code{numeric}}
-    \item{\samp{rf(\%)}:} {Relative frequency in percentages, \code{numeric}}
-    \item{\samp{cf}:} {Cumulative frequency; \code{numeric}}
-    \item{\samp{cf(\%)}:} {Cumulative frequency in percentages, \code{numeric}}
-  }
+  \item{Class limits}{Interval classes, \code{character}}
+  \item{f}{Absolute frequency, \code{numeric}}
+  \item{rf}{Relative frequency, \code{numeric}}
+  \item{rf(\%)}{Relative frequency in percentages, \code{numeric}}
+  \item{cf}{Cumulative frequency; \code{numeric}}
+  \item{cf(\%)}{Cumulative frequency in percentages, \code{numeric}}
 }
 
 \seealso{
