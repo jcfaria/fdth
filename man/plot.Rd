@@ -64,19 +64,21 @@
   \item{v.round}{If \code{v=TRUE}, it rounds the values to the specified number of decimal places (default 0).}
   \item{v.pos}{If \code{v=TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
     indicate positions below, to the left of, above and to the right of the coordinates (default 3).}
-  \item{xlab}{A label for the x axis.}
-  \item{ylab}{A label for the y axis.}
+  \item{xlab}{A label for the \samp{x} axis.}
+  \item{ylab}{A label for the \samp{y} axis.}
   \item{col}{A \code{vector} of colors.}
-  \item{xlim}{The x limits of the plot.}
-  \item{ylim}{The y limits of the plot.}
+  \item{xlim}{The \samp{x} limits of the plot.}
+  \item{ylim}{The \samp{y} limits of the plot.}
   \item{main}{Title of the plot(s). This option has priority over \samp{main.vars}, i.e, if any value is informed,
    the variable names will not be used as title of the plot(s). For \code{fdt.multiple}, the value should be a vector of characters,
    in this case, the R's recycling rule will be used.}
-  \item{main.vars}{Logical flag: should the variables names be added as title of each plot (default TRUE)?}
-  \item{x.round}{A numeric value to round the x ticks.}
-  \item{x.las}{An integer which controls the orientation of the x axis labels
-    (0: parallel to the axes, 1: horizontal, 2: perpendicular to the axes,
-    3: vertical)}
+  \item{main.vars}{Logical flag: should the variables names be added as title of each plot (default \code{TRUE})?}
+  \item{x.round}{A numeric value to round the \samp{x} ticks.}
+  \item{x.las}{An integer which controls the orientation of the \samp{x} axis labels: \cr
+    \samp{0:} parallel to the axes, \cr
+    \samp{1:} horizontal, \cr
+    \samp{2:} perpendicular to the axes, \cr
+    \samp{3:} vertical.}
   \item{\dots}{Optional plotting parameters.}
 }
 

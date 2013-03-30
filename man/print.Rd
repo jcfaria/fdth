@@ -41,7 +41,7 @@
     decimal places (default 2).}
   \item{format.classes}{Logical, if \code{TRUE} the first column of the
     data.frame table will be formated using regular expression.
-    The default is "\%09.3e".}
+    The default is \dQuote{\%09.3e}.}
   \item{pattern}{Same as \code{fmt} in \code{\link[base]{sprintf}}.}
   \item{row.names}{Logical (or character vector), indicating whether (or what)
     row names should be printed. The default is \code{FALSE}.}
@@ -103,12 +103,12 @@ print(d,
 
 print(d,
       format=TRUE,
-      pattern='\%.2f')  # Huumm ..., good, but ... Can it be better?
+      pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
 
 print(d,
       col=c(1:2, 4, 6),
       format=TRUE, 
-      pattern='\%.2f')  # Yes, it can!
+      pattern='\%.2f')   # Yes, it can!
 
 range(x)                # To know x
 
@@ -118,7 +118,7 @@ print(fdt(x,
           h=1),
       col=c(1:2, 4, 6),
       format=TRUE,
-      pattern='\%d')    # Is it nice now?
+      pattern='\%d')     # Is it nice now?
 
 d[['table']]                        # Stores the feq. dist. table (fdt)
 d[['breaks']]                       # Stores the breaks of fdt

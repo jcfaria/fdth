@@ -177,12 +177,12 @@ summary(d,
 
 summary(d,
         format=TRUE,
-        pattern='\%.2f')  # Huumm ..., good, but ... Can it be better?
+        pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
 
 summary(d,
         col=c(1:2, 4, 6),
         format=TRUE,
-        pattern='\%.2f')  # Yes, it can!
+        pattern='\%.2f')   # Yes, it can!
 
 range(x)                  # To know x
 
@@ -192,7 +192,7 @@ summary(fdt(x,
             h=1),
         col=c(1:2, 4, 6),
         format=TRUE,
-        pattern='\%d')    # Is it nice now?
+        pattern='\%d')     # Is it nice now?
 
 # The fdt.object
 d[['table']]                        # Stores the feq. dist. table (fdt)

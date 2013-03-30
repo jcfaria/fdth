@@ -7,8 +7,8 @@
 }
 
 \description{
-  This function is called by \code{fdt.default} and \code{make.fdt.multiple}. It makes a table 
-  from a vector of numbers. The table consists of absolute and relative 
+  This function is called by \code{fdt.default} and \code{make.fdt.multiple}.
+  It makes a table from a vector of numbers. The table consists of absolute and relative 
   frequencies, cumulative frequencies in numbers and percentages.
 }
 
@@ -39,12 +39,12 @@
   The function \code{make.fdt.simple} returns a \code{data.frame} which contains the 
   table with interval classes and frequencies. The following are the columns:
   \itemize{
-    \item{\samp{Class limits}} {Interval classes, \code{character}}
-    \item{\samp{f}} {Absolute frequency, \code{numeric}}
-    \item{\samp{rf}} {Relative frequency, \code{numeric}}
-    \item{\samp{rf(\%)}} {Relative frequency in percentages, \code{numeric}}
-    \item{\samp{cf}} {Cumulative frequency; \code{numeric}}
-    \item{\samp{cf(\%)}} {Cumulative frequency in percentages, \code{numeric}}
+    \item{\samp{Class limits}:} {Interval classes, \code{character}}
+    \item{\samp{f}:} {Absolute frequency, \code{numeric}}
+    \item{\samp{rf}:} {Relative frequency, \code{numeric}}
+    \item{\samp{rf(\%)}:} {Relative frequency in percentages, \code{numeric}}
+    \item{\samp{cf}:} {Cumulative frequency; \code{numeric}}
+    \item{\samp{cf(\%)}:} {Cumulative frequency in percentages, \code{numeric}}
   }
 }
 
