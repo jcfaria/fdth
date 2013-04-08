@@ -15,7 +15,8 @@
 
 \usage{
 \method{plot}{fdt.default}(x,
-     type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp', 'd', 'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
+     type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp', 'd',
+            'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
      v=FALSE,
      v.round=2,
      v.pos=3,
@@ -29,7 +30,8 @@
      x.las=1, \dots)
 
 \method{plot}{fdt.multiple}(x,
-     type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp', 'd', 'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
+     type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp', 'd',
+            'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
      v=FALSE,
      v.round=2,
      v.pos=3,

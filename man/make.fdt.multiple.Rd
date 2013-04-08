@@ -15,7 +15,7 @@
 \usage{
   make.fdt.multiple(x,
                     k,
-                    breaks = c("Sturges", "Scott", "FD"),
+                    breaks = c('Sturges', 'Scott', 'FD'),
                     right)
 }
 

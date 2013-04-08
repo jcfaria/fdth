@@ -1,5 +1,10 @@
 fdt.default <-
-  function (x, k, start, end, h, breaks=c('Sturges', 'Scott', 'FD'),
+  function (x,
+            k,
+            start,
+            end,
+            h,
+            breaks=c('Sturges', 'Scott', 'FD'),
             right=FALSE, ...)
   {
     # User defines nothing or not 'x' isn't numeric -> stop
@@ -30,7 +35,8 @@ fdt.default <-
 
     # User defines 'x', 'start' and 'end'
     else if (missing(k) && missing(h)) {
-      stopifnot(length(start) >= 1, length(end) >=1)
+      stopifnot(length(start) >= 1,
+                length(end) >=1)
       tmp <- range(x)
       R   <- end - start
       k   <- sqrt(abs(R))
@@ -39,15 +45,36 @@ fdt.default <-
 
     # User defines 'x', 'start', 'end' and 'h'
     else if (missing(k)) {
-      stopifnot(length(start) >= 1, length(end) >= 1, length(h) >= 1)}
+      stopifnot(length(start) >= 1,
+                length(end) >= 1,
+                length(h) >= 1)}
 
     else stop('Please, see the function sintax!')
 
-    fdt           <- make.fdt.simple(x, start, end, h, right)
-    breaks        <- c(start, end, h, ifelse (right, 1, 0))
-    names(breaks) <- c('start', 'end', 'h', 'right')
-    res           <- list(table=fdt, breaks=breaks)
-    class(res)    <- c('fdt.default', 'list')
+    fdt <- make.fdt.simple(x,
+                           start,
+                           end,
+                           h,
+                           right)
+
+    breaks <- c(start,
+                end,
+                h,
+                ifelse (right,
+                        1,
+                        0))
+
+    names(breaks) <- c('start',
+                       'end',
+                       'h',
+                       'right')
+
+    res <- list(table=fdt,
+                breaks=breaks)
+
+    class(res) <- c('fdt.default',
+                    'list')
+
     invisible(res)
   }
 

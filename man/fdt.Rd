@@ -21,18 +21,18 @@
     start,
     end,
     h,
-    breaks=c("Sturges", "Scott", "FD"),
+    breaks=c('Sturges', 'Scott', 'FD'),
     right=FALSE, \dots)
  
   \method{fdt}{data.frame}(x,
     k,
     by,
-    breaks=c("Sturges", "Scott", "FD"),
+    breaks=c('Sturges', 'Scott', 'FD'),
     right=FALSE, \dots)
 
   \method{fdt}{matrix}(x,
     k,
-    breaks=c("Sturges", "Scott", "FD"),
+    breaks=c('Sturges', 'Scott', 'FD'),
     right=FALSE, \dots)
 }
 

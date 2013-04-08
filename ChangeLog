@@ -1,5 +1,6 @@
-2013-03-26 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
+2013-04-07 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The documentation has been deeply improved
+	* Export LaTeX table of the frequency distribution table (latex.fdt)
 
 2012-04-02 vs. 1.1-7 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Cosmetic changes to meet the requirements of CRAN

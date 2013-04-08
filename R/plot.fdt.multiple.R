@@ -1,18 +1,30 @@
 plot.fdt.multiple <-
-  function (x, type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp',
-                      'd', 'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
-            v=FALSE, v.round=2, v.pos=3,
-            xlab='Class limits', ylab=NULL, col='gray',
-            xlim=NULL, ylim=NULL, main=NULL, main.vars=TRUE,
-            x.round=2, x.las=1, ...)
+  function (x,
+            type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp',
+                   'd', 'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
+            v=FALSE,
+            v.round=2,
+            v.pos=3,
+            xlab='Class limits',
+            ylab=NULL,
+            col='gray',
+            xlim=NULL,
+            ylim=NULL,
+            main=NULL,
+            main.vars=TRUE,
+            x.round=2,
+            x.las=1, ...)
   {
-    is.wholenumber <- function (x, tol=.Machine$double.eps^0.5)
+    is.wholenumber <- function (x,
+                                tol=.Machine$double.eps^0.5)
       abs(x - round(x)) < tol
 
     old.mf  <- par("mfrow")
     old.oma <- par("oma")
     old.mar <- par("mar")
-    on.exit(par(mfrow=old.mf, oma=old.oma, mar=old.mar))
+    on.exit(par(mfrow=old.mf,
+                oma=old.oma,
+                mar=old.mar))
     mf <- old.mf
 
     if (length(mf) == 0)
@@ -40,14 +52,24 @@ plot.fdt.multiple <-
     repeat {
       if ((i != 0) & is.wholenumber(i/nplot.device)) {
         x11()
-        par(mfrow=mf)}
+        par(mfrow=mf)
+      }
       i <- i + 1
-      plot.fdt.default(x[[i]], type=type,
-                       v=v, v.round=v.round, v.pos=v.pos,
-                       xlab=xlab, ylab=ylab, col=col,
-                       xlim=xlim, ylim=ylim,
+      plot.fdt.default(x[[i]],
+                       type=type,
+                       v=v,
+                       v.round=v.round,
+                       v.pos=v.pos,
+                       xlab=xlab,
+                       ylab=ylab,
+                       col=col,
+                       xlim=xlim,
+                       ylim=ylim,
                        main=main[i],
-                       x.round=x.round, x.las=x.las, ...)
-      if (i == length(x)) break}
+                       x.round=x.round,
+                       x.las=x.las, ...)
+      if (i == length(x))
+        break
+    }
   }
 

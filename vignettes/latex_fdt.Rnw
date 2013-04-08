@@ -1,0 +1,282 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{verbose,
+  tmargin=2.5cm, 
+  bmargin=2.5cm, 
+  lmargin=2.5cm, 
+  rmargin=2.5cm}
+\usepackage[urlcolor=blue,
+  citecolor=red,
+  colorlinks=true]{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{parskip}
+\usepackage[round]{natbib}
+% The four packages below are required by latex.fdt function
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{threeparttable}
+
+\setlength\parindent{0pt}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+
+  % Title
+    \HRule \\[0.4cm]
+    {\huge \bfseries \LaTeX~table for fdt objects} \\[0.4cm]
+
+    \HRule \\[1.5cm]
+
+    % Author and user
+    \begin{minipage}{0.5\textwidth}
+      \begin{flushleft} \large
+        \emph{Authors:}\\
+        José C. \textsc{Faria} \\
+        e Ivan B. \textsc{Allaman}
+      \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+      \begin{flushright} \large
+        \emph{Customization in \LaTeX:} \\
+        José C. \textsc{Faria}
+      \end{flushright}
+    \end{minipage}
+
+    \vfill
+
+    % Bottom of the page
+    {\large \today}
+
+  \end{center}
+\end{titlepage}
+\vspace{3cm}
+
+\newpage
+
+Examples of references: See Tables
+\ref{tbl-2} and
+\ref{tbl-3}.
+
+\newpage
+
+<<function, echo=FALSE>>=
+#latex.fdt <- function(x,
+#                      columns=1:6,
+#                      round=2,
+#                      format.classes=TRUE,
+#                      replace.breaks=TRUE,
+#                      pattern='%.2f',
+#                      where='!tbp',
+#                      caption=NULL,
+#                      label=NULL,
+#                      size='', 
+#                      algtable=c('\\flushleft', '\\centering', '\\flushright'),
+#                      hline1='\\hline',
+#                      header=NULL,
+#                      hline2='\\hline',
+#                      algclim='l',
+#                      algfreq='r',
+#                      fdt.label=NULL,
+#                      hline3='\\hline'
+#                      )
+#{
+#  if (is.null(header))
+#    header <- colnames(x$table)[columns]
+#
+#  nfreq <- length(header) - 1
+#
+#  # substitute % in header
+#  header <- gsub('%',
+#                 '\\\\%',  
+#                 header)
+#
+#  header <- paste(' & ',
+#                  header,
+#                  sep='')
+#
+#  header <- c(header,
+#              '\\\\')
+#
+#  header <- paste(header,
+#                  collapse=' ')
+#
+#  clim <- x$table[1]
+#
+#  clim <- sapply(clim,
+#                 as.character)
+#
+#  right <- x$breaks[4]
+#
+#  # format Class limits
+#  if (format.classes) {
+#    clim <- make.fdt.format.classes(clim,
+#                                    right,
+#                                    pattern)
+#  }
+#
+#  # replacle breaks of Class limits
+#  if (replace.breaks) {
+#    # remove all: [, ], ( and ) of Class limits
+#    clim <- gsub('[][()]',
+#                 '',
+#                 clim)
+#
+#    # substitute ,
+#    if (right) {
+#      clim <- gsub(',',
+#                   ' $\\\\dashv$ ',
+#                   clim)
+#    } else {
+#      clim <- gsub(',',
+#                   ' $\\\\vdash$ ',
+#                   clim)
+#    }
+#  }
+#
+#  y <- x$table[columns][-1]
+#
+#  y <- cbind(clim,
+#             round(y, round))
+#
+#  y <- sapply(y,
+#              as.character)
+#
+#  y <- apply(y,
+#             2,
+#             function(x) paste(' & ',
+#                               x,
+#                               sep=''))
+#
+#  y <- paste(apply(y,
+#                   1,
+#                   paste,
+#                   collapse=''),
+#             ' \\\\',
+#             sep='')
+#
+#  res <- list(start=NULL,
+#              algtable=match.arg(algtable),
+#              size=size,
+#              caption=NULL,
+#              label=NULL,
+#              begintabular=NULL,
+#              hline1=hline1,
+#              header=header,
+#              hline2=hline2,
+#              fdt=y,
+#              hline3=hline3,
+#              endtabular=NULL,
+#              end=NULL)                    
+#
+#  res$start <- sub('where',
+#                   where,
+#                   '\\begin{table}[where]')
+#
+#  if(!is.null(caption))
+#    res$caption <- paste('\\caption{', 
+#                         caption,
+#                         '}',
+#                         sep='')
+#
+#  if(!is.null(label))
+#    res$label <- paste('\\label{', 
+#                       label,
+#                       '}',
+#                       sep='')
+#
+#  begintabular <- paste(c('\\begin{tabular}{r',
+#                          algclim,
+#                          rep(algfreq, nfreq),
+#                          '}'),
+#                        collapse='')
+#
+#  res$begintabular <- begintabular
+#
+#  res$endtabular <- '\\end{tabular}'
+#
+#  res$end <- '\\end{table}'
+#
+#  class(res) <- c('latex.fdt',
+#                  'list')
+#
+#  return(res)
+#}
+#
+#
+#print.latex.fdt <- function(x,
+#                            ...)
+#{
+#  cat(unlist(x),
+#      sep='\n')
+#}
+#
+#
+#summary.latex.fdt <- function(object,
+#                              ...)
+#{
+#  cat(unlist(object),
+#      sep='\n')
+#}
+#
+@
+
+<<tab, echo=FALSE, results=tex>>=
+library(fdth)
+
+##Example 1: The simplest possible
+t1 <- fdt(rnorm(n=1e3,
+                mean=10,
+                sd=2))
+
+t1x <- latex.fdt(t1)
+
+t1x
+
+
+## Example 2
+(t1x <- latex.fdt(t1,
+                  replace.breaks=FALSE,
+                  columns=c(1:2, 4, 6)))
+
+
+## Example 3
+t2 <- fdt(rnorm(n=1e3,
+                mean=10,
+                sd=2),
+          right=TRUE)
+
+t2x <- latex.fdt(t2,
+                 algtable='\\centering',
+                 caption='Frequency distribution table 2',
+                 label='tbl-2',
+                 pattern='%.1f')
+
+t2x
+
+
+## Example 4
+t3 <- fdt(rnorm(n=1e3,
+                mean=10,
+                sd=2))
+
+t3x <- latex.fdt(t3,
+                 algtable='\\flushright',
+                 caption='Frequency distribution table 3',
+                 label='tbl-3',
+                 pattern='%.1e')
+
+t3x
+@
+
+\end{document}

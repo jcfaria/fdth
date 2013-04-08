@@ -20,8 +20,7 @@
         format.classes=FALSE,
         pattern="\%09.3e",
         row.names=FALSE,
-        right=TRUE,
-        Sweave=FALSE, \dots)
+        right=TRUE, \dots)
 
   \method{summary}{fdt.multiple}(object,
         columns=1:6,
@@ -29,12 +28,11 @@
         format.classes=FALSE,
         pattern="\%09.3e",
         row.names=FALSE,
-        right=TRUE,
-        Sweave=FALSE, \dots)
+        right=TRUE, \dots)
 }
 
 \arguments{
-  \item{object}{A \samp{fdt} object.}
+  \item{object}{A \code{fdt} object.}
   \item{columns}{A \code{vector} of \code{integers} to select colums of the
     \code{data.frame} table.}
   \item{round}{Rounds the fractionary columns of \samp{fdt} to the specified number of
@@ -47,8 +45,6 @@
     row names should be printed. The default is \code{FALSE}.}
   \item{right}{Logical, indicating whether or not strings should be right-aligned.
     The default is right-alignment.}
-  \item{Sweave}{Logical, indicating whether or not called under Sweave.
-    The default is \code{FALSE}.}
   \item{\dots}{Potential further arguments (require by generic).}
 }
 
@@ -93,6 +89,8 @@ x <- rnorm(n=1e3,
 d <- fdt(x)
 
 str(d)
+
+d
 
 summary(d)  # the same
 
