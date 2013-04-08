@@ -277,6 +277,16 @@ t3x <- latex.fdt(t3,
                  pattern='%.1e')
 
 t3x
+
+## Example 5
+t4 <- fdt(iris,
+          by='Species')
+
+t4x <- lapply(t4,
+              latex.fdt)
+
+cat(unlist(t4x),
+    sep='\n')
 @
 
 \end{document}
