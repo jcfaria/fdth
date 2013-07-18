@@ -122,7 +122,8 @@ t4 <- fdt(iris,
           by='Species')
 
 t4x <- lapply(t4,
-              latex.fdt)
+              function(x) latex.fdt(x,
+                                    caption='Frequency distribution table'))
 
 cat(unlist(t4x),
     sep='\n')
