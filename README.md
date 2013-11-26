@@ -1,6 +1,6 @@
 ### fdth
 
-This is the development code of the R package __fdth__.
+This is the development code of the R package **fdth**.
 You should use it if you want to contribute to its development:
 testing unreleased versions, fixing bugs, writing code, etc.
 
