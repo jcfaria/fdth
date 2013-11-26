@@ -1,4 +1,4 @@
-2013-07-18 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
+2013-11-22 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* plot.fdth.multiple: x11() was replaced by the portable way dev.new()
 	* The documentation has been deeply improved
 	* Export LaTeX table of the frequency distribution table (latex.fdt)

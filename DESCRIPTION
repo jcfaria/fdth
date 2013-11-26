@@ -2,7 +2,7 @@ Package: fdth
 Type: Package
 Title: Frequency Distribution Tables, Histograms and Poligons
 Version: 1.1-8
-Date: 2013-07-18
+Date: 2013-11-22
 Author: José Cláudio Faria & Enio Jelihovschi
 Maintainer: José Cláudio Faria <joseclaudio.faria@gmail.com>
 Depends: R (>= 2.6.0), base, grDevices, graphics
