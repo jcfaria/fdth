@@ -1,7 +1,7 @@
 citHeader("To cite bpca in publications use:")
 
 citEntry(entry  = "Manual",
-         title  = "Frequency Distribution Tables, Histograms and Poligons.",
+         title  = "Frequency Distribution Tables, Histograms and Polygons.",
          author = "José Cláudio Faria and Enio Jelihovschi",
          organization = "UESC",
          address      = "Ilheus, Bahia, Brasil",
@@ -9,7 +9,7 @@ citEntry(entry  = "Manual",
 
          textVersion = 
          paste("Faria, J.C & Jelihovschi, E.G (", version$year, ").",
-               "fdth: Frequency Distribution Tables, Histograms and Poligons.",
+               "fdth: Frequency Distribution Tables, Histograms and Polygons.",
                "UESC, Bahia, Brasil.",
                sep="")
          )

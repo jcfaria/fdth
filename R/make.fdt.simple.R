@@ -8,7 +8,7 @@ make.fdt.simple <- function (x,
                    br=seq(start,
                           end,
                           h),
-                   right=right))                # Absolut freq.
+                   right=right))                # Absolute freq.
   rf  <- as.numeric(f/length(x))                # Relative freq
   rfP <- as.numeric(100*(f/length(x)))          # Relative freq, %
   cf  <- as.numeric(cumsum(f))                  # Cumulative freq

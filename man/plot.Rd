@@ -9,7 +9,7 @@
 
 \description{
   S3 methods for \code{fdt.default} and \code{fdt.multiple} objects.
-  It is possible to plot histograms and poligons (absolute, relative
+  It is possible to plot histograms and polygons (absolute, relative
   and cumulative).
 }
 
@@ -49,19 +49,19 @@
 \arguments{
   \item{x}{A \samp{fdt} object.}
   \item{type}{The type of the plot: \cr
-    \samp{fh:} Absolut frequency histogram, \cr
-    \samp{fp:} Absolut frequency poligon, \cr
+    \samp{fh:} Absolute frequency histogram, \cr
+    \samp{fp:} Absolute frequency polygon, \cr
     \samp{rfh:} Relative frequency histogram, \cr
-    \samp{rfp:} Relative frequency poligon, \cr
+    \samp{rfp:} Relative frequency polygon, \cr
     \samp{rfph:} Relative frequency (\%) histogram, \cr
-    \samp{rfpp:} Relative frequency (\%) poligon, \cr
+    \samp{rfpp:} Relative frequency (\%) polygon, \cr
     \samp{d:} Density, \cr
     \samp{cdh:} Cumulative density histogram, \cr
-    \samp{cdp:} Cumulative density poligon, \cr
+    \samp{cdp:} Cumulative density polygon, \cr
     \samp{cfh:} Cumulative frequency histogram, \cr
-    \samp{cfp:} Cumulative frequency poligon, \cr
+    \samp{cfp:} Cumulative frequency polygon, \cr
     \samp{cdph} Cumulative frequency (\%) histogram, \cr
-    \samp{cfpp:} Cumulative frequency (\%) poligon.}
+    \samp{cfpp:} Cumulative frequency (\%) polygon.}
   \item{v}{Logical flag: should the values be added to the plot?}
   \item{v.round}{If \code{v=TRUE}, it rounds the values to the specified number of decimal places (default 0).}
   \item{v.pos}{If \code{v=TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
@@ -85,9 +85,9 @@
 }
 
 \details{
-  The result is a single histogram or poligon (absolute, relative or cummulative)
-  for \code{fdt.default} or a set of histograms or poligon (absolute, relative or
-  cummulative) for \code{fdt.multiple} objects.
+  The result is a single histogram or polygon (absolute, relative or cumulative)
+  for \code{fdt.default} or a set of histograms or polygon (absolute, relative or
+  cumulative) for \code{fdt.multiple} objects.
   Both \samp{default and multiple} try to compute the maximum number of histograms
   that will fit on one page, then it draws a matrix of histograms. More than one
   graphical device may be opened to show all histograms.
@@ -117,7 +117,7 @@ x <- rnorm(n=1e3,
 (d <- fdt(x))
 
 # Histograms
-plot(d)  # Absolut frequency histogram
+plot(d)  # Absolute frequency histogram
 
 plot(d,
      main='My title')
@@ -143,7 +143,7 @@ plot(d,
      col=rainbow(11))
 
 plot(d,
-     type='fh')    # Absolut frequency histogram
+     type='fh')    # Absolute frequency histogram
 
 plot(d,
      type='rfh')   # Relative frequency histogram
@@ -162,22 +162,22 @@ plot(d,
 
 # Poligons
 plot(d,
-     type='fp')    # Absolut frequency poligon
+     type='fp')    # Absolute frequency polygon
 
 plot(d,
-     type='rfp')   # Relative frequency poligon
+     type='rfp')   # Relative frequency polygon
 
 plot(d,
-     type='rfpp')  # Relative frequency (%) poligon
+     type='rfpp')  # Relative frequency (%) polygon
 
 plot(d,
-     type='cdp')   # Cumulative density poligon
+     type='cdp')   # Cumulative density polygon
 
 plot(d,
-     type='cfp')   # Cumulative frequency poligon
+     type='cfp')   # Cumulative frequency polygon
 
 plot(d,
-     type='cfpp')  # Cumulative frequency (%) poligon
+     type='cfpp')  # Cumulative frequency (%) polygon
 
 # Density
 plot(d,
@@ -283,7 +283,7 @@ plot(fdt(mdf,
 
 plot(fdt(mdf,
          k=5,
-         by='X2'))  # It is dificult to compare
+         by='X2'))  # It is difficult to compare
 
 plot(fdt(mdf,
          k=5,

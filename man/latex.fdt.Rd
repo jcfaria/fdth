@@ -31,7 +31,7 @@ latex.fdt(x,
 
 \arguments{
   \item{x}{A \code{fdt} object.}
-  \item{columns}{A \code{vector} of \code{integers} to select colums of the
+  \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table. For example: \code{columns=c(1:2, 4, 6)}.}
   \item{round}{Rounds the fractionary columns of the \code{fdt} to the specified number of decimal places.
    The default is 2.}
@@ -45,7 +45,7 @@ latex.fdt(x,
     The default is \samp{'!tbp'}.
     Possible values are the tabular environment same, e.g., \samp{'h'}, \samp{'b'} and \samp{'p'}.}
   \item{caption}{Is a legend of table.
-    The defaul is \code{NULL}.}
+    The default is \code{NULL}.}
   \item{label}{A text string representing a symbolic label for the table for referencing in the LaTeX \samp{\\label} and \samp{\\ref} commands.
     \samp{label} is useful in a Rnoweb document only if caption is also provided.}
   \item{size}{Specifies the font size of the table.
@@ -72,10 +72,10 @@ latex.fdt(x,
   The function \code{latex.fdt} was developed to make the life easier for those
   who make latex tables with the results of the \code{fdt} function.
 
-  Some people could ask: why do not use the function \code{\link[Hmisc]{latex}} of the the package \pkg{Hmisc} or
+  Some people could ask: why do not use the function \code{\link[Hmisc]{latex}} of the package \pkg{Hmisc} or
   \code{\link[xtable]{xtable}} of the \pkg{xtable}?
   Both \code{\link[Hmisc]{latex}} and \code{\link[xtable]{xtable}} functions are a bit complex and with many parameters
-  for construct an adequated \code{fdt} table.
+  for construct an adequate \code{fdt} table.
   It is not always intuitive to all users, discouraging some people to use the \code{\link[Hmisc]{latex}} or
   \code{\link[xtable]{xtable}} function for constructing fdt tables, making the preparation of the fdt analysis
   reports data laborious. 
@@ -90,7 +90,7 @@ latex.fdt(x,
   will be shown, as well as the pattern of the first column. The columns are:
   \enumerate{
     \item \samp{Class limits} 
-    \item \samp{f} - Absolut frequency 
+    \item \samp{f} - Absolute frequency 
     \item \samp{rf} - Relative frequency 
     \item \samp{rf(\%)} - Relative frequency, \% 
     \item \samp{cf} - Cumulative frequency 

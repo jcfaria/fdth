@@ -33,7 +33,7 @@
 
 \arguments{
   \item{object}{A \code{fdt} object.}
-  \item{columns}{A \code{vector} of \code{integers} to select colums of the
+  \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table.}
   \item{round}{Rounds the fractionary columns of \samp{fdt} to the specified number of
     decimal places (default 2).}
@@ -53,7 +53,7 @@
   will be shown, as well as the pattern of the first column. The columns are:
   \enumerate{
     \item \samp{Class limits} 
-    \item \samp{f} - Absolut frequency 
+    \item \samp{f} - Absolute frequency 
     \item \samp{rf} - Relative frequency 
     \item \samp{rf(\%)} - Relative frequency, \% 
     \item \samp{cf} - Cumulative frequency 

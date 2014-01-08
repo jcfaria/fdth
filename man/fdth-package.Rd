@@ -4,13 +4,13 @@
 \docType{package}
 
 \title{
-  Frequency Distribution Tables, Histograms and Poligons
+  Frequency Distribution Tables, Histograms and Polygons
 }
 
 \description{
   The \pkg{fdth} package contains a set of functions which easily allows
   the user to make frequency distribution tables (\samp{fdt}), its associated
-  histograms and frequency poligons (absolut, relative and cumulative).
+  histograms and frequency polygons (absolute, relative and cumulative).
   The \samp{fdt} can be formatted in many ways which may be suited to
   publication in many different ways (papers, books, etc).
   The \code{plot} method (S3) is the histogram which can be dealt with the
@@ -26,26 +26,26 @@
   continuous variables. 
 
   The \code{R} environment provides a set of functions (generally low level)
-  enabling the user to perfom a \samp{fdt} and the associated graphical representation,
+  enabling the user to perform a \samp{fdt} and the associated graphical representation,
   the histogram. A \samp{fdt} plays an important role to summarize data information and 
   is the basis for the estimation of probability density function used in 
   parametrical inference.
 
   However, for novices or ocasional users of \code{R}, it can be laborious to
-  find out all necessary funtions and graphical parameters to do a normatized 
+  find out all necessary functions and graphical parameters to do a normalized 
   and pretty \samp{fdt} and the associated histogram ready for publications.
   
   That is the aim of this package, i.e, to allow the user to do (using a few,
   simple and flexible high level set of S3 functions) with ease and flexibility
   both: the \samp{fdt} and histogram. The input data for univariated is generally
   a \code{vector}. For multivariated data can be used both: a \code{data.frame},
-  in this case also alowing grouping all numerical variables according to one
+  in this case also allowing grouping all numerical variables according to one
   categorical, or \code{matrices}.
 
   The simplest way to run \samp{fdt} is done by supplying only the \samp{x}
   object, for example: \code{d <- fdt(x)}. In this case all necessary
   default values (\samp{breaks} and \samp{right}) ("Sturges" and \code{FALSE}
-  respectivelly) will be used.
+  respectively) will be used.
 
   It can be provided also:
   \itemize{
@@ -58,7 +58,7 @@
 
   The \samp{fdt} object stores information to be used by methods \code{summary},
   \code{print} and \code{plot}. The result of \code{plot} is a histogram or
-  poligon (absolut, relative or cummulative).
+  polygon (absolute, relative or cumulative).
   The methods \code{summary}, \code{print} and \code{plot} provide a reasonable
   set of parameters to format and plot the \samp{fdt} object in a pretty
   (and publishable) way.
@@ -97,7 +97,7 @@ x <- rnorm(n=1e3,
 (d <- fdt(x))
 
 # Histograms
-plot(d)  # Absolut frequency histogram
+plot(d)  # Absolute frequency histogram
 
 plot(d,
      main='My title')
@@ -123,7 +123,7 @@ plot(d,
      col=rainbow(11))
 
 plot(d,
-     type='fh')    # Absolut frequency histogram
+     type='fh')    # Absolute frequency histogram
 
 plot(d,
      type='rfh')   # Relative frequency histogram
@@ -140,24 +140,24 @@ plot(d,
 plot(d,
      type='cfph')  # Cumulative frequency (%) histogram
 
-# Poligons
+# Polygons
 plot(d,
-     type='fp')    # Absolut frequency poligon
+     type='fp')    # Absolute frequency polygon
 
 plot(d,
-     type='rfp')   # Relative frequency poligon
+     type='rfp')   # Relative frequency polygon
 
 plot(d,
-     type='rfpp')  # Relative frequency (%) poligon
+     type='rfpp')  # Relative frequency (%) polygon
 
 plot(d,
-     type='cdp')   # Cumulative density poligon
+     type='cdp')   # Cumulative density polygon
 
 plot(d,
-     type='cfp')   # Cumulative frequency poligon
+     type='cfp')   # Cumulative frequency polygon
 
 plot(d,
-     type='cfpp')  # Cumulative frequency (%) poligon
+     type='cfpp')  # Cumulative frequency (%) polygon
 
 # Density
 plot(d,

@@ -56,7 +56,7 @@
   The simplest way to run \samp{fdt} is done by supplying only the \samp{x}
   object, for example: \code{d <- fdt(x)}. In this case all necessary
   default values (\samp{breaks} and \samp{right}) (\dQuote{Sturges} and \code{FALSE}
-  respectivelly) will be used.
+  respectively) will be used.
 
 
   It can be provided also:

@@ -26,7 +26,7 @@ plot.fdt.default <- function (x,
   mids <- 0.5*(breaks[-1] + breaks[-length(breaks)])
 
   switch(match.arg(type),
-         # f (absolut frequency) - histogram
+         # f (absolute frequency) - histogram
          fh = {
            if (is.null(ylim))
              ylim <- with(x,
@@ -56,7 +56,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },
 
-         # f (absolut frequency) - poligon
+         # f (absolute frequency) - polygon
          fp = {
            if (is.null(ylim))
              ylim <- with(x,
@@ -117,7 +117,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },  
 
-         # rf (relative frequency) - poligon
+         # rf (relative frequency) - polygon
          rfp = {
            if (is.null(ylim))
              ylim <- with(x,
@@ -179,7 +179,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },  
 
-         # rf (relative frequency %) - poligon
+         # rf (relative frequency %) - polygon
          rfpp = {
            if (is.null(ylim))
              ylim <- with(x,
@@ -270,7 +270,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },  
 
-         # cm (cumulative density) - poligon
+         # cm (cumulative density) - polygon
          cdp = {
            if (is.null(ylim))
              ylim <- with(x,
@@ -332,7 +332,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },  
 
-         # cf (cumulative frequency) - poligon
+         # cf (cumulative frequency) - polygon
          cfp = {
            if (is.null(ylim))
              ylim <- with(x,
@@ -394,7 +394,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },  
 
-         # cfp (cumulative frequency %) - poligon
+         # cfp (cumulative frequency %) - polygon
          cfpp = {
            if (is.null(ylim))
              ylim <- c(0, 1.2 * 100)

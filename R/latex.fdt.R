@@ -50,7 +50,7 @@ latex.fdt <- function(x,
                                     pattern)
   }
 
-  # replacle breaks of Class limits
+  # replace breaks of Class limits
   if (replace.breaks) {
     # remove all: [, ], ( and ) of Class limits
     clim <- gsub('[][()]',

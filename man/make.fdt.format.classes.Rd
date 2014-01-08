@@ -7,7 +7,7 @@
 
 \description{
   This function uses part of the \pkg{fdt} results which contains the interval 
-  classes description and format it according to a pattern wich is a regular 
+  classes description and format it according to a pattern which is a regular 
   expression, the same as used by \code{\link[base]{sprintf}}. It is mainly for 
   internal use of the \pkg{fdth} package.
 }
@@ -27,7 +27,7 @@
 \details{
   This function uses the  object[["table"]] of the \samp{fdt} results (object) 
   which contains the interval classes description and format it according to a 
-  pattern wich is a regular expression, the same as used by \code{\link[base]{sprintf}}.
+  pattern which is a regular expression, the same as used by \code{\link[base]{sprintf}}.
   It is  called by the generic function \code{summary} and is mainly for 
   internal use of the \pkg{fdth} package.
 }

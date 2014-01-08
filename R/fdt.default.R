@@ -48,7 +48,7 @@ fdt.default <- function (x,
               length(end) >= 1,
               length(h) >= 1)}
 
-  else stop('Please, see the function sintax!')
+  else stop('Please, see the function sintaxe!')
 
   fdt <- make.fdt.simple(x,
                          start,
