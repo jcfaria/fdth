@@ -8,10 +8,12 @@ make.fdt.multiple <- function (x,
   # User defines only x and/or 'breaks'
   if (missing(k)) {
     brk <- match.arg(breaks)
+
     switch (brk,
             Sturges = (k <- nclass.Sturges(x)),
             Scott   = (k <- nclass.scott(x)),
             FD      = (k <- nclass.FD(x)))
+
     tmp   <- range(x)
     start <- tmp[1] - abs(tmp[1])/100
     end   <- tmp[2] + abs(tmp[2])/100
@@ -33,6 +35,7 @@ make.fdt.multiple <- function (x,
                          end,
                          h,
                          right)
+
   breaks <- c(start,
               end,
               h,

@@ -4,6 +4,7 @@ make.fdt.format.classes <- function (x,
 {
   tmp <- strsplit(x,
                   ',')
+
   res <- lapply(tmp,
                 function (.vals) {
                   .vals[1L] <- sprintf(ifelse(right,

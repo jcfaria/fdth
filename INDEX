@@ -1,18 +1,42 @@
+***Enio: verificar se a descrição está boa e compreensível***
+
 Functions:
 =========
+fdt                       Main function S3 based
+fdt.cat                   Main function S3 based
+fdt.cat.data.frame        S3 method for `data.frames'
+fdt.cat.default           S3 method for `vectors'
+fdt.cat.matrix            S3 method for `matrices'
 fdt.data.frame            S3 method for `data.frames'
 fdt.default               S3 method for `vectors'
 fdt.matrix                S3 method for `matrices'
-fdt                       Main function S3 based
 latex.fdt                 LaTeX table of the `fdt' objects
+latex.fdt.cat             LaTeX table of the `fdt.cat' objects
+make.fdt                  To make a complet fdt from numeric vectors (or single tables) for continuous
+make.fdt.cat              To make a complet fdt from numeric vectors (or single tables) for categorical
+make.fdt.cat.multiple     To make tables from a `data.frames' or `matrices' containing at least one categorical column
+make.fdt.cat.simple       To make a table from a categorical vector
 make.fdt.format.classes   To format interval classes description according to a pattern which is a regular expression
 make.fdt.multiple         To make tables from a `data.frames' or `matrices' containing at least one numeric column
 make.fdt.simple           To make a table from a numeric vector
+mean.fdt                  S3 method for `fdt' objects
+median.fdt                S3 method for `fdt' objects
+mfv.fdt                   S3 method for `fdt' objects
+mfv.fdt.cat               S3 method for `fdt.cat' objects
+plot.fdt.cat.default      S3 method for `fdt.cat.default' objects
+plot.fdt.cat.multiple     S3 method for `fdt.cat.multiple' objects
 plot.fdt.default          S3 method for `fdt.default' objects
 plot.fdt.multiple         S3 method for `fdt.multiple' objects
-print.latex.fdt           Prints `latex.fdt' objects
+print.fdt.cat.default     S3 method for `fdt.cat.default' objects
+print.fdt.cat.multiple    S3 method for `fdt.cat.multiple' objects
 print.fdt.default         S3 method for `fdt.default' objects
 print.fdt.multiple        S3 method for `fdt.multiple' objects
-summary.latex.fdt         Summarizes `latex.fdt' objects
+print.latex.fdt           Prints `latex.fdt' objects
+quantile.fdt              S3 method for `fdt' objects
+sd.fdt                    S3 method for `fdt' objects
+summary.fdt.cat.default   S3 method for `fdt.cat.default' objects
+summary.fdt.cat.multiple  S3 method for `fdt.cat.multiple' fdt objects
 summary.fdt.default       S3 method for `fdt.default' objects
 summary.fdt.multiple      S3 method for `fdt.multiple' fdt objects
+summary.latex.fdt         Summarizes `latex.fdt' objects
+var.fdt                   S3 method for `fdt' objects

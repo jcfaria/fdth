@@ -23,7 +23,7 @@ latex.fdt <- function(x,
 
   # substitute % in header
   header <- gsub('%',
-                 '\\\\%',  
+                 '\\\\%',
                  header)
 
   header <- paste(' & ',
@@ -102,20 +102,20 @@ latex.fdt <- function(x,
               fdt=y,
               hline3=hline3,
               endtabular=NULL,
-              end=NULL)                    
+              end=NULL)
 
   res$start <- sub('where',
                    where,
                    '\\begin{table}[where]')
 
   if(!is.null(caption))
-    res$caption <- paste('\\caption{', 
+    res$caption <- paste('\\caption{',
                          caption,
                          '}',
                          sep='')
 
   if(!is.null(label))
-    res$label <- paste('\\label{', 
+    res$label <- paste('\\label{',
                        label,
                        '}',
                        sep='')
@@ -137,4 +137,3 @@ latex.fdt <- function(x,
 
   return(res)
 }
-

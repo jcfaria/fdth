@@ -1,7 +1,10 @@
+% ***Enio: adaptar para contemplar também as categóricas, corrigir geral e verificar os ...***
 \name{plot.fdt}
 \alias{plot.fdt}
 \alias{plot.fdt.default}
 \alias{plot.fdt.multiple}
+\alias{plot.fdt.cat.default}
+\alias{plot.fdt.cat.multiple}
 
 \title{
   Plot fdt.default and fdt.multiple objects
@@ -14,73 +17,149 @@
 }
 
 \usage{
+## S3 methods  
 \method{plot}{fdt.default}(x,
-     type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp', 'd',
-            'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
+     type=c('fh', 'fp', 
+            'rfh', 'rfp', 
+            'rfph', 'rfpp', 
+            'd',
+            'cdh', 'cdp', 
+            'cfh', 'cfp', 
+            'cfph', 'cfpp'),
      v=FALSE,
      v.round=2,
      v.pos=3,
      xlab="Class limits",
+     xlas=0,
      ylab=NULL,
      col="gray",
      xlim=NULL,
      ylim=NULL,
      main=NULL,
-     x.round=2,
-     x.las=1, \dots)
+     x.round=2, \dots)
 
 \method{plot}{fdt.multiple}(x,
-     type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp', 'd',
-            'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
+     type=c('fh', 'fp', 
+            'rfh', 'rfp', 
+            'rfph', 'rfpp', 
+            'd',
+            'cdh', 'cdp', 
+            'cfh', 'cfp', 
+            'cfph', 'cfpp'),
      v=FALSE,
      v.round=2,
      v.pos=3,
      xlab="Class limits",
+     xlas=0,
      ylab=NULL, 
      col="gray",
      xlim=NULL,
      ylim=NULL,
      main=NULL,
      main.vars=TRUE,
-     x.round=2, 
-     x.las=1, \dots)
+     x.round=2, \dots)
+
+\method{plot}{fdt.cat.default}(x,
+     type=c('fb', 'fp', 'fd',
+            'rfb', 'rfp', 'rfd',
+            'rfpb', 'rfpp', 'rfpd',
+            'cfb', 'cfp', 'cfd',
+            'cfpb', 'cfpp', 'cfpd',
+            'pa'),
+     v=FALSE,
+     v.round=2,
+     v.pos=3,
+     xlab=NULL,
+     xlas=0,
+     ylab=NULL,
+     y2lab=NULL,
+     y2cfp=seq(0, 100, 25),
+     col=gray(.4),
+     xlim=NULL,
+     ylim=NULL,
+     main=NULL,
+     box=FALSE, \dots)
+
+\method{plot}{fdt.cat.multiple}(x,
+     type=c('fb', 'fp', 'fd',
+            'rfb', 'rfp', 'rfd',
+            'rfpb', 'rfpp', 'rfpd',
+            'cfb', 'cfp', 'cfd',
+            'cfpb', 'cfpp', 'cfpd',
+            'pa'),
+     v=FALSE,
+     v.round=2,
+     v.pos=3,
+     xlab=NULL,
+     xlas=0,
+     ylab=NULL, 
+     y2lab=NULL,
+     y2cfp=seq(0, 100, 25),
+     col=gray(.4),
+     xlim=NULL,
+     ylim=NULL,
+     main=NULL,
+     main.vars=TRUE,
+     box=FALSE, \dots)
 }
 
 \arguments{
   \item{x}{A \samp{fdt} object.}
   \item{type}{The type of the plot: \cr
+    \samp{fb:} Absolute frequency barplot, \cr
     \samp{fh:} Absolute frequency histogram, \cr
     \samp{fp:} Absolute frequency polygon, \cr
+    \samp{fd:} Absolute frequency dotchart, \cr
+
+    \samp{rfb:} Relative frequency barplot, \cr
     \samp{rfh:} Relative frequency histogram, \cr
     \samp{rfp:} Relative frequency polygon, \cr
+    \samp{rfd:} Relative frequency dotchart, \cr
+
+    \samp{rfpb:} Relative frequency (\%) barplot, \cr
     \samp{rfph:} Relative frequency (\%) histogram, \cr
     \samp{rfpp:} Relative frequency (\%) polygon, \cr
+    \samp{rfpd:} Relative frequency (\%) dotchart, \cr
+
     \samp{d:} Density, \cr
     \samp{cdh:} Cumulative density histogram, \cr
     \samp{cdp:} Cumulative density polygon, \cr
+
+    \samp{cfb:} Cumulative frequency barplot, \cr
     \samp{cfh:} Cumulative frequency histogram, \cr
     \samp{cfp:} Cumulative frequency polygon, \cr
-    \samp{cdph} Cumulative frequency (\%) histogram, \cr
-    \samp{cfpp:} Cumulative frequency (\%) polygon.}
+    \samp{cfd:} Cumulative frequency dotchart, \cr
+
+    \samp{cdpb:} Cumulative frequency (\%) barplot, \cr
+    \samp{cdph:} Cumulative frequency (\%) histogram, \cr
+    \samp{cfpp:} Cumulative frequency (\%) polygon, \cr
+    \samp{cfpd:} Cumulative frequency (\%) dotchart. \cr
+
+    \samp{pa:} Pareto chart.}
   \item{v}{Logical flag: should the values be added to the plot?}
   \item{v.round}{If \code{v=TRUE}, it rounds the values to the specified number of decimal places (default 0).}
   \item{v.pos}{If \code{v=TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
     indicate positions below, to the left of, above and to the right of the coordinates (default 3).}
   \item{xlab}{A label for the \samp{x} axis.}
+  \item{xlas}{An integer which controls the orientation of the \samp{x} axis labels: \cr
+    \samp{0:} parallel to the axes, \cr
+    \samp{2:} perpendicular to the axes.}
   \item{ylab}{A label for the \samp{y} axis.}
+  \item{y2lab}{A label for the \samp{y2} axis.}
+  \item{y2cfp}{A cumulative frequêncy percentual for the \samp{y2} axis. The default is \code{seq(0, 100, 25)}.}
   \item{col}{A \code{vector} of colors.}
   \item{xlim}{The \samp{x} limits of the plot.}
   \item{ylim}{The \samp{y} limits of the plot.}
   \item{main}{Title of the plot(s). This option has priority over \samp{main.vars}, i.e, if any value is informed,
-   the variable names will not be used as title of the plot(s). For \code{fdt.multiple}, the value should be a vector of characters,
-   in this case, the R's recycling rule will be used.}
+    the variable names will not be used as title of the plot(s). For \code{fdt.multiple}, the value should be a vector of characters,
+    in this case, the R's recycling rule will be used.}
   \item{main.vars}{Logical flag: should the variables names be added as title of each plot (default \code{TRUE})?}
-  \item{x.round}{A numeric value to round the \samp{x} ticks.}
-  \item{x.las}{An integer which controls the orientation of the \samp{x} axis labels: \cr
+  \item{x.round}{A numeric value to round the \samp{x} ticks:
     \samp{0:} parallel to the axes, \cr
     \samp{1:} horizontal, \cr
     \samp{2:} perpendicular to the axes, \cr
     \samp{3:} vertical.}
+  \item{box}{...}
   \item{\dots}{Optional plotting parameters.}
 }
 
@@ -94,8 +173,8 @@
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \seealso{
@@ -105,11 +184,9 @@
 \examples{
 library(fdth)
 
-#======================
-# Vectors: univariated
-#======================
-set.seed(1)
-
+#================================
+# Vectors: univariated numerical
+#================================
 x <- rnorm(n=1e3,
            mean=5,
            sd=1)
@@ -127,18 +204,18 @@ plot(d,
      col='darkgreen')
 
 plot(d,
-     x.las=2)
+     xlas=2)
 
 plot(d,
      x.round=3,
-     x.las=2,
+     xlas=2,
      xlab=NULL)
 
 plot(d, 
      v=TRUE, 
      cex=.8,
      x.round=3,
-     x.las=2,
+     xlas=2,
      xlab=NULL,
      col=rainbow(11))
 
@@ -199,6 +276,35 @@ curve(dnorm(x,
       col='darkgreen',
       add=TRUE,
       lwd=2)
+
+
+#==================================
+# Vectors: univariated categorical
+#==================================
+x <- sample(letters[1:5],
+            1e3,
+            rep=TRUE)
+
+(dc <- fdt.cat(x))
+
+# Barplot: the default
+plot(dc)
+
+# Barplot
+plot(dc,
+     type='fb')
+
+# Polygon
+plot(dc,
+     type='fp')
+
+# Dotchart
+plot(dc,
+     type='fd')
+
+# Pareto chart
+plot(dc,
+     type='pa')
 
 #=============================================
 # Data.frames: multivariated with categorical
@@ -309,6 +415,14 @@ plot(d)
 
 plot(d, 
      type='d')
+
+# Categorical data 
+(dc <- fdt.cat(mdf))
+plot(dc)
+
+plot(dc,
+     type='fd',
+     pch=19)
 
 #=========================
 # Matrices: multivariated

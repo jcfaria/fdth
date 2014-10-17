@@ -1,8 +1,9 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{print}
 \alias{print.latex.fdt}
 
 \title{
-  Print Method for latex.fdt Objects
+  Print method for latex.fdt objects
 }
 
 \description{
@@ -10,7 +11,8 @@
 }
 
 \usage{
-  \method{print}{latex.fdt}(x, \dots)
+## S3 method
+\method{print}{latex.fdt}(x, \dots)
 }
 
 \arguments{
@@ -19,9 +21,8 @@
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  and\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \seealso{\code{\link{latex.fdt}}}

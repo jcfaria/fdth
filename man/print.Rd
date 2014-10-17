@@ -1,10 +1,13 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{print.fdt}
 \alias{print.fdt}
 \alias{print.fdt.default}
 \alias{print.fdt.multiple}
+\alias{print.fdt.cat.default}
+\alias{print.fdt.cat.multiple}
 
 \title{
-  Print Methods for fdt Objects
+  Print methods for fdt objects
 }
 
 \description{
@@ -14,7 +17,8 @@
 }
 
 \usage{
-  \method{print}{fdt.default}(x,
+## S3 methods
+\method{print}{fdt.default}(x,
       columns=1:6,
       round=2,
       format.classes=FALSE,
@@ -22,11 +26,23 @@
       row.names=FALSE,
       right=TRUE, \dots)
 
-  \method{print}{fdt.multiple}(x,
+\method{print}{fdt.multiple}(x,
       columns=1:6,
       round=2,
       format.classes=FALSE,
       pattern='\%09.3e',
+      row.names=FALSE,
+      right=TRUE, \dots)
+
+\method{print}{fdt.cat.default}(x,
+      columns=1:6,
+      round=2,
+      row.names=FALSE,
+      right=TRUE, \dots)
+
+\method{print}{fdt.cat.multiple}(x,
+      columns=1:6,
+      round=2,
       row.names=FALSE,
       right=TRUE, \dots)
 }
@@ -59,7 +75,7 @@
     \item \samp{cf} - Cumulative frequency 
     \item \samp{cf(\%)} - Cumulative frequency, \% 
   }
- 
+
   The available parameters offer an easy and powerful way to format the \samp{fdt} for
   publications and other purposes.
 }
@@ -70,8 +86,8 @@
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \examples{
@@ -83,8 +99,8 @@ library (fdth)
 set.seed(1)
 
 x <- rnorm(n=1e3,
-          mean=5,
-          sd=1)
+           mean=5,
+           sd=1)
 
 d <- fdt(x)
 

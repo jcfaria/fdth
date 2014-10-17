@@ -1,10 +1,13 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{summary.fdt}
 \alias{summary.fdt}
 \alias{summary.fdt.default}
 \alias{summary.fdt.multiple}
+\alias{summary.fdt.cat.default}
+\alias{summary.fdt.cat.multiple}
 
 \title{
-  Summary Methods for fdt Objects
+  Summary methods for fdt objects
 }
 
 \description{
@@ -14,7 +17,8 @@
 }
 
 \usage{
-  \method{summary}{fdt.default}(object,
+## S3 methods
+\method{summary}{fdt.default}(object,
         columns=1:6,
         round=2,
         format.classes=FALSE,
@@ -22,11 +26,23 @@
         row.names=FALSE,
         right=TRUE, \dots)
 
-  \method{summary}{fdt.multiple}(object,
+\method{summary}{fdt.multiple}(object,
         columns=1:6,
         round=2,
         format.classes=FALSE,
         pattern="\%09.3e",
+        row.names=FALSE,
+        right=TRUE, \dots)
+
+\method{summary}{fdt.cat.default}(object,
+        columns=1:6,
+        round=2,
+        row.names=FALSE,
+        right=TRUE, \dots)
+
+\method{summary}{fdt.cat.multiple}(object,
+        columns=1:6,
+        round=2,
         row.names=FALSE,
         right=TRUE, \dots)
 }
@@ -70,8 +86,8 @@
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \examples{

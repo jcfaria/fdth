@@ -1,3 +1,9 @@
+2014-10-13 vs. 1.2-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
+	* Thanks to Ivan B. Allaman to the bug fix of the function
+	make.fdt.simple.R
+	* It was added basic suport to categorical variables
+	* Some bugs were corrected
+
 2013-11-22 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* plot.fdth.multiple: x11() was replaced by the portable way dev.new()
 	* The documentation has been deeply improved
@@ -30,4 +36,3 @@
 
 2010-05-16  vs. 1.0-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Restrict to testers
-

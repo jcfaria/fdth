@@ -1,5 +1,7 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{make.fdt.multiple}
 \alias{make.fdt.multiple}
+\alias{make.fdt.cat.multiple}
 
 \title{
   A function which makes the table using the number of interval classes, 
@@ -13,10 +15,14 @@
 }
 
 \usage{
-  make.fdt.multiple(x,
-                    k,
-                    breaks = c('Sturges', 'Scott', 'FD'),
-                    right)
+make.fdt.multiple(x,
+                  k,
+                  breaks = c('Sturges', 'Scott', 'FD'),
+                  right)
+
+make.fdt.cat.multiple(x,
+                      sort,
+                      decreasing)
 }
 
 \arguments{
@@ -24,6 +30,8 @@
   \item{k}{Number of class intervals.}
   \item{breaks}{Method to determine number of classes, c(\dQuote{Sturges}, \dQuote{Scott}, \dQuote{FD}).}
   \item{right}{Intervals right open (default = \code{FALSE}).}
+  \item{sort}{...}
+  \item{decreasing}{...}
 }
 
 \details{
@@ -41,12 +49,12 @@
 }
 
 \seealso{
- \code{\link[base]{table}} and \code{\link[base]{cut}} provided by \pkg{base} package.
+  \code{\link[base]{table}} and \code{\link[base]{cut}} provided by \pkg{base} package.
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \note{

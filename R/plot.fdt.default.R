@@ -1,58 +1,68 @@
 plot.fdt.default <- function (x,
-                              type=c('fh', 'fp', 'rfh', 'rfp', 'rfph', 'rfpp',
-                                     'd', 'cdh', 'cdp', 'cfh', 'cfp', 'cfph', 'cfpp'),
+                              type=c('fh', 'fp', 
+                                     'rfh', 'rfp', 'rfph', 'rfpp',
+                                     'd', 'cdh', 'cdp', 
+                                     'cfh', 'cfp', 'cfph', 'cfpp'),
                               v=FALSE,
                               v.round=2,
                               v.pos=3,
                               xlab='Class limits',
+                              xlas=0,
                               ylab=NULL,
                               col='gray',
                               xlim=NULL,
                               ylim=NULL,
                               main=NULL,
-                              x.round=2,
-                              x.las=1, ...)
+                              x.round=2, ...)
 {
-  breaks <- with(x,
-                 seq(breaks['start'],
-                     breaks['end'],
-                     breaks['h']))
+  brk <- with(x,
+              seq(breaks['start'],
+                  breaks['end'],
+                  breaks['h']))
 
   if (is.null(xlim))
     xlim <- with(x,
                  c(breaks['start'],
                    breaks['end']))
 
-  mids <- 0.5*(breaks[-1] + breaks[-length(breaks)])
+  mids <- 0.5 * (brk[-1] + 
+                 brk[-length(brk)])
 
   switch(match.arg(type),
          # f (absolute frequency) - histogram
          fh = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 2])))
+                          c(0, 
+                            1.2 * max(table[, 2])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab,
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- x$table[, 2]
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },
 
@@ -60,13 +70,15 @@ plot.fdt.default <- function (x,
          fp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 2])))
+                          c(0, 
+                            1.2 * max(table[, 2])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            y <- with(x,
                      table[, 2])
+
            plot(mids,
                 y,
                 type='b',
@@ -81,39 +93,49 @@ plot.fdt.default <- function (x,
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round), 
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },
 
          # rf (relative frequency) - histogram
          rfh = {
-           h <- with(x, breaks[3])
+           h <- with(x, 
+                     breaks[3])
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 3])))
+                          c(0, 
+                            1.2 * max(table[, 3])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab, 
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- x$table[, 3]
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },  
 
@@ -121,7 +143,8 @@ plot.fdt.default <- function (x,
          rfp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 3])))
+                          c(0, 
+                            1.2 * max(table[, 3])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
@@ -139,11 +162,13 @@ plot.fdt.default <- function (x,
                 ylab=ylab,
                 col=col,
                 main=main, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },
 
@@ -153,29 +178,37 @@ plot.fdt.default <- function (x,
                      breaks[3])
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 4])))
+                          c(0, 
+                            1.2 * max(table[, 4])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab,
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- x$table[, 4]
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round), 
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },  
 
@@ -183,7 +216,8 @@ plot.fdt.default <- function (x,
          rfpp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 4])))
+                          c(0, 
+                            1.2 * max(table[, 4])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
@@ -201,47 +235,63 @@ plot.fdt.default <- function (x,
                 ylab=ylab,
                 col=col,
                 main=main, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },
 
          # Density
          d = {
-           h <- with(x, breaks[3])
+           h <- with(x, 
+                     breaks[3])
+
            if (is.null(ylim))
-             ylim <- with(x, c(0, 1.2 * max(table[, 3] / h)))
+             ylim <- with(x, 
+                          c(0, 
+                            1.2 * max(table[, 3] / h)))
 
            if(is.null(ylab))
              ylab <- 'Density'
 
+
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab,
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- x$table[, 3] / h
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round), 
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },  
 
          # cd (cumulative density) - histogram
          cdh = {
-           h <- with(x, breaks[3])
+           h <- with(x, 
+                     breaks[3])
+
            if (is.null(ylim))
              ylim <- with(x,
                           c(0, 1.2))
@@ -250,23 +300,30 @@ plot.fdt.default <- function (x,
              ylab <- 'Cumulative density'
 
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab,
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- cumsum(x$table[, 3])
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },  
 
@@ -281,7 +338,7 @@ plot.fdt.default <- function (x,
 
            y <- c(0,
                   cumsum(x$table[, 3]))
-           plot(breaks,
+           plot(brk,
                 y,
                 type='b',
                 xaxt='n',
@@ -292,11 +349,13 @@ plot.fdt.default <- function (x,
                 ylab=ylab,
                 col=col,
                 main=main, ...)
+
            if(v)
-             text(x=breaks,
+             text(x=brk,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          }, 
 
@@ -304,31 +363,40 @@ plot.fdt.default <- function (x,
          cfh = {
            h <- with(x,
                      breaks[3])
+
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * max(table[, 5])))
+                          c(0, 
+                            1.2 * max(table[, 5])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab,
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- x$table[, 5]
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },  
 
@@ -336,7 +404,8 @@ plot.fdt.default <- function (x,
          cfp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 1.2 * sum(table['f'])))
+                          c(0, 
+                            1.2 * sum(table['f'])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
@@ -344,7 +413,7 @@ plot.fdt.default <- function (x,
            y <- with(x,
                      c(0,
                        table[, 5]))
-           plot(breaks,
+           plot(brk,
                 y,
                 type='b',
                 xaxt='n',
@@ -355,11 +424,13 @@ plot.fdt.default <- function (x,
                 ylab=ylab,
                 col=col,
                 main=main, ...)
+
            if(v)
-             text(x=breaks,
+             text(x=brk,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },
 
@@ -367,44 +438,57 @@ plot.fdt.default <- function (x,
          cfph = {
            h <- with(x,
                      breaks[3])
+
            if (is.null(ylim))
-             ylim <- with(x, c(0, 1.2 * max(table[, 6])))
+             ylim <- with(x, 
+                          c(0, 
+                            1.2 * max(table[, 6])))
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            plot.new()
+
            plot.window(xlim,
                        ylim)
+
            title(main=main,
                  xlab=xlab,
                  ylab=ylab, ...)
+
            axis(2, ...)
+
            y <- x$table[, 6]
-           rect(breaks[-length(breaks)],
+
+           rect(brk[-length(brk)],
                 0,
-                breaks[-1],
+                brk[-1],
                 y,
                 col=col, ...)
+
            if(v)
              text(x=mids,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          },  
 
          # cfp (cumulative frequency %) - polygon
          cfpp = {
            if (is.null(ylim))
-             ylim <- c(0, 1.2 * 100)
+             ylim <- c(0, 
+                       1.2 * 100)
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            y <- with(x,
-                     c(0, table[, 6]))
-           plot(breaks,
+                     c(0, 
+                       table[, 6]))
+
+           plot(brk,
                 y,
                 type='b',
                 xaxt='n',
@@ -415,15 +499,18 @@ plot.fdt.default <- function (x,
                 ylab=ylab,
                 col=col,
                 main=main, ...)
+
            if(v)
-             text(x=breaks,
+             text(x=brk,
                   y=y,
-                  labels=round(y,
-                               v.round),
+                  labels=format(round(y,
+                                      v.round), 
+                                nsmall=v.round),
                   pos=v.pos, ...)
          })
 
-  axis(1, at=round(breaks,
-                   x.round),
-       las=x.las, ...)
+  axis(1, 
+       at=round(brk,
+                x.round),
+       las=xlas, ...)
 }

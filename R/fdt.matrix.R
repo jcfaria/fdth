@@ -4,16 +4,20 @@ fdt.matrix <- function (x,
                         right=FALSE, ...)
 {
   stopifnot(is.matrix(x))
+
   res <- list()
 
   for (i in 1:ncol(x)) {
     m <- as.matrix(x[ ,i])
+
     fdt <- make.fdt.multiple(m,
                              k,
                              breaks,
                              right)
+
     tmpres <- list(table=fdt[[1]],
                    breaks=fdt[[2]])
+
     res <- c(res,
              list(tmpres))
   }
@@ -26,8 +30,10 @@ fdt.matrix <- function (x,
     nms <- colnames(x)
 
   names(res) <- nms
-  class(res) <- c('fdt.multiple',
-                  'list')
-  invisible(res)
-}
 
+  class(res) <- c('fdt.multiple',
+                  'fdt',
+                  'list')
+
+  invisible(res)
+} 

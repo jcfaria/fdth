@@ -1,10 +1,11 @@
+% ***Enio: adaptar também para as categóricas***
 \name{fdth-package}
-\alias{fdth-package}
 \alias{fdth}
+\alias{fdth-package}
 \docType{package}
 
 \title{
-  Frequency Distribution Tables, Histograms and Polygons
+  Frequency distribution tables, histograms and polygons
 }
 
 \description{
@@ -34,7 +35,7 @@
   However, for novices or ocasional users of \code{R}, it can be laborious to
   find out all necessary functions and graphical parameters to do a normalized 
   and pretty \samp{fdt} and the associated histogram ready for publications.
-  
+
   That is the aim of this package, i.e, to allow the user to do (using a few,
   simple and flexible high level set of S3 functions) with ease and flexibility
   both: the \samp{fdt} and histogram. The input data for univariated is generally
@@ -65,8 +66,8 @@
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \keyword{fdt}
@@ -76,10 +77,10 @@
 \keyword{histogram}
 
 \seealso{
- \code{\link[graphics]{hist}} provided by \pkg{graphics};
- \code{\link[base]{table}}, \code{\link[base]{cut}} both provided by \pkg{base}
- and
- \code{\link[Hmisc]{hist.data.frame}} provided by \pkg{Hmisc} package.
+  \code{\link[graphics]{hist}} provided by \pkg{graphics};
+  \code{\link[base]{table}}, \code{\link[base]{cut}} both provided by \pkg{base}
+  and
+  \code{\link[Hmisc]{hist.data.frame}} provided by \pkg{Hmisc} package.
 }
 
 \examples{
@@ -88,98 +89,96 @@ library (fdth)
 #======================
 # Vectors: univariated
 #======================
-set.seed(1)
-
 x <- rnorm(n=1e3,
            mean=5,
            sd=1)
 
-(d <- fdt(x))
+(tb <- fdt(x))
 
 # Histograms
-plot(d)  # Absolute frequency histogram
+plot(tb)  # Absolute frequency histogram
 
-plot(d,
+plot(tb,
      main='My title')
 
-plot(d,
+plot(tb,
      x.round=3,
      col='darkgreen')
 
-plot(d,
-     x.las=2)
+plot(tb,
+     xlas=2)
 
-plot(d,
+plot(tb,
      x.round=3,
-     x.las=2,
+     xlas=2,
      xlab=NULL)
 
-plot(d,
+plot(tb,
      v=TRUE,
      cex=.8,
      x.round=3,
-     x.las=2,
+     xlas=2,
      xlab=NULL,
      col=rainbow(11))
 
-plot(d,
+plot(tb,
      type='fh')    # Absolute frequency histogram
 
-plot(d,
+plot(tb,
      type='rfh')   # Relative frequency histogram
 
-plot(d,
+plot(tb,
      type='rfph')  # Relative frequency (%) histogram
 
-plot(d,
+plot(tb,
      type='cdh')   # Cumulative density histogram
 
-plot(d,
+plot(tb,
      type='cfh')   # Cumulative frequency histogram
 
-plot(d,
+plot(tb,
      type='cfph')  # Cumulative frequency (%) histogram
 
 # Polygons
-plot(d,
+plot(tb,
      type='fp')    # Absolute frequency polygon
 
-plot(d,
+plot(tb,
      type='rfp')   # Relative frequency polygon
 
-plot(d,
+plot(tb,
      type='rfpp')  # Relative frequency (%) polygon
 
-plot(d,
+plot(tb,
      type='cdp')   # Cumulative density polygon
 
-plot(d,
+plot(tb,
      type='cfp')   # Cumulative frequency polygon
 
-plot(d,
+plot(tb,
      type='cfpp')  # Cumulative frequency (%) polygon
 
 # Density
-plot(d,
+plot(tb,
      type='d')     # Density
 
 # Summary
-d
+tb
 
-summary(d)  # the same
+summary(tb)  # the same
 
-print(d)    # the same
+print(tb)    # the same
 
-show(d)     # the same
+show(tb)     # the same
 
-summary(d,
+summary(tb,
         format=TRUE)      # It can not be what you want to publications!
 
-summary(d,
+summary(tb,
         format=TRUE,
         pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
 
-summary(d,
+summary(tb,
         col=c(1:2, 4, 6),
         format=TRUE,
         pattern='\%.2f')   # Yes, it can!
@@ -195,28 +194,31 @@ summary(fdt(x,
         pattern='\%d')     # Is it nice now?
 
 # The fdt.object
-d[['table']]                        # Stores the feq. dist. table (fdt)
-d[['breaks']]                       # Stores the breaks of fdt
-d[['breaks']]['start']              # Stores the left value of the first class
-d[['breaks']]['end']                # Stores the right value of the last class
-d[['breaks']]['h']                  # Stores the class interval
-as.logical(d[['breaks']]['right'])  # Stores the right option
+tb[['table']]                        # Stores the feq. dist. table (fdt)
+tb[['breaks']]                       # Stores the breaks of fdt
+tb[['breaks']]['start']              # Stores the left value of the first class
+tb[['breaks']]['end']                # Stores the right value of the last class
+tb[['breaks']]['h']                  # Stores the class interval
+as.logical(tb[['breaks']]['right'])  # Stores the right option
 
 # Theoretical curve and fdt
-x <- rnorm(1e5,
+y <- rnorm(1e5,
            mean=5, 
            sd=1)
-plot(fdt(x,
-         k=100),
-     type='d',
+
+tb <- fdt(y,
+          k=100)
+
+plot(tb,
+     type='d',                       # density
      col=heat.colors(100))
 
 curve(dnorm(x,
             mean=5, 
             sd=1),
-      col='darkgreen',
+      n=1e3,      
       add=TRUE, 
-      lwd=2)
+      lwd=4)
 
 #=============================================
 # Data.frames: multivariated with categorical
@@ -228,85 +230,82 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y3=rnorm(100, 50, 4),
                   Y4=rnorm(100, 40, 4))
 
-(d <- fdt(mdf))
+(tb <- fdt(mdf))
 
 # Histograms
-plot(d,
+plot(tb,
      v=TRUE)
 
-plot(d,
-     col='darkgreen')
-
-plot(d,
+plot(tb,
      col=rainbow(8))
 
-plot(d,
+plot(tb,
      type='fh')
 
-plot(d,
+plot(tb,
      type='rfh')
 
-plot(d,
+plot(tb,
      type='rfph')
 
-plot(d, 
+plot(tb, 
      type='cdh')
 
-plot(d,
+plot(tb,
      type='cfh')
 
-plot(d,
+plot(tb,
      type='cfph')
 
 # Poligons
-plot(d,
+plot(tb,
      v=TRUE,
      type='fp')
 
-plot(d,
+plot(tb,
      type='rfp')
 
-plot(d,
+plot(tb,
      type='rfpp')
 
-plot(d,
+plot(tb,
      type='cdp')
 
-plot(d,
+plot(tb,
      type='cfp')
 
-plot(d,
+plot(tb,
      type='cfpp') 
 
 # Density
-plot(d,
+plot(tb,
      type='d') 
 
 # Summary
-d
+tb
 
-summary(d)  # the same
+summary(tb)  # the same
 
-print(d)    # the same
+print(tb)    # the same
 
-show(d)     # the same
+show(tb)     # the same
 
-summary(d,
+summary(tb,
         format=TRUE)
 
-summary(d,
+summary(tb,
         format=TRUE, 
         pattern='\%05.2f')  # regular expression
 
-summary(d,
+summary(tb,
         col=c(1:2, 4, 6), 
         format=TRUE,
         pattern='\%05.2f')
 
-print(d,
+print(tb,
       col=c(1:2, 4, 6))
 
-print(d,
+print(tb,
       col=c(1:2, 4, 6), 
       format=TRUE,
       pattern='\%05.2f')
@@ -314,25 +313,12 @@ print(d,
 # Using by
 levels(mdf$X1)
 
-summary(fdt(mdf,
-            k=5,
-            by='X1'))
-
 plot(fdt(mdf,
          k=5,
          by='X1'),
      col=rainbow(5))
 
 levels(mdf$X2)
-
-summary(fdt(mdf,
-            breaks='FD',
-            by='X2'), 
-        round=3)
-
-plot(fdt(mdf,
-         breaks='FD',
-         by='X2'))
 
 summary(fdt(iris,
             k=5),

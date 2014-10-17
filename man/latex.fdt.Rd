@@ -1,8 +1,10 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{latex.fdt}
 \alias{latex.fdt}
+\alias{latex.fdt.cat}
 
 \title{
-  LaTeX Table of the Frequency Distribution Table
+  LaTeX table of the frequency distribution table
 }
 
 \description{
@@ -27,6 +29,20 @@ latex.fdt(x,
           algclim='l',
           algfreq='r',
           hline3='\\\\hline')
+
+latex.fdt.cat(x,
+              columns=1:6,
+              where='!tbp',
+              caption=NULL,
+              label=NULL,
+              size='', 
+              algtable=c('\\\\flushleft', '\\\\centering', '\\\\flushright'),
+              hline1='\\\\hline',
+              header=NULL,
+              hline2='\\\\hline',
+              algclim='l',
+              algfreq='r',
+              hline3='\\\\hline')
 }
 
 \arguments{
@@ -34,13 +50,13 @@ latex.fdt(x,
   \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table. For example: \code{columns=c(1:2, 4, 6)}.}
   \item{round}{Rounds the fractionary columns of the \code{fdt} to the specified number of decimal places.
-   The default is 2.}
+    The default is 2.}
   \item{format.classes}{Logical, if \code{TRUE}, the default, the first column of the
     data.frame table will be formated using regular expression according with \samp{pattern} argument.}
   \item{pattern}{Same as \code{fmt} in \code{\link[base]{sprintf}}.
     The default is \samp{'\%.2f'}.}
   \item{replace.breaks}{Logical, if \code{TRUE}, the default, the mathematical symbols for breaks: \samp{[,)} or \samp{(,]},
-   will be replaced by the LaTeX \samp{$\vdash$} or \samp{$\dashv$} symbols.}
+    will be replaced by the LaTeX \samp{$\vdash$} or \samp{$\dashv$} symbols.}
   \item{where}{Specifies the location to which the floating body can move.
     The default is \samp{'!tbp'}.
     Possible values are the tabular environment same, e.g., \samp{'h'}, \samp{'b'} and \samp{'p'}.}
@@ -106,9 +122,8 @@ latex.fdt(x,
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  and\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \seealso{

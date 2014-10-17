@@ -7,19 +7,25 @@ summary.fdt.multiple <- function (object,
                                   right=TRUE, ...)
 {
   right.tmp  <- as.logical(object[[1]][['breaks']]['right'])
+
   tnames <- names(object)
+
   for (i in 1:length(tnames)) {
     res <- object[tnames[i]][[tnames[i]]][['table']]
+
     res <- cbind(res[, 1],
                  round(res[, 2:6],
                        round))[columns]
+
     cat(tnames[i], '\n')
+
     if (format.classes) {
       tmp      <- as.character(res[, 1])
       res[, 1] <- make.fdt.format.classes(tmp,
                                           right.tmp,
                                           pattern)
     }
+
     names(res) <- c('Class limits',
                     'f', 
                     'rf', 

@@ -3,21 +3,26 @@ make.fdt.simple <- function (x,
                              end,
                              h,
                              right)
+
 {
-  f   <- table(cut(x,
-                   br=seq(start,
-                          end,
-                          h),
-                   right=right))                # Absolute freq.
-  rf  <- as.numeric(f/length(x))                # Relative freq
-  rfP <- as.numeric(100*(f/length(x)))          # Relative freq, %
-  cf  <- as.numeric(cumsum(f))                  # Cumulative freq
-  cfP <- as.numeric(100*(cumsum(f/length(x))))  # Cumulative freq, %
-  res <- data.frame(f,                          # Make final table 
+  ## Ivan B. Allaman: thank you to the bug fix
+  f <- table(cut(x,
+                 br=seq(start,
+                        end,
+                        h),
+                 right=right,
+                 dig.lab=nchar(as.character(round(max(x),
+                                                  2)))))    # Absolute freq.
+  rf  <- as.numeric(f/length(x))                            # Relative freq
+  rfp <- as.numeric(100*(f/length(x)))                      # Relative freq, %
+  cf  <- as.numeric(cumsum(f))                              # Cumulative freq
+  cfp <- as.numeric(100*(cumsum(f/length(x))))              # Cumulative freq, %
+
+  res <- data.frame(f,                                      # Make final table
                     rf,
-                    rfP,
+                    rfp,
                     cf,
-                    cfP)                   
+                    cfp)                   
 
   names(res) <- c('Class limits',
                   'f',
@@ -28,4 +33,3 @@ make.fdt.simple <- function (x,
 
   return(res)
 }
-

@@ -8,7 +8,7 @@ citEntry(entry  = "Manual",
          year         = version$year,
 
          textVersion = 
-         paste("Faria, J.C & Jelihovschi, E.G (", version$year, ").",
+         paste("Faria, J.C & Jelihovschi, E.G. (", version$year, ").",
                "fdth: Frequency Distribution Tables, Histograms and Polygons.",
                "UESC, Bahia, Brasil.",
                sep="")

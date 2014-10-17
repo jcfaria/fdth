@@ -7,16 +7,21 @@ print.fdt.default <- function (x,
                                right=TRUE, ...)
 {
   res <- x[['table']]
+
   res <- cbind(res[, 1],
                round(res[, 2:6],
                      round))[columns]
+
   right.tmp <- as.logical(x[['breaks']]['right'])
+
   if (format.classes) {
     tmp <- as.character(res[, 1])
+
     res[, 1] <- make.fdt.format.classes(tmp,
                                         right.tmp,
                                         pattern)
   }
+
   names(res) <- c('Class limits',
                   'f',
                   'rf',

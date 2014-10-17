@@ -1,9 +1,11 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{make.fdt.simple}
 \alias{make.fdt.simple}
+\alias{make.fdt.cat.simple}
 
 \title{
   A function which makes the table with absolute and relative frequencies, 
-  cumulative frequencies in numbers and percentages.
+  cumulative frequencies in numbers and percentages
 }
 
 \description{
@@ -13,11 +15,15 @@
 }
 
 \usage{
-  make.fdt.simple(x,
-                  start,
-                  end,
-                  h,
-                  right)
+make.fdt.simple(x,
+                start,
+                end,
+                h,
+                right)
+
+make.fdt.cat.simple(x,
+                    sort,
+                    decreasing)
 }
 
 \arguments{
@@ -26,6 +32,8 @@
   \item{end}{The last value of the interval of the last class.}
   \item{h}{The class interval.}
   \item{right}{Intervals right open (default = \code{FALSE}).}
+  \item{sort}{...}
+  \item{decreasing}{...}
 }
 
 \details{
@@ -47,12 +55,12 @@
 }
 
 \seealso{
- \code{\link[base]{table}} and \code{\link[base]{cut}} provided by \pkg{base} package.
+  \code{\link[base]{table}} and \code{\link[base]{cut}} provided by \pkg{base} package.
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \note{

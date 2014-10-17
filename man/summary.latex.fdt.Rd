@@ -1,8 +1,9 @@
+% ***Enio: adaptar para contemplar também as categóricas***
 \name{summary.latex.fdt}
 \alias{summary.latex.fdt}
 
 \title{
-  Summary Method for latex.fdt Objects
+  Summary method for latex.fdt objects
 }
 
 \description{
@@ -10,7 +11,8 @@
 }
 
 \usage{
-  \method{summary}{latex.fdt}(object, \dots)
+## S3 method
+\method{summary}{latex.fdt}(object, \dots)
 }
 
 \arguments{
@@ -19,8 +21,8 @@
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \seealso{

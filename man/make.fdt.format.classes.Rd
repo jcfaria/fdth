@@ -2,7 +2,7 @@
 \alias{make.fdt.format.classes}
 
 \title{
- This function formats the presentation's appearance of the interval classes
+  This function formats the presentation's appearance of the interval classes
 }                   
 
 \description{
@@ -13,9 +13,9 @@
 }
 
 \usage{
-  make.fdt.format.classes(x,
-                          right,
-                          pattern)
+make.fdt.format.classes(x,
+                        right,
+                        pattern)
 }
 
 \arguments{
@@ -38,12 +38,12 @@
 }
 
 \seealso{
- \code{\link[base]{sprintf}} and \code{\link[base]{gsub}} provided by \pkg{base} package.
+  \code{\link[base]{sprintf}} and \code{\link[base]{gsub}} provided by \pkg{base} package.
 }
 
 \author{
-  José Cláudio Faria (\email{joseclaudio.faria@gmail.com})\cr
-  Enio Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+  José Cláudio Faria \cr
+  Enio G. Jelihovschi
 }
 
 \note{
