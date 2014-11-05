@@ -7,7 +7,7 @@
 }
 
 \description{
-  Returns (and prints) a summary list for \code{latex.fdt} objects.
+  Returns a summary list for \code{latex.fdt} objects.
 }
 
 \usage{

@@ -51,7 +51,7 @@
   \item{x}{A \samp{fdt} object.}
   \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table.}
-  \item{round}{Rounds the fractionary columns of \samp{fdt} to the specified number of
+  \item{round}{Rounds \samp{fdt} columns to the specified number of
     decimal places (default 2).}
   \item{format.classes}{Logical, if \code{TRUE} the first column of the
     data.frame table will be formated using regular expression.

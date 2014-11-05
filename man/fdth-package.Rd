@@ -36,19 +36,18 @@
   find out all necessary functions and graphical parameters to do a normalized 
   and pretty \samp{fdt} and the associated histogram ready for publications.
 
-  That is the aim of this package, i.e, to allow the user to do (using a few,
-  simple and flexible high level set of S3 functions) with ease and flexibility
-  both: the \samp{fdt} and histogram. The input data for univariated is generally
+  That is the aim of this package, i.e, to allow the user easily and flexibly to do
+  both: the \samp{fdt} and the histogram. The most common input data for univariated is
   a \code{vector}. For multivariated data can be used both: a \code{data.frame},
   in this case also allowing grouping all numerical variables according to one
   categorical, or \code{matrices}.
 
-  The simplest way to run \samp{fdt} is done by supplying only the \samp{x}
+  The simplest way to run \samp{fdt} is by supplying only the \samp{x}
   object, for example: \code{d <- fdt(x)}. In this case all necessary
   default values (\samp{breaks} and \samp{right}) ("Sturges" and \code{FALSE}
   respectively) will be used.
 
-  It can be provided also:
+  You can also supply:
   \itemize{
     \item \samp{x} and \samp{k} (number of class intervals);
     \item \samp{x}, \samp{start} (left endpoint of the first class interval) and

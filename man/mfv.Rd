@@ -8,12 +8,12 @@
 \alias{mfv.fdt.cat.multiple}
 
 \title{
-  Most frequenty value (statistical mode) of frequency distribution table (numerical and categorical variable)
+  Most frequent value (statistical mode) of frequency distribution table (numerical and categorical variable)
 }
 
 \description{
-  S3 methods for the most frequenty value (statistical mode) of a \code{fdt}. \cr 
-  Useful to estimate the most frequenty value or statistical mode (when the real data vector is not known) from a previous \code{fdt}.
+  S3 methods for the most frequent value (statistical mode) of a \code{fdt}. \cr 
+  Useful to estimate the most frequent value or statistical mode (when the real data vector is not known) from a previous \code{fdt}.
 }
 
 \usage{

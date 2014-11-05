@@ -6,7 +6,7 @@
 \alias{fdt.matrix}
 
 \title{
-  Frequency distribution table for numerical
+  Frequency distribution table for numerical data
 }
 
 \description{

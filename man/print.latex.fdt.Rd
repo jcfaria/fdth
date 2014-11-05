@@ -7,7 +7,7 @@
 }
 
 \description{
-  Returns (and prints) a summary list for \code{latex.fdt} objects.
+  Prints a summary list for \code{latex.fdt} objects.
 }
 
 \usage{
@@ -17,7 +17,7 @@
 
 \arguments{
   \item{x}{A given object of the class \code{latex.fdt}.}
-  \item{\dots}{Potential further arguments (require by generic).}
+  \item{\dots}{Optional further arguments (require by generic).}
 }
 
 \author{

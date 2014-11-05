@@ -49,7 +49,7 @@ latex.fdt.cat(x,
   \item{x}{A \code{fdt} object.}
   \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table. For example: \code{columns=c(1:2, 4, 6)}.}
-  \item{round}{Rounds the fractionary columns of the \code{fdt} to the specified number of decimal places.
+  \item{round}{Rounds the \code{fdt} columns to the specified number of decimal places.
     The default is 2.}
   \item{format.classes}{Logical, if \code{TRUE}, the default, the first column of the
     data.frame table will be formated using regular expression according with \samp{pattern} argument.}
@@ -91,14 +91,14 @@ latex.fdt.cat(x,
   Some people could ask: why do not use the function \code{\link[Hmisc]{latex}} of the package \pkg{Hmisc} or
   \code{\link[xtable]{xtable}} of the \pkg{xtable}?
   Both \code{\link[Hmisc]{latex}} and \code{\link[xtable]{xtable}} functions are a bit complex and with many parameters
-  for construct an adequate \code{fdt} table.
+  are required to build an adequate \code{fdt} table.
   It is not always intuitive to all users, discouraging some people to use the \code{\link[Hmisc]{latex}} or
-  \code{\link[xtable]{xtable}} function for constructing fdt tables, making the preparation of the fdt analysis
+  \code{\link[xtable]{xtable}} functions for constructing fdt tables, making the preparation of the fdt analysis
   reports data laborious. 
 
   The function \code{latex.fdt} is extremely easy to use.
-  Obviously, the function provides a formatting pre-set according to what the authors think ideal
-  for presentation in articles, reports, among others.
+  Obviously, the function provides a default formatting according to what the authors think is the ideal
+  for presentation in articles, reports, and others.
   If the user is not satisfied with the formatting provided by this function, the functions \code{\link[Hmisc]{latex}}
   and \code{\link[xtable]{xtable}} provides arguments that allow formatting of tables according to user need.
 

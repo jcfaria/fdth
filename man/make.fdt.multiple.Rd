@@ -5,7 +5,7 @@
 
 \title{
   A function which makes the table using the number of interval classes, 
-  a method used for breaks, and choose the endpoint
+  a method used for breaks, and endpoint
 }
 
 \description{

@@ -8,7 +8,7 @@
 }
 
 \description{
-  Makes an full fdt from a minimal set of information. \cr
+  Makes a full fdt from a minimal set of information. \cr
   Useful to reproduce (when the real data vector is not known) a previous fdt.
 }
 

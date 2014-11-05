@@ -45,7 +45,7 @@ make.fdt.cat.simple(x,
 
 \value{
   The function \code{make.fdt.simple} returns a \code{data.frame} which contains the 
-  table with interval classes and frequencies. The following are the columns:
+  table with interval classes and frequencies. The the columns are following:
   \item{Class limits}{Interval classes, \code{character}}
   \item{f}{Absolute frequency, \code{numeric}}
   \item{rf}{Relative frequency, \code{numeric}}

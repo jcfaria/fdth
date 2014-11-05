@@ -146,7 +146,7 @@
     \samp{2:} perpendicular to the axes.}
   \item{ylab}{A label for the \samp{y} axis.}
   \item{y2lab}{A label for the \samp{y2} axis.}
-  \item{y2cfp}{A cumulative frequêncy percentual for the \samp{y2} axis. The default is \code{seq(0, 100, 25)}.}
+  \item{y2cfp}{A cumulative percent frequency for the \samp{y2} axis. The default is \code{seq(0, 100, 25)}.}
   \item{col}{A \code{vector} of colors.}
   \item{xlim}{The \samp{x} limits of the plot.}
   \item{ylim}{The \samp{y} limits of the plot.}

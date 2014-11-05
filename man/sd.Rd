@@ -6,12 +6,12 @@
 \alias{sd.fdt.multiple}
 
 \title{
-  Standart deviation of frequency distribution table (numerical variable)
+  Standard deviation of frequency distribution table (numerical variable)
 }
 
 \description{
-  S3 methods for the standart deviation of a \code{fdt}. \cr 
-  Useful to estimate the standart deviation (when the real data vector is not known) from a previous \code{fdt}.
+  S3 methods for the standard deviation of a \code{fdt}. \cr 
+  Useful to estimate the standard deviation (when the real data vector is not known) from a previous \code{fdt}.
 }
 
 \usage{

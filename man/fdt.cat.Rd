@@ -6,7 +6,7 @@
 \alias{fdt.cat.matrix}
 
 \title{
-  Frequency distribution table for categorical
+  Frequency distribution table for categorical data.
 }
 
 \description{
@@ -36,15 +36,16 @@ fdt.cat(x, \dots)
   \item{x}{A \code{vector}, \code{data.frame} or \code{matrix} object.
     If \samp{x} is \code{data.frame} or \code{matrix} it must contain at least 
     one character/factor column.}
-  \item{sort}{Logical. Should the \code{fdt.cat} be sorted by the absolut frequency
+  \item{sort}{Logical. Should the \code{fdt.cat} be sorted by the absolute frequency
     into ascending or descending order? (default = \code{TRUE}).}
   \item{decreasing}{Logical. Should the sort order be increasing or decreasing?
     (default = \code{TRUE}).}
-  \item{\dots}{Potencial further arguments (required by generic).}
+  % TODO: Ao invés de "required by generic" dizer para quais funcões os argumentos adicionais são repassados.
+  \item{\dots}{Optional further arguments (required by generic).}
 }
 
 \details{
-  The simplest way to run \samp{fdt.cat} is done by supplying only the \samp{x}
+  The simplest way to run \samp{fdt.cat} is supplying only the \samp{x}
   object, for example: \code{ct <- fdt.cat(x)}. In this case all necessary
   default values (\samp{sort = TRUE} and \samp{decreasing = TRUE}) will be used.
 
@@ -63,7 +64,7 @@ fdt.cat(x, \dots)
   The methods \code{fdt.cat.data.frame} and \code{fdt.cat.matrix} 
   return a list of class \code{fdt.cat..multiple}.
   This \code{list} has one slot for each categorical
-  variable of the \samp{x} provided. Each slot, corresponding to each categorical
+  variable of the  supplied \samp{x}. Each slot, corresponding to each categorical
   variable, stores the same slots of the \code{fdt.cat.default} described above.
 }
 
