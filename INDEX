@@ -12,6 +12,7 @@ fdt.default               S3 method for `vectors'
 fdt.matrix                S3 method for `matrices'
 latex.fdt                 LaTeX table of the `fdt' objects
 latex.fdt.cat             LaTeX table of the `fdt.cat' objects
+latex.fdt.cat.multiple    Latex table of the `fdt.cat.multiple' objects
 make.fdt                  To make a complet fdt from numeric vectors (or single tables) for continuous
 make.fdt.cat              To make a complet fdt from numeric vectors (or single tables) for categorical
 make.fdt.cat.multiple     To make tables from a `data.frames' or `matrices' containing at least one categorical column
@@ -22,7 +23,6 @@ make.fdt.simple           To make a table from a numeric vector
 mean.fdt                  S3 method for `fdt' objects
 median.fdt                S3 method for `fdt' objects
 mfv.fdt                   S3 method for `fdt' objects
-mfv.fdt.cat               S3 method for `fdt.cat' objects
 plot.fdt.cat.default      S3 method for `fdt.cat.default' objects
 plot.fdt.cat.multiple     S3 method for `fdt.cat.multiple' objects
 plot.fdt.default          S3 method for `fdt.default' objects

@@ -4,17 +4,32 @@ print.fdt.cat.multiple <- function (x,
                                     row.names=FALSE, 
                                     right=TRUE, ...)
 {
-  tnames <- names(x)
 
+ tnames <- names(x)
+ 
   for (i in 1:length(tnames)) {
-    res <- x[[tnames[i]]]
 
-    cat(tnames[i], '\n')
+   res <- x[tnames[i]][[tnames[i]]] 
+   #res <- x[[tnames[i]]]
+   
+   if(is.list(res)){
+   res <- cbind(res[[1]][, 1],
+                round(res[[1]][, 2:6],
+                      round))[columns]
+   }
+   cat(tnames[i], '\n')
 
-    print.data.frame(res[, columns],
-                     row.names=row.names,
-                     right=right, ...)
+   names(res) <- c('Category',
+                   'f', 
+                   'rf', 
+                   'rf(%)', 
+                   'cf',
+                   'cf(%)')[columns]
 
-    cat('\n')}
+   print.data.frame(res,
+                    row.names=row.names,
+                    right=right, ...)
+
+   cat('\n')
+  }
 }
-

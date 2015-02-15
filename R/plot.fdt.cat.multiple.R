@@ -62,7 +62,7 @@ plot.fdt.cat.multiple <- function (x,
           par(mfrow=mf)
         }
         i <- i + 1
-        plot.fdt.cat.default(x[[i]],
+        plot.fdt.cat.default(x[[i]][[1]],
                              type=type,
                              v=v,
                              v.round=v.round,

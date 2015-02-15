@@ -4,11 +4,11 @@
 \alias{mfv.default}
 \alias{mfv.fdt}
 \alias{mfv.fdt.multiple}
-\alias{mfv.fdt.cat}
-\alias{mfv.fdt.cat.multiple}
+%\alias{mfv.fdt.cat}
+%\alias{mfv.fdt.cat.multiple}
 
 \title{
-  Most frequent value (statistical mode) of frequency distribution table (numerical and categorical variable)
+  Most frequent value (statistical mode) of frequency distribution table (numerical variable)
 }
 
 \description{
@@ -27,9 +27,9 @@ mfv(x, \dots)
 
 \method{mfv}{fdt.multiple}(x, \dots)
 
-\method{mfv}{fdt.cat}(x, \dots)
+#\method{mfv}{fdt.cat}(x, \dots)
 
-\method{mfv}{fdt.cat.multiple}(x, \dots)
+#\method{mfv}{fdt.cat.multiple}(x, \dots)
 }
 
 \arguments{
@@ -79,25 +79,4 @@ mfv(mdf$z)   # From vector z
 (tb <- fdt(mdf))
 
 mfv(tb)      # From agruped dad in a fdt
-
-
-## Categorical
-mdf <- data.frame(c1=sample(letters[1:5],
-                            1e3,
-                            rep=TRUE),
-                  c2=sample(letters[6:10],
-                            1e3,
-                            rep=TRUE),
-                  c3=sample(letters[11:21],
-                            1e3,
-                            rep=TRUE))
-head(mdf)
-
-mfv(mdf$c1)   # From vector c1
-mfv(mdf$c2)   # From vector c2
-mfv(mdf$c3)   # From vector c3
-
-(tb <- fdt.cat(mdf))
-
-mfv(tb)      # From agruped dad in a fdt 
 }   

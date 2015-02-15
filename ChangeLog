@@ -1,3 +1,13 @@
+2015-02-15 vs. 1.2-1 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
+        * Added the "by" argument to fdt.cat.data.frame function. As
+	consequence, the print.fdt.cat.multiple, plot.fdt.cat.multiple,
+	make.fdt.cat.multiple,fdt.cat.matrix functions were changed.
+	* Obviously that the Rd files were changed.
+	* The mfv.fdt.cat.multiple and mfv.fdt.cat function were removed. This
+	fucntions are unnecessary.
+	* Was added the latex.fdt.cat.multiple function to give suport the
+	objects of the fdt.cat.multiple class.
+
 2014-10-13 vs. 1.2-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Thanks to Ivan B. Allaman to the bug fix of the function
 	make.fdt.simple.R
