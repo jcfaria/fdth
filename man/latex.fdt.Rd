@@ -2,6 +2,7 @@
 \name{latex.fdt}
 \alias{latex.fdt}
 \alias{latex.fdt.cat}
+\alias{latex.fdt.cat.multiple}
 
 \title{
   LaTeX table of the frequency distribution table
@@ -43,6 +44,21 @@ latex.fdt.cat(x,
               algclim='l',
               algfreq='r',
               hline3='\\\\hline')
+
+latex.fdt.cat.multiple(x,
+              columns=1:6,
+              where='!tbp',
+              caption=NULL,
+              label=NULL,
+              size='', 
+              algtable=c('\\\\flushleft', '\\\\centering', '\\\\flushright'),
+              hline1='\\\\hline',
+              header=NULL,
+              hline2='\\\\hline',
+              algclim='l',
+              algfreq='r',
+              hline3='\\\\hline')
+
 }
 
 \arguments{

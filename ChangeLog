@@ -7,6 +7,8 @@
 	fucntions are unnecessary.
 	* Was added the latex.fdt.cat.multiple function to give suport the
 	objects of the fdt.cat.multiple class.
+	* The make functions were removed of the documentation. This function
+	are internal and the users not need them.
 
 2014-10-13 vs. 1.2-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Thanks to Ivan B. Allaman to the bug fix of the function
