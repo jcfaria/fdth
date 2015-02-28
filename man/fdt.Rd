@@ -1,4 +1,3 @@
-% ***Enio: eu adaptei para para as categóricas, necessário correção***
 \name{fdt}
 \alias{fdt}
 \alias{fdt.default}
@@ -71,7 +70,7 @@ fdt(x, \dots)
   These options make the \samp{fdt} very easy and flexible.
 
   The \samp{fdt} object stores information to be used by methods \code{summary},
-  \code{print} and \code{plot}. The result of plot is a histogram.
+  \code{print}, \code{plot}, \code{mean}, \code{median} and \code{mfv}. The result of plot is a histogram.
   The methods \code{summary}, \code{print} and \code{plot} provide a reasonable
   set of parameters to format and plot the \samp{fdt} object in a pretty
   (and publishable) way.
@@ -93,7 +92,8 @@ fdt(x, \dots)
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \seealso{

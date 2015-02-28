@@ -1,13 +1,12 @@
-% ***Enio: adaptar para contemplar também as categóricas***
 \name{print}
 \alias{print.latex.fdt}
 
 \title{
-  Print method for latex.fdt objects
+  Print method for latex.fdt and latex.fdt.cat objects
 }
 
 \description{
-  Prints a summary list for \code{latex.fdt} objects.
+  Prints a summary list for \code{latex.fdt} \code{latex.fdt.cat} objects.
 }
 
 \usage{
@@ -16,16 +15,17 @@
 }
 
 \arguments{
-  \item{x}{A given object of the class \code{latex.fdt}.}
+  \item{x}{A given object of the class \code{latex.fdt} or \code{latex.fdt.cat}.}
   \item{\dots}{Optional further arguments (require by generic).}
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
-\seealso{\code{\link{latex.fdt}}}
+\seealso{\code{\link{latex.fdt}}, \code{\link{latex.fdt.cat}}}
 
 \examples{
 library(fdth)

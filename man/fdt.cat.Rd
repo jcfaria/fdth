@@ -1,4 +1,3 @@
-% ***Enio: eu adaptei da fdt, necessário correção***
 \name{fdt.cat}
 \alias{fdt.cat}
 \alias{fdt.cat.default}
@@ -26,7 +25,7 @@ fdt.cat(x, \dots)
 \method{fdt.cat}{data.frame}(x,
         by,
         sort=TRUE,
-        decreasing=TRUE, \dots)
+        decreasing=TRUE, \dots) 
 
 \method{fdt.cat}{matrix}(x,
         sort=TRUE,
@@ -37,13 +36,12 @@ fdt.cat(x, \dots)
   \item{x}{A \code{vector}, \code{data.frame} or \code{matrix} object.
     If \samp{x} is \code{data.frame} or \code{matrix} it must contain at least 
     one character/factor column.}
-  \item{by}{Categorical variable used for grouping each categorical response,
-    useful only on \code{data.frame}.} 
+   \item{by}{Categorical variable used for grouping each categorical response,
+    useful only on \code{data.frame}.}  
   \item{sort}{Logical. Should the \code{fdt.cat} be sorted by the absolute frequency
     into ascending or descending order? (default = \code{TRUE}).}
   \item{decreasing}{Logical. Should the sort order be increasing or decreasing?
     (default = \code{TRUE}).}
-  % TODO: Ao invés de "required by generic" dizer para quais funcões os argumentos adicionais são repassados.
   \item{\dots}{Optional further arguments (required by generic).}
 }
 
@@ -55,7 +53,7 @@ fdt.cat(x, \dots)
   These options make the \samp{fdt.cat} very easy and flexible.
 
   The \samp{fdt.cat} object stores information to be used by methods \code{summary},
-  \code{print}, \code{plot} and \code{mfv}. The result of plot is ....
+  \code{print}, \code{plot} and \code{mfv}. The result of plot is a bar plot.
   The methods \code{summary.fdt.cat}, \code{print.fdt.cat} and \code{plot.fdt.cat} provide a reasonable
   set of parameters to format and plot the \samp{fdt.cat} object in a pretty
   (and publishable) way.
@@ -73,7 +71,8 @@ fdt.cat(x, \dots)
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi\cr
+  Ivan B. Allaman
 }
 
 \seealso{
@@ -113,6 +112,9 @@ head(mdf)
 
 (fdt.c <- fdt.cat(mdf,
                   sort=FALSE))
+
+(fdt.c <- fdt.cat(mdf,
+                  by='c1'))
 
 ##================================================
 ## Matrix: two categorical

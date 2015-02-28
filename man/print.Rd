@@ -1,4 +1,3 @@
-% ***Enio: adaptar para contemplar também as categóricas***
 \name{print.fdt}
 \alias{print.fdt}
 \alias{print.fdt.default}
@@ -11,8 +10,9 @@
 }
 
 \description{
-  S3 methods to return a \code{data.frame} (the frequency
-  distribution table - fdt) for \code{fdt.default} and \code{fdt.multiple}
+  S3 methods to return a \code{data.frame} (the frequency distribution table - fdt) 
+  for \code{fdt.default} and \code{fdt.multiple} objects; \code{data.frame} (the frequency
+  distribution table - fdt.cat) for \code{fdt.cat.default} and \code{fdt.cat.multiple}
   objects.
 }
 
@@ -65,8 +65,10 @@
 }
 
 \details{
-  It is possible to select what columns of the table (a \code{data.frame})
-  will be shown, as well as the pattern of the first column. The columns are:
+  For \code{print.fdt}, it is possible to select what columns of the table 
+  (a \code{data.frame}) will be shown, as well as the pattern of the first column,
+   for \code{print.fdt.cat} it is only possible to select what columns of the table 
+  (a \code{data.frame}) will be shown. The columns are:
   \enumerate{
     \item \samp{Class limits} 
     \item \samp{f} - Absolute frequency 
@@ -81,13 +83,14 @@
 }
 
 \value{
-  A single \code{data.frame} for \code{fdt.default} or multiple
-  \code{data.frames} for \code{fdt.multiple}.
+  A single \code{data.frame} for \code{fdt.default} and \code{fdt.default} or multiple
+  \code{data.frames} for \code{fdt.multiple} and \code{fdt.cat.multiple}.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \examples{
@@ -148,14 +151,18 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y2=rnorm(100, 60, 4),
                   Y3=rnorm(100, 50, 4),
                   Y4=rnorm(100, 40, 4))
+                  
+(d <- fdt.cat(mdf))
+                  
+print(d)                  
 
 (d <- fdt(mdf))
 
+print(d)
+
 str(d)
 
-print(d) # the same
-
-print(d,
+print(d, # the s
       format=TRUE)
 
 print(d,

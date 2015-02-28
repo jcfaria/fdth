@@ -1,4 +1,3 @@
-% ***Enio: necessário intervenção geral e mais detalhadamente onde deixei reticências: ...***
 \name{sd}
 \alias{sd}
 \alias{sd.default}
@@ -31,21 +30,22 @@ sd(x, \dots)
   \item{\dots}{Required to be generic.}
 }
 
-\details{
-  ...
+\details{\code{sd.fdt} calculates the value of the variance based on a known formula. 
+\code{sd.fdt.multiple} calls \code{sd.fdt}for each variable, that is, each column of the data.frame.
 }
 
-\value{
-  ...
+\value{\code{sd.fdt} returns a numeric vector containing the value of the median of the \code{fdt}.
+ \code{median.fdt.multiple} returns a list, where each element is a numeric vector 
+ containing the value of the variance of the \code{fdt} for each variable.
 }
 
-\seealso{
-  ...
+\seealso{\code{var.fdt}, \code{mean.fdt}.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \note{

@@ -40,18 +40,35 @@ latex.fdt.cat <- function(x,
   y <- sapply(y,
               as.character)
 
-  y <- apply(y,
-             2,
-             function(x) paste(' & ',
-                               x,
-                               sep=''))
+  if(is.null(dim(y))){
 
-  y <- paste(apply(y,
+   y <- sapply(y,
+              function(x) paste(' & ',
+                                x,
+                                sep=''))
+
+   y <- paste(paste(y,
+                    collapse=''),
+              ' \\\\',
+              sep='')
+
+  }
+  else {
+
+   y <- apply(y,
+              2,
+              function(x) paste(' & ',
+                                x,
+                                sep=''))
+
+   y <- paste(apply(y,
                    1,
                    paste,
                    collapse=''),
              ' \\\\',
              sep='')
+  
+  }
 
   res <- list(start=NULL,
               algtable=match.arg(algtable),

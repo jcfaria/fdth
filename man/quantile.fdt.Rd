@@ -1,4 +1,3 @@
-% ***Enio: necessário intervenção geral e mais detalhadamente onde deixei reticências: ...***
 \name{quantile.fdt}
 \alias{quantile.fdt}
 \alias{quantile.fdt.multiple}
@@ -24,26 +23,29 @@
 
 \arguments{
   \item{x}{A \code{fdt} (simple or multiple) object.}
-  \item{i}{...}
-  \item{probs}{...}
-  \item{\dots}{...}
+  \item{i}{A vector of length up to the length of probs}
+  \item{probs}{vector of probabilities defining the quantiles}
+  \item{\dots}{Potencial further arguments (required by generic).}
 }
 
-\details{
-  ...
+\details{\code{quantile.fdt} calculates the quantiles based on a known formula for 
+ class intervals. \code{quantile.fdt.multiple} calls \code{quantile.fdt}
+ for each variable, that is, each column of the data.frame.
 }
 
-\value{
-  ...
+\value{\code{quantile.fdt} returns a numeric vector containing the value(s) of the 
+quantile(s) from \code{fdt}.
+ \code{quantile.fdt.multiple} returns a list, where each element is a numeric vector 
+ containing the quantile(s) of the \code{fdt} for each variable.
 }
 
-\seealso{
-  ...
+\seealso{\code{median.fdt}, \code{var.fdt}.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \note{

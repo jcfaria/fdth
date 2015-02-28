@@ -1,4 +1,3 @@
-% ***Enio: adaptar para contemplar também as categóricas***
 \name{summary.fdt}
 \alias{summary.fdt}
 \alias{summary.fdt.default}
@@ -12,8 +11,8 @@
 
 \description{
   S3 methods to return a \code{data.frame} (the frequency
-  distribution table - \samp{fdt}) for \code{fdt.default} and \code{fdt.multiple}
-  objects.
+  distribution table - \samp{fdt}) for \code{fdt.default}, \code{fdt.multiple},
+  \code{fdt.cat.default} and \code{fdt.cat.multiple} objects.
 }
 
 \usage{
@@ -49,6 +48,7 @@
 
 \arguments{
   \item{object}{A \code{fdt} object.}
+  \item{object}{A \code{fdt.cat} object.}
   \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table.}
   \item{round}{Rounds \samp{fdt} columns to the specified number of
@@ -87,7 +87,8 @@
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \examples{
@@ -148,6 +149,10 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y2=rnorm(100, 60, 4),
                   Y3=rnorm(100, 50, 4),
                   Y4=rnorm(100, 40, 4))
+                  
+dcat <- fdt.cat(mdf) 
+
+summary(dcat)                 
 
 d <- fdt(mdf)
 

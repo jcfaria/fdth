@@ -3,7 +3,7 @@ Type: Package
 Title: Frequency Distribution Tables, Histograms and Polygons
 Version: 1.2-1
 Date: 2015-02-12
-Author: José Cláudio Faria and Enio G. Jelihovschi
+Author: José Cláudio Faria, Enio G. Jelihovschi and Ivan B. Allaman
 Maintainer: José Cláudio Faria <joseclaudio.faria@gmail.com>
 Depends: R (>= 2.6.0), base, grDevices, graphics
 Description: Perform frequency distribution tables, associated histograms
