@@ -1,4 +1,3 @@
-% ***Enio: necessário intervenção geral e mais detalhadamente onde deixei reticências: ...***
 \name{mfv}
 \alias{mfv}
 \alias{mfv.default}
@@ -13,7 +12,7 @@
 
 \description{
   S3 methods for the most frequent value (statistical mode) of a \code{fdt}. \cr 
-  Useful to estimate the most frequent value or statistical mode (when the real data vector is not known) from a previous \code{fdt}.
+  Useful to estimate the most frequent value or statistical mode. May also be used, by using a previous \code{fdt}, when the original data vector is not known.
 }
 
 \usage{
@@ -33,25 +32,30 @@ mfv(x, \dots)
 }
 
 \arguments{
-  \item{x}{A \code{fdt} (simple or multiple) object.}
+  \item{x}{A \code{fdt} or \code{fdt.cat} (simple or multiple) object.}
   \item{\dots}{Required to be generic.}
 }
 
-\details{
-  ...
+\details{\code{mfv.fdt} and \code{mfv.fdt.cat} calculates the most frequent value (mfv) based on a known formula. 
+\code{mfv.fdt.multiple} and \code{mfv.fdt.cat.multiple}call respectively \code{mfv.fdt} 
+or \code{mfv.fdt.cat}for each variable, that is, each column of the data.frame.
 }
 
-\value{
-  ...
+\value{\code{mfv.fdt} returns a numeric vector containing the mfv value of the \code{fdt}.
+ \code{mean.fdt.multiple} returns a list, where each element is a numeric vector 
+ containing the mean value of the \code{fdt} for each variable.
+ \code{mfv.fdt.cat} returns a character vector containing the mfv value of the \code{fdt.cat}.
+ \code{mean.fdt.cat.multiple} returns a list, where each element is a character vector 
+ containing the mfv value of the \code{fdt.cat} for each variable.
 }
 
-\seealso{
-  ...
+\seealso{\code{mean.fdt}, \code{median.fdt}.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \note{
@@ -59,7 +63,7 @@ mfv(x, \dots)
 }
 
 \examples{
-## Numerial
+## Numerical
 mdf <- data.frame(x=rnorm(1e2, 
                           20, 
                           2),

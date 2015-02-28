@@ -1,4 +1,3 @@
-% ***Enio: adaptar para contemplar também as categóricas, corrigir geral e verificar os ...***
 \name{plot.fdt}
 \alias{plot.fdt}
 \alias{plot.fdt.default}
@@ -170,11 +169,19 @@
   Both \samp{default and multiple} try to compute the maximum number of histograms
   that will fit on one page, then it draws a matrix of histograms. More than one
   graphical device may be opened to show all histograms.
+  
+  The result is a single barplot, polygon, dotchar (absolute, relative or cumulative)
+  and Pareto chart for \code{fdt.cat.default} or a set of the same graphs for 
+  \code{fdt.cat.multiple} objects.
+  Both \samp{default and multiple} try to compute the maximum number of histograms
+  that will fit on one page, then it draws a matrix of graphs lited above. More than one
+  graphical device may be opened to show all graphs.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \seealso{

@@ -1,4 +1,3 @@
-% ***Enio: necessário intervenção geral e mais detalhadamente onde deixei reticências: ...***
 \name{mean.fdt}
 \alias{mean.fdt}
 \alias{mean.fdt.multiple}
@@ -22,25 +21,23 @@
   \item{\dots}{Required by generic.}
 }
 
-\details{
-  ...
+\details{\code{mean.fdt} calculates the mean value based on a known formula using 
+the midpoint of each interval class. \code{mean.fdt.multiple} calls \code{mean.fdt}
+ for each variable, that is, each column of the data.frame.
 }
 
-\value{
-  ...
+\value{\code{mean.fdt} returns a numeric vector containing the mean value of the \code{fdt}.
+ \code{mean.fdt.multiple} returns a list, where each element is a numeric vector 
+ containing the mean value of the \code{fdt} for each variable.
 }
 
-\seealso{
-  ...
+\seealso{\code{median.fdt}, \code{mfv}.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
-}
-
-\note{
-  ...
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \examples{

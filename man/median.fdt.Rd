@@ -1,4 +1,3 @@
-% ***Enio: necessário intervenção geral e mais detalhadamente onde deixei reticências: ...***
 \name{median.fdt}
 \alias{median.fdt}
 \alias{median.fdt.multiple}
@@ -22,25 +21,22 @@
   \item{\dots}{Required by generic.}
 }
 
-\details{
-  ...
+\details{\code{median.fdt} calculates the value of the median based on a known formula. 
+\code{median.fdt.multiple} calls \code{mean.fdt}for each variable, that is, each column of the data.frame.
 }
 
-\value{
-  ...
+\value{\code{mean.fdt} returns a numeric vector containing the value of the median of the \code{fdt}.
+ \code{median.fdt.multiple} returns a list, where each element is a numeric vector 
+ containing the value of the median of the \code{fdt} for each variable.
 }
 
-\seealso{
-  ...
+\seealso{\code{mean.fdt}, \code{mfv}.
 }
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
-}
-
-\note{
-  ...
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \examples{

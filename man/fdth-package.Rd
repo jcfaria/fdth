@@ -1,4 +1,3 @@
-% ***Enio: adaptar também para as categóricas***
 \name{fdth-package}
 \alias{fdth}
 \alias{fdth-package}
@@ -23,8 +22,7 @@
   observation occurs in the data. The distribution of a variable is the pattern
   of frequencies of the observation.
 
-  Frequency distribution table \samp{fdt} can be used for both ordinal and
-  continuous variables. 
+  Frequency distribution table \samp{fdt} can be used for ordinal, continuous and  categorical variables. 
 
   The \code{R} environment provides a set of functions (generally low level)
   enabling the user to perform a \samp{fdt} and the associated graphical representation,
@@ -42,12 +40,13 @@
   in this case also allowing grouping all numerical variables according to one
   categorical, or \code{matrices}.
 
-  The simplest way to run \samp{fdt} is by supplying only the \samp{x}
+  The simplest way to run \samp{fdt} and \samp{fdt.cat} is by supplying only the \samp{x}
   object, for example: \code{d <- fdt(x)}. In this case all necessary
   default values (\samp{breaks} and \samp{right}) ("Sturges" and \code{FALSE}
-  respectively) will be used.
+  respectively) will be used, if the \samp{x} object is categorical then just use
+  \code{d <- fdt.cat(x)}.
 
-  You can also supply:
+  If the varable is of contiuos type, you can also supply:
   \itemize{
     \item \samp{x} and \samp{k} (number of class intervals);
     \item \samp{x}, \samp{start} (left endpoint of the first class interval) and
@@ -56,7 +55,7 @@
   }
   These options make the \samp{fdt} very easy and flexible.
 
-  The \samp{fdt} object stores information to be used by methods \code{summary},
+  The \samp{fdt} and \samp{fdt.cat} object store information to be used by methods \code{summary},
   \code{print} and \code{plot}. The result of \code{plot} is a histogram or
   polygon (absolute, relative or cumulative).
   The methods \code{summary}, \code{print} and \code{plot} provide a reasonable
@@ -66,7 +65,8 @@
 
 \author{
   José Cláudio Faria \cr
-  Enio G. Jelihovschi
+  Enio G. Jelihovschi \cr
+  Ivan B. Allaman
 }
 
 \keyword{fdt}

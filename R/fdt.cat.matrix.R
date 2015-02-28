@@ -7,16 +7,18 @@ fdt.cat.matrix <- function (x,
   res <- list()
 
   x <- na.omit(x)
-
+ 
   for (i in 1:ncol(x)) {
     m <- as.matrix(x[ ,i])
 
     fdt <- make.fdt.cat.simple(m,
                                sort,
                                decreasing)
+    
+    tmpres <- list(table=list(fdt)[[1]]) 
 
     res <- c(res,
-             list(fdt))
+             list(tmpres))
   }
 
   if (is.null(colnames(x)))
