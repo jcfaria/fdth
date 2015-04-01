@@ -39,4 +39,3 @@ summary.fdt.multiple <- function (object,
 
     cat('\n')}
 }
-
