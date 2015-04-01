@@ -19,4 +19,3 @@ summary.fdt.cat.default <- function (object,
                           row.names=row.names,
                           right=right, ...)
 }
-
