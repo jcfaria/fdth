@@ -1,3 +1,1 @@
-fdt <-
-  function (x, ...) UseMethod('fdt')
-
+fdt <- function(x, ...) UseMethod('fdt')

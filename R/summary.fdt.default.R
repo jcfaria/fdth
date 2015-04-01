@@ -32,4 +32,3 @@ summary.fdt.default <- function (object,
                           row.names=row.names,
                           right=right, ...)
 }
-
