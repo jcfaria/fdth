@@ -1,14 +1,14 @@
-citHeader("To cite bpca in publications use:")
+citHeader("To cite fdth in publications use:")
 
 citEntry(entry  = "Manual",
          title  = "Frequency Distribution Tables, Histograms and Polygons.",
-         author = "José Cláudio Faria and Enio Jelihovschi",
+         author = "José Cláudio Faria, Enio G. Jelihovschi and Ivan B. Allaman",
          organization = "UESC",
          address      = "Ilheus, Bahia, Brasil",
          year         = version$year,
 
          textVersion = 
-         paste("Faria, J.C & Jelihovschi, E.G. (", version$year, ").",
+         paste("Faria, J.C; Jelihovschi, E.G. & Allaman, I. B. (", version$year, ").",
                "fdth: Frequency Distribution Tables, Histograms and Polygons.",
                "UESC, Bahia, Brasil.",
                sep="")

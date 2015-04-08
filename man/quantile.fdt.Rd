@@ -48,10 +48,6 @@ quantile(s) from \code{fdt}.
   Ivan B. Allaman
 }
 
-\note{
-  ...
-}
-
 \examples{
 mdf <- data.frame(x=rnorm(1e2, 
                           20, 

@@ -47,8 +47,7 @@
 }
 
 \arguments{
-  \item{object}{A \code{fdt} object.}
-  \item{object}{A \code{fdt.cat} object.}
+  \item{object}{A \code{fdt} or \code{fdt.cat} object.}
   \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table.}
   \item{round}{Rounds \samp{fdt} columns to the specified number of

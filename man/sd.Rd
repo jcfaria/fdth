@@ -48,10 +48,6 @@ sd(x, \dots)
   Ivan B. Allaman
 }
 
-\note{
-  ...
-}
-
 \examples{
 mdf <- data.frame(x=rnorm(1e3, 
                           20, 

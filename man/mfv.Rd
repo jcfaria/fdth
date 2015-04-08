@@ -58,10 +58,6 @@ or \code{mfv.fdt.cat}for each variable, that is, each column of the data.frame.
   Ivan B. Allaman
 }
 
-\note{
-  ...
-}
-
 \examples{
 ## Numerical
 mdf <- data.frame(x=rnorm(1e2, 
