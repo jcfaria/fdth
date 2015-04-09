@@ -5,7 +5,7 @@
 \alias{fdt.cat.matrix}
 
 \title{
-  Frequency distribution table for categorical data.
+  Frequency distribution table for categorical data
 }
 
 \description{

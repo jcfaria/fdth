@@ -9,3 +9,10 @@ import(
   grDevices,
   graphics
 )
+
+#S3method(fdt, default)
+#S3method(fdt, data.frame)
+#S3method(fdt, matrix)
+#S3method(fdt.cat, default)
+#S3method(fdt.cat, data.frame)
+#S3method(fdt.cat, matrix)
