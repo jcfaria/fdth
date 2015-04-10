@@ -1,4 +1,4 @@
-make.fdt.cat <- function(f,
+make.fdt_cat <- function(f,
                          categories=NULL,
                          sort=TRUE,
                          decreasing=TRUE)
@@ -40,7 +40,7 @@ make.fdt.cat <- function(f,
                   'cf',
                   'cf(%)')
 
-  class(res) <- c('fdt.cat.default',
+  class(res) <- c('fdt_cat.default',
                   'data.frame')
 
   invisible(res)

@@ -1,7 +1,7 @@
 \name{fdth-internal}
 \title{Internal fdth functions}
-\alias{make.fdt.cat.simple}
-\alias{make.fdt.cat.multiple}
+\alias{make.fdt_cat.simple}
+\alias{make.fdt_cat.multiple}
 \alias{make.fdt.format.classes}
 \alias{make.fdt.multiple}
 \alias{make.fdt.simple}

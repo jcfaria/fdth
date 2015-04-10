@@ -1,4 +1,4 @@
-summary.fdt.cat.default <- function (object,
+summary.fdt_cat.default <- function (object,
                                      columns=1:6,
                                      round=2,
                                      row.names=FALSE,

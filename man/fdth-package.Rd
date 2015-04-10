@@ -40,11 +40,11 @@
   in this case also allowing grouping all numerical variables according to one
   categorical, or \code{matrices}.
 
-  The simplest way to run \samp{fdt} and \samp{fdt.cat} is by supplying only the \samp{x}
+  The simplest way to run \samp{fdt} and \samp{fdt_cat} is by supplying only the \samp{x}
   object, for example: \code{d <- fdt(x)}. In this case all necessary
   default values (\samp{breaks} and \samp{right}) ("Sturges" and \code{FALSE}
   respectively) will be used, if the \samp{x} object is categorical then just use
-  \code{d <- fdt.cat(x)}.
+  \code{d <- fdt_cat(x)}.
 
   If the varable is of contiuos type, you can also supply:
   \itemize{
@@ -55,7 +55,7 @@
   }
   These options make the \samp{fdt} very easy and flexible.
 
-  The \samp{fdt} and \samp{fdt.cat} object store information to be used by methods \code{summary},
+  The \samp{fdt} and \samp{fdt_cat} object store information to be used by methods \code{summary},
   \code{print} and \code{plot}. The result of \code{plot} is a histogram or
   polygon (absolute, relative or cumulative).
   The methods \code{summary}, \code{print} and \code{plot} provide a reasonable

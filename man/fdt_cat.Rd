@@ -1,33 +1,33 @@
-\name{fdt.cat}
-\alias{fdt.cat}
-\alias{fdt.cat.default}
-\alias{fdt.cat.data.frame}
-\alias{fdt.cat.matrix}
+\name{fdt_cat}
+\alias{fdt_cat}
+\alias{fdt_cat.default}
+\alias{fdt_cat.data.frame}
+\alias{fdt_cat.matrix}
 
 \title{
   Frequency distribution table for categorical data
 }
 
 \description{
-  A S3 set of methods to easily perform categorical frequency distribution table (\samp{fdt.cat}) from
+  A S3 set of methods to easily perform categorical frequency distribution table (\samp{fdt_cat}) from
   \code{vector}, \code{data.frame} and \code{matrix} objects.
 }
 
 \usage{
 ## S3 generic
-fdt.cat(x, \dots)
+fdt_cat(x, \dots)
 
 ## S3 methods
-\method{fdt.cat}{default}(x,
+\method{fdt_cat}{default}(x,
         sort=TRUE,
         decreasing=TRUE, \dots)
 
-\method{fdt.cat}{data.frame}(x,
+\method{fdt_cat}{data.frame}(x,
         by,
         sort=TRUE,
         decreasing=TRUE, \dots) 
 
-\method{fdt.cat}{matrix}(x,
+\method{fdt_cat}{matrix}(x,
         sort=TRUE,
         decreasing=TRUE, \dots)
 }
@@ -38,7 +38,7 @@ fdt.cat(x, \dots)
     one character/factor column.}
    \item{by}{Categorical variable used for grouping each categorical response,
     useful only on \code{data.frame}.}  
-  \item{sort}{Logical. Should the \code{fdt.cat} be sorted by the absolute frequency
+  \item{sort}{Logical. Should the \code{fdt_cat} be sorted by the absolute frequency
     into ascending or descending order? (default = \code{TRUE}).}
   \item{decreasing}{Logical. Should the sort order be increasing or decreasing?
     (default = \code{TRUE}).}
@@ -46,27 +46,27 @@ fdt.cat(x, \dots)
 }
 
 \details{
-  The simplest way to run \samp{fdt.cat} is supplying only the \samp{x}
-  object, for example: \code{ct <- fdt.cat(x)}. In this case all necessary
+  The simplest way to run \samp{fdt_cat} is supplying only the \samp{x}
+  object, for example: \code{ct <- fdt_cat(x)}. In this case all necessary
   default values (\samp{sort = TRUE} and \samp{decreasing = TRUE}) will be used.
 
-  These options make the \samp{fdt.cat} very easy and flexible.
+  These options make the \samp{fdt_cat} very easy and flexible.
 
-  The \samp{fdt.cat} object stores information to be used by methods \code{summary},
+  The \samp{fdt_cat} object stores information to be used by methods \code{summary},
   \code{print}, \code{plot} and \code{mfv}. The result of plot is a bar plot.
-  The methods \code{summary.fdt.cat}, \code{print.fdt.cat} and \code{plot.fdt.cat} provide a reasonable
-  set of parameters to format and plot the \samp{fdt.cat} object in a pretty
+  The methods \code{summary.fdt_cat}, \code{print.fdt_cat} and \code{plot.fdt_cat} provide a reasonable
+  set of parameters to format and plot the \samp{fdt_cat} object in a pretty
   (and publishable) way.
 }
 
 \value{
-  For \code{fdt.cat} the method \code{fdt.cat.default} returns a \code{data.frame} storing the \samp{fdt}.
+  For \code{fdt_cat} the method \code{fdt_cat.default} returns a \code{data.frame} storing the \samp{fdt}.
 
-  The methods \code{fdt.cat.data.frame} and \code{fdt.cat.matrix} 
-  return a list of class \code{fdt.cat..multiple}.
+  The methods \code{fdt_cat.data.frame} and \code{fdt_cat.matrix} 
+  return a list of class \code{fdt_cat..multiple}.
   This \code{list} has one slot for each categorical
   variable of the  supplied \samp{x}. Each slot, corresponding to each categorical
-  variable, stores the same slots of the \code{fdt.cat.default} described above.
+  variable, stores the same slots of the \code{fdt_cat.default} described above.
 }
 
 \author{
@@ -89,9 +89,9 @@ x <- sample(x=letters[1:5],
             size=5e2,
             rep=TRUE)
 
-(fdt.c <- fdt.cat(x))
+(fdt.c <- fdt_cat(x))
 
-(fdt.c <- fdt.cat(x,
+(fdt.c <- fdt_cat(x,
                   sort=FALSE))
 
 ##================================================
@@ -105,15 +105,15 @@ mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
 
 head(mdf)
 
-(fdt.c <- fdt.cat(mdf))
+(fdt.c <- fdt_cat(mdf))
 
-(fdt.c <- fdt.cat(mdf,
+(fdt.c <- fdt_cat(mdf,
                   dec=FALSE))
 
-(fdt.c <- fdt.cat(mdf,
+(fdt.c <- fdt_cat(mdf,
                   sort=FALSE))
 
-(fdt.c <- fdt.cat(mdf,
+(fdt.c <- fdt_cat(mdf,
                   by='c1'))
 
 ##================================================
@@ -128,11 +128,11 @@ x <- matrix(sample(x=letters[1:10],
 
 head(x)
 
-(fdt.c <- fdt.cat(x))
+(fdt.c <- fdt_cat(x))
 }
 
 \keyword{fdt}
-\keyword{fdt.cat}
+\keyword{fdt_cat}
 \keyword{frequency}
 \keyword{distribution}
 \keyword{table}

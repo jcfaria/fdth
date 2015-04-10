@@ -2,8 +2,8 @@
 \alias{summary.fdt}
 \alias{summary.fdt.default}
 \alias{summary.fdt.multiple}
-\alias{summary.fdt.cat.default}
-\alias{summary.fdt.cat.multiple}
+\alias{summary.fdt_cat.default}
+\alias{summary.fdt_cat.multiple}
 
 \title{
   Summary methods for fdt objects
@@ -12,7 +12,7 @@
 \description{
   S3 methods to return a \code{data.frame} (the frequency
   distribution table - \samp{fdt}) for \code{fdt.default}, \code{fdt.multiple},
-  \code{fdt.cat.default} and \code{fdt.cat.multiple} objects.
+  \code{fdt_cat.default} and \code{fdt_cat.multiple} objects.
 }
 
 \usage{
@@ -33,13 +33,13 @@
         row.names=FALSE,
         right=TRUE, \dots)
 
-\method{summary}{fdt.cat.default}(object,
+\method{summary}{fdt_cat.default}(object,
         columns=1:6,
         round=2,
         row.names=FALSE,
         right=TRUE, \dots)
 
-\method{summary}{fdt.cat.multiple}(object,
+\method{summary}{fdt_cat.multiple}(object,
         columns=1:6,
         round=2,
         row.names=FALSE,
@@ -47,7 +47,7 @@
 }
 
 \arguments{
-  \item{object}{A \code{fdt} or \code{fdt.cat} object.}
+  \item{object}{A \code{fdt} or \code{fdt_cat} object.}
   \item{columns}{A \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table.}
   \item{round}{Rounds \samp{fdt} columns to the specified number of
@@ -149,7 +149,7 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y3=rnorm(100, 50, 4),
                   Y4=rnorm(100, 40, 4))
                   
-dcat <- fdt.cat(mdf) 
+dcat <- fdt_cat(mdf) 
 
 summary(dcat)                 
 

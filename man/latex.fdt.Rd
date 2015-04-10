@@ -1,7 +1,7 @@
 \name{latex.fdt}
 \alias{latex.fdt}
-\alias{latex.fdt.cat}
-\alias{latex.fdt.cat.multiple} 
+\alias{latex.fdt_cat}
+\alias{latex.fdt_cat.multiple} 
 
 \title{
   LaTeX table of the frequency distribution table
@@ -30,7 +30,7 @@ latex.fdt(x,
           algfreq='r',
           hline3='\\\\hline')
 
-latex.fdt.cat(x,
+latex.fdt_cat(x,
               columns=1:6,
               where='!tbp',
               caption=NULL,
@@ -44,7 +44,7 @@ latex.fdt.cat(x,
               algfreq='r',
               hline3='\\\\hline')
 
-latex.fdt.cat.multiple(x,
+latex.fdt_cat.multiple(x,
                        columns=1:6,
                        where='!tbp',
                        caption=NULL,
@@ -77,7 +77,7 @@ latex.fdt.cat.multiple(x,
     The default is \samp{'!tbp'}.
     Possible values are the tabular environment same, e.g., \samp{'h'}, \samp{'b'} and \samp{'p'}.}
   \item{caption}{Is a legend of table.
-    The default is \code{NULL}. If the table class is fdt.cat.multiple, the caption should be a vector.}
+    The default is \code{NULL}. If the table class is fdt_cat.multiple, the caption should be a vector.}
   \item{label}{A text string representing a symbolic label for the table for referencing in the LaTeX \samp{\\label} and \samp{\\ref} commands.
     \samp{label} is useful in a Rnoweb document only if caption is also provided.}
   \item{size}{Specifies the font size of the table.
@@ -133,7 +133,7 @@ latex.fdt.cat.multiple(x,
 }
 
 \value{
-  An object of the class \code{latex.fdt} and \code{latex.fdt.cat}.
+  An object of the class \code{latex.fdt} and \code{latex.fdt_cat}.
 }
 
 \author{
@@ -201,16 +201,16 @@ t3x
 # +++++ Qualitative data
 
 ## Example 5
-t4 <- fdt.cat(sample(LETTERS[1:3], 
+t4 <- fdt_cat(sample(LETTERS[1:3], 
                      replace=TRUE,
                      size=30))
 
-t4x <- latex.fdt.cat(t4,
+t4x <- latex.fdt_cat(t4,
                      caption='Frequency distribution table 4',
                      label='tbl-4')
 t4x
 
-t5 <- fdt.cat(data.frame(c1=sample(LETTERS[1:3],
+t5 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
                                    replace=TRUE,
                                    size=10),
                          c2=sample(letters[4:5],
@@ -220,7 +220,7 @@ t5 <- fdt.cat(data.frame(c1=sample(LETTERS[1:3],
 caption <- c('Frequency distribution table 5',
              'Frequency distribution table 6')
 
-t5x <- latex.fdt.cat.multiple(t5,
+t5x <- latex.fdt_cat.multiple(t5,
                               caption=caption,
                               algtable='\\\\flushleft')
 t5x

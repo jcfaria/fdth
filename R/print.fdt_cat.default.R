@@ -1,4 +1,4 @@
-print.fdt.cat.default <- function (x,
+print.fdt_cat.default <- function (x,
                                    columns=1:6,
                                    round=2,
                                    row.names=FALSE,

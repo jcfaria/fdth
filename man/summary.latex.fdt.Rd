@@ -3,11 +3,11 @@
 \alias{summary.latex.fdt}
 
 \title{
-  Summary method for latex.fdt and latex.fdt.cat objects
+  Summary method for latex.fdt and latex.fdt_cat objects
 }
 
 \description{
-  Returns a summary list for \code{latex.fdt} and \code{latex.fdt.cat} objects.
+  Returns a summary list for \code{latex.fdt} and \code{latex.fdt_cat} objects.
 }
 
 \usage{
@@ -16,7 +16,7 @@
 }
 
 \arguments{
-  \item{object}{A given object of the class \code{\link{latex.fdt}} or \code{\link{latex.fdt.cat}}.}
+  \item{object}{A given object of the class \code{\link{latex.fdt}} or \code{\link{latex.fdt_cat}}.}
   \item{\dots}{Potential further arguments (require by generic).}
 }
 

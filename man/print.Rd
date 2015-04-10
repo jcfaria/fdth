@@ -2,8 +2,8 @@
 \alias{print.fdt}
 \alias{print.fdt.default}
 \alias{print.fdt.multiple}
-\alias{print.fdt.cat.default}
-\alias{print.fdt.cat.multiple}
+\alias{print.fdt_cat.default}
+\alias{print.fdt_cat.multiple}
 
 \title{
   Print methods for fdt objects
@@ -12,7 +12,7 @@
 \description{
   S3 methods to return a \code{data.frame} (the frequency distribution table - fdt) 
   for \code{fdt.default} and \code{fdt.multiple} objects; \code{data.frame} (the frequency
-  distribution table - fdt.cat) for \code{fdt.cat.default} and \code{fdt.cat.multiple}
+  distribution table - fdt_cat) for \code{fdt_cat.default} and \code{fdt_cat.multiple}
   objects.
 }
 
@@ -34,13 +34,13 @@
       row.names=FALSE,
       right=TRUE, \dots)
 
-\method{print}{fdt.cat.default}(x,
+\method{print}{fdt_cat.default}(x,
       columns=1:6,
       round=2,
       row.names=FALSE,
       right=TRUE, \dots)
 
-\method{print}{fdt.cat.multiple}(x,
+\method{print}{fdt_cat.multiple}(x,
       columns=1:6,
       round=2,
       row.names=FALSE,
@@ -67,7 +67,7 @@
 \details{
   For \code{print.fdt}, it is possible to select what columns of the table 
   (a \code{data.frame}) will be shown, as well as the pattern of the first column,
-   for \code{print.fdt.cat} it is only possible to select what columns of the table 
+   for \code{print.fdt_cat} it is only possible to select what columns of the table 
   (a \code{data.frame}) will be shown. The columns are:
   \enumerate{
     \item \samp{Class limits} 
@@ -84,7 +84,7 @@
 
 \value{
   A single \code{data.frame} for \code{fdt.default} and \code{fdt.default} or multiple
-  \code{data.frames} for \code{fdt.multiple} and \code{fdt.cat.multiple}.
+  \code{data.frames} for \code{fdt.multiple} and \code{fdt_cat.multiple}.
 }
 
 \author{
@@ -152,7 +152,7 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y3=rnorm(100, 50, 4),
                   Y4=rnorm(100, 40, 4))
                   
-(d <- fdt.cat(mdf))
+(d <- fdt_cat(mdf))
                   
 print(d)                  
 

@@ -1,4 +1,4 @@
-plot.fdt.cat.multiple <- function (x,
+plot.fdt_cat.multiple <- function (x,
                                    type=c('fb', 'fp', 'fd',
                                           'rfb', 'rfp', 'rfd',
                                           'rfpb', 'rfpp', 'rfpd',
@@ -62,7 +62,7 @@ plot.fdt.cat.multiple <- function (x,
           par(mfrow=mf)
         }
         i <- i + 1
-        plot.fdt.cat.default(x[[i]][[1]],
+        plot.fdt_cat.default(x[[i]][[1]],
                              type=type,
                              v=v,
                              v.round=v.round,

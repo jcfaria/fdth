@@ -1,4 +1,4 @@
-make.fdt.cat.simple <- function(x,
+make.fdt_cat.simple <- function(x,
                                 sort,
                                 decreasing)
 {

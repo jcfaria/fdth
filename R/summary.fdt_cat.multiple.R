@@ -1,4 +1,4 @@
-summary.fdt.cat.multiple <- function (object,
+summary.fdt_cat.multiple <- function (object,
                                       columns=1:6,
                                       round=2,
                                       row.names=FALSE,

@@ -1,4 +1,4 @@
-latex.fdt.cat.multiple <- function(x,
+latex.fdt_cat.multiple <- function(x,
                                    columns=1:6,
                                    where='!tbp',
                                    caption=NULL,
@@ -16,8 +16,8 @@ latex.fdt.cat.multiple <- function(x,
  res <- list()
  for(i in 1:length(x)){
   y <- x[[i]][[1]]
-  class(y) <- c('fdt.cat','data.frame') 
-  res[[i]] <-  latex.fdt.cat(x=y,
+  class(y) <- c('fdt_cat','data.frame') 
+  res[[i]] <-  latex.fdt_cat(x=y,
                        columns=columns,
                        where=where,
                        caption=caption[i],

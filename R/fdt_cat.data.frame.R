@@ -1,4 +1,4 @@
-fdt.cat.data.frame <- function (x,
+fdt_cat.data.frame <- function (x,
                                 by,
                                 sort=TRUE,
                                 decreasing=TRUE, ...)
@@ -19,7 +19,7 @@ fdt.cat.data.frame <- function (x,
    if (logCol[i]) {
     m <- as.data.frame(x[, i])
 
-    fdt <- make.fdt.cat.multiple(m,
+    fdt <- make.fdt_cat.multiple(m,
                              sort,
                              decreasing)
 
@@ -57,7 +57,7 @@ fdt.cat.data.frame <- function (x,
     if (logCol[j]) {
      m <- as.data.frame(tmpdf[, j])
 
-     fdt <- make.fdt.cat.multiple(m,
+     fdt <- make.fdt_cat.multiple(m,
                                   sort,
                                   decreasing)
      newFY  <- list(fdt)
@@ -78,8 +78,8 @@ fdt.cat.data.frame <- function (x,
   }
  }
 
- class(res) <- c('fdt.cat.multiple',
-                 'fdt.cat',
+ class(res) <- c('fdt_cat.multiple',
+                 'fdt_cat',
                  'list')
 
  invisible(res)

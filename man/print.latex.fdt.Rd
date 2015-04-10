@@ -2,11 +2,11 @@
 \alias{print.latex.fdt}
 
 \title{
-  Print method for latex.fdt and latex.fdt.cat objects
+  Print method for latex.fdt and latex.fdt_cat objects
 }
 
 \description{
-  Prints a summary list for \code{latex.fdt} \code{latex.fdt.cat} objects.
+  Prints a summary list for \code{latex.fdt} \code{latex.fdt_cat} objects.
 }
 
 \usage{
@@ -15,7 +15,7 @@
 }
 
 \arguments{
-  \item{x}{A given object of the class \code{latex.fdt} or \code{latex.fdt.cat}.}
+  \item{x}{A given object of the class \code{latex.fdt} or \code{latex.fdt_cat}.}
   \item{\dots}{Optional further arguments (require by generic).}
 }
 
@@ -25,7 +25,7 @@
   Ivan B. Allaman
 }
 
-\seealso{\code{\link{latex.fdt}}, \code{\link{latex.fdt.cat}}}
+\seealso{\code{\link{latex.fdt}}, \code{\link{latex.fdt_cat}}}
 
 \examples{
 library(fdth)

@@ -1,4 +1,4 @@
-plot.fdt.cat.default <- function (x,
+plot.fdt_cat.default <- function (x,
                                   type=c('fb', 'fp', 'fd',
                                          'rfb', 'rfp', 'rfd',
                                          'rfpb', 'rfpp', 'rfpd',

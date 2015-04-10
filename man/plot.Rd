@@ -2,8 +2,8 @@
 \alias{plot.fdt}
 \alias{plot.fdt.default}
 \alias{plot.fdt.multiple}
-\alias{plot.fdt.cat.default}
-\alias{plot.fdt.cat.multiple}
+\alias{plot.fdt_cat.default}
+\alias{plot.fdt_cat.multiple}
 
 \title{
   Plot fdt.default and fdt.multiple objects
@@ -58,7 +58,7 @@
      main.vars=TRUE,
      x.round=2, \dots)
 
-\method{plot}{fdt.cat.default}(x,
+\method{plot}{fdt_cat.default}(x,
      type=c('fb', 'fp', 'fd',
             'rfb', 'rfp', 'rfd',
             'rfpb', 'rfpp', 'rfpd',
@@ -79,7 +79,7 @@
      main=NULL,
      box=FALSE, \dots)
 
-\method{plot}{fdt.cat.multiple}(x,
+\method{plot}{fdt_cat.multiple}(x,
      type=c('fb', 'fp', 'fd',
             'rfb', 'rfp', 'rfd',
             'rfpb', 'rfpp', 'rfpd',
@@ -171,8 +171,8 @@
   graphical device may be opened to show all histograms.
   
   The result is a single barplot, polygon, dotchar (absolute, relative or cumulative)
-  and Pareto chart for \code{fdt.cat.default} or a set of the same graphs for 
-  \code{fdt.cat.multiple} objects.
+  and Pareto chart for \code{fdt_cat.default} or a set of the same graphs for 
+  \code{fdt_cat.multiple} objects.
   Both \samp{default and multiple} try to compute the maximum number of histograms
   that will fit on one page, then it draws a matrix of graphs lited above. More than one
   graphical device may be opened to show all graphs.
@@ -292,7 +292,7 @@ x <- sample(letters[1:5],
             1e3,
             rep=TRUE)
 
-(dc <- fdt.cat(x))
+(dc <- fdt_cat(x))
 
 # Barplot: the default
 plot(dc)
@@ -424,7 +424,7 @@ plot(d,
      type='d')
 
 # Categorical data 
-(dc <- fdt.cat(mdf))
+(dc <- fdt_cat(mdf))
 plot(dc)
 
 plot(dc,

@@ -1,4 +1,4 @@
-fdt.cat.matrix <- function (x,
+fdt_cat.matrix <- function (x,
                             sort=TRUE,
                             decreasing=TRUE, ...)
 {
@@ -11,7 +11,7 @@ fdt.cat.matrix <- function (x,
   for (i in 1:ncol(x)) {
     m <- as.matrix(x[ ,i])
 
-    fdt <- make.fdt.cat.simple(m,
+    fdt <- make.fdt_cat.simple(m,
                                sort,
                                decreasing)
     
@@ -30,8 +30,8 @@ fdt.cat.matrix <- function (x,
 
   names(res) <- nms
 
-  class(res) <- c('fdt.cat.multiple',
-                  'fdt.cat',
+  class(res) <- c('fdt_cat.multiple',
+                  'fdt_cat',
                   'list')
 
   invisible(res)

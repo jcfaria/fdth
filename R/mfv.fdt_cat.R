@@ -1,4 +1,4 @@
-mfv.fdt.cat <- function(x, ...)
+mfv.fdt_cat <- function(x, ...)
 {
   fdt <- x
 

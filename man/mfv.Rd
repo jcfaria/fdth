@@ -3,8 +3,8 @@
 \alias{mfv.default}
 \alias{mfv.fdt}
 \alias{mfv.fdt.multiple}
-\alias{mfv.fdt.cat}
-\alias{mfv.fdt.cat.multiple}
+\alias{mfv.fdt_cat}
+\alias{mfv.fdt_cat.multiple}
 
 \title{
   Most frequent value (statistical mode) of frequency distribution table (numerical and categorical variable)
@@ -26,27 +26,27 @@ mfv(x, \dots)
 
 \method{mfv}{fdt.multiple}(x, \dots)
 
-\method{mfv}{fdt.cat}(x, \dots)
+\method{mfv}{fdt_cat}(x, \dots)
 
-\method{mfv}{fdt.cat.multiple}(x, \dots)
+\method{mfv}{fdt_cat.multiple}(x, \dots)
 }
 
 \arguments{
-  \item{x}{A \code{fdt} or \code{fdt.cat} (simple or multiple) object.}
+  \item{x}{A \code{fdt} or \code{fdt_cat} (simple or multiple) object.}
   \item{\dots}{Required to be generic.}
 }
 
-\details{\code{mfv.fdt} and \code{mfv.fdt.cat} calculates the most frequent value (mfv) based on a known formula. 
-\code{mfv.fdt.multiple} and \code{mfv.fdt.cat.multiple}call respectively \code{mfv.fdt} 
-or \code{mfv.fdt.cat}for each variable, that is, each column of the data.frame.
+\details{\code{mfv.fdt} and \code{mfv.fdt_cat} calculates the most frequent value (mfv) based on a known formula. 
+\code{mfv.fdt.multiple} and \code{mfv.fdt_cat.multiple}call respectively \code{mfv.fdt} 
+or \code{mfv.fdt_cat}for each variable, that is, each column of the data.frame.
 }
 
 \value{\code{mfv.fdt} returns a numeric vector containing the mfv value of the \code{fdt}.
  \code{mean.fdt.multiple} returns a list, where each element is a numeric vector 
  containing the mean value of the \code{fdt} for each variable.
- \code{mfv.fdt.cat} returns a character vector containing the mfv value of the \code{fdt.cat}.
- \code{mean.fdt.cat.multiple} returns a list, where each element is a character vector 
- containing the mfv value of the \code{fdt.cat} for each variable.
+ \code{mfv.fdt_cat} returns a character vector containing the mfv value of the \code{fdt_cat}.
+ \code{mean.fdt_cat.multiple} returns a list, where each element is a character vector 
+ containing the mfv value of the \code{fdt_cat} for each variable.
 }
 
 \seealso{\code{mean.fdt}, \code{median.fdt}.
@@ -97,7 +97,7 @@ mfv(mdf$c1)   # From vector c1
 mfv(mdf$c2)   # From vector c2
 mfv(mdf$c3)   # From vector c3
 
-(tb <- fdt.cat(mdf))
+(tb <- fdt_cat(mdf))
 
 mfv(tb)      # From agruped dad in a fdt 
 }   

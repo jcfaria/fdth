@@ -1,4 +1,4 @@
-latex.fdt.cat <- function(x,
+latex.fdt_cat <- function(x,
                           columns=1:6,
                           where='!tbp',
                           caption=NULL,
@@ -112,7 +112,7 @@ latex.fdt.cat <- function(x,
 
   res$end <- '\\end{table}'
 
-  class(res) <- c('latex.fdt',
+  class(res) <- c('latex_fdt',
                   'list')
 
   return(res)

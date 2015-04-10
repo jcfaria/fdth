@@ -41,7 +41,7 @@ fdt(x, \dots)
 \arguments{
   \item{x}{A \code{vector}, \code{data.frame} or \code{matrix} object.
     If \samp{x} is \code{data.frame} or \code{matrix} it must contain at least 
-    one numeric column (\code{fdt}) or character/factor (\code{fdt.cat}).}
+    one numeric column (\code{fdt}) or character/factor (\code{fdt_cat}).}
   \item{k}{Number of class intervals.}
   \item{start}{Left endpoint of the first class interval.}
   \item{end}{Right endpoint of the last class interval.}
@@ -191,7 +191,7 @@ head(mdf)
 }
 
 \keyword{fdt}
-\keyword{fdt.cat}
+\keyword{fdt_cat}
 \keyword{frequency}
 \keyword{distribution}
 \keyword{table}

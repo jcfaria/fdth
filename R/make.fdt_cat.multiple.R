@@ -1,4 +1,4 @@
-make.fdt.cat.multiple <- function(x,
+make.fdt_cat.multiple <- function(x,
                                   sort,
                                   decreasing)
 {
@@ -13,7 +13,7 @@ make.fdt.cat.multiple <- function(x,
     if(f[i]){
       m  <- x[,i]
 
-      fdt <- make.fdt.cat.simple(m,
+      fdt <- make.fdt_cat.simple(m,
                                  sort,
                                  decreasing)
       res <- c(res,

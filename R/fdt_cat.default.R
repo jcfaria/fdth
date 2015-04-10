@@ -1,15 +1,15 @@
-fdt.cat.default <- function (x,
+fdt_cat.default <- function (x,
                              sort=TRUE,
                              decreasing=TRUE, ...)
 {
   x <- na.omit(x)
 
-  res <- make.fdt.cat.simple(x,
+  res <- make.fdt_cat.simple(x,
                              sort,
                              decreasing)
 
-  class(res) <- c('fdt.cat.default',
-                  'fdt.cat',
+  class(res) <- c('fdt_cat.default',
+                  'fdt_cat',
                   'data.frame')
 
   invisible(res)
