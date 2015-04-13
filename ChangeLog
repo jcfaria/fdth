@@ -1,3 +1,6 @@
+2015-04-13 vs. 1.2-2 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
+	* The documentation has been improved
+
 2015-04-09 vs. 1.2-1 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
         * Ivan Bezerra Allaman has began to work in the project as co-author.
 	* Added the "by" argument to fdt_cat.data.frame function. As
