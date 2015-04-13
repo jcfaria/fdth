@@ -29,4 +29,3 @@ summary.fdt_cat.multiple <- function (object,
     cat('\n')
   }
 }
-
