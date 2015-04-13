@@ -11,7 +11,7 @@ make.fdt.simple <- function (x,
                         end,
                         h),
                  right=right,
-                 dig.lab=nchar(as.character(round(max(x),
+                 dig.lab=nchar(as.character(round(max(end),
                                                   2)))))    # Absolute freq.
   rf  <- as.numeric(f/length(x))                            # Relative freq
   rfp <- as.numeric(100*(f/length(x)))                      # Relative freq, %
