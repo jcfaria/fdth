@@ -158,7 +158,7 @@
     \samp{1:} horizontal, \cr
     \samp{2:} perpendicular to the axes, \cr
     \samp{3:} vertical.}
-  \item{box}{...}
+  \item{box}{If \code{TRUE} (the default!), a box will be placed on the graphics. Only categorical variable.}
   \item{\dots}{Optional plotting parameters.}
 }
 

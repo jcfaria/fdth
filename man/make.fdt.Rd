@@ -28,9 +28,9 @@ make.fdt.cat(f,
   \item{start}{The left value of the interval of the first class.}
   \item{end}{The last value of the interval of the last class.}
   \item{right}{Intervals right open (default = \code{FALSE}).}
-  \item{categories}{...}
-  \item{sort}{...}
-  \item{decreasing}{...}
+  \item{categories}{The levels of the categorical variable.}
+  \item{sort}{The levels of the categorical variable will be ordered by frequency. The default is \code{TRUE}.}
+  \item{decreasing}{If sort argument is \code{TRUE}, the order will be decreasing by default.}
 }
 
 \details{ Given the starting and ending values of the continuous variable table 
