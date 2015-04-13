@@ -19,7 +19,7 @@ After to clone it, to check, build and install do the following:
 
 > R CMD INSTALL fdth_X.X-X.tar.gz
 
-Or, if you could install directly as:
+Or, you could install directly as:
 
 > require(devtools)
 
