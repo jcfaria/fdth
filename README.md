@@ -19,5 +19,11 @@ After to clone it, to check, build and install do the following:
 
 > R CMD INSTALL fdth_X.X-X.tar.gz
 
+Or, if you could install directly as:
+
+> require(devtools)
+
+> install_github("fdth", "jcfaria")
+
 The stable version of this package is available at:
 http://cran.r-project.org/web/packages/fdth/index.html
