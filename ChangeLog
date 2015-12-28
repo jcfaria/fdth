@@ -1,3 +1,7 @@
+2015-12-28 vs. 1.2-3 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
+	* Added the "round" argument in the functions latex.fdt_cat and
+	latex.fdt_cat.multiple 
+
 2015-04-13 vs. 1.2-2 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The documentation has been improved
 

@@ -1,5 +1,6 @@
 latex.fdt_cat <- function(x,
                           columns=1:6,
+                          round=2,
                           where='!tbp',
                           caption=NULL,
                           label=NULL,
@@ -35,7 +36,7 @@ latex.fdt_cat <- function(x,
   y <- x[columns][-1]
 
   y <- cbind(x[1],
-             y)
+             round(y, round))
 
   y <- sapply(y,
               as.character)
