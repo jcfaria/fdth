@@ -48,7 +48,6 @@ fdt.default <- function (x,
            missing(h)) {
     stopifnot(length(start) >= 1,
               length(end) >=1)
-    tmp <- range(x)
     R   <- end - start
     k   <- sqrt(abs(R))
     if (k < 5) k = 5 # min value of k

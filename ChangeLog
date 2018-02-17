@@ -1,3 +1,6 @@
+2018-02-17 vs. 1.2-4 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
+        * Remove "tmp" object of the fdt.default.R function in the 51 line. That object was desnecessary.
+
 2015-12-28 vs. 1.2-3 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
 	* Added the "round" argument in the functions latex.fdt_cat and
 	latex.fdt_cat.multiple 
