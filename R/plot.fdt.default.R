@@ -310,7 +310,7 @@ plot.fdt.default <- function (x,
 
            axis(2, ...)
 
-           y <- cumsum(x$table[, 3])
+           y <- cumsum(x$table[, 3]/h)
 
            rect(brk[-length(brk)],
                 0,
@@ -329,6 +329,9 @@ plot.fdt.default <- function (x,
 
          # cm (cumulative density) - polygon
          cdp = {
+          h <- with(x, 
+                     breaks[3])
+         
            if (is.null(ylim))
              ylim <- with(x,
                           c(0, 1.2))
@@ -337,7 +340,7 @@ plot.fdt.default <- function (x,
              ylab <- 'Cumulative density'
 
            y <- c(0,
-                  cumsum(x$table[, 3]))
+                  cumsum(x$table[, 3])/h)
            plot(brk,
                 y,
                 type='b',

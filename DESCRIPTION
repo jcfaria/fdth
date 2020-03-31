@@ -1,11 +1,12 @@
 Package: fdth
 Type: Package
 Title: Frequency Distribution Tables, Histograms and Polygons
-Version: 1.2-4
-Date: 2018-02-17
+Version: 1.2-5
+Date: 2020-03-20
 Author: José Cláudio Faria, Enio G. Jelihovschi and Ivan B. Allaman
 Maintainer: José Cláudio Faria <joseclaudio.faria@gmail.com>
 Depends: R (>= 2.6.0), stats, grDevices, graphics
+Imports: xtable
 Description: Perform frequency distribution tables, associated histograms
              and polygons from vector, data.frame and matrix objects for
              numerical and categorical variables.

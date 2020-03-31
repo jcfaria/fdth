@@ -8,7 +8,7 @@ print.fdt.multiple <- function (x,
 {
   right.tmp <- as.logical(x[[1]][['breaks']]['right'])
 
-  tnames <- names(x)
+  tnames <- names(x)[names(x)!="call"]
 
   for (i in 1:length(tnames)) {
     res <- x[tnames[i]][[tnames[i]]][['table']]

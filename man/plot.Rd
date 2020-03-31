@@ -56,7 +56,9 @@
      ylim=NULL,
      main=NULL,
      main.vars=TRUE,
-     x.round=2, \dots)
+     x.round=2, 
+     grouped=FALSE,
+     args.legend=NULL, \dots)
 
 \method{plot}{fdt_cat.default}(x,
      type=c('fb', 'fp', 'fd',
@@ -159,6 +161,8 @@
     \samp{2:} perpendicular to the axes, \cr
     \samp{3:} vertical.}
   \item{box}{If \code{TRUE} (the default!), a box will be placed on the graphics. Only to categorical variable.}
+  \item{grouped}{If \code{TRUE}, the lines of the polygon types will be plotted in the same graphics. It's work only if the "by" argument is used.}
+  \item{args.legend}{List of additional arguments to be passed to \code{legend}; names of the list are used as argument names. Only used if \code{grouped=TRUE}. The default is \code{NULL}.}
   \item{\dots}{Optional plotting parameters.}
 }
 

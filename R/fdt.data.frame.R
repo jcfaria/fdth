@@ -6,6 +6,7 @@ fdt.data.frame <- function (x,
 {
   stopifnot(is.data.frame(x))
 
+  rec <- match.call(expand.dots = TRUE)
   res <- list()
 
   # User do not defines a factor
@@ -72,12 +73,12 @@ fdt.data.frame <- function (x,
                               '',
                               nameFY)
           res <- c(res,
-                   newFY)
+                   newFY) 
         }
       }
     }
   }
-
+  res$call <- rec
   class(res) <- c('fdt.multiple',
                   'fdt',
                   'list')

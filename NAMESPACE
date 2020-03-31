@@ -1,4 +1,4 @@
-# Default NAMESPACE created by R
+	# Default NAMESPACE created by R
 # Remove the previous line if you edit this file
 
 # Export all names
@@ -8,7 +8,8 @@ exportPattern(".")
 import(
   stats,
   grDevices,
-  graphics
+  graphics,
+  xtable
 )
 
 # S3 methods
@@ -35,7 +36,6 @@ S3method(print, fdt.default)
 S3method(print, fdt.multiple)
 S3method(print, fdt_cat.default)
 S3method(print, fdt_cat.multiple)
-S3method(print, latex.fdt)
 S3method(quantile, fdt)
 S3method(quantile, fdt.multiple)
 S3method(sd, default)
@@ -45,7 +45,9 @@ S3method(summary, fdt.default)
 S3method(summary, fdt.multiple)
 S3method(summary, fdt_cat.default)
 S3method(summary, fdt_cat.multiple)
-S3method(summary, latex.fdt)
 S3method(var, default)
 S3method(var, fdt)
 S3method(var, fdt.multiple)
+S3method(xtable,fdt)
+S3method(xtable,fdt.multiple)
+S3method(xtable,fdt_cat.multiple)
