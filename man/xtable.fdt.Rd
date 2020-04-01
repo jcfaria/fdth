@@ -114,22 +114,24 @@ print(t3x,
                                                "\\\\dashv",
                                                x,
                                                perl = TRUE))
-
+\dontrun{
 ## Example 4
-# clim <- t1$table[1]
-# clim1 <- sapply(clim,
-#                 as.character)
-# right <- t1$breaks[4]
-# pattern <- "\\%05.2f"
-# clim2 <- make.fdt.format.classes(clim1,
-#                                  right,
-#                                  pattern)
-# t4x <- t1x
-# t4x[,1] <- clim2
-# 
-# print(t4x,
-#       include.rownames=FALSE)
-# 
+clim <- t1$table[1]
+clim1 <- sapply(clim,
+                as.character)
+right <- t1$breaks[4]
+pattern <- "%05.2f"
+clim2 <- make.fdt.format.classes(clim1,
+                                 right,
+                                 pattern)
+clim3 <- sapply(clim2,function(x)paste0("$",x,"$"))                                 
+t4x <- t1x
+t4x[,1] <- clim3
+
+print(t4x,
+      include.rownames=FALSE)
+
+}
 ## Example 5
 t5 <- fdt(iris,
           by="Species")
@@ -152,11 +154,14 @@ t61 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
                                     size=10),
                           c2=sample(letters[4:5],
                                     replace=TRUE,
-                                    size=10)))
+                                    size=10),
+                          stringsAsFactors=TRUE))
 attr(t61, "subheadings") <- paste0("Variable = ",
                        names(t61)) 
 t61x <- xtable(t61)
 t61x
 }
 
-\keyword{multivariate, xable, fdt}
+\keyword{multivariate}
+\keyword{xable}
+\keyword{fdt}

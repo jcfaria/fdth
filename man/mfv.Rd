@@ -90,7 +90,8 @@ mdf <- data.frame(c1=sample(letters[1:5],
                             rep=TRUE),
                   c3=sample(letters[11:21],
                             1e3,
-                            rep=TRUE))
+                            rep=TRUE),
+                  stringsAsFactors=TRUE)
 head(mdf)
 
 mfv(mdf$c1)   # From vector c1

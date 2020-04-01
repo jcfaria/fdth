@@ -97,9 +97,8 @@ fdt(x, \dots)
 }
 
 \seealso{
-  \code{\link[graphics]{hist}} provided by \pkg{graphics};
-  \code{\link[base]{table}}, \code{\link[base]{cut}} both provided by \pkg{base}
-  and \code{\link[Hmisc]{hist.data.frame}} provided by \pkg{Hmisc} package.
+  \code{\link[graphics]{hist}} provided by \pkg{graphics} and
+  \code{\link[base]{table}}, \code{\link[base]{cut}} both provided by \pkg{base}.
 }
 
 \examples{
@@ -157,7 +156,8 @@ mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, TRUE),
                   c2=as.factor(sample(1:10, 1e2, TRUE)),
                   n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
                   n2=rnorm(100, 60, 4),
-                  n3=rnorm(100, 50, 4))
+                  n3=rnorm(100, 50, 4),
+                  stringsAsFactors=TRUE)
 
 head(mdf)
 

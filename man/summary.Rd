@@ -147,7 +147,8 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
                   Y2=rnorm(100, 60, 4),
                   Y3=rnorm(100, 50, 4),
-                  Y4=rnorm(100, 40, 4))
+                  Y4=rnorm(100, 40, 4),
+                  stringsAsFactors=TRUE)
                   
 dcat <- fdt_cat(mdf) 
 
