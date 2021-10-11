@@ -4,12 +4,13 @@ fdt.default <- function (x,
                          end,
                          h,
                          breaks=c('Sturges', 'Scott', 'FD'),
-                         right=FALSE, ...)
+                         right=FALSE,
+                         na.rm=FALSE, ...)
 {
   # User defines nothing or not 'x' isn't numeric -> stop
   stopifnot(is.numeric(x))
 
-  x <- na.omit(x)
+  #x <- na.omit(x)
 
   # User defines only 'x'
   if (missing(k) && 
@@ -24,7 +25,11 @@ fdt.default <- function (x,
             Scott   = (k <- nclass.scott(x)),
             FD      = (k <- nclass.FD(x)))
 
-    tmp   <- range(x)
+    if (any(is.na(x)) & na.rm == FALSE)
+      stop('The data has <NA> values and na.rm=FALSE by default.')
+
+    tmp   <- range(x,
+                   na.rm=na.rm)
     start <- tmp[1] - abs(tmp[1])/100
     end   <- tmp[2] + abs(tmp[2])/100
     R     <- end - start
@@ -36,7 +41,12 @@ fdt.default <- function (x,
            missing(end) && 
            missing(h)) {
     stopifnot(length(k) >= 1)
-    tmp   <- range(x)
+
+    if (any(is.na(x)) & na.rm == FALSE)
+      stop('The data has <NA> values and na.rm=FALSE by default.')
+
+    tmp   <- range(x,
+                   na.rm=na.rm)
     start <- tmp[1] - abs(tmp[1])/100
     end   <- tmp[2] + abs(tmp[2])/100
     R     <- end - start

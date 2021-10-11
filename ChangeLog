@@ -1,63 +1,72 @@
+2021-10-11 vs. 1.2-6 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
+ * The "na.omit" function, previously used in several methods of the package,
+   has been removed. The main use was in the functions: "fdt.default",
+   "make.ft.multiple", "fdt_cat.default", "fdt_cat.matrix" and "fdt_cat.data.frame".
+
+ * Added "na.rm" argument to methods associated with default FALSE.
+   If you have NA values that can influence the structure of the table, the user will
+   receive a error message.
+
 2020-04-17 vs. 1.2-5 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
-    * Correction of wording of argument x in file fdt.Rd. Removed the snippet 
-    "or character/factor ('fdt_cat')".
+ * Correction of wording of argument x in file fdt.Rd. Removed the snippet
+   "or character/factor ('fdt_cat')".
     
-    * The functions latex.fdt, latex.fdt_cat, latex.fdt_cat.multiple, 
-    print.latex.fdt and summary.latex.fdt was deprecated. Add the new class to 
-    the xtable function: xtable.fdt and xtable.fdt.multiple.
+ * The functions latex.fdt, latex.fdt_cat, latex.fdt_cat.multiple,
+   print.latex.fdt and summary.latex.fdt was deprecated. Add the new class to
+   the xtable function: xtable.fdt and xtable.fdt.multiple.
     
-    * Corrected bug in plot.fdt.default function, types "cdh" and "cdp". 
-          The relative frequencies not was divide by h (amplitude of the class).
+ * Corrected bug in plot.fdt.default function, types "cdh" and "cdp".
+   The relative frequencies not was divide by h (amplitude of the class).
     
-    * Add news arguments in the plot.fdt.multiple: grouped - if the "by" 
-    argument is different from NULL, then the users have the option the to plot 
-    factors in a the same graphics; args.legend - a list with the same arguments
-    of the legend function of the graphics package.
+ * Add news arguments in the plot.fdt.multiple: grouped - if the "by"
+   argument is different from NULL, then the users have the option the to plot
+   factors in a the same graphics; args.legend - a list with the same arguments
+   of the legend function of the graphics package.
 
 2018-02-17 vs. 1.2-4 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
-    * Only available on GitHub (under test)
+ * Only available on GitHub (under test)
 
-    * Remove "tmp" object of the fdt.default.R function in the 51 line. That 
-    object was desnecessary.
+ * Remove "tmp" object of the fdt.default.R function in the 51 line. That
+   object was desnecessary.
 
 2015-12-28 vs. 1.2-3 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
-    * Only available on GitHub (under test)
+ * Only available on GitHub (under test)
 
 	* Added the "round" argument in the functions latex.fdt_cat and
-	latex.fdt_cat.multiple 
+	  latex.fdt_cat.multiple
 
 2015-04-13 vs. 1.2-2 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
-    * Only available on GitHub (under test)
+ * Only available on GitHub (under test)
 
 	* The documentation has been improved
 
 2015-04-09 vs. 1.2-1 - Ivan Bezerra Allaman <ivanalaman@gmail.com>
-    * Ivan Bezerra Allaman has began to work in the project as co-author.
+ * Ivan Bezerra Allaman has began to work in the project as co-author.
 	
-    * Added the "by" argument to fdt_cat.data.frame function. As consequence, 
-    the print.fdt_cat.multiple, plot.fdt_cat.multiple, make.fdt_cat.multiple,
-    fdt_cat.matrix functions were changed.
+ * Added the "by" argument to fdt_cat.data.frame function. As consequence,
+   the print.fdt_cat.multiple, plot.fdt_cat.multiple, make.fdt_cat.multiple,
+   fdt_cat.matrix functions were changed.
 	
-    * Was added the latex.fdt_cat.multiple function to give suport the objects 
-    of the fdt_cat.multiple class
+ * Was added the latex.fdt_cat.multiple function to give suport the objects
+   of the fdt_cat.multiple class
 	
-    * The Rd files make.fdt_cat.simple, make.fdt_cat.multiple,
-	make.fdt.format.classes, make.fdt.multiple and make.fdt.simple were moved 
-    from the documentation
+ * The Rd files make.fdt_cat.simple, make.fdt_cat.multiple,
+	  make.fdt.format.classes, make.fdt.multiple and make.fdt.simple were moved
+   from the documentation
 
 2014-10-13 vs. 1.2-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Thanks to Ivan B. Allaman to the bug fix of the function make.fdt.simple.R
 	
-    * It was added basic suport to categorical variables
+ * It was added basic suport to categorical variables
 	
-    * Some bugs were corrected
+ * Some bugs were corrected
 
 2013-11-22 vs. 1.1-8 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* plot.fdth.multiple: x11() was replaced by the portable way dev.new()
 	
-    * The documentation has been deeply improved
+ * The documentation has been deeply improved
 	
-    * Export LaTeX table of the frequency distribution table (latex.fdt)
+ * Export LaTeX table of the frequency distribution table (latex.fdt)
 
 2012-04-02 vs. 1.1-7 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Cosmetic changes to meet the requirements of CRAN
@@ -65,7 +74,7 @@
 2011-08-21  vs. 1.1-6 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The S3 methods print.fdt.default and print.fdt.multiple were improved.
 	
-    * The S3 methods summary.fdt.default and summary.fdt.multiple were improved.
+ * The S3 methods summary.fdt.default and summary.fdt.multiple were improved.
 
 2011-05-07  vs. 1.1-5 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The S3 methods plot.default and plot.multiple were improved.
@@ -81,7 +90,7 @@
 2010-05-22  vs. 1.1-1 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* The slot data was removed from the fdt object
 	
-    * The S3 methods plot.default and plot.multiple were improved
+ * The S3 methods plot.default and plot.multiple were improved
 
 2010-05-20  vs. 1.1-0 - José Cláudio Faria  <joseclaudio.faria@gmail.com>
 	* Released to CRAN

@@ -83,19 +83,19 @@ fdt_cat(x, \dots)
 \examples{
 library(fdth)
 
-## Categorical
+# Categorical
 x <- sample(x=letters[1:5],
             size=5e2,
             rep=TRUE)
 
-(fdt.c <- fdt_cat(x))
+(ft.c <- fdt_cat(x))
 
-(fdt.c <- fdt_cat(x,
-                  sort=FALSE))
+(ft.c <- fdt_cat(x,
+                 sort=FALSE))
 
-##================================================
-## Data.frame: multivariated with two categorical
-##================================================
+#================================================
+# Data.frame: multivariated with two categorical
+#================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
                   n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
@@ -105,20 +105,20 @@ mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
 
 head(mdf)
 
-(fdt.c <- fdt_cat(mdf))
+(ft.c <- fdt_cat(mdf))
 
-(fdt.c <- fdt_cat(mdf,
-                  dec=FALSE))
+(ft.c <- fdt_cat(mdf,
+                 dec=FALSE))
 
-(fdt.c <- fdt_cat(mdf,
-                  sort=FALSE))
+(ft.c <- fdt_cat(mdf,
+                 sort=FALSE))
 
-(fdt.c <- fdt_cat(mdf,
-                  by='c1'))
+(ft.c <- fdt_cat(mdf,
+                 by='c1'))
 
-##================================================
-## Matrix: two categorical
-##================================================
+#================================================
+# Matrix: two categorical
+#================================================
 x <- matrix(sample(x=letters[1:10],
                    size=100,
                    rep=TRUE),
@@ -128,7 +128,7 @@ x <- matrix(sample(x=letters[1:10],
 
 head(x)
 
-(fdt.c <- fdt_cat(x))
+(ft.c <- fdt_cat(x))
 }
 
 \keyword{fdt}

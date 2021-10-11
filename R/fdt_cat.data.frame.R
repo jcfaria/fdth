@@ -10,7 +10,7 @@ fdt_cat.data.frame <- function (x,
  # User do not defines a factor
  if (missing(by)) {
 
-  x <- na.omit(x) 
+  #x <- na.omit(x)
 
   logCol <- sapply(x,
                    is.factor)
@@ -20,8 +20,8 @@ fdt_cat.data.frame <- function (x,
     m <- as.data.frame(x[, i])
 
     fdt <- make.fdt_cat.multiple(m,
-                             sort,
-                             decreasing)
+                                 sort,
+                                 decreasing)
 
     tmpres <- list(table=fdt[[1]])
 

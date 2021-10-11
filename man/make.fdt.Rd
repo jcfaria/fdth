@@ -65,34 +65,34 @@ make.fdt_cat(f,
 
 
 \examples{
-## Numeric
-## Making one reference fdt
+# Numeric
+# Making one reference fdt
 set.seed(33)
 x <- rnorm(1e3, 
            20, 
            2)
 
-(tb.r <- fdt(x))
+(ft.r <- fdt(x))
 
-## Making a brand new
-(tb.n  <- make.fdt(f=tb.r$table$f,
+# Making a brand new
+(ft.n  <- make.fdt(f=ft.r$table$f,
                    start=13.711,
                    end=27.229))   # Huumm ..., good, but ... Can it be better? 
 
-summary(tb.n,
+summary(ft.n,
         format=TRUE,
         pattern='\%.3f')           # Is it nice now?
 
 
-## Categorical
+# Categorical
 x <- sample(letters[1:5], 
             1e3, 
             rep=TRUE)
 
-## Making one reference fdt
-(tb.r <- fdt_cat(x))
+# Making one reference fdt
+(ft.r <- fdt_cat(x))
 
-## Making a brand new
-(tb.n <- make.fdt_cat(f=tb.r$f,
-                      categ=tb.r$Category))
+# Making a brand new
+(ft.n <- make.fdt_cat(f=ft.r$f,
+                      categ=ft.r$Category))
 }

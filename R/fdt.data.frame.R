@@ -2,7 +2,8 @@ fdt.data.frame <- function (x,
                             k,
                             by,
                             breaks=c('Sturges', 'Scott', 'FD'),
-                            right=FALSE, ...)
+                            right=FALSE,
+                            na.rm=FALSE, ...)
 {
   stopifnot(is.data.frame(x))
 
@@ -21,7 +22,8 @@ fdt.data.frame <- function (x,
         fdt <- make.fdt.multiple(m,
                                  k,
                                  breaks,
-                                 right)
+                                 right,
+                                 na.rm)
 
         tmpres <- list(table=fdt[[1]],
                        breaks=fdt[[2]])
@@ -35,7 +37,6 @@ fdt.data.frame <- function (x,
 
     names(res) <- names(valCol)
   }
-
   # User defines one factor
   else {
     nameF   <- character()
@@ -60,7 +61,8 @@ fdt.data.frame <- function (x,
           fdt <- make.fdt.multiple(m,
                                    k,
                                    breaks,
-                                   right)
+                                   right,
+                                   na.rm)
           newFY  <- list(fdt)
           nameF  <- names(numF[i])
           nameY  <- names(logCol[j])

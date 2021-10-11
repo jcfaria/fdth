@@ -1,7 +1,8 @@
 fdt.matrix <- function (x,
                         k,
                         breaks=c('Sturges', 'Scott', 'FD'),
-                        right=FALSE, ...)
+                        right=FALSE,
+                        na.rm=FALSE, ...)
 {
   stopifnot(is.matrix(x))
 
@@ -13,7 +14,8 @@ fdt.matrix <- function (x,
     fdt <- make.fdt.multiple(m,
                              k,
                              breaks,
-                             right)
+                             right,
+                             na.rm)
 
     tmpres <- list(table=fdt[[1]],
                    breaks=fdt[[2]])

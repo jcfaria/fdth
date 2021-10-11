@@ -105,27 +105,27 @@ x <- rnorm(n=1e3,
            mean=5,
            sd=1)
 
-d <- fdt(x)
+ft <- fdt(x)
 
-str(d)
+str(ft)
 
-d
+ft
 
-print(d) # the same
+print(ft) # the same
 
-print(d,
+print(ft,
       format=TRUE)      # It can not be what you want to publications!
 
-print(d,
+print(ft,
       format=TRUE,
       pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
 
-print(d,
+print(ft,
       col=c(1:2, 4, 6),
       format=TRUE, 
       pattern='\%.2f')   # Yes, it can!
 
-range(x)                # To know x
+range(x)                 # To know x
 
 print(fdt(x,
           start=1,
@@ -135,12 +135,12 @@ print(fdt(x,
       format=TRUE,
       pattern='\%d')     # Is it nice now?
 
-d[['table']]                        # Stores the feq. dist. table (fdt)
-d[['breaks']]                       # Stores the breaks of fdt
-d[['breaks']]['start']              # Stores the left value of the first class
-d[['breaks']]['end']                # Stores the right value of the last class
-d[['breaks']]['h']                  # Stores the class interval
-as.logical(d[['breaks']]['right'])  # Stores the right option
+ft[['table']]                        # Stores the feq. dist. table (fdt)
+ft[['breaks']]                       # Stores the breaks of fdt
+ft[['breaks']]['start']              # Stores the left value of the first class
+ft[['breaks']]['end']                # Stores the right value of the last class
+ft[['breaks']]['h']                  # Stores the class interval
+as.logical(ft[['breaks']]['right'])  # Stores the right option
 
 #=============================================
 # Data.frames: multivariated with categorical
@@ -153,32 +153,32 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y4=rnorm(100, 40, 4),
                   stringsAsFactors=TRUE)
                   
-(d <- fdt_cat(mdf))
+(ft <- fdt_cat(mdf))
                   
-print(d)                  
+print(ft)
 
-(d <- fdt(mdf))
+(ft <- fdt(mdf))
 
-print(d)
+print(ft)
 
-str(d)
+str(ft)
 
-print(d, # the s
+print(ft, # the s
       format=TRUE)
 
-print(d,
+print(ft,
       format=TRUE,
       pattern='\%05.2f')  # regular expression
 
-print(d,
+print(ft,
       col=c(1:2, 4, 6), 
       format=TRUE, 
       pattern='\%05.2f')
 
-print(d,
+print(ft,
       col=c(1:2, 4, 6))
 
-print(d,
+print(ft,
       col=c(1:2, 4, 6),
       format=TRUE,
       pattern='\%05.2f')

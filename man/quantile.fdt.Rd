@@ -61,10 +61,12 @@ mdf <- data.frame(x=rnorm(1e2,
 
 head(mdf)
 
+# From data.frame
 apply(mdf,
       2,
-      quantile)[2,]              # The first quartile
+      quantile)[-c(1,4), ]
 
+# From fdt
 quantile(fdt(mdf))               # Notice that the i default is 1 (the first quartile)
 
 ## A small (but didactic) joke  
@@ -92,4 +94,21 @@ quantile(fdt(mdf),
                    0.001))       # The permile 500
 
 median(fdt(mdf))                 # The median (all the results are the same) ;)
+
+# More than one quantile
+ql <- numeric()
+
+for(i in 1:3)
+  ql[i] <- quantile(fdt(mdf$x),
+                    i=i,
+                    probs=seq(0,
+                              1,
+                              0.25))  # The tree quartiles
+
+names(ql) <- paste0(c(25,
+                      50,
+                      75),
+                    '\%')
+round(ql,
+      2)
 }

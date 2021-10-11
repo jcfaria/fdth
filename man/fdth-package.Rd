@@ -83,7 +83,7 @@
 \examples{
 library (fdth)
 
-## Numerical
+# Numerical
 #======================
 # Vectors: univariated
 #======================
@@ -91,27 +91,27 @@ x <- rnorm(n=1e3,
            mean=5,
            sd=1)
 
-(tb <- fdt(x))
+(ft <- fdt(x))
 
 # Histograms
-plot(tb)  # Absolute frequency histogram
+plot(ft)  # Absolute frequency histogram
 
-plot(tb,
+plot(ft,
      main='My title')
 
-plot(tb,
+plot(ft,
      x.round=3,
      col='darkgreen')
 
-plot(tb,
+plot(ft,
      xlas=2)
 
-plot(tb,
+plot(ft,
      x.round=3,
      xlas=2,
      xlab=NULL)
 
-plot(tb,
+plot(ft,
      v=TRUE,
      cex=.8,
      x.round=3,
@@ -119,64 +119,64 @@ plot(tb,
      xlab=NULL,
      col=rainbow(11))
 
-plot(tb,
+plot(ft,
      type='fh')    # Absolute frequency histogram
 
-plot(tb,
+plot(ft,
      type='rfh')   # Relative frequency histogram
 
-plot(tb,
+plot(ft,
      type='rfph')  # Relative frequency (%) histogram
 
-plot(tb,
+plot(ft,
      type='cdh')   # Cumulative density histogram
 
-plot(tb,
+plot(ft,
      type='cfh')   # Cumulative frequency histogram
 
-plot(tb,
+plot(ft,
      type='cfph')  # Cumulative frequency (%) histogram
 
 # Polygons
-plot(tb,
+plot(ft,
      type='fp')    # Absolute frequency polygon
 
-plot(tb,
+plot(ft,
      type='rfp')   # Relative frequency polygon
 
-plot(tb,
+plot(ft,
      type='rfpp')  # Relative frequency (%) polygon
 
-plot(tb,
+plot(ft,
      type='cdp')   # Cumulative density polygon
 
-plot(tb,
+plot(ft,
      type='cfp')   # Cumulative frequency polygon
 
-plot(tb,
+plot(ft,
      type='cfpp')  # Cumulative frequency (%) polygon
 
 # Density
-plot(tb,
+plot(ft,
      type='d')     # Density
 
 # Summary
-tb
+ft
 
-summary(tb)  # the same
+summary(ft)  # the same
 
-print(tb)    # the same
+print(ft)    # the same
 
-show(tb)     # the same
+show(ft)     # the same
 
-summary(tb,
+summary(ft,
         format=TRUE)      # It can not be what you want to publications!
 
-summary(tb,
+summary(ft,
         format=TRUE,
         pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
 
-summary(tb,
+summary(ft,
         col=c(1:2, 4, 6),
         format=TRUE,
         pattern='\%.2f')   # Yes, it can!
@@ -192,22 +192,22 @@ summary(fdt(x,
         pattern='\%d')     # Is it nice now?
 
 # The fdt.object
-tb[['table']]                        # Stores the feq. dist. table (fdt)
-tb[['breaks']]                       # Stores the breaks of fdt
-tb[['breaks']]['start']              # Stores the left value of the first class
-tb[['breaks']]['end']                # Stores the right value of the last class
-tb[['breaks']]['h']                  # Stores the class interval
-as.logical(tb[['breaks']]['right'])  # Stores the right option
+ft[['table']]                        # Stores the feq. dist. table (fdt)
+ft[['breaks']]                       # Stores the breaks of fdt
+ft[['breaks']]['start']              # Stores the left value of the first class
+ft[['breaks']]['end']                # Stores the right value of the last class
+ft[['breaks']]['h']                  # Stores the class interval
+as.logical(ft[['breaks']]['right'])  # Stores the right option
 
 # Theoretical curve and fdt
 y <- rnorm(1e5,
            mean=5, 
            sd=1)
 
-tb <- fdt(y,
+ft <- fdt(y,
           k=100)
 
-plot(tb,
+plot(ft,
      type='d',                       # density
      col=heat.colors(100))
 
@@ -229,82 +229,85 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y4=rnorm(100, 40, 4),
                   stringsAsFactors=TRUE)
 
-(tb <- fdt(mdf))
+#(ft <- fdt(mdf)) # Error message due to presence of NA values
+
+(ft <- fdt(mdf,
+           na.rm=TRUE))
 
 # Histograms
-plot(tb,
+plot(ft,
      v=TRUE)
 
-plot(tb,
+plot(ft,
      col=rainbow(8))
 
-plot(tb,
+plot(ft,
      type='fh')
 
-plot(tb,
+plot(ft,
      type='rfh')
 
-plot(tb,
+plot(ft,
      type='rfph')
 
-plot(tb, 
+plot(ft,
      type='cdh')
 
-plot(tb,
+plot(ft,
      type='cfh')
 
-plot(tb,
+plot(ft,
      type='cfph')
 
 # Poligons
-plot(tb,
+plot(ft,
      v=TRUE,
      type='fp')
 
-plot(tb,
+plot(ft,
      type='rfp')
 
-plot(tb,
+plot(ft,
      type='rfpp')
 
-plot(tb,
+plot(ft,
      type='cdp')
 
-plot(tb,
+plot(ft,
      type='cfp')
 
-plot(tb,
+plot(ft,
      type='cfpp') 
 
 # Density
-plot(tb,
+plot(ft,
      type='d') 
 
 # Summary
-tb
+ft
 
-summary(tb)  # the same
+summary(ft)  # the same
 
-print(tb)    # the same
+print(ft)    # the same
 
-show(tb)     # the same
+show(ft)     # the same
 
-summary(tb,
+summary(ft,
         format=TRUE)
 
-summary(tb,
+summary(ft,
         format=TRUE, 
         pattern='\%05.2f')  # regular expression
 
-summary(tb,
+summary(ft,
         col=c(1:2, 4, 6), 
         format=TRUE,
         pattern='\%05.2f')
 
-print(tb,
+print(ft,
       col=c(1:2, 4, 6))
 
-print(tb,
+print(ft,
       col=c(1:2, 4, 6), 
       format=TRUE,
       pattern='\%05.2f')
@@ -314,7 +317,8 @@ levels(mdf$X1)
 
 plot(fdt(mdf,
          k=5,
-         by='X1'),
+         by='X1',
+         na.rm=TRUE),
      col=rainbow(5))
 
 levels(mdf$X2)
@@ -371,9 +375,9 @@ x <- sample(x=letters[1:5],
 (fdt.c <- fdt_cat(x,
                   sort=FALSE))
 
-##================================================
-## Data.frame: multivariated with two categorical
-##================================================
+#================================================
+# Data.frame: multivariated with two categorical
+#================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
                   n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
@@ -394,9 +398,9 @@ head(mdf)
 (fdt.c <- fdt_cat(mdf,
                   by='c1'))
 
-##================================================
-## Matrix: two categorical
-##================================================
+#================================================
+# Matrix: two categorical
+#================================================
 x <- matrix(sample(x=letters[1:10],
                    size=100,
                    rep=TRUE),

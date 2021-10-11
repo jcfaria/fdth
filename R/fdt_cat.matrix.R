@@ -6,7 +6,7 @@ fdt_cat.matrix <- function (x,
 
   res <- list()
 
-  x <- na.omit(x)
+  #x <- na.omit(x)
  
   for (i in 1:ncol(x)) {
     m <- as.matrix(x[ ,i])

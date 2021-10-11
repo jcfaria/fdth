@@ -198,27 +198,27 @@ x <- rnorm(n=1e3,
            mean=5,
            sd=1)
 
-(d <- fdt(x))
+(ft <- fdt(x))
 
 # Histograms
-plot(d)  # Absolute frequency histogram
+plot(ft)  # Absolute frequency histogram
 
-plot(d,
+plot(ft,
      main='My title')
 
-plot(d,
+plot(ft,
      x.round=3,
      col='darkgreen')
 
-plot(d,
+plot(ft,
      xlas=2)
 
-plot(d,
+plot(ft,
      x.round=3,
      xlas=2,
      xlab=NULL)
 
-plot(d, 
+plot(ft,
      v=TRUE, 
      cex=.8,
      x.round=3,
@@ -226,45 +226,45 @@ plot(d,
      xlab=NULL,
      col=rainbow(11))
 
-plot(d,
+plot(ft,
      type='fh')    # Absolute frequency histogram
 
-plot(d,
+plot(ft,
      type='rfh')   # Relative frequency histogram
 
-plot(d,
+plot(ft,
      type='rfph')  # Relative frequency (%) histogram
 
-plot(d,
+plot(ft,
      type='cdh')   # Cumulative density histogram
 
-plot(d,
+plot(ft,
      type='cfh')   # Cumulative frequency histogram
 
-plot(d,
+plot(ft,
      type='cfph')  # Cumulative frequency (%) histogram
 
 # Poligons
-plot(d,
+plot(ft,
      type='fp')    # Absolute frequency polygon
 
-plot(d,
+plot(ft,
      type='rfp')   # Relative frequency polygon
 
-plot(d,
+plot(ft,
      type='rfpp')  # Relative frequency (%) polygon
 
-plot(d,
+plot(ft,
      type='cdp')   # Cumulative density polygon
 
-plot(d,
+plot(ft,
      type='cfp')   # Cumulative frequency polygon
 
-plot(d,
+plot(ft,
      type='cfpp')  # Cumulative frequency (%) polygon
 
 # Density
-plot(d,
+plot(ft,
      type='d')     # Density
 
 # Theoretical curve and fdt
@@ -325,61 +325,61 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   stringsAsFactors=TRUE)
 
 # Histograms
-(d <- fdt(mdf))
+(ft <- fdt(mdf))
 
-plot(d,
+plot(ft,
      v=TRUE,
      cex=.8)
 
-plot(d,
+plot(ft,
      col='darkgreen',
      ylim=c(0, 40))
 
-plot(d,
+plot(ft,
      col=rainbow(8), 
      ylim=c(0, 40),
      main=LETTERS[1:4])
 
-plot(d,
+plot(ft,
      type='fh')
 
-plot(d,
+plot(ft,
      type='rfh')
 
-plot(d,
+plot(ft,
      type='rfph')
 
-plot(d,
+plot(ft,
      type='cdh')
 
-plot(d,
+plot(ft,
      type='cfh')
 
-plot(d,
+plot(ft,
      type='cfph')
 
 # Poligons
-plot(d,
+plot(ft,
      v=TRUE,
      type='fp')
 
-plot(d,
+plot(ft,
      type='rfp')
 
-plot(d,
+plot(ft,
      type='rfpp')
 
-plot(d,
+plot(ft,
      type='cdp')
 
-plot(d,
+plot(ft,
      type='cfp')
 
-plot(d,
+plot(ft,
      type='cfpp') 
 
 # Density
-plot(d,
+plot(ft,
      type='d')     
 
 levels(mdf$X1)
@@ -416,12 +416,12 @@ plot(fdt(iris,
          by='Species'),
      v=TRUE)
 
-d <- fdt(iris,
-         k=10)
+ft <- fdt(iris,
+          k=10)
 
-plot(d)
+plot(ft)
 
-plot(d, 
+plot(ft,
      type='d')
 
 # Categorical data 
