@@ -22,10 +22,10 @@
 }
 
 \arguments{
-  \item{x}{A \code{fdt} (simple or multiple) object.}
-  \item{i}{A vector of length up to the length of probs}
+  \item{x}{a \code{fdt} (simple or multiple) object.}
+  \item{i}{a vector of length up to the length of probs}
   \item{probs}{vector of probabilities defining the quantiles}
-  \item{\dots}{Potencial further arguments (required by generic).}
+  \item{\dots}{potencial further arguments (required by generic).}
 }
 
 \details{\code{quantile.fdt} calculates the quantiles based on a known formula for 

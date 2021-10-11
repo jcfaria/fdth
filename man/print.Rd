@@ -48,20 +48,20 @@
 }
 
 \arguments{
-  \item{x}{A \samp{fdt} object.}
-  \item{columns}{A \code{vector} of \code{integers} to select columns of the
+  \item{x}{a \samp{fdt} object.}
+  \item{columns}{a \code{vector} of \code{integers} to select columns of the
     \code{data.frame} table.}
-  \item{round}{Rounds \samp{fdt} columns to the specified number of
+  \item{round}{rounds \samp{fdt} columns to the specified number of
     decimal places (default 2).}
-  \item{format.classes}{Logical, if \code{TRUE} the first column of the
+  \item{format.classes}{logical, if \code{TRUE} the first column of the
     data.frame table will be formated using regular expression.
     The default is \dQuote{\%09.3e}.}
-  \item{pattern}{Same as \code{fmt} in \code{\link[base]{sprintf}}.}
-  \item{row.names}{Logical (or character vector), indicating whether (or what)
+  \item{pattern}{same as \code{fmt} in \code{\link[base]{sprintf}}.}
+  \item{row.names}{logical (or character vector), indicating whether (or what)
     row names should be printed. The default is \code{FALSE}.}
-  \item{right}{Logical, indicating whether or not strings should be right-aligned.
+  \item{right}{logical, indicating whether or not strings should be right-aligned.
     The default is right-alignment.}
-  \item{\dots}{Potential further arguments (require by generic).}
+  \item{\dots}{potential further arguments (require by generic).}
 }
 
 \details{
@@ -71,11 +71,11 @@
   (a \code{data.frame}) will be shown. The columns are:
   \enumerate{
     \item \samp{Class limits} 
-    \item \samp{f} - Absolute frequency 
-    \item \samp{rf} - Relative frequency 
-    \item \samp{rf(\%)} - Relative frequency, \% 
-    \item \samp{cf} - Cumulative frequency 
-    \item \samp{cf(\%)} - Cumulative frequency, \% 
+    \item \samp{f} - absolute frequency
+    \item \samp{rf} - relative frequency
+    \item \samp{rf(\%)} - relative frequency, \%
+    \item \samp{cf} - cumulative frequency
+    \item \samp{cf(\%)} - cumulative frequency, \%
   }
 
   The available parameters offer an easy and powerful way to format the \samp{fdt} for
@@ -157,7 +157,8 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   
 print(ft)
 
-(ft <- fdt(mdf))
+(ft <- fdt(mdf,
+         na.rm=TRUE))
 
 print(ft)
 
@@ -187,18 +188,21 @@ levels(mdf$X1)
 
 print(fdt(mdf,
           k=5,
-          by='X1'))
+          by='X1',
+         na.rm=TRUE))
 
 levels(mdf$X2)
 
 print(fdt(mdf,
           breaks='FD',
-          by='X2'),
+          by='X2',
+          na.rm=TRUE),
       round=3)
 
 print(fdt(mdf,
           k=5,
-          by='X2'),
+          by='X2',
+          na.rm=TRUE),
       format=TRUE,
       round=3)
 

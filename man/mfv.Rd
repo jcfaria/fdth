@@ -32,8 +32,8 @@ mfv(x, \dots)
 }
 
 \arguments{
-  \item{x}{A \code{fdt} or \code{fdt_cat} (simple or multiple) object.}
-  \item{\dots}{Required to be generic.}
+  \item{x}{a \code{fdt} or \code{fdt_cat} (simple or multiple) object.}
+  \item{\dots}{required to be generic.}
 }
 
 \details{\code{mfv.fdt} and \code{mfv.fdt_cat} calculates the most frequent value (mfv) based on a known formula. 

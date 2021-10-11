@@ -33,16 +33,16 @@ fdt_cat(x, \dots)
 }
 
 \arguments{
-  \item{x}{A \code{vector}, \code{data.frame} or \code{matrix} object.
+  \item{x}{a \code{vector}, \code{data.frame} or \code{matrix} object.
     If \samp{x} is \code{data.frame} or \code{matrix} it must contain at least 
     one character/factor column.}
-   \item{by}{Categorical variable used for grouping each categorical response,
+   \item{by}{categorical variable used for grouping each categorical response,
     useful only on \code{data.frame}.}  
-  \item{sort}{Logical. Should the \code{fdt_cat} be sorted by the absolute frequency
+  \item{sort}{logical. Should the \code{fdt_cat} be sorted by the absolute frequency
     into ascending or descending order? (default = \code{TRUE}).}
-  \item{decreasing}{Logical. Should the sort order be increasing or decreasing?
+  \item{decreasing}{logical. Should the sort order be increasing or decreasing?
     (default = \code{TRUE}).}
-  \item{\dots}{Optional further arguments (required by generic).}
+  \item{\dots}{optional further arguments (required by generic).}
 }
 
 \details{

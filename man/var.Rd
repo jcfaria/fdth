@@ -26,8 +26,8 @@ var(x, \dots)
 }
 
 \arguments{
-  \item{x}{A \code{fdt} (simple or multiple) object.}
-  \item{\dots}{Required to be generic.}
+  \item{x}{a \code{fdt} (simple or multiple) object.}
+  \item{\dots}{required to be generic.}
 }
 
 \details{\code{var.fdt} calculates the value of the variance based on a known formula. 

@@ -17,8 +17,8 @@
 }
 
 \arguments{
-  \item{x}{A \code{fdt} (simple or multiple) object.}
-  \item{\dots}{Required by generic.}
+  \item{x}{a \code{fdt} (simple or multiple) object.}
+  \item{\dots}{required by generic.}
 }
 
 \details{\code{mean.fdt} calculates the mean value based on a known formula using 

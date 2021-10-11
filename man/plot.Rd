@@ -106,64 +106,64 @@
 
 \arguments{
   \item{x}{A \samp{fdt} object.}
-  \item{type}{The type of the plot: \cr
-    \samp{fb:} Absolute frequency barplot, \cr
-    \samp{fh:} Absolute frequency histogram, \cr
-    \samp{fp:} Absolute frequency polygon, \cr
-    \samp{fd:} Absolute frequency dotchart, \cr
+  \item{type}{the type of the plot: \cr
+    \samp{fb:} absolute frequency barplot, \cr
+    \samp{fh:} absolute frequency histogram, \cr
+    \samp{fp:} absolute frequency polygon, \cr
+    \samp{fd:} absolute frequency dotchart, \cr
 
-    \samp{rfb:} Relative frequency barplot, \cr
-    \samp{rfh:} Relative frequency histogram, \cr
-    \samp{rfp:} Relative frequency polygon, \cr
-    \samp{rfd:} Relative frequency dotchart, \cr
+    \samp{rfb:} relative frequency barplot, \cr
+    \samp{rfh:} relative frequency histogram, \cr
+    \samp{rfp:} relative frequency polygon, \cr
+    \samp{rfd:} relative frequency dotchart, \cr
 
-    \samp{rfpb:} Relative frequency (\%) barplot, \cr
-    \samp{rfph:} Relative frequency (\%) histogram, \cr
-    \samp{rfpp:} Relative frequency (\%) polygon, \cr
-    \samp{rfpd:} Relative frequency (\%) dotchart, \cr
+    \samp{rfpb:} relative frequency (\%) barplot, \cr
+    \samp{rfph:} relative frequency (\%) histogram, \cr
+    \samp{rfpp:} relative frequency (\%) polygon, \cr
+    \samp{rfpd:} relative frequency (\%) dotchart, \cr
 
-    \samp{d:} Density, \cr
-    \samp{cdh:} Cumulative density histogram, \cr
-    \samp{cdp:} Cumulative density polygon, \cr
+    \samp{d:} density, \cr
+    \samp{cdh:} cumulative density histogram, \cr
+    \samp{cdp:} cumulative density polygon, \cr
 
-    \samp{cfb:} Cumulative frequency barplot, \cr
-    \samp{cfh:} Cumulative frequency histogram, \cr
-    \samp{cfp:} Cumulative frequency polygon, \cr
-    \samp{cfd:} Cumulative frequency dotchart, \cr
+    \samp{cfb:} cumulative frequency barplot, \cr
+    \samp{cfh:} cumulative frequency histogram, \cr
+    \samp{cfp:} cumulative frequency polygon, \cr
+    \samp{cfd:} cumulative frequency dotchart, \cr
 
-    \samp{cdpb:} Cumulative frequency (\%) barplot, \cr
-    \samp{cdph:} Cumulative frequency (\%) histogram, \cr
-    \samp{cfpp:} Cumulative frequency (\%) polygon, \cr
-    \samp{cfpd:} Cumulative frequency (\%) dotchart. \cr
+    \samp{cdpb:} cumulative frequency (\%) barplot, \cr
+    \samp{cdph:} cumulative frequency (\%) histogram, \cr
+    \samp{cfpp:} cumulative frequency (\%) polygon, \cr
+    \samp{cfpd:} cumulative frequency (\%) dotchart. \cr
 
-    \samp{pa:} Pareto chart.}
-  \item{v}{Logical flag: should the values be added to the plot?}
-  \item{v.round}{If \code{v=TRUE}, it rounds the values to the specified number of decimal places (default 0).}
-  \item{v.pos}{If \code{v=TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
+    \samp{pa:} pareto chart.}
+  \item{v}{logical flag: should the values be added to the plot?}
+  \item{v.round}{if \code{v=TRUE}, it rounds the values to the specified number of decimal places (default 0).}
+  \item{v.pos}{if \code{v=TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
     indicate positions below, to the left of, above and to the right of the coordinates (default 3).}
-  \item{xlab}{A label for the \samp{x} axis.}
-  \item{xlas}{An integer which controls the orientation of the \samp{x} axis labels: \cr
+  \item{xlab}{a label for the \samp{x} axis.}
+  \item{xlas}{an integer which controls the orientation of the \samp{x} axis labels: \cr
     \samp{0:} parallel to the axes, \cr
     \samp{2:} perpendicular to the axes.}
-  \item{ylab}{A label for the \samp{y} axis.}
-  \item{y2lab}{A label for the \samp{y2} axis.}
-  \item{y2cfp}{A cumulative percent frequency for the \samp{y2} axis. The default is \code{seq(0, 100, 25)}.}
-  \item{col}{A \code{vector} of colors.}
-  \item{xlim}{The \samp{x} limits of the plot.}
-  \item{ylim}{The \samp{y} limits of the plot.}
-  \item{main}{Title of the plot(s). This option has priority over \samp{main.vars}, i.e, if any value is informed,
+  \item{ylab}{a label for the \samp{y} axis.}
+  \item{y2lab}{a label for the \samp{y2} axis.}
+  \item{y2cfp}{a cumulative percent frequency for the \samp{y2} axis. The default is \code{seq(0, 100, 25)}.}
+  \item{col}{a \code{vector} of colors.}
+  \item{xlim}{the \samp{x} limits of the plot.}
+  \item{ylim}{the \samp{y} limits of the plot.}
+  \item{main}{title of the plot(s). This option has priority over \samp{main.vars}, i.e, if any value is informed,
     the variable names will not be used as title of the plot(s). For \code{fdt.multiple}, the value should be a vector of characters,
     in this case, the R's recycling rule will be used.}
-  \item{main.vars}{Logical flag: should the variables names be added as title of each plot (default \code{TRUE})?}
-  \item{x.round}{A numeric value to round the \samp{x} ticks:
+  \item{main.vars}{logical flag: should the variables names be added as title of each plot (default \code{TRUE})?}
+  \item{x.round}{a numeric value to round the \samp{x} ticks:
     \samp{0:} parallel to the axes, \cr
     \samp{1:} horizontal, \cr
     \samp{2:} perpendicular to the axes, \cr
     \samp{3:} vertical.}
-  \item{box}{If \code{TRUE} (the default!), a box will be placed on the graphics. Only to categorical variable.}
-  \item{grouped}{If \code{TRUE}, the lines of the polygon types will be plotted in the same graphics. It's work only if the "by" argument is used.}
-  \item{args.legend}{List of additional arguments to be passed to \code{legend}; names of the list are used as argument names. Only used if \code{grouped=TRUE}. The default is \code{NULL}.}
-  \item{\dots}{Optional plotting parameters.}
+  \item{box}{if \code{TRUE} (the default!), a box will be placed on the graphics. Only to categorical variable.}
+  \item{grouped}{if \code{TRUE}, the lines of the polygon types will be plotted in the same graphics. It's work only if the "by" argument is used.}
+  \item{args.legend}{list of additional arguments to be passed to \code{legend}; names of the list are used as argument names. Only used if \code{grouped=TRUE}. The default is \code{NULL}.}
+  \item{\dots}{optional plotting parameters.}
 }
 
 \details{
@@ -325,7 +325,8 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   stringsAsFactors=TRUE)
 
 # Histograms
-(ft <- fdt(mdf))
+(ft <- fdt(mdf,
+           na.rm=TRUE))
 
 plot(ft,
      v=TRUE,
@@ -386,22 +387,26 @@ levels(mdf$X1)
 
 plot(fdt(mdf,
          k=5,
-         by='X1'),
+         by='X1',
+         na.rm=TRUE),
      ylim=c(0, 12))
 
 levels(mdf$X2)
 
 plot(fdt(mdf,
          breaks='FD', 
-         by='X2'))
+         by='X2',
+         na.rm=TRUE))
 
 plot(fdt(mdf,
          k=5,
-         by='X2'))  # It is difficult to compare
+         by='X2',
+         na.rm=TRUE))  # It is difficult to compare
 
 plot(fdt(mdf,
          k=5,
-         by='X2'),
+         by='X2',
+         na.rm=TRUE),
      ylim=c(0, 8))  # Easy
 
 plot(fdt(iris,

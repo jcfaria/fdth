@@ -24,34 +24,38 @@ fdt(x, \dots)
     end,
     h,
     breaks=c('Sturges', 'Scott', 'FD'),
-    right=FALSE, \dots)
+    right=FALSE,
+    na.rm=FALSE, \dots)
 
 \method{fdt}{data.frame}(x,
     k,
     by,
     breaks=c('Sturges', 'Scott', 'FD'),
-    right=FALSE, \dots)
+    right=FALSE,
+    na.rm=FALSE, \dots)
 
 \method{fdt}{matrix}(x,
     k,
     breaks=c('Sturges', 'Scott', 'FD'),
-    right=FALSE, \dots)
+    right=FALSE,
+    na.rm=FALSE, \dots)
 }
 
 \arguments{
-  \item{x}{A \code{vector}, \code{data.frame} or \code{matrix} object.
+  \item{x}{a \code{vector}, \code{data.frame} or \code{matrix} object.
     If \samp{x} is \code{data.frame} or \code{matrix} it must contain at least 
     one numeric column.}
-  \item{k}{Number of class intervals.}
-  \item{start}{Left endpoint of the first class interval.}
-  \item{end}{Right endpoint of the last class interval.}
-  \item{h}{Class interval width.}
-  \item{by}{Categorical variable used for grouping each numeric variable,
+  \item{k}{number of class intervals.}
+  \item{start}{left endpoint of the first class interval.}
+  \item{end}{right endpoint of the last class interval.}
+  \item{h}{class interval width.}
+  \item{by}{categorical variable used for grouping each numeric variable,
     useful only on \code{data.frame}.}
-  \item{breaks}{Method used to determine the number of interval classes, 
+  \item{breaks}{method used to determine the number of interval classes,
     c(\dQuote{Sturges}, \dQuote{Scott}, \dQuote{FD}).}
-  \item{right}{Right endpoints open (default = \code{FALSE}).}
-  \item{\dots}{Potencial further arguments (required by generic).}
+  \item{right}{right endpoints open (default = \code{FALSE}).}
+  \item{na.rm}{logical. Should missing values be removed? (default = \code{FALSE}).}
+  \item{\dots}{potencial further arguments (required by generic).}
 }
 
 \details{
