@@ -115,6 +115,8 @@ x <- rnorm(n=1e3,
            mean=5,
            sd=1)
 
+str(x)
+
 # x
 (ft <- fdt(x))
 
@@ -140,7 +142,7 @@ range(x)
            h=1))
 
 # Effect of right
-x <- rep(1:3, 3); sort(x)
+sort(x <- rep(1:3, 3))
 
 (ft <- fdt(x,
            start=1,
@@ -170,7 +172,9 @@ head(mdf)
 (ft <- fdt(mdf,
            na.rm=TRUE))
 
-# By factor!
+str(mdf)
+
+# By factor
 (ft <- fdt(mdf,
            k=5,
            by='c1',
@@ -182,6 +186,7 @@ head(mdf)
            by='c1',
            na.rm=TRUE))
 
+# k
 (ft <- fdt(mdf,
            k=5,
            by='c2',
@@ -198,6 +203,13 @@ head(mdf)
 # Matrices: multivariated
 #=========================
 (ft <-fdt(state.x77))
+
+summary(ft,
+        format=TRUE)
+
+summary(ft,
+        format=TRUE,
+        pattern='\%.2f')
 }
 
 \keyword{fdt}

@@ -88,6 +88,8 @@ x <- sample(x=letters[1:5],
             size=5e2,
             rep=TRUE)
 
+table(x)
+
 (ft.c <- fdt_cat(x))
 
 (ft.c <- fdt_cat(x,

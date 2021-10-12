@@ -292,25 +292,25 @@ x <- sample(letters[1:5],
             1e3,
             rep=TRUE)
 
-(dc <- fdt_cat(x))
+(ft.c <- fdt_cat(x))
 
 # Barplot: the default
-plot(dc)
+plot(ft.c)
 
 # Barplot
-plot(dc,
+plot(ft.c,
      type='fb')
 
 # Polygon
-plot(dc,
+plot(ft.c,
      type='fp')
 
 # Dotchart
-plot(dc,
+plot(ft.c,
      type='fd')
 
 # Pareto chart
-plot(dc,
+plot(ft.c,
      type='pa')
 
 #=============================================
@@ -430,10 +430,10 @@ plot(ft,
      type='d')
 
 # Categorical data 
-(dc <- fdt_cat(mdf))
-plot(dc)
+(ft.c <- fdt_cat(mdf))
+plot(ft.c)
 
-plot(dc,
+plot(ft.c,
      type='fd',
      pch=19)
 

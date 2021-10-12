@@ -8,9 +8,6 @@ fdt_cat.matrix            S3 method for `matrices'
 fdt.data.frame            S3 method for `data.frames'
 fdt.default               S3 method for `vectors'
 fdt.matrix                S3 method for `matrices'
-latex.fdt                 LaTeX table of the `fdt' objects
-latex.fdt_cat             LaTeX table of the `fdt_cat' objects
-latex.fdt_cat.multiple    Latex table of the `fdt_cat.multiple' objects
 make.fdt                  To make a complet fdt from numeric vectors (or single tables) for continuous
 make.fdt_cat              To make a complet fdt from numeric vectors (or single tables) for categorical
 make.fdt_cat.multiple     To make tables from a `data.frames' or `matrices' containing at least one categorical column
@@ -29,12 +26,10 @@ print.fdt_cat.default     S3 method for `fdt_cat.default' objects
 print.fdt_cat.multiple    S3 method for `fdt_cat.multiple' objects
 print.fdt.default         S3 method for `fdt.default' objects
 print.fdt.multiple        S3 method for `fdt.multiple' objects
-print.latex.fdt           Prints `latex.fdt' objects
 quantile.fdt              S3 method for `fdt' objects
 sd.fdt                    S3 method for `fdt' objects
 summary.fdt_cat.default   S3 method for `fdt_cat.default' objects
 summary.fdt_cat.multiple  S3 method for `fdt_cat.multiple' fdt objects
 summary.fdt.default       S3 method for `fdt.default' objects
 summary.fdt.multiple      S3 method for `fdt.multiple' fdt objects
-summary.latex.fdt         Summarizes `latex.fdt' objects
 var.fdt                   S3 method for `fdt' objects

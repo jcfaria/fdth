@@ -78,7 +78,7 @@ mfv(mdf$z)   # From vector z
 
 (ft <- fdt(mdf))
 
-mfv(ft)      # From agruped dad in a fdt
+mfv(ft)      # From agruped data in a fdt object
 
 
 ## Categorical
@@ -100,5 +100,5 @@ mfv(mdf$c3)   # From vector c3
 
 (ft <- fdt_cat(mdf))
 
-mfv(ft)      # From agruped dad in a fdt
+mfv(ft)      # From agruped data in a fdt object
 }   
