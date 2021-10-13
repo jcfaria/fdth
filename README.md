@@ -23,7 +23,7 @@ Or, you could install directly as:
 
 > require(devtools)
 
-> install_github("fdth", "jcfaria")
+> install_github("jcfaria/fdth")
 
 The stable version of this package is available at:
 http://cran.r-project.org/web/packages/fdth/index.html
