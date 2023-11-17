@@ -28,7 +28,7 @@ Or, you could install directly as:
 The stable version of this package is available at: http://cran.r-project.org/web/packages/fdth/index.html
 
 ```
-José Cláudio Faria
+Faria, J. C; Allaman, I. B. and Jelihovschi, E. G.
 Universidade Estadual de Santa Cruz - UESC
 Departamento de Ciências Exatas - DCEX
 Ilhéus - Bahia - Brasil
