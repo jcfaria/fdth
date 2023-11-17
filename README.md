@@ -25,5 +25,9 @@ Or, you could install directly as:
 
 > install_github("jcfaria/fdth")
 
-The stable version of this package is available at:
-http://cran.r-project.org/web/packages/fdth/index.html
+The stable version of this package is available at: http://cran.r-project.org/web/packages/fdth/index.html
+
+José Cláudio Faria
+Universidade Estadual de Santa Cruz - UESC
+Departamento de Ciências Exatas - DCEX
+Ilhéus - Bahia - Brasil
