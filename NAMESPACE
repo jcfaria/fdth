@@ -1,5 +1,4 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
+# José Cláudio Faria
 
 # Export all names
 exportPattern(".")

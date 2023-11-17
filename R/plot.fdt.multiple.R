@@ -109,13 +109,13 @@ plot.fdt.multiple <- function (x,
     liis <- lapply(aux2,function(x)min(x[,1]))
     lsss <- lapply(aux2,function(x)max(x[,2])) 
     auxk1 <- lapply(auxk,unlist)
-    k <- lapply(auxk1,function(x)nclass.Sturges(1:max(x)))#pegando o fator com maior observação, pois o número de classes será maior e irá englobar os demais fatores caso tenha uma amostra menor!
+    k <- lapply(auxk1,function(x)nclass.Sturges(1:max(x))) # Taking the factor with the greatest observation, as the number of classes will be greater and will encompass the other factors if you have a smaller sample!
     hh <- mapply(function(x,y,z) (y - x)/z,
                  liis,
                  lsss,
                  k)
 
-    ## O PRÓXIMO PASSO É FAZER UMA TABELA PARA CADA FATOR E PARA CADA VARIÁVEL
+    # THE NEXT STEP IS TO MAKE A TABLE FOR EACH FACTOR AND EACH VARIABLE
     factors <- levels(DFagain[[byagain]])
     subgroups <- list()
     for(i in 1:length(factors)){

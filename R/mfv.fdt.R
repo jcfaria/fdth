@@ -7,7 +7,7 @@ mfv.fdt <- function(x, ...)
 
     liMFV <- brk[pos]
 
-    ## It is important if 'pos' is inside of the first class
+    # It is important if 'pos' is inside of the first class
     if (pos - 1 <= 0)
       D1 <- fdt[pos, 2]
     else
@@ -15,7 +15,7 @@ mfv.fdt <- function(x, ...)
 
     nrows <- dim(fdt)[1]
 
-    ## It is important if 'pos' is inside of the last class
+    # It is important if 'pos' is inside of the last class
     if (pos + 1 > nrows)
       D2 <- fdt[pos, 2]
     else

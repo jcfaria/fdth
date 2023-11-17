@@ -245,7 +245,7 @@ plot.fdt.default <- function (x,
                   pos=v.pos, ...)
          },
 
-         # Density
+         # d (density)
          d = {
            h <- with(x, 
                      breaks[3])

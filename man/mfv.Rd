@@ -53,9 +53,9 @@ or \code{mfv.fdt_cat}for each variable, that is, each column of the data.frame.
 }
 
 \author{
-  José Cláudio Faria \cr
-  Enio G. Jelihovschi \cr
-  Ivan B. Allaman
+  Faria, J. C. \cr
+  Allaman, I. B \cr
+  Jelihovschi, E. G.
 }
 
 \examples{

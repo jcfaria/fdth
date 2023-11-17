@@ -18,7 +18,7 @@ quantile.fdt <- function(x,
 
   liQ <- brk[posQ]
 
-  ## It is important if 'posQ ' is inside of the first class
+  # It is important if 'posQ ' is inside of the first class
   if (posQ - 1 <= 0)
     sfaQ <- 0
   else

@@ -1,7 +1,7 @@
 \name{xtable.fdt}
 \alias{xtable.fdt}
 \alias{xtable.fdt.multiple}
-\alias{xtable.fdt_cat.multiple} 
+\alias{xtable.fdt_cat.multiple}
 
 \title{
   LaTeX table of the frequency distribution table
@@ -12,34 +12,35 @@
 }
 
 \usage{
-xtable.fdt(x,
-           caption = NULL,
-           label = NULL,
-           align = NULL,
-           digits = NULL,
-           display = NULL,
-           auto = FALSE,
-           \dots) 
 
-xtable.fdt.multiple(x,
-                    caption = NULL,
-                    label = NULL,
-                    align = NULL,
-                    digits = NULL,
-                    display = NULL,
-                    \dots) 
+\method{xtable}{fdt}(x,
+       caption = NULL,
+       label = NULL,
+       align = NULL,
+       digits = NULL,
+       display = NULL,
+       auto = FALSE,
+       \dots)
 
-xtable.fdt_cat.multiple(x,
-                        caption = NULL,
-                        label = NULL,
-                        align = NULL,
-                        digits = NULL,
-                        display = NULL,
-                        \dots) 
+\method{xtable}{fdt.multiple}(x,
+       caption = NULL,
+       label = NULL,
+       align = NULL,
+       digits = NULL,
+       display = NULL,
+       \dots)
+
+\method{xtable}{fdt_cat.multiple}(x,
+       caption = NULL,
+       label = NULL,
+       align = NULL,
+       digits = NULL,
+       display = NULL,
+       \dots)
 }
 
 \arguments{
-  \item{x}{A \code{fdt} or \code{fdt.multiple} class object.}
+  \item{x}{A \code{fdt}, \code{fdt.multiple} or \code{fdt_cat.multiple} class object.}
   \item{caption}{Character vector of length 1 or 2 containing the table's caption or title. See \code{xtable} function to more details.}
   \item{label}{Character vector of length 1 containing the LaTeX label or HTML anchor. See \code{xtable} function to more details.}
   \item{align}{Character vector of length equal to the number of columns of the resulting table, indicating the alignment of the corresponding columns. See \code{xtable} function to more details.}
@@ -70,13 +71,13 @@ xtable.fdt_cat.multiple(x,
 }
 
 \value{
-  An object of the class \code{xtable.fdt} and \code{xtable.fdt.multiple}.
+  An object of the class \code{xtable.fdt}, \code{xtable.fdt.multiple} and \code{xtable.fdt_cat.multiple}.
 }
 
 \author{
-  José Cláudio Faria \cr
-  Enio G. Jelihovschi \cr
-  Ivan B. Allaman
+  Faria, J. C. \cr
+  Allaman, I. B \cr
+  Jelihovschi, E. G.
 }
 
 \seealso{
@@ -90,8 +91,7 @@ library(fdth)
 library(xtable)
 
 # +++++ Quantitative data
-
-##Example 1: The simplest possible
+## Example 1: The simplest possible
 t1 <- fdt(rnorm(n=1e3,
                 mean=10,
                 sd=2))
@@ -104,7 +104,10 @@ print(t1x,
       include.rownames=FALSE)
 
 ## Example 3
-newclass <- gsub("[\\\\[\\\\)]","",t1x[,1],perl=TRUE)
+newclass <- gsub("[\\\\[\\\\)]",
+                 "",
+                 t1x[,1],
+                 perl=TRUE)
 t3x <- t1x
 t3x[,1] <- newclass
 
@@ -124,7 +127,10 @@ pattern <- "%05.2f"
 clim2 <- make.fdt.format.classes(clim1,
                                  right,
                                  pattern)
-clim3 <- sapply(clim2,function(x)paste0("$",x,"$"))                                 
+clim3 <- sapply(clim2,
+                function(x) paste0("$",
+                                   x,
+                                   "$"))
 t4x <- t1x
 t4x[,1] <- clim3
 
@@ -140,7 +146,6 @@ attr(t5, "subheadings") <- paste0("Variable = ",
 xtable(t5)
 
 # +++++ Qualitative data
-
 ## Example 6
 t6 <- fdt_cat(sample(LETTERS[1:3], 
                      replace=TRUE,
@@ -156,12 +161,12 @@ t61 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
                                     replace=TRUE,
                                     size=10),
                           stringsAsFactors=TRUE))
+
 attr(t61, "subheadings") <- paste0("Variable = ",
-                       names(t61)) 
+                                   names(t61))
 t61x <- xtable(t61)
 t61x
 }
 
-\keyword{multivariate}
 \keyword{xable}
 \keyword{fdt}

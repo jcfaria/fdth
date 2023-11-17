@@ -1,7 +1,7 @@
-%\VignetteIndexEntry{latex table for fdt object}
+%\VignetteIndexEntry{fdt}
 \documentclass[10pt,a4paper]{article}
 \usepackage[brazil]{babel}
-%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
 \usepackage{geometry}
@@ -20,6 +20,7 @@
 \usepackage{parskip}
 \usepackage[round]{natbib}
 \usepackage{morefloats}
+
 % The four packages below are required by latex.fdt function
 \usepackage{multirow}
 \usepackage{colortbl}
@@ -44,14 +45,14 @@
     \begin{minipage}{0.5\textwidth}
       \begin{flushleft} \large
         \emph{Authors:}\\
-        Jos\'{e} C. \textsc{Faria} \\
+        José C. \textsc{Faria} \\
         e Ivan B. \textsc{Allaman}
       \end{flushleft}
     \end{minipage}
     \begin{minipage}{0.4\textwidth}
       \begin{flushright} \large
         \emph{Customization in \LaTeX:} \\
-        Jos\'{e} C. \textsc{Faria}
+        José C. \textsc{Faria}
       \end{flushright}
     \end{minipage}
 
@@ -91,10 +92,13 @@ print(t1x,
 
 It's very good!
 
-Substitute [ and ) by $\dashv$.
+Replacing mathematical symbols [ and ) by $\dashv$.
 
 <<results=tex>>=
-newclass <- gsub("[$\\\\[\\\\)$]","",t1x[,1],perl=TRUE)
+newclass <- gsub("[$\\\\[\\\\)$]",
+                 "",
+                 t1x[,1],
+                 perl=TRUE)
 t3x <- t1x
 t3x[,1] <- newclass
 
@@ -114,10 +118,14 @@ clim1 <- sapply(clim,
                 as.character)
 right <- t1$breaks[4]
 pattern='%05.2f'
+
 clim2 <- make.fdt.format.classes(clim1,
                                  right,
                                  pattern)
-clim3 <- sapply(clim2,function(x)paste0("$",x,"$"))
+clim3 <- sapply(clim2,
+                function(x) paste0("$",
+                                   x,
+                                   "$"))
 t4x <- t1x
 t4x[,1] <- clim3
 
@@ -129,7 +137,7 @@ print(t4x,
 To objects of the "fdt.multiple" class.
 
 <<results=tex>>=
-t5 <- fdt(iris,
+t5 <- fdt(iris[, c(1:2, 5)],
           by='Species')
 attr(t5, "subheadings") <- paste0("Variable = ",
                                   names(t5))
@@ -180,10 +188,16 @@ print(t61x,
 Title of the table in portuguese.
 
 <<results=tex>>=
-portugueseT <- c("Intervalo de classes","f","fr","fr(%)","fa","fa(%)")
+portugueseT <- c("Intervalo de classes",
+                 "f",
+                 "fr",
+                 "fr(%)",
+                 "fa",
+                 "fa(%)")
 t7 <- t1$table
 names(t7) <- portugueseT
-t71 <- list(table=t7,breaks=t1$breaks)
+t71 <- list(table=t7,
+            breaks=t1$breaks)
 class(t71) <- "fdt"
 t7x <- xtable(t71)
 

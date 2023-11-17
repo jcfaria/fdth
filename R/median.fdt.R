@@ -15,7 +15,7 @@ median.fdt <- function(x, ...)
 
   liM <- brk[posM]
 
-  ## It is important if 'posM' is inside of the first class
+  # It is important if 'posM' is inside of the first class
   if (posM - 1 <= 0)
     sfaM <- 0
   else

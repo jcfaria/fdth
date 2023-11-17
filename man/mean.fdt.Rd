@@ -35,9 +35,9 @@ the midpoint of each interval class. \code{mean.fdt.multiple} calls \code{mean.f
 }
 
 \author{
-  José Cláudio Faria \cr
-  Enio G. Jelihovschi \cr
-  Ivan B. Allaman
+  Faria, J. C. \cr
+  Allaman, I. B \cr
+  Jelihovschi, E. G.
 }
 
 \examples{
