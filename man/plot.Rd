@@ -282,7 +282,7 @@ curve(dnorm(x,
             sd=1),
       col='darkgreen',
       add=TRUE,
-      lwd=2)
+      lwd=3)
 
 
 #==================================
@@ -323,6 +323,8 @@ mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   Y3=rnorm(100, 50, 4),
                   Y4=rnorm(100, 40, 4),
                   stringsAsFactors=TRUE)
+
+str(mdf)
 
 # Histograms
 (ft <- fdt(mdf,

@@ -1,4 +1,4 @@
-### fdth
+### fdth - Frequency Distribution Tables, Histograms and Polygons
 
 This is the development code of the R package **fdth**.
 You should use it if you want to contribute to its development:
@@ -30,6 +30,6 @@ The stable version of this package is available at: http://cran.r-project.org/we
 ```
 Faria, J. C; Allaman, I. B. and Jelihovschi, E. G.
 Universidade Estadual de Santa Cruz - UESC
-Departamento de Ciências Exatas - DCEX
-Ilhéus - Bahia - Brasil
+Departamento de CiÃªncias Exatas - DCEX
+IlhÃ©us - Bahia - Brasil
 ```

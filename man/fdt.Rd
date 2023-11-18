@@ -115,8 +115,6 @@ x <- rnorm(n=1e3,
            mean=5,
            sd=1)
 
-str(x)
-
 # x
 (ft <- fdt(x))
 
@@ -165,14 +163,12 @@ mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, TRUE),
                   n3=rnorm(100, 50, 4),
                   stringsAsFactors=TRUE)
 
-head(mdf)
+str(mdf)
 
 #(ft <- fdt(mdf))  # Error message due to presence of NA values
 
 (ft <- fdt(mdf,
            na.rm=TRUE))
-
-str(mdf)
 
 # By factor
 (ft <- fdt(mdf,
@@ -192,10 +188,10 @@ str(mdf)
            by='c2',
            na.rm=TRUE))
 
-(ft <- fdt(iris,
+(ft <- fdt(iris[c(1:2, 5)],
            k=10))
 
-(ft <- fdt(iris,
+(ft <- fdt(iris[c(1:2, 5)],
            k=5,
            by='Species'))
 

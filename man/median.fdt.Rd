@@ -52,9 +52,11 @@ mdf <- data.frame(x=rnorm(1e3,
 
 head(mdf)
 
+# From a data.frame
 apply(mdf,
       2,
       median)
 
-median(fdt(mdf))      
+# From a fdt object
+median(fdt(mdf))
 }

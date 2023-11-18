@@ -53,9 +53,11 @@ mdf <- data.frame(x=rnorm(1e3,
 
 head(mdf)
 
+# From a data.frame
 apply(mdf,
       2,
       mean)
 
-mean(fdt(mdf))      
+# From a fdt object
+mean(fdt(mdf))
 }

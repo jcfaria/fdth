@@ -61,12 +61,12 @@ mdf <- data.frame(x=rnorm(1e2,
 
 head(mdf)
 
-# From data.frame
+# From a data.frame
 apply(mdf,
       2,
       quantile)[-c(1,4), ]
 
-# From fdt
+# From a fdt object
 quantile(fdt(mdf))               # Notice that the i default is 1 (the first quartile)
 
 ## A small (but didactic) joke  

@@ -89,6 +89,7 @@ x <- sample(x=letters[1:5],
             rep=TRUE)
 
 table(x)
+sum(table(x))
 
 (ft.c <- fdt_cat(x))
 
@@ -105,7 +106,7 @@ mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   n3=rnorm(100, 50, 4),
                   stringsAsFactors=TRUE)
 
-head(mdf)
+str(mdf)
 
 (ft.c <- fdt_cat(mdf))
 

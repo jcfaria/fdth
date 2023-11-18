@@ -1,5 +1,5 @@
-%\VignetteIndexEntry{fdt}
-\documentclass[10pt,a4paper]{article}
+%\VignetteIndexEntry{LaTeX table for fdt objects}
+\documentclass[10pt, a4paper]{article}
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}

@@ -61,9 +61,11 @@ mdf <- data.frame(x=rnorm(1e2,
 
 head(mdf)
 
+# From a data.frame
 apply(mdf,
       2,
       var)
 
-var(fdt(mdf))      
+# From a fdt object
+var(fdt(mdf))
 }

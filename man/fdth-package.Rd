@@ -216,7 +216,8 @@ curve(dnorm(x,
             sd=1),
       n=1e3,      
       add=TRUE, 
-      lwd=4)
+      lwd=3,
+      col='dark blue')
 
 #=============================================
 # Data.frames: multivariated with categorical
@@ -385,7 +386,7 @@ mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   n3=rnorm(100, 50, 4),
                   stringsAsFactors=TRUE)
 
-head(mdf)
+str(mdf)
 
 (fdt.c <- fdt_cat(mdf))
 
