@@ -23,9 +23,9 @@
 
 \arguments{
   \item{x}{a \code{fdt} (simple or multiple) object.}
-  \item{i}{a vector of length up to the length of probs}
-  \item{probs}{vector of probabilities defining the quantiles}
-  \item{\dots}{potencial further arguments (required by generic).}
+  \item{i}{a vector with length up to the length of \code{probs}.}
+  \item{probs}{a vector of probabilities defining the quantiles.}
+  \item{\dots}{potential further arguments (required by generic).}
 }
 
 \details{\code{quantile.fdt} calculates the quantiles based on a known formula for 
@@ -93,7 +93,7 @@ quantile(fdt(mdf),
                    1, 
                    0.001))       # The permile 500
 
-median(fdt(mdf))                 # The median (all the results are the same) ;)
+median(fdt(mdf))                 # The median (all results are the same) ;)
 
 # More than one quantile
 ql <- numeric()
@@ -103,7 +103,7 @@ for(i in 1:3)
                     i=i,
                     probs=seq(0,
                               1,
-                              0.25))  # The tree quartiles
+                              0.25))  # The three quartiles
 
 names(ql) <- paste0(c(25,
                       50,

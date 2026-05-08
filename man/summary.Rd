@@ -53,14 +53,14 @@
   \item{round}{rounds \samp{fdt} columns to the specified number of
     decimal places (default 2).}
   \item{format.classes}{logical, if \code{TRUE} the first column of the
-    data.frame table will be formated using regular expression.
+    data.frame table will be formatted using a regular expression.
     The default is \dQuote{\%09.3e}.}
   \item{pattern}{same as \code{fmt} in \code{\link[base]{sprintf}}.}
   \item{row.names}{logical (or character vector), indicating whether (or what)
     row names should be printed. The default is \code{FALSE}.}
   \item{right}{logical, indicating whether or not strings should be right-aligned.
     The default is right-alignment.}
-  \item{\dots}{optional further arguments (require by generic).}
+  \item{\dots}{optional further arguments (required by generic).}
 }
 
 \details{
@@ -94,7 +94,7 @@
 library (fdth)
 
 #======================
-# Vectors: univariated
+# Vectors: univariate
 #======================
 set.seed(1)
 
@@ -108,21 +108,21 @@ str(ft)
 
 ft
 
-summary(ft)  # the same
+summary(ft)  # same result
 
 summary(ft,
-        format=TRUE)      # It can not be what you want to publications!
+        format=TRUE)      # It may not be what you want for publication!
 
 summary(ft,
         format=TRUE,
-        pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
+        pattern='\%.2f')   # Better, but can it be improved?
 
 summary(ft,
         col=c(1:2, 4, 6),
         format=TRUE,
         pattern='\%.2f')   # Yes, it can!
 
-range(x)                  # To know x
+range(x)                  # To inspect the range of x
 
 summary(fdt(x,
             start=1,
@@ -132,7 +132,7 @@ summary(fdt(x,
         format=TRUE,
         pattern='\%d')     # Is it nice now?
 
-ft[['table']]                        # Stores the feq. dist. table (fdt)
+ft[['table']]                        # Stores the frequency distribution table (fdt)
 ft[['breaks']]                       # Stores the breaks of fdt
 ft[['breaks']]['start']              # Stores the left value of the first class
 ft[['breaks']]['end']                # Stores the right value of the last class
@@ -140,7 +140,7 @@ ft[['breaks']]['h']                  # Stores the class interval
 as.logical(ft[['breaks']]['right'])  # Stores the right option
 
 #=============================================
-# Data.frames: multivariated with categorical
+# Data.frames: multivariate with categorical variables
 #=============================================
 mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   X2=as.factor(rep(1:10, 10)),
@@ -159,7 +159,7 @@ ft <- fdt(mdf,
 
 str(ft)
 
-summary(ft)  # the same
+summary(ft)  # same result
 
 summary(ft,
         format=TRUE)
@@ -217,7 +217,7 @@ summary(fdt(iris,
         patter='\%04.2f')
 
 #=========================
-# Matrices: multivariated
+# Matrices: multivariate
 #=========================
 summary(fdt(state.x77),
         col=c(1:2, 4, 6),

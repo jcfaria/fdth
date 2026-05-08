@@ -30,13 +30,13 @@ sd(x, \dots)
   \item{\dots}{required to be generic.}
 }
 
-\details{\code{sd.fdt} calculates the value of the variance based on a known formula. 
-\code{sd.fdt.multiple} calls \code{sd.fdt}for each variable, that is, each column of the data.frame.
+\details{\code{sd.fdt} calculates the value of the standard deviation based on a known formula.
+\code{sd.fdt.multiple} calls \code{sd.fdt} for each variable, that is, each column of the data.frame.
 }
 
-\value{\code{sd.fdt} returns a numeric vector containing the value of the median of the \code{fdt}.
- \code{median.fdt.multiple} returns a list, where each element is a numeric vector 
- containing the value of the variance of the \code{fdt} for each variable.
+\value{\code{sd.fdt} returns a numeric vector containing the value of the standard deviation of the \code{fdt}.
+ \code{sd.fdt.multiple} returns a list, where each element is a numeric vector
+ containing the value of the standard deviation of the \code{fdt} for each variable.
 }
 
 \seealso{\code{var.fdt}, \code{mean.fdt}.

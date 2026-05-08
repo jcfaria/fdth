@@ -9,7 +9,7 @@
 }
 
 \description{
-  A S3 set of methods to easily perform categorical frequency distribution table (\samp{fdt_cat}) from
+  An S3 set of methods to easily create categorical frequency distribution tables (\samp{fdt_cat}) from
   \code{vector}, \code{data.frame} and \code{matrix} objects.
 }
 
@@ -53,9 +53,9 @@ fdt_cat(x, \dots)
   These options make the \samp{fdt_cat} very easy and flexible.
 
   The \samp{fdt_cat} object stores information to be used by methods \code{summary},
-  \code{print}, \code{plot} and \code{mfv}. The result of plot is a bar plot.
+  \code{print}, \code{plot} and \code{mfv}. The result of \code{plot} is a bar plot.
   The methods \code{summary.fdt_cat}, \code{print.fdt_cat} and \code{plot.fdt_cat} provide a reasonable
-  set of parameters to format and plot the \samp{fdt_cat} object in a pretty
+  set of parameters to format and plot the \samp{fdt_cat} object in a clear
   (and publishable) way.
 }
 
@@ -97,7 +97,7 @@ sum(table(x))
                  sort=FALSE))
 
 #================================================
-# Data.frame: multivariated with two categorical
+# Data.frame: multivariate with two categorical variables
 #================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
@@ -120,7 +120,7 @@ str(mdf)
                  by='c1'))
 
 #================================================
-# Matrix: two categorical
+# Matrix: two categorical variables
 #================================================
 x <- matrix(sample(x=letters[1:10],
                    size=100,

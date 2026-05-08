@@ -30,12 +30,12 @@ var(x, \dots)
   \item{\dots}{required to be generic.}
 }
 
-\details{\code{var.fdt} calculates the value of the variance based on a known formula. 
-\code{var.fdt.multiple} calls \code{var.fdt}for each variable, that is, each column of the data.frame.
+\details{\code{var.fdt} calculates the value of the variance based on a known formula.
+\code{var.fdt.multiple} calls \code{var.fdt} for each variable, that is, each column of the data.frame.
 }
 
-\value{\code{var.fdt} returns a numeric vector containing the value of the median of the \code{fdt}.
- \code{median.fdt.multiple} returns a list, where each element is a numeric vector 
+\value{\code{var.fdt} returns a numeric vector containing the value of the variance of the \code{fdt}.
+ \code{var.fdt.multiple} returns a list, where each element is a numeric vector
  containing the value of the variance of the \code{fdt} for each variable.
 }
 

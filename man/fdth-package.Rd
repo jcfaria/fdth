@@ -8,13 +8,13 @@
 }
 
 \description{
-  The \pkg{fdth} package contains a set of functions which easily allows
-  the user to make frequency distribution tables (\samp{fdt}), its associated
+  The \pkg{fdth} package contains a set of functions that allow
+  users to create frequency distribution tables (\samp{fdt}) and their associated
   histograms and frequency polygons (absolute, relative and cumulative).
-  The \samp{fdt} can be formatted in many ways which may be suited to
-  publication in many different ways (papers, books, etc).
-  The \code{plot} method (S3) is the histogram which can be dealt with the
-  easiness and flexibility of a high level function.
+  The \samp{fdt} can be formatted in many ways suitable for
+  publication (papers, books, etc).
+  The S3 \code{plot} method produces histograms with the
+  convenience and flexibility of a high-level function.
 }
 
 \details{
@@ -22,7 +22,7 @@
   observation occurs in the data. The distribution of a variable is the pattern
   of frequencies of the observation.
 
-  Frequency distribution table \samp{fdt} can be used for ordinal, continuous and  categorical variables. 
+  Frequency distribution tables (\samp{fdt}) can be used for ordinal, continuous, and categorical variables.
 
   The \code{R} environment provides a set of functions (generally low level)
   enabling the user to perform a \samp{fdt} and the associated graphical representation,
@@ -30,13 +30,13 @@
   is the basis for the estimation of probability density function used in 
   parametrical inference.
 
-  However, for novices or ocasional users of \code{R}, it can be laborious to
+  However, for novice or occasional users of \code{R}, it can be laborious to
   find out all necessary functions and graphical parameters to do a normalized 
-  and pretty \samp{fdt} and the associated histogram ready for publications.
+  and clear \samp{fdt} tables and associated histograms ready for publication.
 
-  That is the aim of this package, i.e, to allow the user easily and flexibly to do
-  both: the \samp{fdt} and the histogram. The most common input data for univariated is
-  a \code{vector}. For multivariated data can be used both: a \code{data.frame},
+  That is the aim of this package, i.e., to allow users to create
+  both \samp{fdt} tables and histograms easily and flexibly. The most common input for univariate data is
+  a \code{vector}. For multivariate data, both a \code{data.frame}
   in this case also allowing grouping all numerical variables according to one
   categorical, or \code{matrices}.
 
@@ -46,7 +46,7 @@
   respectively) will be used, if the \samp{x} object is categorical then just use
   \code{d <- fdt_cat(x)}.
 
-  If the varable is of contiuos type, you can also supply:
+  If the variable is continuous, you can also supply:
   \itemize{
     \item \samp{x} and \samp{k} (number of class intervals);
     \item \samp{x}, \samp{start} (left endpoint of the first class interval) and
@@ -85,7 +85,7 @@ library (fdth)
 
 # Numerical
 #======================
-# Vectors: univariated
+# Vectors: univariate
 #======================
 x <- rnorm(n=1e3,
            mean=5,
@@ -163,25 +163,25 @@ plot(ft,
 # Summary
 ft
 
-summary(ft)  # the same
+summary(ft)  # same result
 
-print(ft)    # the same
+print(ft)    # same result
 
-show(ft)     # the same
+show(ft)     # same result
 
 summary(ft,
-        format=TRUE)      # It can not be what you want to publications!
+        format=TRUE)      # This may not be what you want for publication.
 
 summary(ft,
         format=TRUE,
-        pattern='\%.2f')   # Huumm ..., good, but ... Can it be better?
+        pattern='\%.2f')   # Better, but can it be improved?
 
 summary(ft,
         col=c(1:2, 4, 6),
         format=TRUE,
         pattern='\%.2f')   # Yes, it can!
 
-range(x)                  # To know x
+range(x)                  # To inspect the range of x
 
 summary(fdt(x,
             start=1, 
@@ -192,7 +192,7 @@ summary(fdt(x,
         pattern='\%d')     # Is it nice now?
 
 # The fdt.object
-ft[['table']]                        # Stores the feq. dist. table (fdt)
+ft[['table']]                        # Stores the frequency distribution table (fdt)
 ft[['breaks']]                       # Stores the breaks of fdt
 ft[['breaks']]['start']              # Stores the left value of the first class
 ft[['breaks']]['end']                # Stores the right value of the last class
@@ -220,7 +220,7 @@ curve(dnorm(x,
       col='dark blue')
 
 #=============================================
-# Data.frames: multivariated with categorical
+# Data.frames: multivariate with categorical variables
 #=============================================
 mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   X2=as.factor(rep(1:10, 10)),
@@ -260,7 +260,7 @@ plot(ft,
 plot(ft,
      type='cfph')
 
-# Poligons
+# Polygons
 plot(ft,
      v=TRUE,
      type='fp')
@@ -287,11 +287,11 @@ plot(ft,
 # Summary
 ft
 
-summary(ft)  # the same
+summary(ft)  # same result
 
-print(ft)    # the same
+print(ft)    # same result
 
-show(ft)     # the same
+show(ft)     # same result
 
 summary(ft,
         format=TRUE)
@@ -347,7 +347,7 @@ plot(fdt(iris,
      v=TRUE)
 
 #=========================
-# Matrices: multivariated
+# Matrices: multivariate
 #=========================
 summary(fdt(state.x77),
         col=c(1:2, 4, 6),
@@ -377,7 +377,7 @@ x <- sample(x=letters[1:5],
                   sort=FALSE))
 
 #================================================
-# Data.frame: multivariated with two categorical
+# Data.frame: multivariate with two categorical variables
 #================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   c2=as.factor(sample(1:10, 1e2, rep=TRUE)),

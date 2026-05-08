@@ -9,7 +9,7 @@
 }
 
 \description{
-  A S3 set of methods to easily perform frequency distribution table (\samp{fdt}) from
+  An S3 set of methods to easily create frequency distribution tables (\samp{fdt}) from
   \code{vector}, \code{data.frame} and \code{matrix} objects.
 }
 
@@ -55,28 +55,28 @@ fdt(x, \dots)
     c(\dQuote{Sturges}, \dQuote{Scott}, \dQuote{FD}).}
   \item{right}{right endpoints open (default = \code{FALSE}).}
   \item{na.rm}{logical. Should missing values be removed? (default = \code{FALSE}).}
-  \item{\dots}{potencial further arguments (required by generic).}
+  \item{\dots}{potential further arguments (required by generic).}
 }
 
 \details{
-  The simplest way to run \samp{fdt} is done by supplying only the \samp{x}
+  The simplest way to run \samp{fdt} is by supplying only the \samp{x}
   object, for example: \code{nm <- fdt(x)}. In this case all necessary
   default values (\samp{breaks} and \samp{right}) (\dQuote{Sturges} and \code{FALSE}
   respectively) will be used.
 
-  It can be provided also:
+  It can also be provided as:
   \itemize{
     \item \samp{x} and \samp{k} (number of class intervals);
     \item \samp{x}, \samp{start} (left endpoint of the first class interval) and
     \samp{end} (right endpoint of the last class interval); or
     \item \samp{x}, \samp{start}, \samp{end} and \samp{h} (class interval width).
   }
-  These options make the \samp{fdt} very easy and flexible.
+  These options make \samp{fdt} very easy and flexible.
 
-  The \samp{fdt} object stores information to be used by methods \code{summary},
-  \code{print}, \code{plot}, \code{mean}, \code{median} and \code{mfv}. The result of plot is a histogram.
+  The \samp{fdt} object stores information used by methods \code{summary},
+  \code{print}, \code{plot}, \code{mean}, \code{median} and \code{mfv}. The result of \code{plot} is a histogram.
   The methods \code{summary}, \code{print} and \code{plot} provide a reasonable
-  set of parameters to format and plot the \samp{fdt} object in a pretty
+  set of parameters to format and plot the \samp{fdt} object in a clear
   (and publishable) way.
 }
 
@@ -154,7 +154,7 @@ sort(x <- rep(1:3, 3))
            right=TRUE))
 
 #================================================
-# Data.frame: multivariated with two categorical
+# Data.frame: multivariate with two categorical variables
 #================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, TRUE),
                   c2=as.factor(sample(1:10, 1e2, TRUE)),
@@ -196,7 +196,7 @@ str(mdf)
            by='Species'))
 
 #=========================
-# Matrices: multivariated
+# Matrices: multivariate
 #=========================
 (ft <-fdt(state.x77))
 

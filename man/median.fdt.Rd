@@ -21,11 +21,11 @@
   \item{\dots}{required by generic.}
 }
 
-\details{\code{median.fdt} calculates the value of the median based on a known formula. 
-\code{median.fdt.multiple} calls \code{mean.fdt}for each variable, that is, each column of the data.frame.
+\details{\code{median.fdt} calculates the median value based on a known formula.
+\code{median.fdt.multiple} calls \code{median.fdt} for each variable, that is, each column of the data.frame.
 }
 
-\value{\code{mean.fdt} returns a numeric vector containing the value of the median of the \code{fdt}.
+\value{\code{median.fdt} returns a numeric vector containing the value of the median of the \code{fdt}.
  \code{median.fdt.multiple} returns a list, where each element is a numeric vector 
  containing the value of the median of the \code{fdt} for each variable.
 }

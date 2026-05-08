@@ -41,11 +41,11 @@
 
 \arguments{
   \item{x}{A \code{fdt}, \code{fdt.multiple} or \code{fdt_cat.multiple} class object.}
-  \item{caption}{Character vector of length 1 or 2 containing the table's caption or title. See \code{xtable} function to more details.}
-  \item{label}{Character vector of length 1 containing the LaTeX label or HTML anchor. See \code{xtable} function to more details.}
-  \item{align}{Character vector of length equal to the number of columns of the resulting table, indicating the alignment of the corresponding columns. See \code{xtable} function to more details.}
-  \item{digits}{Numeric vector of length equal to one (in which case it will be replicated as necessary) or to the number of columns of the resulting table or matrix of the same size as the resulting table, indicating the number of digits to display in the corresponding columns. See \code{xtable} function to more details.}
-  \item{display}{Character vector of length equal to the number of columns of the resulting table, indicating the format for the corresponding columns. See \code{xtable} function to more details.}
+  \item{caption}{Character vector of length 1 or 2 containing the table caption or title. See the \code{xtable} function for more details.}
+  \item{label}{Character vector of length 1 containing the LaTeX label or HTML anchor. See the \code{xtable} function for more details.}
+  \item{align}{Character vector of length equal to the number of columns of the resulting table, indicating the alignment of the corresponding columns. See the \code{xtable} function for more details.}
+  \item{digits}{Numeric vector of length equal to one (in which case it will be replicated as necessary) or to the number of columns of the resulting table, or matrix of the same size as the resulting table, indicating the number of digits to display in the corresponding columns. See the \code{xtable} function for more details.}
+  \item{display}{Character vector of length equal to the number of columns of the resulting table, indicating the format for the corresponding columns. See the \code{xtable} function for more details.}
   \item{auto}{Logical, indicating whether to apply automatic format when no value is passed to \code{align}, \code{digits}, or \code{display}}
   \item{\dots}{Additional arguments.}
 }
@@ -53,7 +53,7 @@
 \details{
   The functions \code{latex.fdt} was deprecated. We understand over the years that creating a method for the generic \code{xtable} function would be inevitable, given the advancement of the xtable package and its support by the academic community.
 
-  Then, the \code{fdt}, \code{fdt.multiple} and \code{fdt_cat.multiple} methods were created for the generic \code{xtable} function. For object of the \code{fdt_cat} class, no methods were created, as they inherit the \code{data.frame} class, and therefore, the \code{xtable} functions can be used directly for such objects.
+  Then, the \code{fdt}, \code{fdt.multiple} and \code{fdt_cat.multiple} methods were created for the generic \code{xtable} function. For objects of class \code{fdt_cat}, no methods were created, as they inherit from \code{data.frame}; therefore, the \code{xtable} function can be used directly for such objects.
 
   Objects of the \code{fdt.multiple} and \code{fdt_cat.multiple} class, when using the \code{xtable} function, will have the \code{xtableList} class. Although it may seem confusing, the \code{xtableList} function in the xtable package has no generic function and therefore it was not possible to create a method of type \code{xtableList.fdt.multiple}. Therefore, a method of the \code{xtable.fdt.multiple} class was created, but the function \code{xtableList} is being used internally.
 

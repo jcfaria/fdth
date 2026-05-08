@@ -151,7 +151,7 @@
   \item{col}{a \code{vector} of colors.}
   \item{xlim}{the \samp{x} limits of the plot.}
   \item{ylim}{the \samp{y} limits of the plot.}
-  \item{main}{title of the plot(s). This option has priority over \samp{main.vars}, i.e, if any value is informed,
+  \item{main}{title of the plot(s). This option has priority over \samp{main.vars}, i.e., if any value is provided,
     the variable names will not be used as title of the plot(s). For \code{fdt.multiple}, the value should be a vector of characters,
     in this case, the R's recycling rule will be used.}
   \item{main.vars}{logical flag: should the variables names be added as title of each plot (default \code{TRUE})?}
@@ -160,25 +160,25 @@
     \samp{1:} horizontal, \cr
     \samp{2:} perpendicular to the axes, \cr
     \samp{3:} vertical.}
-  \item{box}{if \code{TRUE} (the default!), a box will be placed on the graphics. Only to categorical variable.}
-  \item{grouped}{if \code{TRUE}, the lines of the polygon types will be plotted in the same graphics. It's work only if the "by" argument is used.}
+  \item{box}{if \code{TRUE} (the default), a box will be placed on the graphic. Only for categorical variables.}
+  \item{grouped}{if \code{TRUE}, the lines of polygon types will be plotted on the same graphic. It works only if the \code{by} argument is used.}
   \item{args.legend}{list of additional arguments to be passed to \code{legend}; names of the list are used as argument names. Only used if \code{grouped=TRUE}. The default is \code{NULL}.}
   \item{\dots}{optional plotting parameters.}
 }
 
 \details{
   The result is a single histogram or polygon (absolute, relative or cumulative)
-  for \code{fdt.default} or a set of histograms or polygon (absolute, relative or
+  for \code{fdt.default} or a set of histograms or polygons (absolute, relative or
   cumulative) for \code{fdt.multiple} objects.
   Both \samp{default and multiple} try to compute the maximum number of histograms
   that will fit on one page, then it draws a matrix of histograms. More than one
   graphical device may be opened to show all histograms.
   
-  The result is a single barplot, polygon, dotchar (absolute, relative or cumulative)
+  The result is a single bar plot, polygon, dot chart (absolute, relative or cumulative)
   and Pareto chart for \code{fdt_cat.default} or a set of the same graphs for 
   \code{fdt_cat.multiple} objects.
   Both \samp{default and multiple} try to compute the maximum number of histograms
-  that will fit on one page, then it draws a matrix of graphs lited above. More than one
+  that will fit on one page, then it draws a matrix of graphs listed above. More than one
   graphical device may be opened to show all graphs.
 }
 
@@ -192,7 +192,7 @@
 library(fdth)
 
 #================================
-# Vectors: univariated numerical
+# Vectors: univariate numerical
 #================================
 x <- rnorm(n=1e3,
            mean=5,
@@ -244,7 +244,7 @@ plot(ft,
 plot(ft,
      type='cfph')  # Cumulative frequency (%) histogram
 
-# Poligons
+# Polygons
 plot(ft,
      type='fp')    # Absolute frequency polygon
 
@@ -286,7 +286,7 @@ curve(dnorm(x,
 
 
 #==================================
-# Vectors: univariated categorical
+# Vectors: univariate categorical
 #==================================
 x <- sample(letters[1:5],
             1e3,
@@ -314,7 +314,7 @@ plot(ft.c,
      type='pa')
 
 #=============================================
-# Data.frames: multivariated with categorical
+# Data.frames: multivariate with categorical variables
 #=============================================
 mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   X2=as.factor(rep(1:10, 10)),
@@ -361,7 +361,7 @@ plot(ft,
 plot(ft,
      type='cfph')
 
-# Poligons
+# Polygons
 plot(ft,
      v=TRUE,
      type='fp')
@@ -440,7 +440,7 @@ plot(ft.c,
      pch=19)
 
 #=========================
-# Matrices: multivariated
+# Matrices: multivariate
 #=========================
 plot(fdt(state.x77))
 
