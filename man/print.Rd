@@ -118,12 +118,12 @@ print(ft,
 
 print(ft,
       format=TRUE,
-      pattern='%.2f')   # Better, but can it be improved?
+      pattern='\%.2f')   # Better, but can it be improved?
 
 print(ft,
       col=c(1:2, 4, 6),
       format=TRUE, 
-      pattern='%.2f')   # Yes, it can!
+      pattern='\%.2f')   # Yes, it can!
 
 range(x)                 # To inspect the range of x
 
@@ -133,7 +133,7 @@ print(fdt(x,
           h=1),
       col=c(1:2, 4, 6),
       format=TRUE,
-      pattern='%d')     # Is it nice now?
+      pattern='\%d')     # Is it nice now?
 
 ft[['table']]                        # Stores the frequency distribution table (fdt)
 ft[['breaks']]                       # Stores the breaks of fdt
@@ -169,12 +169,12 @@ print(ft, # the s
 
 print(ft,
       format=TRUE,
-      pattern='%05.2f')  # regular expression
+      pattern='\%05.2f')  # regular expression
 
 print(ft,
       col=c(1:2, 4, 6), 
       format=TRUE, 
-      pattern='%05.2f')
+      pattern='\%05.2f')
 
 print(ft,
       col=c(1:2, 4, 6))
@@ -182,7 +182,7 @@ print(ft,
 print(ft,
       col=c(1:2, 4, 6),
       format=TRUE,
-      pattern='%05.2f')
+      pattern='\%05.2f')
 
 levels(mdf$X1)
 
@@ -209,7 +209,7 @@ print(fdt(mdf,
 print(fdt(iris,
           k=5),
       format=TRUE,
-      patter='%04.2f')
+      patter='\%04.2f')
 
 levels(iris$Species)
 
@@ -217,7 +217,7 @@ print(fdt(iris,
           k=5,
           by='Species'),
       format=TRUE, 
-      patter='%04.2f')
+      patter='\%04.2f')
 
 #=========================
 # Matrices: multivariate
@@ -231,7 +231,7 @@ print(fdt(volcano,
       col=c(1:2, 4, 6),
       round=3,
       format=TRUE,
-      pattern='%05.1f')
+      pattern='\%05.1f')
 }
 
 \keyword{fdt}

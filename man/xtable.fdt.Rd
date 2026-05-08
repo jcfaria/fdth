@@ -123,7 +123,7 @@ clim <- t1$table[1]
 clim1 <- sapply(clim,
                 as.character)
 right <- t1$breaks[4]
-pattern <- "%05.2f"
+pattern <- "\%05.2f"
 clim2 <- make.fdt.format.classes(clim1,
                                  right,
                                  pattern)

@@ -205,7 +205,7 @@ summary(ft,
 
 summary(ft,
         format=TRUE,
-        pattern='%.2f')
+        pattern='\%.2f')
 }
 
 \keyword{fdt}
