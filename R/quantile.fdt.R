@@ -3,6 +3,25 @@ quantile.fdt <- function(x,
                          i=1, 
                          probs=seq(0, 1, 0.25))
 {
+  if (!is.numeric(i) || length(i) < 1 || any(is.na(i)) || any(!is.finite(i)))
+    stop("'i' must be a finite numeric vector without missing values.")
+  
+  if (any(i != as.integer(i)))
+    stop("'i' must contain integer values only.")
+  
+  if (!is.numeric(probs) || length(probs) < 2 || any(is.na(probs)) || any(!is.finite(probs)))
+    stop("'probs' must be a finite numeric vector with at least two values.")
+  
+  if (is.unsorted(probs))
+    stop("'probs' must be sorted in non-decreasing order.")
+  
+  if (any(probs < 0) || any(probs > 1))
+    stop("'probs' values must be between 0 and 1.")
+  
+  i.max <- length(probs) - 1
+  if (any(i < 1) || any(i > i.max))
+    stop(sprintf("'i' values must be between 1 and %d for the supplied 'probs'.", i.max))
+  
   fdt <- with(x,
               table)
 
@@ -19,7 +38,11 @@ quantile.fdt <- function(x,
   {
     qpos <- ii * n / (length(probs) - 1)
     
-    posQ <- which(qpos <= fdt[, 5])[1]
+    posQ <- which(qpos <= fdt[, 5] &
+                    fdt[, 2] > 0)[1]
+    
+    if (is.na(posQ))
+      stop("Unable to locate a valid class interval for the requested quantile.")
     
     liQ <- brk[posQ]
     

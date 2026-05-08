@@ -23,8 +23,10 @@
 
 \arguments{
   \item{x}{a \code{fdt} (simple or multiple) object.}
-  \item{i}{a vector with length up to the length of \code{probs}.}
-  \item{probs}{a vector of probabilities defining the quantiles.}
+  \item{i}{an integer vector indicating which quantiles should be computed.
+  Values must be in \code{1:(length(probs)-1)}.}
+  \item{probs}{a finite numeric vector in \code{[0, 1]} defining the quantile
+  scale. It must have at least two values and be sorted in non-decreasing order.}
   \item{\dots}{potential further arguments (required by generic).}
 }
 

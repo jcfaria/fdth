@@ -59,7 +59,8 @@
     \vfill
 
     % Bottom of the page
-    {\large \today}
+    {\large \today}\\[0.3cm]
+    {\small Last revision: 2026-05-08}
 
   \end{center}
 \end{titlepage}
@@ -67,11 +68,12 @@
 
 \newpage
 
-To elaborate a simple table.
+Creating a simple table.
 
 <<tab, results=tex>>=
 library(fdth)
 library(xtable)
+set.seed(123)
 
 t1 <- fdt(rnorm(n=1e3,
                 mean=10,
@@ -82,7 +84,7 @@ t1x <- xtable(t1)
 t1x
 @
 
-The default is not good. Let's use the print function.
+The default output is not ideal. Let's use the `print` function.
 
 <<results=tex>>=
 print(t1x,
@@ -90,9 +92,9 @@ print(t1x,
       sanitize.text.function = function(x){x})
 @
 
-It's very good!
+This is much better.
 
-Replacing mathematical symbols [ and ) by $\dashv$.
+Replacing class interval delimiters `[` and `)` with `$\dashv$`.
 
 <<results=tex>>=
 newclass <- gsub("[$\\\\[\\\\)$]",
@@ -110,7 +112,7 @@ print(t3x,
       table.placement='H')
 @
 
-Standardizing the class limits to two decimal places.
+Standardizing class limits to two decimal places.
 
 <<results=tex>>=
 clim <- t1$table[1]
@@ -134,7 +136,7 @@ print(t4x,
       sanitize.text.function = function(x){x})
 @
 
-To objects of the "fdt.multiple" class.
+For objects of class `"fdt.multiple"`.
 
 <<results=tex>>=
 t5 <- fdt(iris[, c(1:2, 5)],
@@ -145,7 +147,7 @@ print(xtable(t5),
      table.placement='H')
 @
 
-Is not good! It's necessary to use the longtable begin.
+This output is not ideal. It is better to use the `longtable` environment.
 
 <<results=tex>>=
 t51 <- xtable(t5)
@@ -157,7 +159,7 @@ print(t51,
       floating=FALSE)
 @
 
-To objects of the "fdt\_cat" class.
+For objects of class `"fdt\_cat"`.
 
 <<results=tex>>=
 t6 <- fdt_cat(sample(LETTERS[1:3], 
@@ -185,7 +187,40 @@ print(t61x,
 
 @
 
-Title of the table in portuguese.
+For objects of class `"fdt\_cat.multiple"` with subheadings.
+
+<<results=tex>>=
+t62 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
+                                    replace=TRUE,
+                                    size=20),
+                          c2=sample(letters[4:6],
+                                    replace=TRUE,
+                                    size=20),
+                          stringsAsFactors=TRUE))
+attr(t62, "subheadings") <- paste0("Variable = ",
+                                  names(t62))
+print(xtable(t62),
+      table.placement='H')
+@
+
+Custom numeric formatting with `xtable`.
+
+<<results=tex>>=
+print(xtable(t1,
+             auto=FALSE,
+             digits=c(0,
+                      0,
+                      0,
+                      3,
+                      2,
+                      0,
+                      2)),
+      include.rownames=FALSE,
+      sanitize.text.function = function(x){x},
+      table.placement='H')
+@
+
+Table header in Portuguese.
 
 <<results=tex>>=
 portugueseT <- c("Intervalo de classes",
