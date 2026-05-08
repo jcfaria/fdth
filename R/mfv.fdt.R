@@ -35,8 +35,8 @@ mfv.fdt <- function(x, ...)
   h <- as.vector(with(x,
                       breaks['h']))
 
-  posMFV <- grep(max(y),
-                 y)
+  ymax <- max(y)
+  posMFV <- which(y == ymax)
 
   res <- sapply(posMFV,
                 getMFV)
