@@ -81,7 +81,7 @@ x <- rnorm(1e3,
 
 summary(ft.n,
         format=TRUE,
-        pattern='%.3f')           # Is it nice now?
+        pattern='\%.3f')           # Is it nice now?
 
 
 # Categorical

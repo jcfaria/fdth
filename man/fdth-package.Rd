@@ -170,18 +170,18 @@ print(ft)    # same result
 show(ft)     # same result
 
 summary(ft,
-        format=TRUE)       # This may not be what you want for publication.
+        format=TRUE)      # This may not be what you want for publication.
 
 summary(ft,
         format=TRUE,
-        pattern='%.2f')   # Better, but can it be improved?
+        pattern='\%.2f')   # Better, but can it be improved?
 
 summary(ft,
         col=c(1:2, 4, 6),
         format=TRUE,
-        pattern='%.2f')   # Yes, it can!
+        pattern='\%.2f')   # Yes, it can!
 
-range(x)                   # To inspect the range of x
+range(x)                  # To inspect the range of x
 
 summary(fdt(x,
             start=1, 
@@ -189,7 +189,7 @@ summary(fdt(x,
             h=1),
         col=c(1:2, 4, 6),
         format=TRUE,
-        pattern='%d')     # Is it nice now?
+        pattern='\%d')     # Is it nice now?
 
 # The fdt.object
 ft[['table']]                        # Stores the frequency distribution table (fdt)
@@ -298,12 +298,12 @@ summary(ft,
 
 summary(ft,
         format=TRUE, 
-        pattern='%05.2f')  # regular expression
+        pattern='\%05.2f')  # regular expression
 
 summary(ft,
         col=c(1:2, 4, 6), 
         format=TRUE,
-        pattern='%05.2f')
+        pattern='\%05.2f')
 
 print(ft,
       col=c(1:2, 4, 6))
@@ -311,7 +311,7 @@ print(ft,
 print(ft,
       col=c(1:2, 4, 6), 
       format=TRUE,
-      pattern='%05.2f')
+      pattern='\%05.2f')
 
 # Using by
 levels(mdf$X1)
@@ -327,7 +327,7 @@ levels(mdf$X2)
 summary(fdt(iris,
             k=5),
         format=TRUE,
-        patter='%04.2f')
+        patter='\%04.2f')
 
 plot(fdt(iris,
          k=5),
@@ -339,7 +339,7 @@ summary(fdt(iris,
             k=5,
             by='Species'),
         format=TRUE,
-        patter='%04.2f')
+        patter='\%04.2f')
 
 plot(fdt(iris,
          k=5,
@@ -361,7 +361,7 @@ summary(fdt(volcano,
         col=c(1:2, 4, 6),
         round=3,
         format=TRUE,
-        pattern='%05.1f')
+        pattern='\%05.1f')
 
 plot(fdt(volcano,
          right=TRUE))

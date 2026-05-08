@@ -108,7 +108,7 @@ for(i in 1:3)
 names(ql) <- paste0(c(25,
                       50,
                       75),
-                    '%')
+                    '\%')
 round(ql,
       2)
 }
