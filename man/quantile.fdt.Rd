@@ -96,19 +96,32 @@ quantile(fdt(mdf),
 median(fdt(mdf))                 # The median (all results are the same) ;)
 
 # More than one quantile
-ql <- numeric()
+quantile(fdt(mdf$x),
+         i=1:3,
+         probs=seq(0,
+                   1,
+                   0.25))  # The three quartiles
 
-for(i in 1:3)
-  ql[i] <- quantile(fdt(mdf$x),
-                    i=i,
-                    probs=seq(0,
-                              1,
-                              0.25))  # The three quartiles
+quantile(fdt(mdf$x),
+         i=1:9,
+         probs=seq(0,
+                   1,
+                   0.10))  # The nine deciles
 
-names(ql) <- paste0(c(25,
-                      50,
-                      75),
-                    '\%')
-round(ql,
-      2)
+# Legacy approach (no longer necessary)
+# ql <- numeric()
+# 
+# for(i in 1:3)
+#   ql[i] <- quantile(fdt(mdf$x),
+#                     i=i,
+#                     probs=seq(0,
+#                               1,
+#                               0.25))  # The three quartiles
+# 
+# names(ql) <- paste0(c(25,
+#                       50,
+#                       75),
+#                     '\%')
+# round(ql,
+#       2)
 }

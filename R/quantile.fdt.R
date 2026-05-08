@@ -7,29 +7,35 @@ quantile.fdt <- function(x,
               table)
 
   n <- fdt[nrow(fdt), 5]
-
-  posQ <- grep(TRUE,
-               i * n / (length(probs) - 1) <= fdt[, 5])[1]
-
   brk <- with(x,
               seq(breaks['start'],
                   breaks['end'],
                   breaks['h']))
 
-  liQ <- brk[posQ]
-
-  # It is important if 'posQ ' is inside of the first class
-  if (posQ - 1 <= 0)
-    sfaQ <- 0
-  else
-    sfaQ <- fdt[(posQ - 1), 5]
-
-  fQ <- fdt[posQ, 2]
-
   h <- as.vector(with(x,
                       breaks['h']))
-
-  res <- liQ + (((i * n / (length(probs) - 1)) - sfaQ) * h) / fQ
+  
+  getQ <- function(ii)
+  {
+    qpos <- ii * n / (length(probs) - 1)
+    
+    posQ <- which(qpos <= fdt[, 5])[1]
+    
+    liQ <- brk[posQ]
+    
+    # It is important if 'posQ ' is inside of the first class
+    if (posQ - 1 <= 0)
+      sfaQ <- 0
+    else
+      sfaQ <- fdt[(posQ - 1), 5]
+    
+    fQ <- fdt[posQ, 2]
+    
+    Q <- liQ + ((qpos - sfaQ) * h) / fQ
+  }
+  
+  res <- sapply(i,
+                getQ)
 
   return(res)
 }                        
