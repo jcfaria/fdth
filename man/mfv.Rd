@@ -32,8 +32,8 @@ mfv(x, \dots)
 }
 
 \arguments{
-  \item{x}{a \code{fdt} or \code{fdt_cat} (simple or multiple) object.}
-  \item{\dots}{required to be generic.}
+  \item{x}{for \code{mfv.default}, a numeric or categorical vector; for the other methods, a \code{fdt} or \code{fdt_cat} (simple or multiple) object.}
+  \item{\dots}{further arguments (required by the generic).}
 }
 
 \details{\code{mfv.fdt} and \code{mfv.fdt_cat} calculate the most frequent value (mfv) based on a known formula.
@@ -52,7 +52,7 @@ or \code{mfv.fdt_cat}, respectively, for each variable, that is, each column of 
  containing the mfv value(s) of the \code{fdt_cat} for each variable.
 }
 
-\seealso{\code{mean.fdt}, \code{median.fdt}.
+\seealso{\code{mean.fdt}, \code{median.fdt}, \code{\link{quantile.fdt}}.
 }
 
 \author{
@@ -151,4 +151,4 @@ mfv(mdf$c3)   # From vector c3
 (ft <- fdt_cat(mdf))
 
 mfv(ft)      # From grouped data in a fdt object
-}   
+}

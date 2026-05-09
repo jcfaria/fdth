@@ -41,7 +41,7 @@ quantile(s) from \code{fdt}.
  containing the quantile(s) of the \code{fdt} for each variable.
 }
 
-\seealso{\code{median.fdt}, \code{\link{fdt_var}}.
+\seealso{\code{median.fdt}, \code{\link{fdt_var}}, \code{\link{mfv}}.
 }
 
 \author{
@@ -51,6 +51,40 @@ quantile(s) from \code{fdt}.
 }
 
 \examples{
+x <- rnorm(n=1e3,
+           mean=5,
+           sd=1)
+
+(ft <- fdt(x))
+
+# Quartile from vector
+quantile(x)[2:4]
+
+# Quartile from grouped data in a fdt object
+quantile(ft,
+         i=1:3)
+
+# Quartile from vector
+quantile(x,
+         probs=seq(from=0,
+                   to=1,
+                   by=.1))[2:10]
+
+# Decile from grouped data in a fdt object
+quantile(ft,
+         i=1:9,
+         probs=seq(from=0,
+                   to=1,
+                   by=.1))
+
+# Percentile from grouped data in a fdt object
+quantile(ft,
+         i=1:99,
+         probs=seq(from=0,
+                   to=1,
+                   by=.01))
+
+# From a data.frame
 mdf <- data.frame(x=rnorm(1e2, 
                           20, 
                           2),
@@ -63,10 +97,10 @@ mdf <- data.frame(x=rnorm(1e2,
 
 head(mdf)
 
-# From a data.frame
+# From a data.frame (rows 2:4 are the 25\%, 50\%, and 75\% quantiles)
 apply(mdf,
       2,
-      quantile)[-c(1,4), ]
+      quantile)[2:4, ]
 
 # From a fdt object
 quantile(fdt(mdf))               # Notice that the i default is 1 (the first quartile)
