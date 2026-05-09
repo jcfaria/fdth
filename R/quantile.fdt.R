@@ -59,6 +59,12 @@ quantile.fdt <- function(x,
   
   res <- sapply(i,
                 getQ)
+  
+  # Keep names aligned with the selected probability levels (e.g., 25%, 50%).
+  q.pct <- sprintf("%.6f", 100 * probs[i + 1L])
+  q.pct <- sub("0+$", "", q.pct)
+  q.pct <- sub("\\.$", "", q.pct)
+  names(res) <- paste0(q.pct, "%")
 
   return(res)
 }                        

@@ -35,8 +35,9 @@
  for each variable, that is, each column of the data.frame.
 }
 
-\value{\code{quantile.fdt} returns a numeric vector containing the value(s) of the 
-quantile(s) from \code{fdt}.
+\value{\code{quantile.fdt} returns a named numeric vector containing the value(s) of the 
+quantile(s) from \code{fdt}. Names are derived from the selected probability levels
+in \code{probs} (for example, \code{25\%}, \code{50\%}, \code{75\%}).
  \code{quantile.fdt.multiple} returns a list, where each element is a numeric vector 
  containing the quantile(s) of the \code{fdt} for each variable.
 }
