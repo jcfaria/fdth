@@ -3,6 +3,9 @@
 ## 1.3-4 (2026-05-09) - Faria, J. C.
 
 - Added **testthat**-based tests under `tests/testthat/` (including checks for `summary(..., format.classes = TRUE, pattern = "%.2f")` using normal R strings, avoiding `\%` quoting issues from `.Rd` examples).
+- `quantile.fdt` now returns a named numeric vector (for example, `25%`, `50%`, `75%`), with tests and documentation updates for this behavior.
+- Restored `var` and `sd` as S3 generics for `fdt` / `fdt.multiple` (with `var.default` and `sd.default` methods), matching previous package behavior when attaching `fdth`.
+- Improved vignette didactics in `vignettes/latex_fdt.Rnw` with a quick-start section, a compact `xtable::print` arguments guide, reproducible categorical examples, and closing takeaways.
 
 ## 1.3-3 (2026-05-08) - Faria, J. C.
 
