@@ -8,6 +8,8 @@ fdt_cat.matrix            S3 method for `matrices'
 fdt.data.frame            S3 method for `data.frames'
 fdt.default               S3 method for `vectors'
 fdt.matrix                S3 method for `matrices'
+fdt_sd                    Standard deviation for `fdt' objects (S3 generic)
+fdt_var                   Variance for `fdt' objects (S3 generic)
 make.fdt                  To make a complet fdt from numeric vectors (or single tables) for continuous
 make.fdt_cat              To make a complet fdt from numeric vectors (or single tables) for categorical
 make.fdt_cat.multiple     To make tables from a `data.frames' or `matrices' containing at least one categorical column
@@ -27,9 +29,9 @@ print.fdt_cat.multiple    S3 method for `fdt_cat.multiple' objects
 print.fdt.default         S3 method for `fdt.default' objects
 print.fdt.multiple        S3 method for `fdt.multiple' objects
 quantile.fdt              S3 method for `fdt' objects
-sd.fdt                    S3 method for `fdt' objects
+fdt_sd.fdt                S3 method for `fdt' objects
 summary.fdt_cat.default   S3 method for `fdt_cat.default' objects
 summary.fdt_cat.multiple  S3 method for `fdt_cat.multiple' fdt objects
 summary.fdt.default       S3 method for `fdt.default' objects
 summary.fdt.multiple      S3 method for `fdt.multiple' fdt objects
-var.fdt                   S3 method for `fdt' objects
+fdt_var.fdt               S3 method for `fdt' objects

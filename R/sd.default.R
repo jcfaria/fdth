@@ -1,3 +1,3 @@
-sd.default <- function(x, ...)
+fdt_sd.default <- function(x, ...)
   stats::sd(x, ...)
 

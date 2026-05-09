@@ -1,4 +1,4 @@
-sd.fdt <- function(x, ...)
+fdt_sd.fdt <- function(x, ...)
 {
   brk <- with(x,
               seq(breaks['start'],

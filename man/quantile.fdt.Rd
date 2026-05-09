@@ -41,7 +41,7 @@ quantile(s) from \code{fdt}.
  containing the quantile(s) of the \code{fdt} for each variable.
 }
 
-\seealso{\code{median.fdt}, \code{var.fdt}.
+\seealso{\code{median.fdt}, \code{\link{fdt_var}}.
 }
 
 \author{

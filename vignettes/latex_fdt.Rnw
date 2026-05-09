@@ -1,228 +1,288 @@
 %\VignetteIndexEntry{LaTeX table for fdt objects}
-\documentclass[10pt, a4paper]{article}
-\usepackage[brazil]{babel}
+%\VignetteEngine{knitr::knitr}
+%\VignetteEncoding{UTF-8}
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[sc]{mathpazo}
-\usepackage[T1]{fontenc}
+\usepackage{microtype}
 \usepackage{geometry}
-\geometry{verbose,
-  tmargin=2.5cm, 
-  bmargin=2.5cm, 
-  lmargin=2.5cm, 
-  rmargin=2.5cm}
-\usepackage[urlcolor=blue,
-  citecolor=red,
-  colorlinks=true]{hyperref}
+\usepackage{titlesec}
+
+\geometry{
+  a4paper,
+  tmargin=2.5cm,
+  bmargin=2.5cm,
+  lmargin=2.5cm,
+  rmargin=2.5cm
+}
+
+%% Accent and subtle shades (tables / code remain from xtable / knitr)
+\definecolor{accent}{RGB}{26, 82, 118}
+\definecolor{rulegray}{RGB}{180, 180, 180}
+\definecolor{titlemuted}{RGB}{90, 90, 90}
+
+\usepackage[
+  colorlinks=true,
+  linkcolor=accent,
+  citecolor=accent,
+  urlcolor=accent
+]{hyperref}
+\hypersetup{
+  pdftitle={LaTeX table for fdt objects},
+  pdfauthor={José C. Faria, Ivan B. Allaman}
+}
+
 \usepackage{url}
-\usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{parskip}
 \usepackage[round]{natbib}
 \usepackage{morefloats}
 
-% The four packages below are required by latex.fdt function
+% Required by \texttt{latex.fdt}
 \usepackage{multirow}
 \usepackage{colortbl}
 \usepackage{array}
 \usepackage{threeparttable}
 
-\setlength\parindent{0pt}
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{accent}}
+  {\thesection}{0.75em}{}
+\titlespacing*{\section}{0pt}{2.25ex plus .5ex minus .2ex}{1.25ex plus .2ex}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{titlemuted}}
+  {\thesubsection}{0.65em}{}
+
+\newcommand{\HRule}{%
+  \leavevmode\leaders\hrule height 0.6pt\hfill\kern0pt\relax}
+\newcommand{\titleaccentline}{%
+  {\color{accent}\rule{\linewidth}{1.4pt}}}
 
 \begin{document}
 
 \begin{titlepage}
-  \begin{center}
+  \centering
+  \vspace*{1.2cm}
 
-  % Title
-    \HRule \\[0.4cm]
-    {\huge \bfseries \LaTeX~table for fdt objects} \\[0.4cm]
+  {\color{rulegray}\HRule}
+  \vspace{0.55cm}
 
-    \HRule \\[1.5cm]
+  {\Huge\bfseries\color{accent}%
+    \LaTeX\ table for \texttt{fdt} objects}
 
-    % Author and user
-    \begin{minipage}{0.5\textwidth}
-      \begin{flushleft} \large
-        \emph{Authors:}\\
-        José C. \textsc{Faria} \\
-        e Ivan B. \textsc{Allaman}
-      \end{flushleft}
-    \end{minipage}
-    \begin{minipage}{0.4\textwidth}
-      \begin{flushright} \large
-        \emph{Customization in \LaTeX:} \\
-        José C. \textsc{Faria}
-      \end{flushright}
-    \end{minipage}
+  \vspace{0.35cm}
+  {\large\color{titlemuted}%
+    Examples with \texttt{xtable} and formatting}
 
-    \vfill
+  \vspace{0.55cm}
+  {\color{rulegray}\HRule}
 
-    % Bottom of the page
-    {\large \today}\\[0.3cm]
-    {\small Last revision: 2026-05-08}
+  \vspace{2.4cm}
 
-  \end{center}
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedright
+    \textbf{\color{titlemuted}Authors}\\[0.35em]
+    José C.\ \textsc{Faria}\\
+    Ivan B.\ \textsc{Allaman}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.48\textwidth}
+    \raggedleft
+    \textbf{\color{titlemuted}\LaTeX\ customization}\\[0.35em]
+    José C.\ \textsc{Faria}
+  \end{minipage}
+
+  \vfill
+
+  \titleaccentline
+  \vspace{0.6cm}
+  {\large\today}
 \end{titlepage}
-\vspace{3cm}
 
+<<setup, include=FALSE>>=
+knitr::opts_chunk$set(
+  results = "asis",
+  echo = TRUE,
+  comment = NA,
+  tidy.opts = list(width.cutoff = 72)
+)
+@
+
+\vspace{1.25cm}
+\tableofcontents
 \newpage
+
+\section{First table}
 
 Creating a simple table.
 
-<<tab, results=tex>>=
+<<tab, message=FALSE, warning=FALSE>>=
 library(fdth)
 library(xtable)
 set.seed(123)
 
-t1 <- fdt(rnorm(n=1e3,
-                mean=10,
-                sd=2),
-          x.round=3)
+t1 <- fdt(rnorm(n = 1e3,
+                mean = 10,
+                sd = 2),
+          x.round = 3)
 
 t1x <- xtable(t1)
 t1x
 @
 
-The default output is not ideal. Let's use the `print` function.
+\subsection{Using \texttt{print}}
 
-<<results=tex>>=
+The default output is not ideal. We use the \texttt{print} function.
+
+<<print-default>>=
 print(t1x,
-      include.rownames=FALSE,
-      sanitize.text.function = function(x){x})
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x)
 @
 
 This is much better.
 
-Replacing class interval delimiters `[` and `)` with `$\dashv$`.
+\section{Delimiters and class limits}
 
-<<results=tex>>=
+\subsection{Replacing delimiters with \texttt{\textbackslash dashv}}
+
+Replacing class interval delimiters \texttt{[} and \texttt{)} with
+\texttt{\$\textbackslash dashv\$}.
+
+<<dashv>>=
 newclass <- gsub("[$\\\\[\\\\)$]",
                  "",
-                 t1x[,1],
-                 perl=TRUE)
+                 t1x[, 1],
+                 perl = TRUE)
 t3x <- t1x
-t3x[,1] <- newclass
+t3x[, 1] <- newclass
 
 print(t3x,
-      include.rownames=FALSE,
-      sanitize.text.function = function(x)gsub(",",
-                                               "$\\\\dashv$",
-                                               x),
-      table.placement='H')
+      include.rownames = FALSE,
+      sanitize.text.function = function(x)
+        gsub(",", "$\\\\dashv$", x),
+      table.placement = "H")
 @
+
+\subsection{Two decimal places for limits}
 
 Standardizing class limits to two decimal places.
 
-<<results=tex>>=
+<<two-decimals>>=
 clim <- t1$table[1]
-clim1 <- sapply(clim,
-                as.character)
+clim1 <- sapply(clim, as.character)
 right <- t1$breaks[4]
-pattern='%05.2f'
+pattern <- "%05.2f"
 
 clim2 <- make.fdt.format.classes(clim1,
                                  right,
                                  pattern)
 clim3 <- sapply(clim2,
-                function(x) paste0("$",
-                                   x,
-                                   "$"))
+                function(x) paste0("$", x, "$"))
 t4x <- t1x
-t4x[,1] <- clim3
+t4x[, 1] <- clim3
 
 print(t4x,
-      include.rownames=FALSE,
-      sanitize.text.function = function(x){x})
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x)
 @
 
-For objects of class `"fdt.multiple"`.
+\section{Objects of class \texttt{fdt.multiple}}
 
-<<results=tex>>=
+<<fdt-multiple>>=
 t5 <- fdt(iris[, c(1:2, 5)],
-          by='Species')
+          by = "Species")
 attr(t5, "subheadings") <- paste0("Variable = ",
                                   names(t5))
 print(xtable(t5),
-     table.placement='H')
+      table.placement = "H")
 @
 
-This output is not ideal. It is better to use the `longtable` environment.
+This output is not ideal for wide layouts; the \texttt{longtable} environment
+works better.
 
-<<results=tex>>=
+<<fdt-multiple-long>>=
 t51 <- xtable(t5)
 print(t51,
-      table.placement='H',
-      include.rownames=FALSE,
-      sanitize.text.function = function(x){x},
-      tabular.environment='longtable',
-      floating=FALSE)
+      table.placement = "H",
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x,
+      tabular.environment = "longtable",
+      floating = FALSE)
 @
 
-For objects of class `"fdt\_cat"`.
+\section{Objects of class \texttt{fdt\_cat}}
 
-<<results=tex>>=
-t6 <- fdt_cat(sample(LETTERS[1:3], 
-                     replace=TRUE,
-                     size=30))
+<<fdt-cat-one>>=
+t6 <- fdt_cat(sample(LETTERS[1:3],
+                     replace = TRUE,
+                     size = 30))
 
 t6x <- xtable(t6)
 print(t6x,
-      table.placement='H',
+      table.placement = "H",
       include.rownames = FALSE)
-      
 
-t61 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
-                                    replace=TRUE,
-                                    size=10),
-                          c2=sample(letters[4:5],
-                                    replace=TRUE,
-                                    size=10),
-                          stringsAsFactors=TRUE))
+
+t61 <- fdt_cat(data.frame(c1 = sample(LETTERS[1:3],
+                                      replace = TRUE,
+                                      size = 10),
+                          c2 = sample(letters[4:5],
+                                      replace = TRUE,
+                                      size = 10),
+                          stringsAsFactors = TRUE))
 
 t61x <- xtable(t61)
 print(t61x,
-      table.placement='H',
+      table.placement = "H",
       include.rownames = FALSE)
 
 @
 
-For objects of class `"fdt\_cat.multiple"` with subheadings.
+\section{Objects of class \texttt{fdt\_cat.multiple} with subheadings}
 
-<<results=tex>>=
-t62 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
-                                    replace=TRUE,
-                                    size=20),
-                          c2=sample(letters[4:6],
-                                    replace=TRUE,
-                                    size=20),
-                          stringsAsFactors=TRUE))
+<<fdt-cat-multi>>=
+t62 <- fdt_cat(data.frame(c1 = sample(LETTERS[1:3],
+                                     replace = TRUE,
+                                     size = 20),
+                          c2 = sample(letters[4:6],
+                                      replace = TRUE,
+                                      size = 20),
+                          stringsAsFactors = TRUE))
 attr(t62, "subheadings") <- paste0("Variable = ",
-                                  names(t62))
+                                   names(t62))
 print(xtable(t62),
-      table.placement='H')
+      table.placement = "H")
 @
 
-Custom numeric formatting with `xtable`.
+\section{Custom numeric formatting}
 
-<<results=tex>>=
+<<custom-digits>>=
 print(xtable(t1,
-             auto=FALSE,
-             digits=c(0,
-                      0,
-                      0,
-                      3,
-                      2,
-                      0,
-                      2)),
-      include.rownames=FALSE,
-      sanitize.text.function = function(x){x},
-      table.placement='H')
+             auto = FALSE,
+             digits = c(0,
+                        0,
+                        0,
+                        3,
+                        2,
+                        0,
+                        2)),
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x,
+      table.placement = "H")
 @
 
-Table header in Portuguese.
+\section{Table header in Portuguese}
 
-<<results=tex>>=
+<<portuguese-header>>=
 portugueseT <- c("Intervalo de classes",
                  "f",
                  "fr",
@@ -231,15 +291,15 @@ portugueseT <- c("Intervalo de classes",
                  "fa(%)")
 t7 <- t1$table
 names(t7) <- portugueseT
-t71 <- list(table=t7,
-            breaks=t1$breaks)
+t71 <- list(table = t7,
+            breaks = t1$breaks)
 class(t71) <- "fdt"
 t7x <- xtable(t71)
 
 print(t7x,
-      table.placement='H',
-      include.rownames=FALSE,
-      sanitize.text.function = function(x){x})
+      table.placement = "H",
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x)
 @
 
 \end{document}

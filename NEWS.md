@@ -1,5 +1,9 @@
 # fdth news
 
+## 1.3-3 (2026-05-08) - Faria, J. C.
+
+- **Breaking change:** the S3 generics `var` and `sd` were renamed to `fdt_var` and `fdt_sd` so that `library(fdth)` no longer masks `stats::var` and `stats::sd`. Use `fdt_var(x)` and `fdt_sd(x)` for `fdt` objects; use `stats::var` and `stats::sd` (or `var` / `sd` after attaching **stats** as usual) for plain vectors. Help topics `?var.fdt` and `?sd.fdt` still resolve via aliases.
+
 ## 1.3-2 (2026-05-07) - Faria, J. C.
 
 - Refactored `mfv.default` to return all modal values in multimodal cases.

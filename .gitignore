@@ -1,2 +1,13 @@
 # Example code in package build process
 *-Ex.R
+
+# Local package build (R CMD build)
+*.tar.gz
+
+# Vignette: knitr / LaTeX intermediates (not source)
+vignettes/*.tex
+vignettes/*.aux
+vignettes/*.log
+vignettes/*.out
+vignettes/*.synctex.gz
+vignettes/*.tex_old

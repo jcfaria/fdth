@@ -1,3 +1,3 @@
-var <-
-  function (x, ...) UseMethod("var")
+fdt_var <-
+  function(x, ...) UseMethod("fdt_var")
 
