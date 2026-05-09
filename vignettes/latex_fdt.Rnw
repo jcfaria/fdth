@@ -120,6 +120,33 @@ knitr::opts_chunk$set(
 \tableofcontents
 \newpage
 
+\section{Quick start}
+
+This vignette shows a practical workflow to create publication-ready \LaTeX\
+tables from \texttt{fdt} and \texttt{fdt\_cat} objects.
+
+\begin{enumerate}
+  \item Create a frequency distribution object with \texttt{fdt()} or \texttt{fdt\_cat()}.
+  \item Convert it to an \texttt{xtable} object.
+  \item Use \texttt{print()} options to control row names, sanitization and table layout.
+\end{enumerate}
+
+\subsection{Most used \texttt{xtable::print} arguments}
+
+\begin{center}
+\begin{tabular}{p{0.28\linewidth} p{0.63\linewidth}}
+\hline
+\textbf{Argument} & \textbf{Purpose} \\
+\hline
+\texttt{include.rownames} & Include or hide row names (usually \texttt{FALSE} for cleaner tables). \\
+\texttt{sanitize.text.function} & Control escaping/sanitization (useful for math delimiters and custom symbols). \\
+\texttt{table.placement} & Preferred placement for floating tables (for example, \texttt{"H"}). \\
+\texttt{tabular.environment} & Choose environment (\texttt{"tabular"}, \texttt{"longtable"}, etc.). \\
+\texttt{floating} & Enable/disable floating behavior (commonly \texttt{FALSE} with \texttt{longtable}). \\
+\hline
+\end{tabular}
+\end{center}
+
 \section{First table}
 
 Creating a simple table.
@@ -222,6 +249,7 @@ print(t51,
 \section{Objects of class \texttt{fdt\_cat}}
 
 <<fdt-cat-one>>=
+set.seed(321)
 t6 <- fdt_cat(sample(LETTERS[1:3],
                      replace = TRUE,
                      size = 30))
@@ -250,6 +278,7 @@ print(t61x,
 \section{Objects of class \texttt{fdt\_cat.multiple} with subheadings}
 
 <<fdt-cat-multi>>=
+set.seed(654)
 t62 <- fdt_cat(data.frame(c1 = sample(LETTERS[1:3],
                                      replace = TRUE,
                                      size = 20),
@@ -301,5 +330,13 @@ print(t7x,
       include.rownames = FALSE,
       sanitize.text.function = function(x) x)
 @
+
+\section{Takeaways}
+
+\begin{itemize}
+  \item For a clean default layout, use \texttt{xtable()} followed by \texttt{print(..., include.rownames = FALSE)}.
+  \item For custom class labels (delimiters or decimal pattern), combine class-string editing with \texttt{sanitize.text.function}.
+  \item For wide or multi-table outputs, prefer \texttt{tabular.environment = "longtable"} and \texttt{floating = FALSE}.
+\end{itemize}
 
 \end{document}

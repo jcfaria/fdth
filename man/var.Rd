@@ -68,4 +68,6 @@ apply(mdf,
 
 # From a fdt object
 var(fdt(mdf))
+
+unlist(var(fdt(mdf)))
 }
