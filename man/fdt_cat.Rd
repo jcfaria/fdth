@@ -96,9 +96,9 @@ sum(table(x))
 (ft.c <- fdt_cat(x,
                  sort=FALSE))
 
-#================================================
+#=========================================================
 # Data.frame: multivariate with two categorical variables
-#================================================
+#=========================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
                   n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
@@ -119,9 +119,9 @@ str(mdf)
 (ft.c <- fdt_cat(mdf,
                  by='c1'))
 
-#================================================
+#===================================
 # Matrix: two categorical variables
-#================================================
+#===================================
 x <- matrix(sample(x=letters[1:10],
                    size=100,
                    rep=TRUE),

@@ -1,3 +1,3 @@
-fdt_sd <-
-  function(x, ...) UseMethod("fdt_sd")
+sd <-
+  function(x, ...) UseMethod("sd")
 

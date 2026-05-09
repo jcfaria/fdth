@@ -93,9 +93,9 @@
 \examples{
 library (fdth)
 
-#======================
+#=====================
 # Vectors: univariate
-#======================
+#=====================
 set.seed(1)
 
 x <- rnorm(n=1e3,
@@ -139,9 +139,9 @@ ft[['breaks']]['end']                # Stores the right value of the last class
 ft[['breaks']]['h']                  # Stores the class interval
 as.logical(ft[['breaks']]['right'])  # Stores the right option
 
-#=============================================
+#======================================================
 # Data.frames: multivariate with categorical variables
-#=============================================
+#======================================================
 mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   X2=as.factor(rep(1:10, 10)),
                   Y1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
@@ -216,9 +216,9 @@ summary(fdt(iris,
         format=TRUE, 
         patter='\%04.2f')
 
-#=========================
+#========================
 # Matrices: multivariate
-#=========================
+#========================
 summary(fdt(state.x77),
         col=c(1:2, 4, 6),
         format=TRUE)

@@ -1,2 +1,2 @@
-fdt_var.default <- function(x, ...)
+var.default <- function(x, ...)
   stats::var(x, ...)

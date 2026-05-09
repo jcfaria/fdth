@@ -219,9 +219,9 @@ curve(dnorm(x,
       lwd=3,
       col='dark blue')
 
-#=============================================
+#======================================================
 # Data.frames: multivariate with categorical variables
-#=============================================
+#======================================================
 mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
                   X2=as.factor(rep(1:10, 10)),
                   Y1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
@@ -346,9 +346,9 @@ plot(fdt(iris,
          by='Species'),
      v=TRUE)
 
-#=========================
+#========================
 # Matrices: multivariate
-#=========================
+#========================
 summary(fdt(state.x77),
         col=c(1:2, 4, 6),
         format=TRUE)
@@ -376,9 +376,9 @@ x <- sample(x=letters[1:5],
 (fdt.c <- fdt_cat(x,
                   sort=FALSE))
 
-#================================================
+#=========================================================
 # Data.frame: multivariate with two categorical variables
-#================================================
+#=========================================================
 mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
                   c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
                   n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
@@ -399,9 +399,9 @@ str(mdf)
 (fdt.c <- fdt_cat(mdf,
                   by='c1'))
 
-#================================================
+#=========================
 # Matrix: two categorical
-#================================================
+#=========================
 x <- matrix(sample(x=letters[1:10],
                    size=100,
                    rep=TRUE),

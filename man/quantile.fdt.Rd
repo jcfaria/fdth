@@ -42,7 +42,7 @@ in \code{probs} (for example, \code{25\%}, \code{50\%}, \code{75\%}).
  containing the quantile(s) of the \code{fdt} for each variable.
 }
 
-\seealso{\code{median.fdt}, \code{\link{fdt_var}}, \code{\link{mfv}}.
+\seealso{\code{median.fdt}, \code{var.fdt}, \code{\link{mfv}}.
 }
 
 \author{
@@ -78,6 +78,12 @@ quantile(ft,
                    to=1,
                    by=.1))
 
+# Percentile from vector
+quantile(x,
+         probs=seq(from=0,
+                   to=1,
+                   by=.01))[2:100]
+
 # Percentile from grouped data in a fdt object
 quantile(ft,
          i=1:99,
@@ -87,7 +93,7 @@ quantile(ft,
 
 # From a data.frame
 mdf <- data.frame(x=rnorm(1e2, 
-                          20, 
+                          20,
                           2),
                   y=rnorm(1e2, 
                           30,
@@ -104,7 +110,8 @@ apply(mdf,
       quantile)[2:4, ]
 
 # From a fdt object
-quantile(fdt(mdf))               # Notice that the i default is 1 (the first quartile)
+quantile(fdt(mdf),
+         i=1:3)
 
 ## A small (but didactic) joke  
 quantile(fdt(mdf),
