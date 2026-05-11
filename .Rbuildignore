@@ -1,0 +1,4 @@
+# Version control (avoid Windows lock / permission errors during check & build)
+^.*-Ex.R$
+^\.git$
+^.*\.Rcheck$

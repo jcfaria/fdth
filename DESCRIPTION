@@ -1,14 +1,10 @@
 Package: fdth
 Version: 1.3-4
-Date: 2026-05-09
+Date: 2026-05-11
 Title: Frequency Distribution Tables, Histograms and Polygons
-Authors@R: c(person("José C.", "Faria", role=c("aut","cre"),
-               email="joseclaudio.faria@gmail.com"),
+Authors@R: c(person("José C.", "Faria", role=c("aut","cre"), email="joseclaudio.faria@gmail.com"),
              person("Ivan B.", "Allaman", role="aut"),
              person("Enio G.", "Jelihovschi", role="aut"))
-Author: José C. Faria [aut, cre],
-        Ivan B. Allaman [aut],
-        Enio G. Jelihovschi [aut]
 Maintainer: José C. Faria <joseclaudio.faria@gmail.com>
 Depends: R (>= 2.6.0)
 Imports: xtable

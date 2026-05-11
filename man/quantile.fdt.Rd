@@ -52,6 +52,8 @@ in \code{probs} (for example, \code{25\%}, \code{50\%}, \code{75\%}).
 }
 
 \examples{
+library(fdth)
+
 x <- rnorm(n=1e3,
            mean=5,
            sd=1)

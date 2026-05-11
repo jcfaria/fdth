@@ -40,7 +40,9 @@
 }
 
 \examples{
-mdf <- data.frame(x=rnorm(1e3, 
+library(fdth)
+
+mdf <- data.frame(x=rnorm(1e3,
                           20, 
                           2),
                   y=rnorm(1e3, 

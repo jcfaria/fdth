@@ -1,9 +1,6 @@
 # Example code in package build process
 *-Ex.R
 
-# Local package build (R CMD build)
-*.tar.gz
-
 # Vignette: knitr / LaTeX intermediates (not source)
 vignettes/*.tex
 vignettes/*.aux

@@ -62,26 +62,7 @@ or \code{mfv.fdt_cat}, respectively, for each variable, that is, each column of 
 }
 
 \examples{
-# Numerical
-mdf <- data.frame(x=rnorm(1e2, 
-                          20, 
-                          2),
-                  y=rnorm(1e2, 
-                          30,
-                          3),
-                  z=rnorm(1e2,
-                          40,
-                          4))
-
-head(mdf)
-
-mfv(mdf$x)   # From vector x
-mfv(mdf$y)   # From vector y
-mfv(mdf$z)   # From vector z
-
-(ft <- fdt(mdf))
-
-mfv(ft)      # From grouped data in a fdt object
+library(fdth)
 
 ## Numerical (multimodal examples)
 vx <- c(rep(3,
@@ -150,5 +131,5 @@ mfv(mdf$c3)   # From vector c3
 
 (ft <- fdt_cat(mdf))
 
-mfv(ft)      # From grouped data in a fdt object
+mfv(ft)       # From grouped data in a fdt object
 }

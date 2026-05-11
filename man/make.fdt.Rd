@@ -65,6 +65,8 @@ make.fdt_cat(f,
 
 
 \examples{
+library(fdth)
+
 # Numeric
 # Making one reference fdt
 set.seed(33)
