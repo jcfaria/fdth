@@ -1,0 +1,327 @@
+---
+title: "Introduction to fdth"
+author: "Faria, J. C.; Allaman, I. B.; Jelihovschi, E. G."
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to fdth}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse  = TRUE,
+  comment   = "#>",
+  fig.width = 6,
+  fig.height = 4,
+  fig.align = "center"
+)
+```
+
+## Overview
+
+`fdth` builds **frequency distribution tables** (fdt) and their associated
+graphics from vectors, data frames, and matrices for both **numerical** and
+**categorical** variables.
+
+Core functions:
+
+| Function | Purpose |
+|---|---|
+| `fdt()` | Frequency table for numerical data |
+| `fdt_cat()` | Frequency table for categorical data |
+| `make.fdt()` | Reconstruct a table from frequencies alone |
+| `make.fdt_cat()` | Reconstruct a categorical table from frequencies |
+| `mfv()` | Most frequent value (mode) |
+| `sd()` / `var()` | Standard deviation / variance for grouped data |
+
+```{r load}
+library(fdth)
+```
+
+---
+
+## 1. Numerical data — `fdt()`
+
+### 1.1 Basic usage
+
+```{r fdt-basic}
+set.seed(42)
+x <- rnorm(200, mean = 10, sd = 2)
+
+ft <- fdt(x)
+ft
+```
+
+The default table has six columns:
+
+| Column | Description |
+|---|---|
+| `Class limits` | Interval notation |
+| `f` | Absolute frequency |
+| `rf` | Relative frequency |
+| `rf(%)` | Relative frequency (%) |
+| `cf` | Cumulative frequency |
+| `cf(%)` | Cumulative frequency (%) |
+
+### 1.2 Choosing the number of classes
+
+```{r fdt-breaks}
+# Sturges (default)
+fdt(x, breaks = "Sturges")
+
+# Scott
+fdt(x, breaks = "Scott")
+
+# Freedman-Diaconis
+fdt(x, breaks = "FD")
+
+# Fixed number of classes
+fdt(x, k = 8)
+```
+
+### 1.3 Custom interval boundaries
+
+```{r fdt-custom}
+# Fixed start, end and width
+ft2 <- fdt(x,
+           start = 4,
+           end   = 16,
+           h     = 2)
+ft2
+```
+
+### 1.4 Formatting class limits
+
+Use `format.classes = TRUE` together with `pattern` to control the number of
+decimal places displayed in the class limits:
+
+```{r fdt-format}
+# Two decimal places
+print(ft,
+      format.classes = TRUE,
+      pattern        = "%.2f")
+
+# Summary with the same formatting
+summary(ft,
+        format.classes = TRUE,
+        pattern        = "%.2f")
+```
+
+### 1.5 Right-closed intervals
+
+By default intervals are left-closed `[a, b)`. Use `right = TRUE` for
+right-closed `(a, b]`:
+
+```{r fdt-right}
+fdt(x, right = TRUE)
+```
+
+### 1.6 Missing values
+
+```{r fdt-na}
+x_na <- c(x, NA, NA)
+
+# This errors by design:
+tryCatch(fdt(x_na), error = function(e) message("Error: ", e$message))
+
+# Remove NAs explicitly:
+fdt(x_na, na.rm = TRUE)
+```
+
+---
+
+## 2. Plots — `plot.fdt.default()`
+
+All plot types are selected with the `type` argument.
+
+### 2.1 Absolute frequency histogram and polygon
+
+```{r plot-fh-fp, fig.show="hold", out.width="48%"}
+plot(ft, type = "fh", main = "Frequency histogram")
+plot(ft, type = "fp", main = "Frequency polygon")
+```
+
+### 2.2 Relative frequency (proportion and percentage)
+
+```{r plot-rf, fig.show="hold", out.width="48%"}
+plot(ft, type = "rfh",  main = "Relative frequency histogram")
+plot(ft, type = "rfph", main = "Relative frequency (%) histogram")
+```
+
+### 2.3 Density
+
+```{r plot-density}
+plot(ft, type = "d", main = "Density histogram")
+```
+
+### 2.4 Cumulative frequency
+
+```{r plot-cf, fig.show="hold", out.width="48%"}
+plot(ft, type = "cfp",  main = "Cumulative frequency polygon")
+plot(ft, type = "cfpp", main = "Cumulative frequency (%) polygon")
+```
+
+### 2.5 Value labels on bars
+
+```{r plot-labels}
+plot(ft,
+     type    = "fh",
+     v       = TRUE,
+     v.round = 0,
+     main    = "Histogram with counts")
+```
+
+---
+
+## 3. Summary statistics from grouped data
+
+Once an `fdt` object exists, the usual statistics can be computed directly
+from the **grouped** (tabulated) data — no access to the original vector is
+needed.
+
+```{r stats}
+ft3 <- fdt(x)
+
+mean(ft3)
+median(ft3)
+mfv(ft3)          # mode(s)
+var(ft3)
+sd(ft3)
+
+# Quartiles (default)
+quantile(ft3)
+
+# Deciles
+quantile(ft3,
+         i     = 1:9,
+         probs = seq(0, 1, 0.1))
+```
+
+---
+
+## 4. Multiple numerical variables — `fdt.data.frame()`
+
+When the input is a **data frame** or **matrix**, `fdt()` builds one table
+per numeric column and returns an `fdt.multiple` object.
+
+### 4.1 All numeric columns
+
+```{r fdt-df}
+ft_iris <- fdt(iris[, 1:4])
+ft_iris
+```
+
+### 4.2 Grouped by a factor
+
+Use the `by` argument to stratify each numeric variable by a categorical
+column:
+
+```{r fdt-by}
+ft_by <- fdt(iris[, c(1, 2, 5)],
+             k  = 5,
+             by = "Species")
+ft_by
+```
+
+### 4.3 Plotting multiple tables
+
+```{r plot-multiple, fig.width=8, fig.height=6}
+plot(ft_iris, type = "fh")
+```
+
+### 4.4 Statistics on multiple tables
+
+```{r stats-multiple}
+mean(ft_iris)
+```
+
+---
+
+## 5. Categorical data — `fdt_cat()`
+
+### 5.1 Basic usage
+
+```{r fdt-cat-basic}
+set.seed(7)
+fruits <- sample(c("apple", "banana", "cherry", "date", "apple",
+                   "banana", "apple"),
+                 150,
+                 replace = TRUE)
+
+ft_cat <- fdt_cat(fruits)
+ft_cat
+```
+
+By default the table is sorted by descending frequency.
+
+### 5.2 Preserving natural order
+
+```{r fdt-cat-nosort}
+fdt_cat(fruits, sort = FALSE)
+```
+
+### 5.3 Formatting
+
+```{r fdt-cat-format}
+print(ft_cat, round = 3)
+```
+
+### 5.4 Plots for categorical data
+
+```{r plot-cat-bar}
+plot(ft_cat, type = "fb", main = "Frequency bar chart")
+```
+
+```{r plot-cat-dotchart}
+plot(ft_cat, type = "fd", main = "Frequency dotchart")
+```
+
+```{r plot-cat-pareto}
+plot(ft_cat, type = "pa", main = "Pareto chart")
+```
+
+---
+
+## 6. Reconstructing a table from frequencies
+
+If the original data is no longer available but the frequency table is known,
+`make.fdt()` and `make.fdt_cat()` rebuild complete `fdt` objects.
+
+```{r make-fdt}
+# Numerical
+ft_ref <- fdt(x)
+
+ft_new <- make.fdt(f     = ft_ref$table$f,
+                   start = ft_ref$breaks["start"],
+                   end   = ft_ref$breaks["end"])
+
+print(ft_new, format.classes = TRUE, pattern = "%.2f")
+```
+
+```{r make-fdt-cat}
+# Categorical
+ft_new_cat <- make.fdt_cat(f          = ft_cat$f,
+                            categories = ft_cat$Category)
+ft_new_cat
+```
+
+---
+
+## 7. LaTeX export
+
+For publication-ready LaTeX tables use `xtable::xtable()` on any `fdt`
+object. A dedicated vignette covers this workflow in detail:
+
+```{r xtable-ref, eval=FALSE}
+vignette("latex_fdt", package = "fdth")
+```
+
+---
+
+## Session information
+
+```{r session}
+sessionInfo()
+```

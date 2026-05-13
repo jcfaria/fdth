@@ -9,7 +9,7 @@ Authors@R: c(person("José C.", "Faria", role=c("aut","cre"),
 Maintainer: José C. Faria <joseclaudio.faria@gmail.com>
 Depends: R (>= 3.5.0)
 Imports: xtable
-Suggests: knitr, testthat (>= 3.0.0)
+Suggests: knitr, rmarkdown, testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Description: Perform frequency distribution tables, associated histograms
              and polygons from vector, data.frame and matrix objects for
