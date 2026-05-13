@@ -2,3 +2,5 @@
 ^.*-Ex.R$
 ^\.git$
 ^.*\.Rcheck$
+^doc$
+^Meta$

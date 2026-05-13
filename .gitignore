@@ -45,3 +45,5 @@ desktop.ini
 *.swp
 *~
 .vscode/
+/doc/
+/Meta/
