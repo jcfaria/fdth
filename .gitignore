@@ -1,10 +1,47 @@
-# Example code in package build process
+# =============================================================================
+# R session and history
+# =============================================================================
+.Rhistory
+.RData
+.Rproj.user/
+.Rproj.user
+
+# =============================================================================
+# Build artefacts
+# =============================================================================
+
+# Package source tarball produced by R CMD build
+*.tar.gz
+
+# R CMD check output directory
+*.Rcheck/
+
+# Example code generated during the build process
 *-Ex.R
 
-# Vignette: knitr / LaTeX intermediates (not source)
+# =============================================================================
+# Vignette build intermediates (keep only source + final PDF)
+# =============================================================================
 vignettes/*.tex
 vignettes/*.aux
 vignettes/*.log
 vignettes/*.out
 vignettes/*.synctex.gz
 vignettes/*.tex_old
+vignettes/*.toc
+vignettes/*.fdb_latexmk
+vignettes/*.fls
+
+# =============================================================================
+# Operating-system artefacts
+# =============================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =============================================================================
+# Editor / IDE artefacts
+# =============================================================================
+*.swp
+*~
+.vscode/

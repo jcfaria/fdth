@@ -209,9 +209,9 @@ clim1 <- sapply(clim, as.character)
 right <- t1$breaks[4]
 pattern <- "%05.2f"
 
-clim2 <- make.fdt.format.classes(clim1,
-                                 right,
-                                 pattern)
+clim2 <- fdth:::make.fdt.format.classes(clim1,
+                                        right,
+                                        pattern)
 clim3 <- sapply(clim2,
                 function(x) paste0("$", x, "$"))
 t4x <- t1x

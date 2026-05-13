@@ -6,10 +6,10 @@ make.fdt_cat.multiple <- function(x,
 
   res <- list()
 
-  f <- sapply(x, 
+  f <- sapply(x,
               is.factor)
 
-  for(i in 1:ncol(x)){
+  for(i in seq_len(ncol(x))){
     if(f[i]){
       m  <- x[,i]
 
@@ -24,5 +24,5 @@ make.fdt_cat.multiple <- function(x,
 
   names(res) <- names(valCol)
 
-  return(res)  
+  return(res)
 }

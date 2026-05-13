@@ -1,7 +1,7 @@
 plot.fdt.default <- function (x,
-                              type=c('fh', 'fp', 
+                              type=c('fh', 'fp',
                                      'rfh', 'rfp', 'rfph', 'rfpp',
-                                     'd', 'cdh', 'cdp', 
+                                     'd', 'cdh', 'cdp',
                                      'cfh', 'cfp', 'cfph', 'cfpp'),
                               v=FALSE,
                               v.round=2,
@@ -25,7 +25,7 @@ plot.fdt.default <- function (x,
                  c(breaks['start'],
                    breaks['end']))
 
-  mids <- 0.5 * (brk[-1] + 
+  mids <- 0.5 * (brk[-1] +
                  brk[-length(brk)])
 
   switch(match.arg(type),
@@ -33,7 +33,7 @@ plot.fdt.default <- function (x,
          fh = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 2])))
 
            if(is.null(ylab))
@@ -61,7 +61,7 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
          },
@@ -70,7 +70,7 @@ plot.fdt.default <- function (x,
          fp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 2])))
 
            if(is.null(ylab))
@@ -94,18 +94,18 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
          },
 
          # rf (relative frequency) - histogram
          rfh = {
-           h <- with(x, 
+           h <- with(x,
                      breaks[3])
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 3])))
 
            if(is.null(ylab))
@@ -117,7 +117,7 @@ plot.fdt.default <- function (x,
                        ylim)
 
            title(main=main,
-                 xlab=xlab, 
+                 xlab=xlab,
                  ylab=ylab, ...)
 
            axis(2, ...)
@@ -134,16 +134,16 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         },  
+         },
 
          # rf (relative frequency) - polygon
          rfp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 3])))
 
            if(is.null(ylab))
@@ -167,7 +167,7 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
          },
@@ -178,7 +178,7 @@ plot.fdt.default <- function (x,
                      breaks[3])
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 4])))
 
            if(is.null(ylab))
@@ -207,16 +207,16 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         },  
+         },
 
          # rf (relative frequency %) - polygon
          rfpp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 4])))
 
            if(is.null(ylab))
@@ -240,19 +240,19 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
          },
 
          # d (density)
          d = {
-           h <- with(x, 
+           h <- with(x,
                      breaks[3])
 
            if (is.null(ylim))
-             ylim <- with(x, 
-                          c(0, 
+             ylim <- with(x,
+                          c(0,
                             1.2 * max(table[, 3] / h)))
 
            if(is.null(ylab))
@@ -282,14 +282,14 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         },  
+         },
 
          # cd (cumulative density) - histogram
          cdh = {
-           h <- with(x, 
+           h <- with(x,
                      breaks[3])
 
            if (is.null(ylim))
@@ -322,16 +322,16 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         },  
+         },
 
          # cm (cumulative density) - polygon
          cdp = {
-          h <- with(x, 
+          h <- with(x,
                      breaks[3])
-         
+
            if (is.null(ylim))
              ylim <- with(x,
                           c(0, 1.2))
@@ -357,10 +357,10 @@ plot.fdt.default <- function (x,
              text(x=brk,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         }, 
+         },
 
          # cf (cumulative frequency) - histogram
          cfh = {
@@ -369,7 +369,7 @@ plot.fdt.default <- function (x,
 
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * max(table[, 5])))
 
            if(is.null(ylab))
@@ -398,16 +398,16 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         },  
+         },
 
          # cf (cumulative frequency) - polygon
          cfp = {
            if (is.null(ylim))
              ylim <- with(x,
-                          c(0, 
+                          c(0,
                             1.2 * sum(table['f'])))
 
            if(is.null(ylab))
@@ -432,7 +432,7 @@ plot.fdt.default <- function (x,
              text(x=brk,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
          },
@@ -443,8 +443,8 @@ plot.fdt.default <- function (x,
                      breaks[3])
 
            if (is.null(ylim))
-             ylim <- with(x, 
-                          c(0, 
+             ylim <- with(x,
+                          c(0,
                             1.2 * max(table[, 6])))
 
            if(is.null(ylab))
@@ -473,22 +473,21 @@ plot.fdt.default <- function (x,
              text(x=mids,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
-         },  
+         },
 
          # cfp (cumulative frequency %) - polygon
          cfpp = {
            if (is.null(ylim))
-             ylim <- c(0, 
-                       1.2 * 100)
+             ylim <- c(0, 120)  # 0-100 % scale with 20 % headroom
 
            if(is.null(ylab))
              ylab <- 'Frequency'
 
            y <- with(x,
-                     c(0, 
+                     c(0,
                        table[, 6]))
 
            plot(brk,
@@ -507,12 +506,12 @@ plot.fdt.default <- function (x,
              text(x=brk,
                   y=y,
                   labels=format(round(y,
-                                      v.round), 
+                                      v.round),
                                 nsmall=v.round),
                   pos=v.pos, ...)
          })
 
-  axis(1, 
+  axis(1,
        at=round(brk,
                 x.round),
        las=xlas, ...)

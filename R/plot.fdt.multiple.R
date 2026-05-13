@@ -1,7 +1,7 @@
 plot.fdt.multiple <- function (x,
-                               type=c('fh', 'fp', 
+                               type=c('fh', 'fp',
                                       'rfh', 'rfp', 'rfph', 'rfpp',
-                                      'd', 'cdh', 'cdp', 
+                                      'd', 'cdh', 'cdp',
                                       'cfh', 'cfp', 'cfph', 'cfpp'),
                                v=FALSE,
                                v.round=2,
@@ -20,7 +20,7 @@ plot.fdt.multiple <- function (x,
 {
 
   typearg <- match.arg(type)
-  if(!grouped){  
+  if(!grouped){
     is.whole.number <- function (x,
                                  tol=.Machine$double.eps^0.5)
       abs(x - round(x)) < tol
@@ -82,7 +82,7 @@ plot.fdt.multiple <- function (x,
 
         if (i == length(xx))
           break
-      } 
+      }
   } else if(typearg == 'fp' | typearg == 'rfp' | typearg == 'rfpp' | typearg == 'cdp' | typearg == 'cfp' | typearg == 'cfpp'){
     DFagain <- eval(getCall(x)$x)
     byagain <- eval(getCall(x)$by)
@@ -99,7 +99,7 @@ plot.fdt.multiple <- function (x,
     aux1 <- list()
     aux2 <- list()
     auxk <- list()
-    for(i in 1:length(varisnum)){
+    for(i in seq_along(varisnum)){
       posvaris[[i]] <- which(namesvar==varisnum[i])
       tabsc[[i]] <- x[posvaris[[i]]]
       aux1[[i]] <- lapply(tabsc[[i]],function(x)x$breaks)
@@ -107,7 +107,7 @@ plot.fdt.multiple <- function (x,
       auxk[[i]] <- lapply(tabsc[[i]],function(x)x$table[,5])
     }
     liis <- lapply(aux2,function(x)min(x[,1]))
-    lsss <- lapply(aux2,function(x)max(x[,2])) 
+    lsss <- lapply(aux2,function(x)max(x[,2]))
     auxk1 <- lapply(auxk,unlist)
     k <- lapply(auxk1,function(x)nclass.Sturges(1:max(x))) # Taking the factor with the greatest observation, as the number of classes will be greater and will encompass the other factors if you have a smaller sample!
     hh <- mapply(function(x,y,z) (y - x)/z,
@@ -118,17 +118,17 @@ plot.fdt.multiple <- function (x,
     # THE NEXT STEP IS TO MAKE A TABLE FOR EACH FACTOR AND EACH VARIABLE
     factors <- levels(DFagain[[byagain]])
     subgroups <- list()
-    for(i in 1:length(factors)){
+    for(i in seq_along(factors)){
       subgroups[[i]] <- subset(DFagain,
                                eval(parse(text=byagain))%in%factors[i])
     }
 
     tabsfactors <- rep(list(rep(list(NA),length(varisnum))),length(factors))
-    for(i in 1:length(factors)){
-      for(j in 1:length(varisnum)){
+    for(i in seq_along(factors)){
+      for(j in seq_along(varisnum)){
         ifelse(length(varisnum)==1,
                groups <- subgroups[[i]][,((ncol(DFagain)-length(varisnum))+1):ncol(DFagain)],
-               groups <- subgroups[[i]][,((ncol(DFagain)-length(varisnum))+1):ncol(DFagain)][,j]) 
+               groups <- subgroups[[i]][,((ncol(DFagain)-length(varisnum))+1):ncol(DFagain)][,j])
         tabsfactors[[i]][[j]] <- fdt(groups,
                                      start=liis[[j]],
                                      end=lsss[[j]],
@@ -195,11 +195,11 @@ plot.fdt.multiple <- function (x,
       col = c(col,colors()[152:253][2:length(varisnum)])
     }
 
-    switch(typearg,         
+    switch(typearg,
            # f (absolute frequency) - polygon
            fp = {
-             onlyfreq <- list()
-             for(i in 1:length(factors)){
+           onlyfreq <- list()
+           for(i in seq_along(factors)){
                onlyfreq[[i]] <- lapply(tabsfactors[[i]],
                                        function(x)with(x,table[,2]))
              }
@@ -207,19 +207,19 @@ plot.fdt.multiple <- function (x,
              if(is.null(ylim)){
                ylim1 <- lapply(onlyfreq,function(x)do.call('cbind',x))
                ylim2 <- do.call('rbind',ylim1)
-               ylim3 <- apply(ylim2,2,max)*1.2 
+               ylim3 <- apply(ylim2,2,max)*1.2
                ylim4 <- rbind(rep(0,length(varisnum)),ylim3)
                ylim <- t(ylim4)
              }
 
              par(mfrow = mf)
-             for(i in 1:length(varisnum)){
+             for(i in seq_along(varisnum)){
                plot(mids[,i],
-                    onlyfreq[[1]][[i]], 
+                    onlyfreq[[1]][[i]],
                     type = 'b',
                     xaxt = 'n',
                     bty = 'n',
-                    xlim = xlim[i,], 
+                    xlim = xlim[i,],
                     ylim = ylim[i,],
                     xlab = xlab,
                     ylab = ylab,
@@ -239,7 +239,7 @@ plot.fdt.multiple <- function (x,
            # rfp (relative frequency percentual) - polygon
            rfp = {
              onlyfreq <- list()
-             for(i in 1:length(factors)){
+             for(i in seq_along(factors)){
                onlyfreq[[i]] <- lapply(tabsfactors[[i]],
                                        function(x)with(x,table[,3]))
              }
@@ -247,25 +247,25 @@ plot.fdt.multiple <- function (x,
              if(is.null(ylim)){
                ylim1 <- lapply(onlyfreq,function(x)do.call('cbind',x))
                ylim2 <- do.call('rbind',ylim1)
-               ylim3 <- apply(ylim2,2,max)*1.2 
+               ylim3 <- apply(ylim2,2,max)*1.2
                ylim4 <- rbind(rep(0,length(varisnum)),ylim3)
                ylim <- t(ylim4)
              }
 
              par(mfrow = mf)
-             for(i in 1:length(varisnum)){
+             for(i in seq_along(varisnum)){
                plot(mids[,i],
-                    onlyfreq[[1]][[i]], 
+                    onlyfreq[[1]][[i]],
                     type = 'b',
                     xaxt = 'n',
                     bty = 'n',
-                    xlim = xlim[i,], 
+                    xlim = xlim[i,],
                     ylim = ylim[i,],
                     xlab = xlab,
                     ylab = ylab,
                     col = col[1],
                     main = main[i])
-               axis(1,at=round(mids[,i],x.round)) 
+               axis(1,at=round(mids[,i],x.round))
                j <- 2
                while(j <= length(factors)){
                  points(mids[,i],
@@ -279,7 +279,7 @@ plot.fdt.multiple <- function (x,
            # rfpp (relative frequency percentual percentual) - polygon
            rfpp = {
              onlyfreq <- list()
-             for(i in 1:length(factors)){
+             for(i in seq_along(factors)){
                onlyfreq[[i]] <- lapply(tabsfactors[[i]],
                                        function(x)with(x,table[,4]))
              }
@@ -287,25 +287,25 @@ plot.fdt.multiple <- function (x,
              if(is.null(ylim)){
                ylim1 <- lapply(onlyfreq,function(x)do.call('cbind',x))
                ylim2 <- do.call('rbind',ylim1)
-               ylim3 <- apply(ylim2,2,max)*1.2 
+               ylim3 <- apply(ylim2,2,max)*1.2
                ylim4 <- rbind(rep(0,length(varisnum)),ylim3)
                ylim <- t(ylim4)
              }
 
              par(mfrow = mf)
-             for(i in 1:length(varisnum)){
+             for(i in seq_along(varisnum)){
                plot(mids[,i],
-                    onlyfreq[[1]][[i]], 
+                    onlyfreq[[1]][[i]],
                     type = 'b',
                     xaxt = 'n',
                     bty = 'n',
-                    xlim = xlim[i,], 
+                    xlim = xlim[i,],
                     ylim = ylim[i,],
                     xlab = xlab,
                     ylab = ylab,
                     col = col[1],
                     main = main[i])
-               axis(1,at=round(mids[,i],x.round))  
+               axis(1,at=round(mids[,i],x.round))
                j <- 2
                while(j <= length(factors)){
                  points(mids[,i],
@@ -315,12 +315,12 @@ plot.fdt.multiple <- function (x,
                  j <- j+1
                }
              }
-           },         
+           },
            # cdp (cumulative density) - polygon
            cdp = {
              onlyfreq <- list()
              onlyden <- list()
-             for(i in 1:length(factors)){
+             for(i in seq_along(factors)){
                onlyfreq[[i]] <- lapply(tabsfactors[[i]],
                                        function(x)with(x,table[,3]))
                onlyden[[i]] <- mapply(function(y,z)cumsum(y/z),
@@ -330,25 +330,25 @@ plot.fdt.multiple <- function (x,
 
              if(is.null(ylim)){
                ylim2 <- do.call('rbind',onlyden)
-               ylim3 <- apply(ylim2,2,max)*1.2 
+               ylim3 <- apply(ylim2,2,max)*1.2
                ylim4 <- rbind(rep(0,length(varisnum)),ylim3)
                ylim <- t(ylim4)
              }
 
              par(mfrow = mf)
-             for(i in 1:length(varisnum)){
+             for(i in seq_along(varisnum)){
                plot(mids[,i],
-                    onlyden[[1]][,i], 
+                    onlyden[[1]][,i],
                     type = 'b',
                     xaxt = 'n',
                     bty = 'n',
-                    xlim = xlim[i,], 
+                    xlim = xlim[i,],
                     ylim = ylim[i,],
                     xlab = xlab,
                     ylab = ylab,
                     col = col[1],
                     main = main[i])
-               axis(1,at=round(mids[,i],x.round))   
+               axis(1,at=round(mids[,i],x.round))
                j <- 2
                while(j <= length(factors)){
                  points(mids[,i],
@@ -358,11 +358,11 @@ plot.fdt.multiple <- function (x,
                  j <- j+1
                }
              }
-           },          
+           },
            # cfp (cumulative frequency) - polygon
            cfp = {
              onlyfreq <- list()
-             for(i in 1:length(factors)){
+             for(i in seq_along(factors)){
                onlyfreq[[i]] <- lapply(tabsfactors[[i]],
                                        function(x)with(x,table[,5]))
              }
@@ -371,25 +371,25 @@ plot.fdt.multiple <- function (x,
                ylim1 <- lapply(onlyfreq,function(x)do.call('cbind',x))
                ylim2 <- lapply(ylim1,function(x)apply(x,2,max))
                ylim3 <- do.call('rbind',ylim2)
-               ylim4 <- apply(ylim3,2,max)*1.2 
+               ylim4 <- apply(ylim3,2,max)*1.2
                ylim5 <- rbind(rep(0,length(varisnum)),ylim4)
                ylim <- t(ylim5)
              }
 
              par(mfrow = mf)
-             for(i in 1:length(varisnum)){
+             for(i in seq_along(varisnum)){
                plot(mids[,i],
-                    onlyfreq[[1]][[i]], 
+                    onlyfreq[[1]][[i]],
                     type = 'b',
                     xaxt = 'n',
                     bty = 'n',
-                    xlim = xlim[i,], 
+                    xlim = xlim[i,],
                     ylim = ylim[i,],
                     xlab = xlab,
                     ylab = ylab,
                     col = col[1],
                     main = main[i])
-               axis(1,at=round(mids[,i],x.round))    
+               axis(1,at=round(mids[,i],x.round))
                j <- 2
                while(j <= length(factors)){
                  points(mids[,i],
@@ -399,11 +399,11 @@ plot.fdt.multiple <- function (x,
                  j <- j+1
                }
              }
-           },          
+           },
            # cfpp (cumulative frequency%) - polygon
            cfpp = {
              onlyfreq <- list()
-             for(i in 1:length(factors)){
+             for(i in seq_along(factors)){
                onlyfreq[[i]] <- lapply(tabsfactors[[i]],
                                        function(x)with(x,table[,6]))
              }
@@ -415,19 +415,19 @@ plot.fdt.multiple <- function (x,
              }
 
              par(mfrow = mf)
-             for(i in 1:length(varisnum)){
+             for(i in seq_along(varisnum)){
                plot(mids[,i],
-                    onlyfreq[[1]][[i]], 
+                    onlyfreq[[1]][[i]],
                     type = 'b',
                     xaxt = 'n',
                     bty = 'n',
-                    xlim = xlim[i,], 
+                    xlim = xlim[i,],
                     ylim = ylim[i,],
                     xlab = xlab,
                     ylab = ylab,
                     col = col[1],
                     main = main[i])
-               axis(1,at=round(mids[,i],x.round))     
+               axis(1,at=round(mids[,i],x.round))
                j <- 2
                while(j <= length(factors)){
                  points(mids[,i],
@@ -457,14 +457,13 @@ plot.fdt.multiple <- function (x,
                        lty = rep(1,length(factors)),
                        xpd=T)
 
-      args.2Kl[names(args.legend)] <- args.legend     
+      args.2Kl[names(args.legend)] <- args.legend
 
       do.call('legend',
-              args.2Kl) 
+              args.2Kl)
 
-    }  
+    }
   } else {
     warning("Set an of the options to the type argument: fp, rfp, rfpp, cdp, cfp or cfpp!")
   }
 }
-

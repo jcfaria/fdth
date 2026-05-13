@@ -1,5 +1,68 @@
 # fdth news
 
+## 1.5-0 (2026-05-13) - Faria, J. C.
+
+### Bug fixes
+
+- `make.fdt.simple`: relative and cumulative frequencies were computed using
+  `length(x)` as the denominator, which is incorrect when values fall outside
+  the `[start, end]` range (they are silently dropped by `cut()`). The
+  denominator is now `sum(f)`, counting only observations that landed in a
+  class interval.
+- `quantile.fdt`: the quantile-position formula `ii * n / (length(probs) - 1)`
+  assumed equally-spaced `probs`. It is now `probs[ii + 1L] * n`, which works
+  correctly for any arbitrary probability vector.
+- `mfv.fdt_cat`: replaced `grep(max(y), y)` with `which(y == max(y))`. `grep`
+  performs regex string matching and is not suitable for numeric equality tests.
+- `median.fdt`: replaced `grep(TRUE, ...)` with the idiomatic `which(...)`.
+
+### Refactoring
+
+- `sd.fdt`: method body simplified to `sqrt(var.fdt(x, ...))`, eliminating the
+  duplicated variance calculation that previously mirrored `var.fdt` verbatim.
+- `print.fdt.default` / `summary.fdt.default`: shared formatting logic extracted
+  into the private helper `.fdt.format.num`; both methods now delegate to it,
+  removing the code duplication.
+- `print.fdt_cat.default` / `summary.fdt_cat.default`: same pattern — shared
+  logic moved into the private helper `.fdt.format.cat`.
+- `make.fdt.format.classes`: removed unnecessary `invisible()` wrapper on the
+  return value.
+- `fdt.data.frame`, `make.fdt_cat.multiple`, `plot.fdt.multiple`: replaced
+  `1:length(x)` / `1:ncol(x)` idioms with `seq_along()` / `seq_len()` to
+  avoid off-by-one errors when the input has zero length.
+
+### NAMESPACE / imports
+
+- Replaced the catch-all `exportPattern(".")` with an explicit `export()` list
+  covering only the public API (`fdt`, `fdt_cat`, `make.fdt`, `make.fdt_cat`,
+  `mfv`, `sd`, `var`). Internal helpers such as `make.fdt.simple`,
+  `make.fdt.multiple`, and `make.fdt.format.classes` are no longer exported.
+- Replaced wholesale `import(stats, grDevices, xtable)` with selective
+  `importFrom()` calls, keeping `import(graphics)` because the plot methods
+  use many low-level primitives from that package.
+
+### Documentation
+
+- `man/fdt.Rd`: removed the `data` slot from the `\value` section; that slot
+  was documented but has never existed in the actual return object.
+- `README.md`: project layout corrected — removed references to non-existent
+  `/data` and `/demo` directories; added `/tests` entry.
+- `DESCRIPTION`: minimum R version raised from `2.6.0` (released 2007) to
+  `3.5.0`.
+- `.gitignore`: expanded with standard entries for R session files, OS
+  artefacts, editor swap files, and additional vignette build intermediates.
+
+### Tests
+
+- Added `tests/testthat/test-mean-median-var-sd.R`: 5 tests covering `mean.fdt`,
+  `median.fdt`, `var.fdt`, `sd.fdt`, and the zero-variance edge case.
+- Added `tests/testthat/test-fdt-cat.R`: 9 tests covering `fdt_cat` (class,
+  column names, frequency sums, sort behaviour, factor input, `print`, `summary`).
+- Added `tests/testthat/test-fdt-data-frame.R`: 7 tests covering
+  `fdt.data.frame` with multi-numeric columns and the `by` grouping argument,
+  plus `mean`, `print`, and `summary` on `fdt.multiple` objects.
+- Total test count raised from **11** to **41** (0 failures, 0 warnings).
+
 ## 1.3-4 (2026-05-11) - Faria, J. C.
 
 - Added **testthat**-based tests under `tests/testthat/` (including checks for `summary(..., format.classes = TRUE, pattern = "%.2f")` using normal R strings, avoiding `\%` quoting issues from `.Rd` examples).

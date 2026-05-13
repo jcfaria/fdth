@@ -10,12 +10,10 @@ fdt.default <- function (x,
   # User defines nothing or not 'x' isn't numeric -> stop
   stopifnot(is.numeric(x))
 
-  #x <- na.omit(x)
-
   # User defines only 'x'
-  if (missing(k) && 
-      missing(start) && 
-      missing(end) && 
+  if (missing(k) &&
+      missing(start) &&
+      missing(end) &&
       missing(h)) {
 
     brk <- match.arg(breaks)
@@ -37,8 +35,8 @@ fdt.default <- function (x,
   }
 
   # User defines 'x' and 'k'
-  else if (missing(start) && 
-           missing(end) && 
+  else if (missing(start) &&
+           missing(end) &&
            missing(h)) {
     stopifnot(length(k) >= 1)
 
@@ -54,7 +52,7 @@ fdt.default <- function (x,
   }
 
   # User defines 'x', 'start' and 'end'
-  else if (missing(k) && 
+  else if (missing(k) &&
            missing(h)) {
     stopifnot(length(start) >= 1,
               length(end) >=1)
@@ -71,7 +69,7 @@ fdt.default <- function (x,
               length(h) >= 1)
   }
 
-  else stop('Please, see the function sintaxe!')
+  else stop('Please, see the function syntax!')
 
   fdt <- make.fdt.simple(x,
                          start,
@@ -99,4 +97,4 @@ fdt.default <- function (x,
                   'list')
 
   invisible(res)
-} 
+}

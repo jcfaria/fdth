@@ -11,7 +11,7 @@ make.fdt.format.classes <- function (x,
                                               paste('(',
                                                     pattern,
                                                     sep=''),
-                                              paste('[', 
+                                              paste('[',
                                                     pattern,
                                                     sep='')),
                                        as.numeric(substring(.vals[1L], 2)))
@@ -24,10 +24,9 @@ make.fdt.format.classes <- function (x,
                                                      sep='')),
                                        as.numeric(substring(.vals[2L], 1,
                                                             nchar(.vals[2L]) - 1)))
-                  paste(.vals, 
+                  paste(.vals,
                         collapse=', ')
                 })
 
-  invisible(unlist(res))
+  unlist(res)
 }
-

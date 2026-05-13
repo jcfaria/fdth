@@ -4,8 +4,6 @@ make.fdt.multiple <- function (x,
                                right,
                                na.rm)
 {
-  #x <- na.omit(x)
-
   # Built-in functions adapted from grDevices package to accept 'na.rm' argument
   nclass.Scott_local <-
   function (x,
@@ -112,4 +110,3 @@ make.fdt.multiple <- function (x,
 
   return (res)
 }
-

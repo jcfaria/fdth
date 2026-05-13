@@ -53,9 +53,8 @@ mfv(ft)
 ## Project Layout
 
 - `/R`: Core functions and S3 methods.
-- `/man`: Documentation (`.Rd` files).
-- `/data`: Package datasets.
-- `/demo`: Runnable examples.
+- `/man`: Reference documentation (`.Rd` files).
+- `/tests`: Automated tests (`testthat`).
 - `/vignettes`: Tutorials and longer-form documentation.
 
 ## Contributing

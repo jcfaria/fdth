@@ -5,8 +5,7 @@ median.fdt <- function(x, ...)
 
   n <- fdt[nrow(fdt), 5]
 
-  posM <- grep(TRUE,
-               n / 2 <= fdt[, 5])[1]
+  posM <- which(n / 2 <= fdt[, 5])[1]
 
   brk <- with(x,
               seq(breaks['start'],
@@ -29,5 +28,4 @@ median.fdt <- function(x, ...)
   res <- liM + (((n / 2) - sfaM) * h) / fM
 
   return(res)
-}                        
-
+}

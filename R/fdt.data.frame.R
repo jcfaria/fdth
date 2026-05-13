@@ -15,7 +15,7 @@ fdt.data.frame <- function (x,
     logCol <- sapply(x,
                      is.numeric)
 
-    for (i in 1:ncol(x)) {
+    for (i in seq_len(ncol(x))) {
       if (logCol[i]) {
         m <- as.matrix(x[, i])
 
@@ -47,14 +47,14 @@ fdt.data.frame <- function (x,
     stopifnot(is.factor((x[[pos]])))
 
     numF <- table(x[[pos]])
-    for (i in 1:length(numF)) {
+    for (i in seq_along(numF)) {
       tmpdf  <- subset(x,
                        x[[pos]] == names(numF[i]))
 
       logCol <- sapply(tmpdf,
                        is.numeric)
 
-      for (j in 1:ncol(tmpdf)) {
+      for (j in seq_len(ncol(tmpdf))) {
         if (logCol[j]) {
           m <- as.matrix(tmpdf[, j])
 
@@ -75,7 +75,7 @@ fdt.data.frame <- function (x,
                               '',
                               nameFY)
           res <- c(res,
-                   newFY) 
+                   newFY)
         }
       }
     }
@@ -85,4 +85,4 @@ fdt.data.frame <- function (x,
                   'fdt',
                   'list')
   invisible(res)
-} 
+}

@@ -1,18 +1,34 @@
-# José Cláudio Faria
+# =============================================================================
+# Public API — only the user-facing generics and reconstruction helpers
+# are exported; internal helpers (make.fdt.simple, make.fdt.multiple, etc.)
+# remain unexported.
+# =============================================================================
+export(fdt, fdt_cat, make.fdt, make.fdt_cat, mfv, sd, var)
 
-# Export all names
-exportPattern(".")
+# =============================================================================
+# Selective imports
+# =============================================================================
 
-# Import all packages listed as Imports or Depends
-import(
-  stats,
-  grDevices,
-  graphics,
-  xtable
-)
+# grDevices: class-width helpers used in fdt.default / make.fdt.multiple,
+# plus colour utilities used in the plot methods.
+importFrom(grDevices, colors, dev.new, gray, nclass.FD, nclass.scott, nclass.Sturges)
 
+# stats: S3 generics that fdth extends with its own methods.
+# sd and var are intentionally NOT imported here because fdth defines its own
+# generics with those names (see R/sd.R and R/var.R).
+importFrom(stats, getCall, median, quantile)
+
+# graphics: many low-level plotting primitives are used across the plot
+# methods, so the whole namespace is imported.
+import(graphics)
+
+# xtable: only the single function needed for LaTeX export.
+importFrom(xtable, xtable, xtableList)
+
+# =============================================================================
 # S3 methods
-S3method(fdt, data.frame) 
+# =============================================================================
+S3method(fdt, data.frame)
 S3method(fdt, default)
 S3method(fdt, matrix)
 S3method(fdt_cat, data.frame)
@@ -47,6 +63,6 @@ S3method(summary, fdt_cat.multiple)
 S3method(var, default)
 S3method(var, fdt)
 S3method(var, fdt.multiple)
-S3method(xtable,fdt)
-S3method(xtable,fdt.multiple)
-S3method(xtable,fdt_cat.multiple)
+S3method(xtable, fdt)
+S3method(xtable, fdt.multiple)
+S3method(xtable, fdt_cat.multiple)

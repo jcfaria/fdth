@@ -1,4 +1,4 @@
-## Make an full fdt from a minimal information: a vector of frequency and class limits
+## Build a full fdt from a minimal information: a vector of frequency and class limits
 ## Useful to reproduce any previous continuous fdt
 make.fdt <- function(f,
                      start,
@@ -14,8 +14,8 @@ make.fdt <- function(f,
   cf  <- cumsum(f)                 # Cumulative freq
   cfp <- 100*(cumsum(f/sum(f)))    # Cumulative freq, %
 
-  brk <- seq(start, 
-             end, 
+  brk <- seq(start,
+             end,
              len=length(f) + 1)
 
   if (right)
@@ -34,17 +34,17 @@ make.fdt <- function(f,
                 sep='')
 
   fdt <- data.frame(cl,            # Make final table
-                    f,                                   
+                    f,
                     rf,
                     rfp,
                     cf,
-                    cfp)                   
+                    cfp)
 
   names(fdt) <- c('Class limits',
                   'f',
                   'rf',
                   'rf(%)',
-                  'cf', 
+                  'cf',
                   'cf(%)')
 
   breaks <- c(start,
