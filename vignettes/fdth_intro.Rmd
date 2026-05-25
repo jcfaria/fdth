@@ -267,8 +267,8 @@ mean(ft_iris)
 set.seed(7)
 fruits <- sample(c("apple", 
                    "banana", 
-                   "cherry"
-                   "strawberry"
+                   "cherry",
+                   "strawberry",
                    "melon"),
                  size = 150,
                  replace = TRUE)
