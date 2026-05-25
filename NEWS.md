@@ -1,6 +1,6 @@
 # fdth news
 
-## 1.5-0 (2026-05-13) - Faria, J. C.
+## 1.5-0 (2026-05-25) - Faria, J. C.
 
 ### Bug fixes
 
@@ -51,6 +51,19 @@
   `3.5.0`.
 - `.gitignore`: expanded with standard entries for R session files, OS
   artefacts, editor swap files, and additional vignette build intermediates.
+
+### Code style
+
+- Adopted consistent formatting across all R source files, man pages, tests, and
+  vignettes: function calls with more than two arguments are now broken at commas
+  with continuation arguments aligned to the first.
+- Added spaces around `=` (named arguments, formals, assignments) and ensured
+  consistent spacing after commas.
+- Consolidated short `round()` and `rep()` calls (two arguments) onto a single
+  line for readability.
+- Created `R/fdt-utils.R` to group the shared internal helpers `.fdt.format.num`
+  and `.fdt.format.cat`, previously defined inside `print.fdt.default.R` and
+  `print.fdt_cat.default.R`.
 
 ### Tests
 
