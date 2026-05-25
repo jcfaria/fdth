@@ -1,8 +1,8 @@
 print.fdt_cat.multiple <- function (x,
-                                    columns=1:6,
-                                    round=2,
-                                    row.names=FALSE, 
-                                    right=TRUE, ...)
+                                    columns = 1:6,
+                                    round = 2,
+                                    row.names = FALSE, 
+                                    right = TRUE, ...)
 {
 
  tnames <- names(x)
@@ -13,9 +13,7 @@ print.fdt_cat.multiple <- function (x,
    #res <- x[[tnames[i]]]
    
    if(is.list(res)){
-   res <- cbind(res[[1]][, 1],
-                round(res[[1]][, 2:6],
-                      round))[columns]
+   res <- cbind(res[[1]][, 1], round(res[[1]][, 2:6], round))[columns]
    }
    cat(tnames[i], '\n')
 
@@ -27,8 +25,8 @@ print.fdt_cat.multiple <- function (x,
                    'cf(%)')[columns]
 
    print.data.frame(res,
-                    row.names=row.names,
-                    right=right, ...)
+                    row.names = row.names,
+                    right = right, ...)
 
    cat('\n')
   }

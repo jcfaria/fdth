@@ -18,90 +18,95 @@
 \usage{
 ## S3 methods  
 \method{plot}{fdt.default}(x,
-     type=c('fh', 'fp', 
-            'rfh', 'rfp', 
-            'rfph', 'rfpp', 
-            'd',
-            'cdh', 'cdp', 
-            'cfh', 'cfp', 
-            'cfph', 'cfpp'),
-     v=FALSE,
-     v.round=2,
-     v.pos=3,
-     xlab="Class limits",
-     xlas=0,
-     ylab=NULL,
-     col="gray",
-     xlim=NULL,
-     ylim=NULL,
-     main=NULL,
-     x.round=2, \dots)
+     type = c('fh', 'fp', 
+              'rfh', 'rfp', 
+              'rfph', 'rfpp', 
+              'd',
+              'cdh', 'cdp', 
+              'cfh', 'cfp', 
+              'cfph', 'cfpp'),
+       
+     v = FALSE,
+     v.round = 2,
+     v.pos = 3,
+     xlab = "Class limits",
+     xlas = 0,
+     ylab = NULL,
+     col = "gray",
+     xlim = NULL,
+     ylim = NULL,
+     main = NULL,
+     x.round = 2, \dots)
 
 \method{plot}{fdt.multiple}(x,
-     type=c('fh', 'fp', 
-            'rfh', 'rfp', 
-            'rfph', 'rfpp', 
-            'd',
-            'cdh', 'cdp', 
-            'cfh', 'cfp', 
-            'cfph', 'cfpp'),
-     v=FALSE,
-     v.round=2,
-     v.pos=3,
-     xlab="Class limits",
-     xlas=0,
-     ylab=NULL, 
-     col="gray",
-     xlim=NULL,
-     ylim=NULL,
-     main=NULL,
-     main.vars=TRUE,
-     x.round=2, 
-     grouped=FALSE,
-     args.legend=NULL, \dots)
+     type = c('fh', 'fp', 
+              'rfh', 'rfp', 
+              'rfph', 'rfpp', 
+              'd',
+              'cdh', 'cdp', 
+              'cfh', 'cfp', 
+              'cfph', 'cfpp'),
+     v = FALSE,
+     v.round = 2,
+     v.pos = 3,
+     xlab = "Class limits",
+     xlas = 0,
+     ylab = NULL, 
+     col = "gray",
+     xlim = NULL,
+     ylim = NULL,
+     main = NULL,
+     main.vars = TRUE,
+     x.round = 2, 
+     grouped = FALSE,
+     args.legend = NULL, \dots)
 
 \method{plot}{fdt_cat.default}(x,
-     type=c('fb', 'fp', 'fd',
-            'rfb', 'rfp', 'rfd',
-            'rfpb', 'rfpp', 'rfpd',
-            'cfb', 'cfp', 'cfd',
-            'cfpb', 'cfpp', 'cfpd',
-            'pa'),
-     v=FALSE,
-     v.round=2,
-     v.pos=3,
-     xlab=NULL,
-     xlas=0,
-     ylab=NULL,
-     y2lab=NULL,
-     y2cfp=seq(0, 100, 25),
-     col=gray(.4),
-     xlim=NULL,
-     ylim=NULL,
-     main=NULL,
-     box=FALSE, \dots)
+     type = c('fb', 'fp', 'fd',
+              'rfb', 'rfp', 'rfd',
+              'rfpb', 'rfpp', 'rfpd',
+              'cfb', 'cfp', 'cfd',
+              'cfpb', 'cfpp', 'cfpd',
+              'pa'),
+     v = FALSE,
+     v.round = 2,
+     v.pos = 3,
+     xlab = NULL,
+     xlas = 0,
+     ylab = NULL,
+     y2lab = NULL,
+     y2cfp = seq(0, 
+                 100, 
+                 25),
+     col = gray(.4),
+     xlim = NULL,
+     ylim = NULL,
+     main = NULL,
+     box = FALSE, \dots)
 
 \method{plot}{fdt_cat.multiple}(x,
-     type=c('fb', 'fp', 'fd',
-            'rfb', 'rfp', 'rfd',
-            'rfpb', 'rfpp', 'rfpd',
-            'cfb', 'cfp', 'cfd',
-            'cfpb', 'cfpp', 'cfpd',
-            'pa'),
-     v=FALSE,
-     v.round=2,
-     v.pos=3,
-     xlab=NULL,
-     xlas=0,
-     ylab=NULL, 
-     y2lab=NULL,
-     y2cfp=seq(0, 100, 25),
-     col=gray(.4),
-     xlim=NULL,
-     ylim=NULL,
-     main=NULL,
-     main.vars=TRUE,
-     box=FALSE, \dots)
+     type = c('fb', 'fp', 'fd',
+              'rfb', 'rfp', 'rfd',
+              'rfpb', 'rfpp', 'rfpd',
+              'cfb', 'cfp', 'cfd',
+              'cfpb', 'cfpp', 'cfpd',
+              'pa'),
+     v = FALSE,
+     v.round = 2,
+     v.pos = 3,
+     xlab = NULL,
+     xlas = 0,
+     ylab = NULL, 
+     y2lab = NULL,
+     y2cfp = seq(0, 
+                 100, 
+                 25),
+     col = gray(.4),
+     xlim = NULL,
+     ylim = NULL,
+     main = NULL,
+     main.vars = TRUE,
+     box = FALSE, \dots)
 }
 
 \arguments{
@@ -138,8 +143,8 @@
 
     \samp{pa:} pareto chart.}
   \item{v}{logical flag: should the values be added to the plot?}
-  \item{v.round}{if \code{v=TRUE}, it rounds the values to the specified number of decimal places (default 0).}
-  \item{v.pos}{if \code{v=TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
+  \item{v.round}{if \code{v = TRUE}, it rounds the values to the specified number of decimal places (default 0).}
+  \item{v.pos}{if \code{v = TRUE}, a position specifier for the text. Values of 1, 2, 3 and 4, respectively
     indicate positions below, to the left of, above and to the right of the coordinates (default 3).}
   \item{xlab}{a label for the \samp{x} axis.}
   \item{xlas}{an integer which controls the orientation of the \samp{x} axis labels: \cr
@@ -162,7 +167,7 @@
     \samp{3:} vertical.}
   \item{box}{if \code{TRUE} (the default), a box will be placed on the graphic. Only for categorical variables.}
   \item{grouped}{if \code{TRUE}, the lines of polygon types will be plotted on the same graphic. It works only if the \code{by} argument is used.}
-  \item{args.legend}{list of additional arguments to be passed to \code{legend}; names of the list are used as argument names. Only used if \code{grouped=TRUE}. The default is \code{NULL}.}
+  \item{args.legend}{list of additional arguments to be passed to \code{legend}; names of the list are used as argument names. Only used if \code{grouped = TRUE}. The default is \code{NULL}.}
   \item{\dots}{optional plotting parameters.}
 }
 
@@ -194,9 +199,9 @@ library(fdth)
 #===============================
 # Vectors: univariate numerical
 #===============================
-x <- rnorm(n=1e3,
-           mean=5,
-           sd=1)
+x <- rnorm(n = 1e3,
+           mean = 5,
+           sd = 1)
 
 (ft <- fdt(x))
 
@@ -204,85 +209,85 @@ x <- rnorm(n=1e3,
 plot(ft)  # Absolute frequency histogram
 
 plot(ft,
-     main='My title')
+     main = 'My title')
 
 plot(ft,
-     x.round=3,
-     col='darkgreen')
+     x.round = 3,
+     col = 'darkgreen')
 
 plot(ft,
-     xlas=2)
+     xlas = 2)
 
 plot(ft,
-     x.round=3,
-     xlas=2,
-     xlab=NULL)
+     x.round = 3,
+     xlas = 2,
+     xlab = NULL)
 
 plot(ft,
-     v=TRUE, 
-     cex=.8,
-     x.round=3,
-     xlas=2,
-     xlab=NULL,
-     col=rainbow(11))
+     v = TRUE, 
+     cex = .8,
+     x.round = 3,
+     xlas = 2,
+     xlab = NULL,
+     col = rainbow(11))
 
 plot(ft,
-     type='fh')    # Absolute frequency histogram
+     type = 'fh')    # Absolute frequency histogram
 
 plot(ft,
-     type='rfh')   # Relative frequency histogram
+     type = 'rfh')   # Relative frequency histogram
 
 plot(ft,
-     type='rfph')  # Relative frequency (%) histogram
+     type = 'rfph')  # Relative frequency (%) histogram
 
 plot(ft,
-     type='cdh')   # Cumulative density histogram
+     type = 'cdh')   # Cumulative density histogram
 
 plot(ft,
-     type='cfh')   # Cumulative frequency histogram
+     type = 'cfh')   # Cumulative frequency histogram
 
 plot(ft,
-     type='cfph')  # Cumulative frequency (%) histogram
+     type = 'cfph')  # Cumulative frequency (%) histogram
 
 # Polygons
 plot(ft,
-     type='fp')    # Absolute frequency polygon
+     type = 'fp')    # Absolute frequency polygon
 
 plot(ft,
-     type='rfp')   # Relative frequency polygon
+     type = 'rfp')   # Relative frequency polygon
 
 plot(ft,
-     type='rfpp')  # Relative frequency (%) polygon
+     type = 'rfpp')  # Relative frequency (%) polygon
 
 plot(ft,
-     type='cdp')   # Cumulative density polygon
+     type = 'cdp')   # Cumulative density polygon
 
 plot(ft,
-     type='cfp')   # Cumulative frequency polygon
+     type = 'cfp')   # Cumulative frequency polygon
 
 plot(ft,
-     type='cfpp')  # Cumulative frequency (%) polygon
+     type = 'cfpp')  # Cumulative frequency (%) polygon
 
 # Density
 plot(ft,
-     type='d')     # Density
+     type = 'd')     # Density
 
 # Theoretical curve and fdt
 x <- rnorm(1e5,
-           mean=5,
-           sd=1)
+           mean = 5,
+           sd = 1)
 
 plot(fdt(x,
-         k=100), 
-     type='d', 
-     col=heat.colors(100))
+         k = 100), 
+     type = 'd', 
+     col = heat.colors(100))
 
 curve(dnorm(x,
-            mean=5,
-            sd=1),
-      col='darkgreen',
-      add=TRUE,
-      lwd=3)
+            mean = 5,
+            sd = 1),
+      col = 'darkgreen',
+      add = TRUE,
+      lwd = 3)
 
 
 #=================================
@@ -290,7 +295,7 @@ curve(dnorm(x,
 #=================================
 x <- sample(letters[1:5],
             1e3,
-            rep=TRUE)
+            rep = TRUE)
 
 (ft.c <- fdt_cat(x))
 
@@ -299,145 +304,157 @@ plot(ft.c)
 
 # Barplot
 plot(ft.c,
-     type='fb')
+     type = 'fb')
 
 # Polygon
 plot(ft.c,
-     type='fp')
+     type = 'fp')
 
 # Dotchart
 plot(ft.c,
-     type='fd')
+     type = 'fd')
 
 # Pareto chart
 plot(ft.c,
-     type='pa')
+     type = 'pa')
 
 #======================================================
 # Data.frames: multivariate with categorical variables
 #======================================================
-mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
-                  X2=as.factor(rep(1:10, 10)),
-                  Y1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
-                  Y2=rnorm(100, 60, 4),
-                  Y3=rnorm(100, 50, 4),
-                  Y4=rnorm(100, 40, 4),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(X1 = rep(LETTERS[1:4], 25),
+                  X2 = as.factor(rep(1:10, 10)),
+                  Y1 = c(NA,
+                         NA,
+                         rnorm(96,
+                               10,
+                               1),
+                         NA,
+                         NA),
+                  Y2 = rnorm(100,
+                             60,
+                             4),
+                  Y3 = rnorm(100,
+                             50,
+                             4),
+                  Y4 = rnorm(100,
+                             40,
+                             4),
+                  stringsAsFactors = TRUE)
 
 str(mdf)
 
 # Histograms
 (ft <- fdt(mdf,
-           na.rm=TRUE))
+           na.rm = TRUE))
 
 plot(ft,
-     v=TRUE,
-     cex=.8)
+     v = TRUE,
+     cex = .8)
 
 plot(ft,
-     col='darkgreen',
-     ylim=c(0, 40))
+     col = 'darkgreen',
+     ylim = c(0, 40))
 
 plot(ft,
-     col=rainbow(8), 
-     ylim=c(0, 40),
-     main=LETTERS[1:4])
+     col = rainbow(8), 
+     ylim = c(0, 40),
+     main = LETTERS[1:4])
 
 plot(ft,
-     type='fh')
+     type = 'fh')
 
 plot(ft,
-     type='rfh')
+     type = 'rfh')
 
 plot(ft,
-     type='rfph')
+     type = 'rfph')
 
 plot(ft,
-     type='cdh')
+     type = 'cdh')
 
 plot(ft,
-     type='cfh')
+     type = 'cfh')
 
 plot(ft,
-     type='cfph')
+     type = 'cfph')
 
 # Polygons
 plot(ft,
-     v=TRUE,
-     type='fp')
+     v = TRUE,
+     type = 'fp')
 
 plot(ft,
-     type='rfp')
+     type = 'rfp')
 
 plot(ft,
-     type='rfpp')
+     type = 'rfpp')
 
 plot(ft,
-     type='cdp')
+     type = 'cdp')
 
 plot(ft,
-     type='cfp')
+     type = 'cfp')
 
 plot(ft,
-     type='cfpp') 
+     type = 'cfpp') 
 
 # Density
 plot(ft,
-     type='d')     
+     type = 'd')     
 
 levels(mdf$X1)
 
 plot(fdt(mdf,
-         k=5,
-         by='X1',
-         na.rm=TRUE),
-     ylim=c(0, 12))
+         k = 5,
+         by = 'X1',
+         na.rm = TRUE),
+     ylim = c(0, 12))
 
 levels(mdf$X2)
 
 plot(fdt(mdf,
-         breaks='FD', 
-         by='X2',
-         na.rm=TRUE))
+         breaks = 'FD', 
+         by = 'X2',
+         na.rm = TRUE))
 
 plot(fdt(mdf,
-         k=5,
-         by='X2',
-         na.rm=TRUE))  # It is difficult to compare
+         k = 5,
+         by = 'X2',
+         na.rm = TRUE))  # It is difficult to compare
 
 plot(fdt(mdf,
-         k=5,
-         by='X2',
-         na.rm=TRUE),
-     ylim=c(0, 8))  # Easy
+         k = 5,
+         by = 'X2',
+         na.rm = TRUE),
+     ylim = c(0, 8))  # Easy
 
 plot(fdt(iris,
-         k=5))
+         k = 5))
 
 plot(fdt(iris,
-         k=5),
-     col=rainbow(5))
+         k = 5),
+     col = rainbow(5))
 
 plot(fdt(iris, 
-         k=5,
-         by='Species'),
-     v=TRUE)
+         k = 5,
+         by = 'Species'),
+     v = TRUE)
 
 ft <- fdt(iris,
-          k=10)
+          k = 10)
 
 plot(ft)
 
 plot(ft,
-     type='d')
+     type = 'd')
 
 # Categorical data 
 (ft.c <- fdt_cat(mdf))
 plot(ft.c)
 
 plot(ft.c,
-     type='fd',
-     pch=19)
+     type = 'fd',
+     pch = 19)
 
 #========================
 # Matrices: multivariate

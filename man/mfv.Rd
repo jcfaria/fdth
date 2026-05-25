@@ -82,15 +82,15 @@ vy <- c(rep(3,
             5),
         sample(6:9,
                10,
-               rep=TRUE),
+               rep = TRUE),
         rep(10,
             5))
 vy
 
 tb2 <- fdt(vy,
-           start=3,
-           end=11,
-           h=1)
+           start = 3,
+           end = 11,
+           h = 1)
 tb2
 mfv(tb2)     # Two modes in non-adjacent classes
 
@@ -105,24 +105,24 @@ vz <- c(rep(1.2,
 vz
 
 tb3 <- fdt(vz,
-           start=0,
-           end=8,
-           h=1)
+           start = 0,
+           end = 8,
+           h = 1)
 tb3
 mfv(tb3)     # Two modes in non-adjacent classes (deterministic example)
 
 
 ## Categorical
-mdf <- data.frame(c1=sample(letters[1:5],
-                            1e3,
-                            rep=TRUE),
-                  c2=sample(letters[6:10],
-                            1e3,
-                            rep=TRUE),
-                  c3=sample(letters[11:21],
-                            1e3,
-                            rep=TRUE),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(c1 = sample(letters[1:5],
+                              1e3,
+                              rep = TRUE),
+                  c2 = sample(letters[6:10],
+                              1e3,
+                              rep = TRUE),
+                  c3 = sample(letters[11:21],
+                              1e3,
+                              rep = TRUE),
+                  stringsAsFactors = TRUE)
 head(mdf)
 
 mfv(mdf$c1)   # From vector c1

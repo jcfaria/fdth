@@ -92,27 +92,27 @@ library(xtable)
 
 # +++++ Quantitative data
 ## Example 1: The simplest possible
-t1 <- fdt(rnorm(n=1e3,
-                mean=10,
-                sd=2))
+t1 <- fdt(rnorm(n = 1e3,
+                mean = 10,
+                sd = 2))
 
 t1x <- xtable(t1)
 t1x
 
 ## Example 2
 print(t1x,
-      include.rownames=FALSE)
+      include.rownames = FALSE)
 
 ## Example 3
 newclass <- gsub("[\\\\[\\\\)]",
                  "",
                  t1x[,1],
-                 perl=TRUE)
+                 perl = TRUE)
 t3x <- t1x
 t3x[,1] <- newclass
 
 print(t3x,
-      include.rownames=FALSE,
+      include.rownames = FALSE,
       sanitize.text.function = function(x)gsub(",",
                                                "\\\\dashv",
                                                x,
@@ -135,35 +135,33 @@ t4x <- t1x
 t4x[,1] <- clim3
 
 print(t4x,
-      include.rownames=FALSE)
+      include.rownames = FALSE)
 
 }
 ## Example 5
 t5 <- fdt(iris,
-          by="Species")
-attr(t5, "subheadings") <- paste0("Variable = ",
-                      names(t5))
+          by = "Species")
+attr(t5, "subheadings") <- paste0("Variable = ", names(t5))
 xtable(t5)
 
 # +++++ Qualitative data
 ## Example 6
-t6 <- fdt_cat(sample(LETTERS[1:3], 
-                     replace=TRUE,
-                     size=30))
+t6 <- fdt_cat(sample(LETTERS[1:3],
+                     replace = TRUE,
+                     size = 30))
 
 t6x <- xtable(t6)
 t6x
 
-t61 <- fdt_cat(data.frame(c1=sample(LETTERS[1:3],
-                                    replace=TRUE,
-                                    size=10),
-                          c2=sample(letters[4:5],
-                                    replace=TRUE,
-                                    size=10),
-                          stringsAsFactors=TRUE))
+t61 <- fdt_cat(data.frame(c1 = sample(LETTERS[1:3],
+                                      replace = TRUE,
+                                      size = 10),
+                          c2 = sample(letters[4:5],
+                                      replace = TRUE,
+                                      size = 10),
+                          stringsAsFactors = TRUE))
 
-attr(t61, "subheadings") <- paste0("Variable = ",
-                                   names(t61))
+attr(t61, "subheadings") <- paste0("Variable = ", names(t61))
 t61x <- xtable(t61)
 t61x
 }

@@ -5,8 +5,9 @@ test_that("summary(fdt) accepts pattern with '%' like %.2f without Rd escapes", 
   out <- NULL
   capture.output({
     out <- summary(ft,
-                   format.classes = TRUE,
-                   pattern = "%.2f")
+      format.classes = TRUE,
+      pattern = "%.2f"
+    )
   })
 
   expect_s3_class(out, "data.frame")

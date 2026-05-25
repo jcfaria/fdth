@@ -1,6 +1,6 @@
 fdt_cat.matrix <- function (x,
-                            sort=TRUE,
-                            decreasing=TRUE, ...)
+                            sort = TRUE,
+                            decreasing = TRUE, ...)
 {
   stopifnot(is.matrix(x))
 
@@ -9,13 +9,13 @@ fdt_cat.matrix <- function (x,
   #x <- na.omit(x)
  
   for (i in 1:ncol(x)) {
-    m <- as.matrix(x[ ,i])
+    m <- as.matrix(x[ , i])
 
     fdt <- make.fdt_cat.simple(m,
                                sort,
                                decreasing)
     
-    tmpres <- list(table=list(fdt)[[1]]) 
+    tmpres <- list(table = list(fdt)[[1]]) 
 
     res <- c(res,
              list(tmpres))
@@ -24,7 +24,7 @@ fdt_cat.matrix <- function (x,
   if (is.null(colnames(x)))
     nms <- paste('Column',
                  1:ncol(x),
-                 sep=':')
+                 sep = ':')
   else
     nms <- colnames(x)
 

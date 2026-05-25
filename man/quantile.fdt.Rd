@@ -15,8 +15,8 @@
 ## S3 methods: numerical
 \method{quantile}{fdt}(x,
          \dots,
-         i=1,
-         probs=seq(0, 1, 0.25))
+         i = 1,
+         probs = seq(0, 1, 0.25))
 
 \method{quantile}{fdt.multiple}(x, \dots) 
 }
@@ -54,9 +54,9 @@ in \code{probs} (for example, \code{25\%}, \code{50\%}, \code{75\%}).
 \examples{
 library(fdth)
 
-x <- rnorm(n=1e3,
-           mean=5,
-           sd=1)
+x <- rnorm(n = 1e3,
+           mean = 5,
+           sd = 1)
 
 (ft <- fdt(x))
 
@@ -65,44 +65,44 @@ quantile(x)[2:4]
 
 # Quartile from grouped data in a fdt object
 quantile(ft,
-         i=1:3)
+         i = 1:3)
 
 # Quartile from vector
 quantile(x,
-         probs=seq(from=0,
-                   to=1,
-                   by=.1))[2:10]
+         probs = seq(from = 0,
+                   to = 1,
+                   by = .1))[2:10]
 
 # Decile from grouped data in a fdt object
 quantile(ft,
-         i=1:9,
-         probs=seq(from=0,
-                   to=1,
-                   by=.1))
+         i = 1:9,
+         probs = seq(from = 0,
+                   to = 1,
+                   by = .1))
 
 # Percentile from vector
 quantile(x,
-         probs=seq(from=0,
-                   to=1,
-                   by=.01))[2:100]
+         probs = seq(from = 0,
+                   to = 1,
+                   by = .01))[2:100]
 
 # Percentile from grouped data in a fdt object
 quantile(ft,
-         i=1:99,
-         probs=seq(from=0,
-                   to=1,
-                   by=.01))
+         i = 1:99,
+         probs = seq(from = 0,
+                   to = 1,
+                   by = .01))
 
 # From a data.frame
-mdf <- data.frame(x=rnorm(1e2, 
-                          20,
-                          2),
-                  y=rnorm(1e2, 
-                          30,
-                          3),
-                  z=rnorm(1e2,
-                          40,
-                          4))
+mdf <- data.frame(x = rnorm(1e2,
+                            20,
+                            2),
+                  y = rnorm(1e2,
+                            30,
+                            3),
+                  z = rnorm(1e2,
+                            40,
+                            4))
 
 head(mdf)
 
@@ -113,46 +113,46 @@ apply(mdf,
 
 # From a fdt object
 quantile(fdt(mdf),
-         i=1:3)
+         i = 1:3)
 
 ## A small (but didactic) joke  
 quantile(fdt(mdf),
-         i=2,
-         probs=seq(0, 
-                   1, 
-                   0.25))        # The quartile 2
+         i = 2,
+         probs = seq(0,
+                     1,
+                     0.25))        # The quartile 2
 quantile(fdt(mdf),
-         i=5,
-         probs=seq(0, 
-                   1, 
-                   0.10))        # The decile 5 
+         i = 5,
+         probs = seq(0,
+                     1,
+                     0.10))        # The decile 5
 
 quantile(fdt(mdf),
-         i=50,
-         probs=seq(0, 
-                   1, 
-                   0.01))        # The percentile 50
+         i = 50,
+         probs = seq(0,
+                     1,
+                     0.01))        # The percentile 50
 
 quantile(fdt(mdf),
-         i=500,
-         probs=seq(0, 
-                   1, 
-                   0.001))       # The permile 500
+         i = 500,
+         probs = seq(0,
+                     1,
+                     0.001))       # The permile 500
 
 median(fdt(mdf))                 # The median (all results are the same) ;)
 
 # More than one quantile
 quantile(fdt(mdf$x),
-         i=1:3,
-         probs=seq(0,
-                   1,
-                   0.25))  # The three quartiles
+         i = 1:3,
+         probs = seq(0,
+                     1,
+                     0.25))  # The three quartiles
 
 quantile(fdt(mdf$x),
-         i=1:9,
-         probs=seq(0,
-                   1,
-                   0.10))  # The nine deciles
+         i = 1:9,
+         probs = seq(0,
+                     1,
+                     0.10))  # The nine deciles
 
 # Legacy approach (no longer necessary)
 # ql <- numeric()

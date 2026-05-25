@@ -19,17 +19,17 @@ fdt_cat(x, \dots)
 
 ## S3 methods
 \method{fdt_cat}{default}(x,
-        sort=TRUE,
-        decreasing=TRUE, \dots)
+        sort = TRUE,
+        decreasing = TRUE, \dots)
 
 \method{fdt_cat}{data.frame}(x,
         by,
-        sort=TRUE,
-        decreasing=TRUE, \dots) 
+        sort = TRUE,
+        decreasing = TRUE, \dots) 
 
 \method{fdt_cat}{matrix}(x,
-        sort=TRUE,
-        decreasing=TRUE, \dots)
+        sort = TRUE,
+        decreasing = TRUE, \dots)
 }
 
 \arguments{
@@ -84,9 +84,9 @@ fdt_cat(x, \dots)
 library(fdth)
 
 # Categorical
-x <- sample(x=letters[1:5],
-            size=5e2,
-            rep=TRUE)
+x <- sample(x = letters[1:5],
+            size = 5e2,
+            rep = TRUE)
 
 table(x)
 sum(table(x))
@@ -94,40 +94,54 @@ sum(table(x))
 (ft.c <- fdt_cat(x))
 
 (ft.c <- fdt_cat(x,
-                 sort=FALSE))
+                 sort = FALSE))
 
 #=========================================================
 # Data.frame: multivariate with two categorical variables
 #=========================================================
-mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
-                  c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
-                  n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
-                  n2=rnorm(100, 60, 4),
-                  n3=rnorm(100, 50, 4),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(c1 = sample(LETTERS[1:3],
+                              1e2,
+                              rep = TRUE),
+                  c2 = as.factor(sample(1:10,
+                                        1e2,
+                                        rep = TRUE)),
+                  n1 = c(NA,
+                         NA,
+                         rnorm(96,
+                               10,
+                               1),
+                         NA,
+                         NA),
+                  n2 = rnorm(100,
+                             60,
+                             4),
+                  n3 = rnorm(100,
+                             50,
+                             4),
+                  stringsAsFactors = TRUE)
 
 str(mdf)
 
 (ft.c <- fdt_cat(mdf))
 
 (ft.c <- fdt_cat(mdf,
-                 dec=FALSE))
+                 dec = FALSE))
 
 (ft.c <- fdt_cat(mdf,
-                 sort=FALSE))
+                 sort = FALSE))
 
 (ft.c <- fdt_cat(mdf,
-                 by='c1'))
+                 by = 'c1'))
 
 #===================================
 # Matrix: two categorical variables
 #===================================
-x <- matrix(sample(x=letters[1:10],
-                   size=100,
-                   rep=TRUE),
-            nc=2,
-            dimnames=list(NULL,
-                          c('c1', 'c2')))
+x <- matrix(sample(x = letters[1:10],
+                   size = 100,
+                   rep = TRUE),
+            nc = 2,
+            dimnames = list(NULL,
+                            c('c1', 'c2')))
 
 head(x)
 

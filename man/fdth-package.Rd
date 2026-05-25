@@ -87,9 +87,9 @@ library (fdth)
 #=====================
 # Vectors: univariate
 #=====================
-x <- rnorm(n=1e3,
-           mean=5,
-           sd=1)
+x <- rnorm(n = 1e3,
+           mean = 5,
+           sd = 1)
 
 (ft <- fdt(x))
 
@@ -97,68 +97,68 @@ x <- rnorm(n=1e3,
 plot(ft)  # Absolute frequency histogram
 
 plot(ft,
-     main='My title')
+     main = 'My title')
 
 plot(ft,
-     x.round=3,
-     col='darkgreen')
+     x.round = 3,
+     col = 'darkgreen')
 
 plot(ft,
-     xlas=2)
+     xlas = 2)
 
 plot(ft,
-     x.round=3,
-     xlas=2,
-     xlab=NULL)
+     x.round = 3,
+     xlas = 2,
+     xlab = NULL)
 
 plot(ft,
-     v=TRUE,
-     cex=.8,
-     x.round=3,
-     xlas=2,
-     xlab=NULL,
-     col=rainbow(11))
+     v = TRUE,
+     cex = .8,
+     x.round = 3,
+     xlas = 2,
+     xlab = NULL,
+     col = rainbow(11))
 
 plot(ft,
-     type='fh')    # Absolute frequency histogram
+     type = 'fh')    # Absolute frequency histogram
 
 plot(ft,
-     type='rfh')   # Relative frequency histogram
+     type = 'rfh')   # Relative frequency histogram
 
 plot(ft,
-     type='rfph')  # Relative frequency (%) histogram
+     type = 'rfph')  # Relative frequency (%) histogram
 
 plot(ft,
-     type='cdh')   # Cumulative density histogram
+     type = 'cdh')   # Cumulative density histogram
 
 plot(ft,
-     type='cfh')   # Cumulative frequency histogram
+     type = 'cfh')   # Cumulative frequency histogram
 
 plot(ft,
-     type='cfph')  # Cumulative frequency (%) histogram
+     type = 'cfph')  # Cumulative frequency (%) histogram
 
 # Polygons
 plot(ft,
-     type='fp')    # Absolute frequency polygon
+     type = 'fp')    # Absolute frequency polygon
 
 plot(ft,
-     type='rfp')   # Relative frequency polygon
+     type = 'rfp')   # Relative frequency polygon
 
 plot(ft,
-     type='rfpp')  # Relative frequency (%) polygon
+     type = 'rfpp')  # Relative frequency (%) polygon
 
 plot(ft,
-     type='cdp')   # Cumulative density polygon
+     type = 'cdp')   # Cumulative density polygon
 
 plot(ft,
-     type='cfp')   # Cumulative frequency polygon
+     type = 'cfp')   # Cumulative frequency polygon
 
 plot(ft,
-     type='cfpp')  # Cumulative frequency (%) polygon
+     type = 'cfpp')  # Cumulative frequency (%) polygon
 
 # Density
 plot(ft,
-     type='d')     # Density
+     type = 'd')     # Density
 
 # Summary
 ft
@@ -170,26 +170,26 @@ print(ft)    # same result
 show(ft)     # same result
 
 summary(ft,
-        format=TRUE)      # This may not be what you want for publication.
+        format = TRUE)      # This may not be what you want for publication.
 
 summary(ft,
-        format=TRUE,
-        pattern='\%.2f')   # Better, but can it be improved?
+        format = TRUE,
+        pattern = '\%.2f')   # Better, but can it be improved?
 
 summary(ft,
-        col=c(1:2, 4, 6),
-        format=TRUE,
-        pattern='\%.2f')   # Yes, it can!
+        col = c(1:2, 4, 6),
+        format = TRUE,
+        pattern = '\%.2f')   # Yes, it can!
 
 range(x)                  # To inspect the range of x
 
 summary(fdt(x,
-            start=1, 
-            end=9,
-            h=1),
-        col=c(1:2, 4, 6),
-        format=TRUE,
-        pattern='\%d')     # Is it nice now?
+            start = 1, 
+            end = 9,
+            h = 1),
+        col = c(1:2, 4, 6),
+        format = TRUE,
+        pattern = '\%d')     # Is it nice now?
 
 # The fdt.object
 ft[['table']]                        # Stores the frequency distribution table (fdt)
@@ -201,88 +201,100 @@ as.logical(ft[['breaks']]['right'])  # Stores the right option
 
 # Theoretical curve and fdt
 y <- rnorm(1e5,
-           mean=5, 
-           sd=1)
+           mean = 5, 
+           sd = 1)
 
 ft <- fdt(y,
-          k=100)
+          k = 100)
 
 plot(ft,
-     type='d',                       # density
-     col=heat.colors(100))
+     type = 'd',                       # density
+     col = heat.colors(100))
 
 curve(dnorm(x,
-            mean=5, 
-            sd=1),
-      n=1e3,      
-      add=TRUE, 
-      lwd=3,
-      col='dark blue')
+            mean = 5, 
+            sd = 1),
+      n = 1e3,      
+      add = TRUE, 
+      lwd = 3,
+      col = 'dark blue')
 
 #======================================================
 # Data.frames: multivariate with categorical variables
 #======================================================
-mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
-                  X2=as.factor(rep(1:10, 10)),
-                  Y1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
-                  Y2=rnorm(100, 60, 4),
-                  Y3=rnorm(100, 50, 4),
-                  Y4=rnorm(100, 40, 4),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(X1 = rep(LETTERS[1:4], 25),
+                  X2 = as.factor(rep(1:10, 10)),
+                  Y1 = c(NA,
+                         NA,
+                         rnorm(96,
+                               10,
+                               1),
+                         NA,
+                         NA),
+                  Y2 = rnorm(100,
+                             60,
+                             4),
+                  Y3 = rnorm(100,
+                             50,
+                             4),
+                  Y4 = rnorm(100,
+                             40,
+                             4),
+                  stringsAsFactors = TRUE)
 
 #(ft <- fdt(mdf)) # Error message due to presence of NA values
 
 (ft <- fdt(mdf,
-           na.rm=TRUE))
+           na.rm = TRUE))
 
 # Histograms
 plot(ft,
-     v=TRUE)
+     v = TRUE)
 
 plot(ft,
-     col=rainbow(8))
+     col = rainbow(8))
 
 plot(ft,
-     type='fh')
+     type = 'fh')
 
 plot(ft,
-     type='rfh')
+     type = 'rfh')
 
 plot(ft,
-     type='rfph')
+     type = 'rfph')
 
 plot(ft,
-     type='cdh')
+     type = 'cdh')
 
 plot(ft,
-     type='cfh')
+     type = 'cfh')
 
 plot(ft,
-     type='cfph')
+     type = 'cfph')
 
 # Polygons
 plot(ft,
-     v=TRUE,
-     type='fp')
+     v = TRUE,
+     type = 'fp')
 
 plot(ft,
-     type='rfp')
+     type = 'rfp')
 
 plot(ft,
-     type='rfpp')
+     type = 'rfpp')
 
 plot(ft,
-     type='cdp')
+     type = 'cdp')
 
 plot(ft,
-     type='cfp')
+     type = 'cfp')
 
 plot(ft,
-     type='cfpp') 
+     type = 'cfpp') 
 
 # Density
 plot(ft,
-     type='d') 
+     type = 'd') 
 
 # Summary
 ft
@@ -294,120 +306,138 @@ print(ft)    # same result
 show(ft)     # same result
 
 summary(ft,
-        format=TRUE)
+        format = TRUE)
 
 summary(ft,
-        format=TRUE, 
-        pattern='\%05.2f')  # regular expression
+        format = TRUE, 
+        pattern = '\%05.2f')  # regular expression
 
 summary(ft,
-        col=c(1:2, 4, 6), 
-        format=TRUE,
-        pattern='\%05.2f')
+        col = c(1:2, 4, 6), 
+        format = TRUE,
+        pattern = '\%05.2f')
 
 print(ft,
-      col=c(1:2, 4, 6))
+      col = c(1:2, 4, 6))
 
 print(ft,
-      col=c(1:2, 4, 6), 
-      format=TRUE,
-      pattern='\%05.2f')
+      col = c(1:2, 4, 6), 
+      format = TRUE,
+      pattern = '\%05.2f')
 
 # Using by
 levels(mdf$X1)
 
 plot(fdt(mdf,
-         k=5,
-         by='X1',
-         na.rm=TRUE),
-     col=rainbow(5))
+         k = 5,
+         by = 'X1',
+         na.rm = TRUE),
+     col = rainbow(5))
 
 levels(mdf$X2)
 
 summary(fdt(iris,
-            k=5),
-        format=TRUE,
-        patter='\%04.2f')
+            k = 5),
+        format = TRUE,
+        patter = '\%04.2f')
 
 plot(fdt(iris,
-         k=5),
-     col=rainbow(5))
+         k = 5),
+     col = rainbow(5))
 
 levels(iris$Species)
 
 summary(fdt(iris,
-            k=5,
-            by='Species'),
-        format=TRUE,
-        patter='\%04.2f')
+            k = 5,
+            by = 'Species'),
+        format = TRUE,
+        patter = '\%04.2f')
 
 plot(fdt(iris,
-         k=5,
-         by='Species'),
-     v=TRUE)
+         k = 5,
+         by = 'Species'),
+     v = TRUE)
 
 #========================
 # Matrices: multivariate
 #========================
 summary(fdt(state.x77),
-        col=c(1:2, 4, 6),
-        format=TRUE)
+        col = c(1:2, 
+                4, 
+                6),
+        format = TRUE)
 
 plot(fdt(state.x77))
 
 # Very big
 summary(fdt(volcano,
-            right=TRUE),
-        col=c(1:2, 4, 6),
-        round=3,
-        format=TRUE,
-        pattern='\%05.1f')
+            right = TRUE),
+        col = c(1:2, 
+                  4, 
+                  6),
+        round = 3,
+        format = TRUE,
+        pattern = '\%05.1f')
 
 plot(fdt(volcano,
-         right=TRUE))
+         right = TRUE))
 
 ## Categorical
-x <- sample(x=letters[1:5],
-            size=5e2,
-            rep=TRUE)
+x <- sample(x = letters[1:5],
+            size = 5e2,
+            rep = TRUE)
 
 (fdt.c <- fdt_cat(x))
 
 (fdt.c <- fdt_cat(x,
-                  sort=FALSE))
+                  sort = FALSE))
 
 #=========================================================
 # Data.frame: multivariate with two categorical variables
 #=========================================================
-mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, rep=TRUE),
-                  c2=as.factor(sample(1:10, 1e2, rep=TRUE)),
-                  n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
-                  n2=rnorm(100, 60, 4),
-                  n3=rnorm(100, 50, 4),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(c1 = sample(LETTERS[1:3],
+                              1e2,
+                              rep = TRUE),
+                  c2 = as.factor(sample(1:10,
+                                        1e2,
+                                        rep = TRUE)),
+                  n1 = c(NA,
+                         NA,
+                         rnorm(96,
+                               10,
+                               1),
+                         NA,
+                         NA),
+                  n2 = rnorm(100,
+                             60,
+                             4),
+                  n3 = rnorm(100,
+                             50,
+                             4),
+                  stringsAsFactors = TRUE)
 
 str(mdf)
 
 (fdt.c <- fdt_cat(mdf))
 
 (fdt.c <- fdt_cat(mdf,
-                  dec=FALSE))
+                  dec = FALSE))
 
 (fdt.c <- fdt_cat(mdf,
-                  sort=FALSE))
+                  sort = FALSE))
 
 (fdt.c <- fdt_cat(mdf,
-                  by='c1'))
+                  by = 'c1'))
 
 #=========================
 # Matrix: two categorical
 #=========================
-x <- matrix(sample(x=letters[1:10],
-                   size=100,
-                   rep=TRUE),
-            nc=2,
-            dimnames=list(NULL,
-                          c('c1', 'c2')))
+x <- matrix(sample(x = letters[1:10],
+                   size = 100,
+                   rep = TRUE),
+            nc = 2,
+            dimnames = list(NULL,
+                            c('c1', 'c2')))
 
 head(x)
 

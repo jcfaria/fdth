@@ -1,7 +1,7 @@
 fdt_cat.data.frame <- function (x,
                                 by,
-                                sort=TRUE,
-                                decreasing=TRUE, ...)
+                                sort = TRUE,
+                                decreasing = TRUE, ...)
 {
  stopifnot(is.data.frame(x))
 
@@ -23,7 +23,7 @@ fdt_cat.data.frame <- function (x,
                                  sort,
                                  decreasing)
 
-    tmpres <- list(table=fdt[[1]])
+    tmpres <- list(table = fdt[[1]])
 
     res <- c(res,
              list(tmpres))
@@ -66,7 +66,7 @@ fdt_cat.data.frame <- function (x,
      nameFY <- paste(nameF,
                      '.',
                      nameY,
-                     sep="")
+                     sep = "")
 
      names(newFY) <- sub(' +$',
                          '',

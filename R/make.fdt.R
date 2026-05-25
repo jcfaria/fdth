@@ -3,7 +3,7 @@
 make.fdt <- function(f,
                      start,
                      end,
-                     right=FALSE)
+                     right = FALSE)
 
 {
   stopifnot(start < end)
@@ -16,7 +16,7 @@ make.fdt <- function(f,
 
   brk <- seq(start,
              end,
-             len=length(f) + 1)
+             len = length(f) + 1)
 
   if (right)
     cl <- paste('(',
@@ -24,14 +24,14 @@ make.fdt <- function(f,
                 ',',
                 brk[2:length(brk)],
                 ']',
-                sep='')
+                sep = '')
   else
     cl <- paste('[',
                 brk[1:length(brk) - 1],
                 ',',
                 brk[2:length(brk)],
                 ')',
-                sep='')
+                sep = '')
 
   fdt <- data.frame(cl,            # Make final table
                     f,
@@ -49,7 +49,7 @@ make.fdt <- function(f,
 
   breaks <- c(start,
               end,
-              h=diff(brk)[1],
+              h = diff(brk)[1],
               ifelse (right,
                       1,
                       0))
@@ -59,8 +59,8 @@ make.fdt <- function(f,
                      'h',
                      'right')
 
-  res <- list(table=fdt,
-              breaks=breaks)
+  res <- list(table = fdt,
+              breaks = breaks)
 
   class(res) <- c('fdt.default',
                   'fdt',

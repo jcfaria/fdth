@@ -18,32 +18,32 @@
 \usage{
 ## S3 methods
 \method{summary}{fdt.default}(object,
-        columns=1:6,
-        round=2,
-        format.classes=FALSE,
-        pattern="\%09.3e",
-        row.names=FALSE,
-        right=TRUE, \dots)
+        columns = 1:6,
+        round = 2,
+        format.classes = FALSE,
+        pattern = "\%09.3e",
+        row.names = FALSE,
+        right = TRUE, \dots)
 
 \method{summary}{fdt.multiple}(object,
-        columns=1:6,
-        round=2,
-        format.classes=FALSE,
-        pattern="\%09.3e",
-        row.names=FALSE,
-        right=TRUE, \dots)
+        columns = 1:6,
+        round = 2,
+        format.classes = FALSE,
+        pattern = "\%09.3e",
+        row.names = FALSE,
+        right = TRUE, \dots)
 
 \method{summary}{fdt_cat.default}(object,
-        columns=1:6,
-        round=2,
-        row.names=FALSE,
-        right=TRUE, \dots)
+        columns = 1:6,
+        round = 2,
+        row.names = FALSE,
+        right = TRUE, \dots)
 
 \method{summary}{fdt_cat.multiple}(object,
-        columns=1:6,
-        round=2,
-        row.names=FALSE,
-        right=TRUE, \dots)
+        columns = 1:6,
+        round = 2,
+        row.names = FALSE,
+        right = TRUE, \dots)
 }
 
 \arguments{
@@ -98,9 +98,9 @@ library (fdth)
 #=====================
 set.seed(1)
 
-x <- rnorm(n=1e3,
-           mean=5,
-           sd=1)
+x <- rnorm(n = 1e3,
+           mean = 5,
+           sd = 1)
 
 ft <- fdt(x)
 
@@ -111,26 +111,26 @@ ft
 summary(ft)  # same result
 
 summary(ft,
-        format=TRUE)      # It may not be what you want for publication!
+        format = TRUE)      # It may not be what you want for publication!
 
 summary(ft,
-        format=TRUE,
-        pattern='\%.2f')   # Better, but can it be improved?
+        format = TRUE,
+        pattern = '\%.2f')   # Better, but can it be improved?
 
 summary(ft,
-        col=c(1:2, 4, 6),
-        format=TRUE,
-        pattern='\%.2f')   # Yes, it can!
+        col = c(1:2, 4, 6),
+        format = TRUE,
+        pattern = '\%.2f')   # Yes, it can!
 
 range(x)                  # To inspect the range of x
 
 summary(fdt(x,
-            start=1,
-            end=9,
-            h=1),
-        col=c(1:2, 4, 6),
-        format=TRUE,
-        pattern='\%d')     # Is it nice now?
+            start = 1,
+            end = 9,
+            h = 1),
+        col = c(1:2, 4, 6),
+        format = TRUE,
+        pattern = '\%d')     # Is it nice now?
 
 ft[['table']]                        # Stores the frequency distribution table (fdt)
 ft[['breaks']]                       # Stores the breaks of fdt
@@ -142,93 +142,105 @@ as.logical(ft[['breaks']]['right'])  # Stores the right option
 #======================================================
 # Data.frames: multivariate with categorical variables
 #======================================================
-mdf <- data.frame(X1=rep(LETTERS[1:4], 25),
-                  X2=as.factor(rep(1:10, 10)),
-                  Y1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
-                  Y2=rnorm(100, 60, 4),
-                  Y3=rnorm(100, 50, 4),
-                  Y4=rnorm(100, 40, 4),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(X1 = rep(LETTERS[1:4], 25),
+                  X2 = as.factor(rep(1:10, 10)),
+                  Y1 = c(NA,
+                         NA,
+                         rnorm(96,
+                               10,
+                               1),
+                         NA,
+                         NA),
+                  Y2 = rnorm(100,
+                             60,
+                             4),
+                  Y3 = rnorm(100,
+                             50,
+                             4),
+                  Y4 = rnorm(100,
+                             40,
+                             4),
+                  stringsAsFactors = TRUE)
                   
 ft_c <- fdt_cat(mdf)
 
 summary(ft_c)
 
 ft <- fdt(mdf,
-          na.rm=TRUE)
+          na.rm = TRUE)
 
 str(ft)
 
 summary(ft)  # same result
 
 summary(ft,
-        format=TRUE)
+        format = TRUE)
 
 summary(ft,
-        format=TRUE,
-        pattern='\%05.2f')  # regular expression
+        format = TRUE,
+        pattern = '\%05.2f')  # regular expression
 
 summary(ft,
-        col=c(1:2, 4, 6),
-        format=TRUE,
-        pattern='\%05.2f')
+        col = c(1:2, 4, 6),
+        format = TRUE,
+        pattern = '\%05.2f')
 
 print(ft,
-      col=c(1:2, 4, 6))
+      col = c(1:2, 4, 6))
 
 print(ft,
-      col=c(1:2, 4, 6),
-      format=TRUE,
-      pattern='\%05.2f')
+      col = c(1:2, 4, 6),
+      format = TRUE,
+      pattern = '\%05.2f')
 
 levels(mdf$X1)
 
 summary(fdt(mdf,
-            k=5,
-            by='X1',
-            na.rm=TRUE))
+            k = 5,
+            by = 'X1',
+            na.rm = TRUE))
 
 levels(mdf$X2)
 
 summary(fdt(mdf, 
-            breaks='FD',
-            by='X2',
-            na.rm=TRUE),
-        round=3)
+            breaks = 'FD',
+            by = 'X2',
+            na.rm = TRUE),
+        round = 3)
 
 summary(fdt(mdf,
-            k=5,
-            by='X2',
-            na.rm=TRUE),
-        format=TRUE,
-        round=3)
+            k = 5,
+            by = 'X2',
+            na.rm = TRUE),
+        format = TRUE,
+        round = 3)
 
 summary(fdt(iris,
-            k=5),
-        format=TRUE,
-        patter='\%04.2f')
+            k = 5),
+        format = TRUE,
+        patter = '\%04.2f')
 
 levels(iris$Species)
 
 summary(fdt(iris, 
-            k=5, 
-            by='Species'), 
-        format=TRUE, 
-        patter='\%04.2f')
+            k = 5, 
+            by = 'Species'), 
+        format = TRUE, 
+        patter = '\%04.2f')
 
 #========================
 # Matrices: multivariate
 #========================
 summary(fdt(state.x77),
-        col=c(1:2, 4, 6),
-        format=TRUE)
+        col = c(1:2, 4, 6),
+        format = TRUE)
 
 summary(fdt(volcano,
-            right=TRUE),
-        col=c(1:2, 4, 6),
-        round=3,
-        format=TRUE,
-        pattern='\%05.1f')
+            right = TRUE),
+        col = c(1:2, 4, 6),
+        round = 3,
+        format = TRUE,
+        pattern = '\%05.1f')
 }
 
 \keyword{fdt}

@@ -3,9 +3,11 @@ fdt.default <- function (x,
                          start,
                          end,
                          h,
-                         breaks=c('Sturges', 'Scott', 'FD'),
-                         right=FALSE,
-                         na.rm=FALSE, ...)
+                         breaks = c('Sturges',
+                                    'Scott',
+                                    'FD'),
+                         right = FALSE,
+                         na.rm = FALSE, ...)
 {
   # User defines nothing or not 'x' isn't numeric -> stop
   stopifnot(is.numeric(x))
@@ -27,7 +29,7 @@ fdt.default <- function (x,
       stop('The data has <NA> values and na.rm=FALSE by default.')
 
     tmp   <- range(x,
-                   na.rm=na.rm)
+                   na.rm = na.rm)
     start <- tmp[1] - abs(tmp[1])/100
     end   <- tmp[2] + abs(tmp[2])/100
     R     <- end - start
@@ -44,7 +46,7 @@ fdt.default <- function (x,
       stop('The data has <NA> values and na.rm=FALSE by default.')
 
     tmp   <- range(x,
-                   na.rm=na.rm)
+                   na.rm = na.rm)
     start <- tmp[1] - abs(tmp[1])/100
     end   <- tmp[2] + abs(tmp[2])/100
     R     <- end - start
@@ -89,8 +91,8 @@ fdt.default <- function (x,
                      'h',
                      'right')
 
-  res <- list(table=fdt,
-              breaks=breaks)
+  res <- list(table = fdt,
+              breaks = breaks)
 
   class(res) <- c('fdt.default',
                   'fdt',

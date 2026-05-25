@@ -6,12 +6,11 @@ make.fdt.simple <- function (x,
 
 {
   f <- table(cut(x,
-                 br=seq(start,
-                        end,
-                        h),
-                 right=right,
-                 dig.lab=nchar(as.character(round(max(end),
-                                                  2)))))    # Absolute freq.
+                 br = seq(start,
+                          end,
+                          h),
+                 right = right,
+                 dig.lab = nchar(as.character(round(max(end), 2)))))    # Absolute freq.
   rf  <- as.numeric(f/sum(f))                              # Relative freq
   rfp <- as.numeric(100*(f/sum(f)))                        # Relative freq, %
   cf  <- as.numeric(cumsum(f))                             # Cumulative freq

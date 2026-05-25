@@ -11,7 +11,7 @@ make.fdt_cat.multiple <- function(x,
 
   for(i in seq_len(ncol(x))){
     if(f[i]){
-      m  <- x[,i]
+      m  <- x[, i]
 
       fdt <- make.fdt_cat.simple(m,
                                  sort,

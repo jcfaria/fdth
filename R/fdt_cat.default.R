@@ -1,6 +1,6 @@
 fdt_cat.default <- function (x,
-                             sort=TRUE,
-                             decreasing=TRUE, ...)
+                             sort = TRUE,
+                             decreasing = TRUE, ...)
 {
   res <- make.fdt_cat.simple(x,
                              sort,

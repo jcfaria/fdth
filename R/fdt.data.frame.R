@@ -1,9 +1,11 @@
 fdt.data.frame <- function (x,
                             k,
                             by,
-                            breaks=c('Sturges', 'Scott', 'FD'),
-                            right=FALSE,
-                            na.rm=FALSE, ...)
+                            breaks = c('Sturges',
+                                       'Scott',
+                                       'FD'),
+                            right = FALSE,
+                            na.rm = FALSE, ...)
 {
   stopifnot(is.data.frame(x))
 
@@ -25,8 +27,8 @@ fdt.data.frame <- function (x,
                                  right,
                                  na.rm)
 
-        tmpres <- list(table=fdt[[1]],
-                       breaks=fdt[[2]])
+        tmpres <- list(table = fdt[[1]],
+                       breaks = fdt[[2]])
 
         res <- c(res,
                  list(tmpres))
@@ -69,7 +71,7 @@ fdt.data.frame <- function (x,
           nameFY <- paste(nameF,
                           '.',
                           nameY,
-                          sep="")
+                          sep = "")
 
           names(newFY) <- sub(' +$',
                               '',

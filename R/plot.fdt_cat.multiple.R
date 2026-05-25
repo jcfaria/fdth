@@ -1,35 +1,37 @@
 plot.fdt_cat.multiple <- function (x,
-                                   type=c('fb', 'fp', 'fd',
-                                          'rfb', 'rfp', 'rfd',
-                                          'rfpb', 'rfpp', 'rfpd',
-                                          'cfb', 'cfp', 'cfd',
-                                          'cfpb', 'cfpp', 'cfpd',
-                                          'pa'),
-                                   v=FALSE,
-                                   v.round=2,
-                                   v.pos=3,
-                                   xlab=NULL,
-                                   xlas=0,
-                                   ylab=NULL,
-                                   y2lab=NULL,
-                                   y2cfp=seq(0, 100, 25),
-                                   col=gray(.4),
-                                   xlim=NULL,
-                                   ylim=NULL,
-                                   main=NULL,
-                                   main.vars=TRUE,
-                                   box=FALSE, ...)
+                                   type = c('fb', 'fp', 'fd',
+                                            'rfb', 'rfp', 'rfd',
+                                            'rfpb', 'rfpp', 'rfpd',
+                                            'cfb', 'cfp', 'cfd',
+                                            'cfpb', 'cfpp', 'cfpd',
+                                            'pa'),
+                                   v = FALSE,
+                                   v.round = 2,
+                                   v.pos = 3,
+                                   xlab = NULL,
+                                   xlas = 0,
+                                   ylab = NULL,
+                                   y2lab = NULL,
+                                   y2cfp = seq(0,
+                                               100,
+                                               25),
+                                   col = gray(.4),
+                                   xlim = NULL,
+                                   ylim = NULL,
+                                   main = NULL,
+                                   main.vars = TRUE,
+                                   box = FALSE, ...)
 {
   is.whole.number <- function (x,
-                               tol=.Machine$double.eps^0.5)
+                               tol = .Machine$double.eps^0.5)
     abs(x - round(x)) < tol
 
   old.mf  <- par("mfrow")
   old.oma <- par("oma")
   old.mar <- par("mar")
-  on.exit(par(mfrow=old.mf,
-              oma=old.oma,
-              mar=old.mar))
+  on.exit(par(mfrow = old.mf,
+              oma = old.oma,
+              mar = old.mar))
 
   mf <- old.mf
 
@@ -45,12 +47,11 @@ plot.fdt_cat.multiple <- function (x,
       else  if (n <= 16) c(4, 4)
       else               c(4, 5)
 
-      par(mfrow=mf)
+      par(mfrow = mf)
       nplot.device <- prod(mf)
 
       if (!is.null(main))
-        main <- rep(main, 
-                    length(x))
+        main <- rep(main, length(x))
       else if (main.vars)
         main <- names(x)
 
@@ -59,24 +60,24 @@ plot.fdt_cat.multiple <- function (x,
       repeat {
         if ((i != 0) & is.whole.number(i/nplot.device)) {
           dev.new()
-          par(mfrow=mf)
+          par(mfrow = mf)
         }
         i <- i + 1
         plot.fdt_cat.default(x[[i]][[1]],
-                             type=type,
-                             v=v,
-                             v.round=v.round,
-                             v.pos=v.pos,
-                             xlab=xlab,
-                             xlas=xlas,
-                             ylab=ylab,
-                             y2lab=y2lab,
-                             y2cfp=y2cfp,
-                             col=col,
-                             xlim=xlim,
-                             ylim=ylim,
-                             main=main[i],
-                             box=box, ...)
+                             type = type,
+                             v = v,
+                             v.round = v.round,
+                             v.pos = v.pos,
+                             xlab = xlab,
+                             xlas = xlas,
+                             ylab = ylab,
+                             y2lab = y2lab,
+                             y2cfp = y2cfp,
+                             col = col,
+                             xlim = xlim,
+                             ylim = ylim,
+                             main = main[i],
+                             box = box, ...)
         if (i == length(x))
           break
       }

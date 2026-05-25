@@ -15,12 +15,12 @@
 make.fdt(f,
          start,
          end,
-         right=FALSE)
+         right = FALSE)
 
 make.fdt_cat(f,
-             categories=NULL,
-             sort=TRUE,
-             decreasing=TRUE)
+             categories = NULL,
+             sort = TRUE,
+             decreasing = TRUE)
 }
 
 \arguments{
@@ -77,24 +77,24 @@ x <- rnorm(1e3,
 (ft.r <- fdt(x))
 
 # Making a brand new
-(ft.n  <- make.fdt(f=ft.r$table$f,
-                   start=13.711,
-                   end=27.229))   # Good, but can it be improved?
+(ft.n  <- make.fdt(f = ft.r$table$f,
+                   start = 13.711,
+                   end = 27.229))   # Good, but can it be improved?
 
 summary(ft.n,
-        format=TRUE,
-        pattern='\%.3f')           # Is it nice now?
+        format = TRUE,
+        pattern = '\%.3f')           # Is it nice now?
 
 
 # Categorical
 x <- sample(letters[1:5], 
             1e3, 
-            rep=TRUE)
+            rep = TRUE)
 
 # Making one reference fdt
 (ft.r <- fdt_cat(x))
 
 # Making a brand new
-(ft.n <- make.fdt_cat(f=ft.r$f,
-                      categ=ft.r$Category))
+(ft.n <- make.fdt_cat(f = ft.r$f,
+                      categ = ft.r$Category))
 }

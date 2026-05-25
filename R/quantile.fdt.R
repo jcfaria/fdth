@@ -1,7 +1,7 @@
 quantile.fdt <- function(x,
                          ...,
-                         i=1,
-                         probs=seq(0, 1, 0.25))
+                         i = 1,
+                         probs = seq(0, 1, 0.25))
 {
   if (!is.numeric(i) || length(i) < 1 || any(is.na(i)) || any(!is.finite(i)))
     stop("'i' must be a finite numeric vector without missing values.")

@@ -1,8 +1,10 @@
 library(fdth)
 
 set.seed(99)
-x_chr <- sample(c("apple", "banana", "cherry", "apple", "banana",
-                   "apple"), 120, replace = TRUE)
+x_chr <- sample(c(
+  "apple", "banana", "cherry", "apple", "banana",
+  "apple"
+), 120, replace = TRUE)
 x_fac <- factor(x_chr)
 
 test_that("fdt_cat returns correct class for character input", {
@@ -48,7 +50,7 @@ test_that("print.fdt_cat.default runs without error", {
 })
 
 test_that("summary.fdt_cat.default returns a data frame invisibly", {
-  ft  <- fdt_cat(x_chr)
+  ft <- fdt_cat(x_chr)
   out <- NULL
   capture.output(out <- summary(ft))
   expect_s3_class(out, "data.frame")

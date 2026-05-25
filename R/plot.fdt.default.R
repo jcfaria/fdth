@@ -1,19 +1,19 @@
 plot.fdt.default <- function (x,
-                              type=c('fh', 'fp',
-                                     'rfh', 'rfp', 'rfph', 'rfpp',
-                                     'd', 'cdh', 'cdp',
-                                     'cfh', 'cfp', 'cfph', 'cfpp'),
-                              v=FALSE,
-                              v.round=2,
-                              v.pos=3,
-                              xlab='Class limits',
-                              xlas=0,
-                              ylab=NULL,
-                              col='gray',
-                              xlim=NULL,
-                              ylim=NULL,
-                              main=NULL,
-                              x.round=2, ...)
+                              type = c('fh', 'fp',
+                                       'rfh', 'rfp', 'rfph', 'rfpp',
+                                       'd', 'cdh', 'cdp',
+                                       'cfh', 'cfp', 'cfph', 'cfpp'),
+                              v = FALSE,
+                              v.round = 2,
+                              v.pos = 3,
+                              xlab = 'Class limits',
+                              xlas = 0,
+                              ylab = NULL,
+                              col = 'gray',
+                              xlim = NULL,
+                              ylim = NULL,
+                              main = NULL,
+                              x.round = 2, ...)
 {
   brk <- with(x,
               seq(breaks['start'],
@@ -44,9 +44,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -56,14 +56,12 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # f (absolute frequency) - polygon
@@ -81,22 +79,20 @@ plot.fdt.default <- function (x,
 
            plot(mids,
                 y,
-                type='b',
-                xaxt='n',
-                bty='n',
-                xlim=xlim,
-                ylim=ylim,
-                xlab=xlab,
-                ylab=ylab,
-                col=col,
-                main=main, ...)
+                type = 'b',
+                xaxt = 'n',
+                bty = 'n',
+                xlim = xlim,
+                ylim = ylim,
+                xlab = xlab,
+                ylab = ylab,
+                col = col,
+                main = main, ...)
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # rf (relative frequency) - histogram
@@ -116,9 +112,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -128,15 +124,13 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # rf (relative frequency) - polygon
@@ -153,23 +147,21 @@ plot.fdt.default <- function (x,
                      table[, 3])
            plot(mids,
                 y,
-                type='b',
-                xaxt='n',
-                bty='n',
-                xlim=xlim,
-                ylim=ylim,
-                xlab=xlab,
-                ylab=ylab,
-                col=col,
-                main=main, ...)
+                type = 'b',
+                xaxt = 'n',
+                bty = 'n',
+                xlim = xlim,
+                ylim = ylim,
+                xlab = xlab,
+                ylab = ylab,
+                col = col,
+                main = main, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # rf (relative frequency %) - histogram
@@ -189,9 +181,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -201,15 +193,13 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # rf (relative frequency %) - polygon
@@ -226,23 +216,21 @@ plot.fdt.default <- function (x,
                      table[, 4])
            plot(mids,
                 y,
-                type='b',
-                xaxt='n',
-                bty='n',
-                xlim=xlim,
-                ylim=ylim,
-                xlab=xlab,
-                ylab=ylab,
-                col=col,
-                main=main, ...)
+                type = 'b',
+                xaxt = 'n',
+                bty = 'n',
+                xlim = xlim,
+                ylim = ylim,
+                xlab = xlab,
+                ylab = ylab,
+                col = col,
+                main = main, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # d (density)
@@ -264,9 +252,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -276,15 +264,13 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # cd (cumulative density) - histogram
@@ -304,9 +290,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -316,15 +302,13 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # cm (cumulative density) - polygon
@@ -343,23 +327,21 @@ plot.fdt.default <- function (x,
                   cumsum(x$table[, 3])/h)
            plot(brk,
                 y,
-                type='b',
-                xaxt='n',
-                bty='n',
-                xlim=xlim,
-                ylim=ylim,
-                xlab=xlab,
-                ylab=ylab,
-                col=col,
-                main=main, ...)
+                type = 'b',
+                xaxt = 'n',
+                bty = 'n',
+                xlim = xlim,
+                ylim = ylim,
+                xlab = xlab,
+                ylab = ylab,
+                col = col,
+                main = main, ...)
 
            if(v)
-             text(x=brk,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = brk,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # cf (cumulative frequency) - histogram
@@ -380,9 +362,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -392,15 +374,13 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # cf (cumulative frequency) - polygon
@@ -418,23 +398,21 @@ plot.fdt.default <- function (x,
                        table[, 5]))
            plot(brk,
                 y,
-                type='b',
-                xaxt='n',
-                bty='n',
-                xlim=xlim,
-                ylim=ylim,
-                xlab=xlab,
-                ylab=ylab,
-                col=col,
-                main=main, ...)
+                type = 'b',
+                xaxt = 'n',
+                bty = 'n',
+                xlim = xlim,
+                ylim = ylim,
+                xlab = xlab,
+                ylab = ylab,
+                col = col,
+                main = main, ...)
 
            if(v)
-             text(x=brk,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = brk,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # cfp (cumulative frequency %) - histogram
@@ -455,9 +433,9 @@ plot.fdt.default <- function (x,
            plot.window(xlim,
                        ylim)
 
-           title(main=main,
-                 xlab=xlab,
-                 ylab=ylab, ...)
+           title(main = main,
+                 xlab = xlab,
+                 ylab = ylab, ...)
 
            axis(2, ...)
 
@@ -467,15 +445,13 @@ plot.fdt.default <- function (x,
                 0,
                 brk[-1],
                 y,
-                col=col, ...)
+                col = col, ...)
 
            if(v)
-             text(x=mids,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = mids,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          },
 
          # cfp (cumulative frequency %) - polygon
@@ -492,27 +468,24 @@ plot.fdt.default <- function (x,
 
            plot(brk,
                 y,
-                type='b',
-                xaxt='n',
-                bty='n',
-                xlim=xlim,
-                ylim=ylim,
-                xlab=xlab,
-                ylab=ylab,
-                col=col,
-                main=main, ...)
+                type = 'b',
+                xaxt = 'n',
+                bty = 'n',
+                xlim = xlim,
+                ylim = ylim,
+                xlab = xlab,
+                ylab = ylab,
+                col = col,
+                main = main, ...)
 
            if(v)
-             text(x=brk,
-                  y=y,
-                  labels=format(round(y,
-                                      v.round),
-                                nsmall=v.round),
-                  pos=v.pos, ...)
+             text(x = brk,
+                  y = y,
+                  labels = format(round(y, v.round), nsmall = v.round),
+                  pos = v.pos, ...)
          })
 
   axis(1,
-       at=round(brk,
-                x.round),
-       las=xlas, ...)
+       at = round(brk, x.round),
+       las = xlas, ...)
 }

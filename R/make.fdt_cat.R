@@ -1,24 +1,24 @@
 make.fdt_cat <- function(f,
-                         categories=NULL,
-                         sort=TRUE,
-                         decreasing=TRUE)
+                         categories = NULL,
+                         sort = TRUE,
+                         decreasing = TRUE)
 {
   if (is.null(categories))
     if (is.null(names(f)))
       categories  <- paste('V',
                            1:length(f),
-                           sep='')
+                           sep = '')
     else
       categories <- names(f)
 
-    if (sort) {
-      order.f <- order(f,
-                       decreasing=decreasing)
+  if (sort) {
+    order.f <- order(f,
+                     decreasing = decreasing)
 
-      f <- f[order.f]
+    f <- f[order.f]
 
-      categories <- categories[order.f]
-    }
+    categories <- categories[order.f]
+  }
 
   f   <- as.vector(f)             # Frequency
   rf  <- f / sum(f)               # Relative freq

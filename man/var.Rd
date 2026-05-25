@@ -51,15 +51,15 @@ var(x, \dots)
 \examples{
 library(fdth)
 
-mdf <- data.frame(x=rnorm(1e2,
-                          20,
-                          2),
-                  y=rnorm(1e2,
-                          30,
-                          3),
-                  z=rnorm(1e2,
-                          40,
-                          4))
+mdf <- data.frame(x = rnorm(1e2,
+                            20,
+                            2),
+                  y = rnorm(1e2,
+                            30,
+                            3),
+                  z = rnorm(1e2,
+                            40,
+                            4))
 
 head(mdf)
 

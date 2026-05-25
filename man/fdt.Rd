@@ -23,22 +23,22 @@ fdt(x, \dots)
     start,
     end,
     h,
-    breaks=c('Sturges', 'Scott', 'FD'),
-    right=FALSE,
-    na.rm=FALSE, \dots)
+    breaks = c('Sturges', 'Scott', 'FD'),
+    right = FALSE,
+    na.rm = FALSE, \dots)
 
 \method{fdt}{data.frame}(x,
     k,
     by,
-    breaks=c('Sturges', 'Scott', 'FD'),
-    right=FALSE,
-    na.rm=FALSE, \dots)
+    breaks = c('Sturges', 'Scott', 'FD'),
+    right = FALSE,
+    na.rm = FALSE, \dots)
 
 \method{fdt}{matrix}(x,
     k,
-    breaks=c('Sturges', 'Scott', 'FD'),
-    right=FALSE,
-    na.rm=FALSE, \dots)
+    breaks = c('Sturges', 'Scott', 'FD'),
+    right = FALSE,
+    na.rm = FALSE, \dots)
 }
 
 \arguments{
@@ -110,89 +110,103 @@ library(fdth)
 #========
 # Vector
 #========
-x <- rnorm(n=1e3,
-           mean=5,
-           sd=1)
+x <- rnorm(n = 1e3,
+           mean = 5,
+           sd = 1)
 
 # x
 (ft <- fdt(x))
 
 # x, alternative breaks
 (ft <- fdt(x,
-           breaks='Scott'))
+           breaks = 'Scott'))
 
 # x, k
 (ft <- fdt(x,
-           k=10))
+           k = 10))
 
 # x, star, end
 range(x)
 
 (ft <- fdt(x,
-           start=floor(min(x)),
-           end=floor(max(x) + 1)))
+           start = floor(min(x)),
+           end = floor(max(x) + 1)))
 
 # x, start, end, h
 (ft <- fdt(x,
-           start=floor(min(x)),
-           end=floor(max(x) + 1),
-           h=1))
+           start = floor(min(x)),
+           end = floor(max(x) + 1),
+           h = 1))
 
 # Effect of right
 sort(x <- rep(1:3, 3))
 
 (ft <- fdt(x,
-           start=1,
-           end=4,
-           h=1))
+           start = 1,
+           end = 4,
+           h = 1))
 
 (ft <- fdt(x,
-           start=0,
-           end=3,
-           h=1,
-           right=TRUE))
+           start = 0,
+           end = 3,
+           h = 1,
+           right = TRUE))
 
 #=========================================================
 # Data.frame: multivariate with two categorical variables
 #=========================================================
-mdf <- data.frame(c1=sample(LETTERS[1:3], 1e2, TRUE),
-                  c2=as.factor(sample(1:10, 1e2, TRUE)),
-                  n1=c(NA, NA, rnorm(96, 10, 1), NA, NA),
-                  n2=rnorm(100, 60, 4),
-                  n3=rnorm(100, 50, 4),
-                  stringsAsFactors=TRUE)
+mdf <- data.frame(c1 = sample(LETTERS[1:3],
+                              1e2,
+                              TRUE),
+                  c2 = as.factor(sample(1:10,
+                                        1e2,
+                                        TRUE)),
+                  n1 = c(NA,
+                         NA,
+                         rnorm(96,
+                               10,
+                               1),
+                         NA,
+                         NA),
+                  n2 = rnorm(100,
+                             60,
+                             4),
+                  n3 = rnorm(100,
+                             50,
+                             4),
+                  stringsAsFactors = TRUE)
 
 str(mdf)
 
 #(ft <- fdt(mdf))  # Error message due to presence of NA values
 
 (ft <- fdt(mdf,
-           na.rm=TRUE))
+           na.rm = TRUE))
 
 # By factor
 (ft <- fdt(mdf,
-           k=5,
-           by='c1',
-           na.rm=TRUE))
+           k = 5,
+           by = 'c1',
+           na.rm = TRUE))
 
 # choose FD criteria
 (ft <- fdt(mdf,
-           breaks='FD',
-           by='c1',
-           na.rm=TRUE))
+           breaks = 'FD',
+           by = 'c1',
+           na.rm = TRUE))
 
 # k
 (ft <- fdt(mdf,
-           k=5,
-           by='c2',
-           na.rm=TRUE))
+           k = 5,
+           by = 'c2',
+           na.rm = TRUE))
 
 (ft <- fdt(iris[c(1:2, 5)],
-           k=10))
+           k = 10))
 
 (ft <- fdt(iris[c(1:2, 5)],
-           k=5,
-           by='Species'))
+           k = 5,
+           by = 'Species'))
 
 #========================
 # Matrices: multivariate
@@ -200,11 +214,11 @@ str(mdf)
 (ft <-fdt(state.x77))
 
 summary(ft,
-        format=TRUE)
+        format = TRUE)
 
 summary(ft,
-        format=TRUE,
-        pattern='\%.2f')
+        format = TRUE,
+        pattern = '\%.2f')
 }
 
 \keyword{fdt}

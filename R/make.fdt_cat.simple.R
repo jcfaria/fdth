@@ -11,7 +11,7 @@ make.fdt_cat.simple <- function(x,
 
   if (sort) {
     order.f <- order(f,
-                     decreasing=decreasing)
+                     decreasing = decreasing)
 
     f <- f[order.f]
 

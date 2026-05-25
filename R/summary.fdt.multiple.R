@@ -1,10 +1,10 @@
 summary.fdt.multiple <- function (object,
-                                  columns=1:6,
-                                  round=2, 
-                                  format.classes=FALSE,
-                                  pattern='%09.3e',
-                                  row.names=FALSE,
-                                  right=TRUE, ...)
+                                  columns = 1:6,
+                                  round = 2, 
+                                  format.classes = FALSE,
+                                  pattern = '%09.3e',
+                                  row.names = FALSE,
+                                  right = TRUE, ...)
 {
   right.tmp  <- as.logical(object[[1]][['breaks']]['right'])
 
@@ -13,9 +13,7 @@ summary.fdt.multiple <- function (object,
   for (i in 1:length(tnames)) {
     res <- object[tnames[i]][[tnames[i]]][['table']]
 
-    res <- cbind(res[, 1],
-                 round(res[, 2:6],
-                       round))[columns]
+    res <- cbind(res[, 1], round(res[, 2:6], round))[columns]
 
     cat(tnames[i], '\n')
 
@@ -34,8 +32,8 @@ summary.fdt.multiple <- function (object,
                     'cf(%)')[columns]
 
     print.data.frame(res,
-                     row.names=row.names, 
-                     right=right, ...)
+                     row.names = row.names, 
+                     right = right, ...)
 
     cat('\n')}
 }
