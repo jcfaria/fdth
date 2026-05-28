@@ -6,10 +6,16 @@ x <- sample(x = letters[1:5],
             rep = TRUE)
 
 # Basic categorical fdt_cat
-print(fdt_cat(x))
+summary(fdt_cat(x),
+        columns = c(1, 2, 4, 6),
+        format = TRUE,
+        pattern = '%.2f')
 
 # Preserve original order (sort = FALSE)
-print(fdt_cat(x, sort = FALSE))
+summary(fdt_cat(x, sort = FALSE),
+        columns = c(1, 2, 4, 6),
+        format = TRUE,
+        pattern = '%.2f')
 
 # Categorical data.frame (multiple outputs)
 mdf <- data.frame(c1 = sample(LETTERS[1:3],

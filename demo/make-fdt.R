@@ -7,18 +7,32 @@ x <- rnorm(1e3,
 
 # Rebuild numeric fdt from frequencies
 ft_ref <- fdt(x)
+
+summary(ft_ref,
+        columns = c(1, 2, 4, 6),
+        format = TRUE,
+        pattern = "%.3f")
+
 ft_new <- make.fdt(f = ft_ref$table$f,
                    start = ft_ref$breaks["start"],
                    end = ft_ref$breaks["end"])
-print(summary(ft_new,
-              format = TRUE,
-              pattern = "%.3f"))
+
+summary(ft_new,
+        columns = c(1, 2, 4, 6),
+        format = TRUE,
+        pattern = "%.3f")
 
 # Rebuild categorical fdt from frequencies
 fruits <- sample(c("apple", "banana", "cherry", "date"),
-                 150,
+                 size=150,
                  replace = TRUE)
-ft_cat <- fdt_cat(fruits)
-ft_new_cat <- make.fdt_cat(f = ft_cat$f,
-                           categories = ft_cat$Category)
-print(ft_new_cat)
+
+ftc_ref <- fdt_cat(fruits)
+
+summary(ftc_ref,
+        columns = c(1, 2, 4, 6))
+
+ftc_new <- make.fdt_cat(f = ftc_ref$f,
+                        categories = ftc_ref$Category)
+summary(ftc_new,
+        columns = c(1, 2, 4, 6))

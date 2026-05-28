@@ -1,6 +1,7 @@
 \name{xtable.fdt}
 \alias{xtable.fdt}
 \alias{xtable.fdt.multiple}
+\alias{xtable.fdt_cat}
 \alias{xtable.fdt_cat.multiple}
 
 \title{
@@ -8,7 +9,8 @@
 }
 
 \description{
-  This function returns a LaTeX table of the \code{fdt}, \code{fdt.multiple} and \code{fdt_cat.multiple} objects of the \code{xtable} class.
+  This function returns a LaTeX table of the \code{fdt}, \code{fdt.multiple},
+  \code{fdt_cat}, and \code{fdt_cat.multiple} objects of the \code{xtable} class.
 }
 
 \usage{
@@ -30,6 +32,15 @@
        display = NULL,
        \dots)
 
+\method{xtable}{fdt_cat}(x,
+       caption = NULL,
+       label = NULL,
+       align = NULL,
+       digits = NULL,
+       display = NULL,
+       auto = FALSE,
+       \dots)
+
 \method{xtable}{fdt_cat.multiple}(x,
        caption = NULL,
        label = NULL,
@@ -40,7 +51,7 @@
 }
 
 \arguments{
-  \item{x}{A \code{fdt}, \code{fdt.multiple} or \code{fdt_cat.multiple} class object.}
+  \item{x}{A \code{fdt}, \code{fdt.multiple}, \code{fdt_cat}, or \code{fdt_cat.multiple} class object.}
   \item{caption}{Character vector of length 1 or 2 containing the table caption or title. See the \code{xtable} function for more details.}
   \item{label}{Character vector of length 1 containing the LaTeX label or HTML anchor. See the \code{xtable} function for more details.}
   \item{align}{Character vector of length equal to the number of columns of the resulting table, indicating the alignment of the corresponding columns. See the \code{xtable} function for more details.}
@@ -53,7 +64,7 @@
 \details{
   The functions \code{latex.fdt} was deprecated. We understand over the years that creating a method for the generic \code{xtable} function would be inevitable, given the advancement of the xtable package and its support by the academic community.
 
-  Then, the \code{fdt}, \code{fdt.multiple} and \code{fdt_cat.multiple} methods were created for the generic \code{xtable} function. For objects of class \code{fdt_cat}, no methods were created, as they inherit from \code{data.frame}; therefore, the \code{xtable} function can be used directly for such objects.
+  Then, the \code{fdt}, \code{fdt.multiple}, \code{fdt_cat}, and \code{fdt_cat.multiple} methods were created for the generic \code{xtable} function.
 
   Objects of the \code{fdt.multiple} and \code{fdt_cat.multiple} class, when using the \code{xtable} function, will have the \code{xtableList} class. Although it may seem confusing, the \code{xtableList} function in the xtable package has no generic function and therefore it was not possible to create a method of type \code{xtableList.fdt.multiple}. Therefore, a method of the \code{xtable.fdt.multiple} class was created, but the function \code{xtableList} is being used internally.
 
@@ -71,7 +82,7 @@
 }
 
 \value{
-  An object of the class \code{xtable.fdt}, \code{xtable.fdt.multiple} and \code{xtable.fdt_cat.multiple}.
+  An object of the class \code{xtable}, \code{xtableList}, or related classes from the \pkg{xtable} package.
 }
 
 \author{

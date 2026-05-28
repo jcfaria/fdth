@@ -7,7 +7,11 @@ x <- rnorm(n = 1e3,
 
 # Basic numeric fdt
 ft <- fdt(x)
-print(ft)
+str(ft) 
+summary(ft, 
+        columns = c(1, 2, 4, 6), # select columns to show
+        format = TRUE,           # format the numbers
+        pattern = '%.2f')        # use a pattern to format the numbers
 
 # Alternative breaks
 print(fdt(x, breaks = "Scott"))
@@ -22,9 +26,8 @@ print(fdt(x,
           end = floor(max(x) + 1),
           h = 1))
 
-# Right-closed classes
-x2 <- sort(rep(1:3, 3))
-print(fdt(x2,
+# Right-closed classes 
+print(fdt(sort(rep(1:3, 3)),
           start = 0,
           end = 3,
           h = 1,

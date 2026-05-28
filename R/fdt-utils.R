@@ -54,3 +54,30 @@
                    row.names = row.names,
                    right = right, ...)
 }
+
+.fdt.xtable.prep.df <- function(df,
+                                math.limits = FALSE)
+{
+  res_DF <- as.data.frame(df)
+  col1 <- trimws(as.character(res_DF[, 1]))
+
+  if (math.limits)
+    col1 <- paste0("$", col1, "$")
+
+  res_DF[, 1] <- format(col1,
+                        justify = "left")
+  res_DF[1, 1] <- paste0("  ", res_DF[1, 1])
+  names(res_DF) <- gsub("\\%",
+                        "\\\\%",
+                        names(res_DF))
+
+  res_DF
+}
+
+.fdt.xtable.cat.item <- function(xi)
+{
+  if (is.list(xi) && !is.null(xi$table))
+    return(xi$table)
+
+  as.data.frame(xi)
+}

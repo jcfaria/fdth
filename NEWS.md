@@ -7,6 +7,8 @@
 - Added `amplitude()` as a new S3 generic to compute total range:
   `amplitude.default`, `amplitude.fdt`, and `amplitude.fdt.multiple`.
 - Exported the new API in `NAMESPACE` and documented it in `man/amplitude.Rd`.
+- Added `ta()` as a concise shortcut to `amplitude()`, exported in
+  `NAMESPACE` and documented in `man/ta.Rd`.
 
 ### Demos
 
@@ -15,6 +17,14 @@
 - Added `demo/measures-from-fdt.R` with grouped-data measures of central
   tendency, position (separatrices), and dispersion, including total range for
   `fdt` and `fdt.multiple`.
+
+### Fixes
+
+- `xtable.fdt`: normalized class-limit label formatting to avoid a visual
+  artefact in the first LaTeX table row (stray leading character before class
+  limits in some console outputs).
+- `xtable.fdt.multiple`, `xtable.fdt_cat`, and `xtable.fdt_cat.multiple`: same
+  first-row alignment fix generalized for grouped and categorical tables.
 
 ## 1.5-0 (2026-05-25) - Faria, J. C.
 

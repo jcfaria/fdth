@@ -5,7 +5,12 @@ xtable.fdt_cat.multiple <- function(x,
                                     digits = NULL,
                                     display = NULL, ...){
 
-  res <- lapply(x, function(x)x$table)
+  res1 <- x[names(x) != "call"]
+  res <- lapply(res1,
+                .fdt.xtable.cat.item)
+  res <- lapply(res,
+                .fdt.xtable.prep.df,
+                math.limits = FALSE)
   attr(res, "subheadings") <- attr(x, "subheadings")
   return(xtableList(res,
                     caption = caption,

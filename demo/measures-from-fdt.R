@@ -6,54 +6,58 @@ x <- rnorm(1e3,
            3)
 ft <- fdt(x)
 
-# Measures computed from an fdt
-
+## Measures computed from an fdt
 # Central tendency
-mean_ft <- mean(ft)
-median_ft <- median(ft)
-mode_ft <- mfv(ft)
+mean(ft)
+median(ft)
+mfv(ft)
 
-mean_ft
-median_ft
-mode_ft
 
 # Position (separatrices)
-quartiles <- quantile(ft,
-                      i = 1:3,
-                      probs = seq(0,
-                                  1,
-                                  0.25))
-deciles <- quantile(ft,
-                    i = 1:9,
-                    probs = seq(0,
-                                1,
-                                0.10))
-percentiles <- quantile(ft,
-                        i = c(10,
-                              25,
-                              50,
-                              75,
-                              90),
-                        probs = seq(0,
-                                    1,
-                                    0.01))
-
-print(quartiles)
-print(deciles)
-print(percentiles)
+quantile(ft,
+         i = 1:3,
+         probs = seq(0,
+                     1,
+                     0.25))
+quantile(ft,
+         i = 1:9,
+         probs = seq(0,
+                     1,
+                     0.10))
+quantile(ft,
+         i = c(10,
+               25,
+               50,
+               75,
+               90),
+         probs = seq(0,
+                     1,
+                     0.01))
 
 # Dispersion
-var_ft <- var(ft)
-sd_ft <- sd(ft)
-at_ft <- amplitude(ft)
-iqr_ft <- quartiles[3] - quartiles[1]
-cv_ft <- 100 * sd_ft / mean_ft
+var(ft)
+sd(ft)
+amplitude(ft)
+ta(ft) # same as amplitude(ft)
 
-at_ft
-var_ft
-sd_ft
+# Interquartile range
+iqr_ft <- quantile(ft,
+                   i = 3,
+                   probs = seq(0,
+                               1,
+                               0.25)) -
+  quantile(ft,
+           i = 1,
+           probs = seq(0,
+                       1,
+                       0.25))
 iqr_ft
+
+#Coefficient of variation
+cv_ft <- 100 * sd(ft) / mean(ft)
 cv_ft
 
 # Total range for fdt.multiple
-print(amplitude(fdt(iris[, 1:4])))
+ft_by <- fdt(iris[, c(1, 2, 5)],
+             by = "Species")
+amplitude(ft_by)

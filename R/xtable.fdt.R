@@ -5,20 +5,8 @@ xtable.fdt <- function(x,
                        digits = NULL,
                        display = NULL,
                        auto = FALSE, ...){
-  res_DF <- x$table
-  newclass1 <- res_DF[, 1]
-  newclass2 <- gsub("\\[",
-                    "$[",
-                    newclass1)
-  newclass3 <- gsub("\\)",
-                    ")$",
-                    newclass2)
-  res_DF[, 1] <- newclass3
-  newnames <- names(res_DF)
-  newnames1 <- gsub("\\%",
-                    "\\\\%",
-                    newnames)
-  names(res_DF) <- newnames1
+  res_DF <- .fdt.xtable.prep.df(x$table,
+                                math.limits = TRUE)
 
   return(xtable(res_DF,
                 caption = caption,
