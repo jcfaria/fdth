@@ -1,6 +1,6 @@
 Package: fdth
-Version: 1.5-0
-Date: 2026-05-25
+Version: 1.5-1
+Date: 2026-05-28
 Title: Frequency Distribution Tables, Histograms and Polygons
 Authors@R: c(person("J. C.", "Faria", role=c("aut","cre"),
                email="joseclaudio.faria@gmail.com"),

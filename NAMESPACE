@@ -3,7 +3,7 @@
 # are exported; internal helpers (make.fdt.simple, make.fdt.multiple, etc.)
 # remain unexported.
 # =============================================================================
-export(fdt, fdt_cat, make.fdt, make.fdt_cat, mfv, sd, var)
+export(amplitude, fdt, fdt_cat, make.fdt, make.fdt_cat, mfv, sd, var)
 
 # =============================================================================
 # Selective imports
@@ -31,6 +31,9 @@ importFrom(xtable, xtable, xtableList)
 S3method(fdt, data.frame)
 S3method(fdt, default)
 S3method(fdt, matrix)
+S3method(amplitude, default)
+S3method(amplitude, fdt)
+S3method(amplitude, fdt.multiple)
 S3method(fdt_cat, data.frame)
 S3method(fdt_cat, default)
 S3method(fdt_cat, matrix)

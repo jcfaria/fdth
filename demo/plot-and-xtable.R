@@ -1,0 +1,27 @@
+library(fdth)
+library(xtable)
+
+set.seed(33)
+x <- rnorm(1e3,
+           20,
+           2)
+ft <- fdt(x)
+
+cat("\n--- Plot variants for fdt ---\n")
+plot(ft, type = "fh", main = "Frequency histogram")
+plot(ft, type = "fp", main = "Frequency polygon")
+plot(ft, type = "d", main = "Density")
+plot(ft, type = "cfpp", main = "Cumulative frequency (%) polygon")
+
+cat("\n--- xtable from fdt ---\n")
+t1x <- xtable(ft)
+print(t1x,
+      include.rownames = FALSE,
+      sanitize.text.function = function(z) z)
+
+cat("\n--- xtable from grouped object (by) ---\n")
+t_multi <- fdt(iris,
+               by = "Species")
+attr(t_multi, "subheadings") <- paste0("Variable = ", names(t_multi))
+print(xtable(t_multi),
+      table.placement = "H")

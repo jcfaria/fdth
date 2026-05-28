@@ -1,5 +1,21 @@
 # fdth news
 
+## 1.5-1 (2026-05-28) - Faria, J. C.
+
+### New feature
+
+- Added `amplitude()` as a new S3 generic to compute total range:
+  `amplitude.default`, `amplitude.fdt`, and `amplitude.fdt.multiple`.
+- Exported the new API in `NAMESPACE` and documented it in `man/amplitude.Rd`.
+
+### Demos
+
+- Added a new `demo/` folder with practical scripts derived from package
+  documentation to speed up user familiarization.
+- Added `demo/measures-from-fdt.R` with grouped-data measures of central
+  tendency, position (separatrices), and dispersion, including total range for
+  `fdt` and `fdt.multiple`.
+
 ## 1.5-0 (2026-05-25) - Faria, J. C.
 
 ### Bug fixes
