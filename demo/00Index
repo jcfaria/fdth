@@ -1,0 +1,8 @@
+fdt-basic            Basic numeric frequency tables with fdt()
+fdt-categorical      Categorical frequency tables with fdt_cat()
+fdt-multiple         Multiple numeric variables and matrices
+grouped-stats        Mean, median, mode, variance, sd, and quantiles
+measures-from-fdt    Central tendency, separatrices, and dispersion
+make-fdt             Reconstruct fdt objects from frequencies
+plot                 Plot variants for fdt and fdt_cat
+xtable               LaTeX export with xtable

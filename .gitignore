@@ -19,6 +19,9 @@
 # Example code generated during the build process
 *-Ex.R
 
+# Function index generated at install time
+INDEX
+
 # =============================================================================
 # Vignette build intermediates (keep only source + final PDF)
 # =============================================================================

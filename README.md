@@ -54,6 +54,7 @@ mfv(ft)
 
 - `/R`: Core functions and S3 methods.
 - `/man`: Reference documentation (`.Rd` files).
+- `/demo`: Runnable examples (`demo()`).
 - `/tests`: Automated tests (`testthat`).
 - `/vignettes`: Tutorials and longer-form documentation.
 
