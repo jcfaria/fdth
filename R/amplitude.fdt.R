@@ -1,6 +1,6 @@
 amplitude.fdt <- function(x, ...)
 {
   with(x,
-       breaks["end"] - breaks["start"])
+       as.numeric(breaks["end"] - breaks["start"]))
 }
 

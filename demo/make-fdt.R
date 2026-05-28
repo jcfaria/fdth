@@ -5,7 +5,7 @@ x <- rnorm(1e3,
            20,
            2)
 
-cat("\n--- Rebuild numeric fdt from frequencies ---\n")
+# Rebuild numeric fdt from frequencies
 ft_ref <- fdt(x)
 ft_new <- make.fdt(f = ft_ref$table$f,
                    start = ft_ref$breaks["start"],
@@ -14,7 +14,7 @@ print(summary(ft_new,
               format = TRUE,
               pattern = "%.3f"))
 
-cat("\n--- Rebuild categorical fdt from frequencies ---\n")
+# Rebuild categorical fdt from frequencies
 fruits <- sample(c("apple", "banana", "cherry", "date"),
                  150,
                  replace = TRUE)

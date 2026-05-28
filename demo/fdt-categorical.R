@@ -5,13 +5,13 @@ x <- sample(x = letters[1:5],
             size = 5e2,
             rep = TRUE)
 
-cat("\n--- Basic categorical fdt_cat ---\n")
+# Basic categorical fdt_cat
 print(fdt_cat(x))
 
-cat("\n--- Preserve original order (sort = FALSE) ---\n")
+# Preserve original order (sort = FALSE)
 print(fdt_cat(x, sort = FALSE))
 
-cat("\n--- Categorical data.frame (multiple outputs) ---\n")
+# Categorical data.frame (multiple outputs)
 mdf <- data.frame(c1 = sample(LETTERS[1:3],
                               1e2,
                               rep = TRUE),
