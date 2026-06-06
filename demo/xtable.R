@@ -81,16 +81,14 @@ ft <- fdt(rnorm(n = 1e3,
 q_ft <- quantile(ft,
                  i = 1:3)
 print(xtable(q_ft),
-      include.rownames = FALSE,
-      sanitize.text.function = function(x) x)
+      include.rownames = FALSE)
 
 ft_multi <- fdt(iris[, 1:4])
 q_multi <- quantile(ft_multi,
                     i = 1:3)
 attr(q_multi, "subheadings") <- names(q_multi)
 print(xtable(q_multi),
-      include.rownames = FALSE,
-      sanitize.text.function = function(x) x)
+      include.rownames = FALSE)
 
 # xtable after print() returns the original fdt object invisibly
 print(xtable(print(ft_multi)),
