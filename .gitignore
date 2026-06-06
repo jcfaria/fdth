@@ -34,6 +34,7 @@ vignettes/*.tex_old
 vignettes/*.toc
 vignettes/*.fdb_latexmk
 vignettes/*.fls
+vignettes/*-concordance.tex
 
 # =============================================================================
 # Operating-system artefacts
