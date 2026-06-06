@@ -10,11 +10,15 @@ xtable.fdt.quantile.multiple <- function(x,
 
   attr(res_DF, "subheadings") <- attr(x, "subheadings")
 
-  return(xtableList(res_DF,
-                    caption = caption,
-                    label = label,
-                    align = align,
-                    digits = digits,
-                    display = display,
-                    ...))
+  xl <- xtableList(res_DF,
+                   caption = caption,
+                   label = label,
+                   align = align,
+                   digits = digits,
+                   display = display,
+                   ...)
+
+  class(xl) <- c("xtableList.fdt.quantile.multiple", class(xl))
+
+  return(xl)
 }

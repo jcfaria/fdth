@@ -94,6 +94,45 @@ test_that("print.fdt.quantile hides class attribute", {
   expect_true(any(grepl("25%", out)))
 })
 
+test_that("xtable.fdt.quantile omits row index column by default", {
+  set.seed(123)
+  tb <- fdt(rnorm(n = 200,
+                  mean = 10,
+                  sd = 2))
+  qq <- quantile(tb,
+                 i = 1:3)
+  tx <- xtable(qq)
+
+  out <- capture.output(print(tx,
+                              sanitize.text.function = function(x) x))
+
+  hline_idx <- grep("\\\\hline", out)[2]
+  first_data_line <- out[hline_idx + 1]
+
+  expect_false(grepl("^1 &", first_data_line))
+  expect_true(grepl("25", first_data_line))
+})
+
+test_that("xtable.fdt.quantile keeps first quantile line aligned", {
+  set.seed(123)
+  tb <- fdt(rnorm(n = 200,
+                  mean = 10,
+                  sd = 2))
+  qq <- quantile(tb,
+                 i = 1:3)
+  tx <- xtable(qq)
+
+  out <- capture.output(print(tx,
+                              sanitize.text.function = function(x) x))
+
+  hline_idx <- grep("\\\\hline", out)[2]
+  first_data_line <- out[hline_idx + 1]
+  second_data_line <- out[hline_idx + 2]
+
+  expect_true(startsWith(first_data_line, "  "))
+  expect_true(startsWith(second_data_line, "  "))
+})
+
 test_that("xtable.fdt.quantile exports quantile labels", {
   set.seed(123)
   tb <- fdt(rnorm(n = 200,
@@ -104,12 +143,29 @@ test_that("xtable.fdt.quantile exports quantile labels", {
   expect_s3_class(qq, "fdt.quantile")
 
   tx <- xtable(qq)
+  out <- capture.output(print(tx))
+
+  expect_true(any(grepl("25\\\\%", out)))
+  expect_false(any(grepl("backslash", out, ignore.case = TRUE)))
+  expect_true(any(grepl("Quantile", out)))
+})
+
+test_that("xtable.fdt.quantile.multiple keeps first quantile lines aligned", {
+  tb <- fdt(iris[, 1:4])
+  qq <- quantile(tb,
+                 i = 1:3)
+  attr(qq, "subheadings") <- names(qq)
+  tx <- xtable(qq)
+
   out <- capture.output(print(tx,
                               include.rownames = FALSE,
                               sanitize.text.function = function(x) x))
 
-  expect_true(any(grepl("25\\\\%", out)))
-  expect_true(any(grepl("Quantile", out)))
+  sh_idx <- grep("Sepal.Length", out, fixed = TRUE)
+  first_lines <- out[sh_idx + 1]
+
+  expect_true(length(first_lines) > 0)
+  expect_true(all(startsWith(first_lines, "  ")))
 })
 
 test_that("xtable.fdt.quantile.multiple exports one table per variable", {

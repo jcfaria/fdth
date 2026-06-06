@@ -8,11 +8,11 @@ xtable.fdt.quantile <- function(x,
 {
   res_DF <- .fdt.xtable.prep.quantile(x)
 
-  return(xtable(res_DF,
-                caption = caption,
-                label = label,
-                align = align,
-                digits = digits,
-                display = display,
-                auto = auto, ...))
+  return(.fdt.xtable.tag.quantile(xtable(res_DF,
+                                          caption = caption,
+                                          label = label,
+                                          align = align,
+                                          digits = digits,
+                                          display = display,
+                                          auto = auto, ...)))
 }

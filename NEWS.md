@@ -1,5 +1,18 @@
 # fdth news
 
+## 1.5-3 (2026-05-28) - Faria, J. C.
+
+### Fixes
+
+- `xtable.fdt.quantile` and `xtable.fdt.quantile.multiple`: same first-row
+  alignment fix applied to other `xtable` methods (leading spaces on the first
+  data row).
+- Quantile `xtable` objects omit the row-index column by default
+  (`include.rownames = FALSE`).
+- Quantile `xtable` LaTeX output uses `\%` in the source (renders as `%` in PDF)
+  via the default `xtable` sanitizer; do not pass
+  `sanitize.text.function = function(x) x` unless you handle escaping yourself.
+
 ## 1.5-2 (2026-05-28) - Faria, J. C.
 
 ### Fixes

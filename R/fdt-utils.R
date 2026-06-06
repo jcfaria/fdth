@@ -76,14 +76,22 @@
 
 .fdt.xtable.prep.quantile <- function(x)
 {
-  qnames <- gsub("\\%",
-                 "\\\\%",
-                 names(x))
+  res_DF <- data.frame(Quantile = names(x),
+                       Value = as.numeric(x),
+                       row.names = NULL,
+                       check.names = FALSE)
 
-  data.frame(Quantile = qnames,
-             Value = as.numeric(x),
-             row.names = NULL,
-             check.names = FALSE)
+  res_DF[, 1] <- format(as.character(res_DF[, 1]),
+                        justify = "left")
+  res_DF[1, 1] <- paste0("  ", res_DF[1, 1])
+
+  res_DF
+}
+
+.fdt.xtable.tag.quantile <- function(x)
+{
+  class(x) <- c("xtable.fdt.quantile", class(x))
+  x
 }
 
 .fdt.xtable.cat.item <- function(xi)
