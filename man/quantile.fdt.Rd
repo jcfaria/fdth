@@ -35,14 +35,18 @@
  for each variable, that is, each column of the data.frame.
 }
 
-\value{\code{quantile.fdt} returns a named numeric vector containing the value(s) of the 
-quantile(s) from \code{fdt}. Names are derived from the selected probability levels
-in \code{probs} (for example, \code{25\%}, \code{50\%}, \code{75\%}).
- \code{quantile.fdt.multiple} returns a list, where each element is a numeric vector 
- containing the quantile(s) of the \code{fdt} for each variable.
+\value{\code{quantile.fdt} returns a named numeric vector of class
+\code{fdt.quantile} containing the value(s) of the quantile(s) from \code{fdt}.
+Names are derived from the selected probability levels in \code{probs}
+(for example, \code{25\%}, \code{50\%}, \code{75\%}).
+ \code{quantile.fdt.multiple} returns a list of class \code{fdt.quantile.multiple},
+ where each element is a \code{fdt.quantile} vector containing the quantile(s)
+ of the \code{fdt} for each variable. Both classes have \code{xtable} methods for
+ LaTeX export.
 }
 
-\seealso{\code{median.fdt}, \code{var.fdt}, \code{\link{mfv}}.
+\seealso{\code{median.fdt}, \code{var.fdt}, \code{\link{mfv}},
+ \code{\link{xtable.fdt}}.
 }
 
 \author{

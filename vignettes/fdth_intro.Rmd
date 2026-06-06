@@ -343,7 +343,20 @@ ft_new_cat
 ## 7. LaTeX export
 
 For publication-ready LaTeX tables use `xtable::xtable()` on any `fdt`
-object. A dedicated vignette covers this workflow in detail:
+object, including quantiles estimated from grouped data:
+
+```{r xtable-quantile, eval=FALSE}
+library(xtable)
+ft <- fdt(rnorm(1000, 10, 2))
+xtable(quantile(ft, i = 1:3))
+
+ftm <- fdt(iris[, 1:4])
+qq <- quantile(ftm, i = 1:3)
+attr(qq, "subheadings") <- names(qq)
+xtable(qq)
+```
+
+A dedicated vignette covers this workflow in detail:
 
 ```{r xtable-ref, eval=FALSE}
 vignette("latex_fdt", package = "fdth")

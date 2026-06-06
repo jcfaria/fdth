@@ -6,5 +6,7 @@ quantile.fdt.multiple <- function(x, ...)
   res <- lapply(xx1,
                 quantile.fdt, ...)
 
+  class(res) <- c("fdt.quantile.multiple", "list")
+
   return(res)
 }

@@ -66,5 +66,7 @@ quantile.fdt <- function(x,
   q.pct <- sub("\\.$", "", q.pct)
   names(res) <- paste0(q.pct, "%")
 
+  class(res) <- c("fdt.quantile", class(res))
+
   return(res)
 }

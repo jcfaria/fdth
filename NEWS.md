@@ -1,5 +1,23 @@
 # fdth news
 
+## 1.5-2 (2026-05-28) - Faria, J. C.
+
+### Fixes
+
+- Added `xtable.fdt.quantile` and `xtable.fdt.quantile.multiple` so LaTeX export
+  works on objects returned by `quantile()` for `fdt` and `fdt.multiple`.
+- `quantile.fdt` and `quantile.fdt.multiple` now attach S3 classes
+  `fdt.quantile` and `fdt.quantile.multiple` to their return values.
+- Added `print.fdt.quantile` and `print.fdt.quantile.multiple` so the class
+  attribute is not shown in the console output.
+- `print.fdt.multiple` (and the other `print` methods for `fdt` objects) now
+  return the original object invisibly, so `xtable(print(x))` and assignment
+  after printing work as expected.
+
+### Demos and documentation
+
+- Extended `demo/xtable.R` and vignettes with quantile-to-LaTeX examples.
+
 ## 1.5-1 (2026-05-28) - Faria, J. C.
 
 ### New feature

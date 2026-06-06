@@ -14,4 +14,6 @@ print.fdt.default <- function(x,
                   pattern = pattern,
                   row.names = row.names,
                   right = right, ...)
+
+  invisible(x)
 }

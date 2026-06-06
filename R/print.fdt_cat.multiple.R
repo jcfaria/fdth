@@ -30,4 +30,6 @@ print.fdt_cat.multiple <- function (x,
 
    cat('\n')
   }
+
+  invisible(x)
 }

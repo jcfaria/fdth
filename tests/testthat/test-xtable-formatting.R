@@ -80,3 +80,60 @@ test_that("xtable.fdt_cat.multiple keeps category lines aligned", {
   expect_true(all(startsWith(first_lines, "  ")))
 })
 
+test_that("print.fdt.quantile hides class attribute", {
+  set.seed(123)
+  tb <- fdt(rnorm(n = 200,
+                  mean = 10,
+                  sd = 2))
+  qq <- quantile(tb,
+                 i = 1:3)
+  expect_s3_class(qq, "fdt.quantile")
+
+  out <- capture.output(print(qq))
+  expect_false(any(grepl("^attr\\(,", out)))
+  expect_true(any(grepl("25%", out)))
+})
+
+test_that("xtable.fdt.quantile exports quantile labels", {
+  set.seed(123)
+  tb <- fdt(rnorm(n = 200,
+                  mean = 10,
+                  sd = 2))
+  qq <- quantile(tb,
+                 i = 1:3)
+  expect_s3_class(qq, "fdt.quantile")
+
+  tx <- xtable(qq)
+  out <- capture.output(print(tx,
+                              include.rownames = FALSE,
+                              sanitize.text.function = function(x) x))
+
+  expect_true(any(grepl("25\\\\%", out)))
+  expect_true(any(grepl("Quantile", out)))
+})
+
+test_that("xtable.fdt.quantile.multiple exports one table per variable", {
+  tb <- fdt(iris[, 1:4])
+  qq <- quantile(tb,
+                 i = 1:3)
+  expect_s3_class(qq, "fdt.quantile.multiple")
+
+  attr(qq, "subheadings") <- names(qq)
+  tx <- xtable(qq)
+
+  out <- capture.output(print(tx,
+                              include.rownames = FALSE,
+                              sanitize.text.function = function(x) x))
+
+  expect_true(any(grepl("Sepal.Length", out)))
+  expect_true(any(grepl("Petal.Width", out)))
+})
+
+test_that("print.fdt.multiple returns fdt.multiple invisibly for xtable", {
+  tb <- fdt(iris[, 1:4])
+  printed <- print(tb)
+
+  expect_s3_class(printed, "fdt.multiple")
+  expect_no_error(xtable(printed))
+})
+

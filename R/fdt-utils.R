@@ -74,6 +74,18 @@
   res_DF
 }
 
+.fdt.xtable.prep.quantile <- function(x)
+{
+  qnames <- gsub("\\%",
+                 "\\\\%",
+                 names(x))
+
+  data.frame(Quantile = qnames,
+             Value = as.numeric(x),
+             row.names = NULL,
+             check.names = FALSE)
+}
+
 .fdt.xtable.cat.item <- function(xi)
 {
   if (is.list(xi) && !is.null(xi$table))

@@ -290,6 +290,25 @@ print(xtable(t62),
       table.placement = "H")
 @
 
+\section{Quantiles estimated from grouped data}
+
+<<quantile-xtable>>=
+q1 <- quantile(t1,
+               i = 1:3)
+print(xtable(q1),
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x,
+      table.placement = "H")
+
+q5 <- quantile(fdt(iris[, 1:4]),
+               i = 1:3)
+attr(q5, "subheadings") <- names(q5)
+print(xtable(q5),
+      include.rownames = FALSE,
+      sanitize.text.function = function(x) x,
+      table.placement = "H")
+@
+
 \section{Custom numeric formatting}
 
 <<custom-digits>>=

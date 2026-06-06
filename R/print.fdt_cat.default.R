@@ -9,4 +9,6 @@ print.fdt_cat.default <- function(x,
                   round.digits = round,
                   row.names = row.names,
                   right = right, ...)
+
+  invisible(x)
 }

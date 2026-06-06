@@ -37,5 +37,7 @@ print.fdt.multiple <- function (x,
                      right = right, ...)
 
     cat('\n')}
+
+  invisible(x)
 }
 
